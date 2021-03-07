@@ -1,8 +1,6 @@
 ## 目录结构
 
-### Android
-
-#### Kotlin
+### Kotlin
 
 * [Kotlin 泛型中的 in 和 out](https://www.jianshu.com/p/c5ef8b30d768)
 

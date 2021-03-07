@@ -1,8 +1,3 @@
-# About
-
-该目录主要存储 Android 常见问题、功能模块、UI 等收藏夹链接
-
-
 ## 目录结构
 
 ### Android
@@ -25,6 +20,8 @@
 
 * [Android 博客大汇总](https://juejin.im/post/5d60ad5df265da03c42899f1)
 
+* [Android - 美团技术团队](https://tech.meituan.com/tags/android.html)
+
 ### 功能
 
 #### 插件化、热修复
@@ -37,7 +34,13 @@
 
 * [Bugly Android 热更新详解](https://bugly.qq.com/docs/user-guide/instruction-manual-android-hotfix-demo/?v=20181014122344)
 
-* [Android 组件化和插件化开发](https://www.cnblogs.com/android-blogs/p/5703355.html)
+#### 换肤
+
+* [Android 插件化系列第 动态加载技术之 apk 换肤](https://www.jianshu.com/p/d1c6e67f7889)
+
+* [Android 主题切换（Theme）实现日夜间功能](https://www.jianshu.com/p/0cd03c878def)
+
+* [Android 主题换肤 无缝切换](https://www.jianshu.com/p/af7c0585dd5b)
 
 #### Hook
 
@@ -111,6 +114,12 @@
 
 * [Android 平台 Camera 开发指南](https://mp.weixin.qq.com/s/dTPtjdDquce_m0LYENfAGw)
 
+#### 优化
+
+* [Android 布局优化 Merge的使用](https://www.jianshu.com/p/69e1a3743960)
+
+* [RecyclerView 列表使用 Timer 定时器复用错乱的问题](https://blog.csdn.net/qq_26665903/article/details/78033117)
+
 #### UI、动画
 
 * [Android 自定义控件进阶篇, 自定义 LayoutManager](https://blog.csdn.net/u012551350/article/details/93971801)
@@ -143,8 +152,6 @@
 
 #### 功能、效果
 
-* [Android 插件化系列第 动态加载技术之 apk 换肤](https://www.jianshu.com/p/d1c6e67f7889)
-
 * [Android 安全防护 / 检查 Root / 检查 Xposed / 反调试 / 应用多开 / 模拟器检测](https://www.jianshu.com/p/c37b1bdb4757)
 
 * [Toolbar 的正确使用姿势](https://www.jianshu.com/p/05ef48b777cc)
@@ -176,32 +183,3 @@
 * [ViewPager 显示两侧的 View 各显示一点](https://blog.csdn.net/baidu_40389775/article/details/96439385)
 
 * [Android EditText 两种方法限制输入两位小数](https://www.jianshu.com/p/dc2419de0abf)
-
-#### Github
-
-* [励志成为较全的直播技术导航 AnyRTC](https://github.com/DyncLang/DevLiveBook)
-
-* [Android 优秀开源项目汇总](https://github.com/SenhLinsh/Android-Hot-Libraries)
-
-* [收集 Android 开发中优秀的开源组件库](https://github.com/XXApple/AndroidLibs)
-
-* [GitHub 上受欢迎的 Android UI Library](https://hndeveloper.github.io/2017/github-android-ui.html#Header)
-
-* [处于萌芽阶段的 Java 核心知识库](https://github.com/crossoverJie/JCSprout)
-
-* [一份涵盖大部分 Java 程序员所需要掌握的核心知识](https://github.com/Snailclimb/JavaGuide)
-
-* [安卓学习笔记 GcsSloop / AndroidNote](https://github.com/GcsSloop/AndroidNote)
-
-#### 算法、面试
-
-* [Android 校招面试指南](https://github.com/LRH1993/android_interview)
-
-* [Android 面试题集](https://github.com/Ellen2018/AndroidFaceInterview)
-
-* [Android开发工程师面试指南 ( 面试题集附答案、简历模板)](https://juejin.im/post/5ac1f77cf265da238155cbb7)
-
-* [Awesome-Android-Interview](https://github.com/JsonChao/Awesome-Android-Interview)
-
-* [软件工程技术面试个人指南 interviews](https://www.wanandroid.com/blog/show/2318)
-
