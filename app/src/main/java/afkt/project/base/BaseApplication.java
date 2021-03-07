@@ -4,7 +4,6 @@ import androidx.multidex.MultiDexApplication;
 
 /**
  * detail: Base Application
- *
  * @author Ttt
  */
 public class BaseApplication
