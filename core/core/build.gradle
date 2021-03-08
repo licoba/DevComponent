@@ -11,5 +11,5 @@ android.defaultConfig {
 dependencies {
 
     // 核心基础依赖库
-    implementation project(':core_base')
+    api project(':core_base')
 }

@@ -4,6 +4,9 @@ apply plugin: 'kotlin-parcelize'
 apply plugin: 'kotlin-kapt'
 
 android {
+
+    compileSdkVersion versions.compileSdkVersion
+
     defaultConfig {
         minSdkVersion versions.app_minSdkVersion
         targetSdkVersion versions.targetSdkVersion

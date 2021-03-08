@@ -1,4 +1,4 @@
-package afkt.project.base;
+package afkt.component.base;
 
 import androidx.multidex.MultiDexApplication;
 

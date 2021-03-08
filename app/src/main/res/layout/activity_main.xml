@@ -25,20 +25,11 @@
             app:cardElevation="@dimen/un_dp_10"
             tools:targetApi="lollipop">
 
-            <dev.base.widget.BaseImageView
+            <ImageView
                 android:layout_width="@dimen/un_dp_120"
                 android:layout_height="@dimen/un_dp_120"
                 android:layout_gravity="center"
                 android:background="@mipmap/icon" />
         </androidx.cardview.widget.CardView>
-
-        <dev.base.widget.BaseTextView
-            android:id="@+id/vid_am_android_tv"
-            style="@style/AppTheme.Base_TextView"
-            android:gravity="center" />
-
-        <include
-            android:id="@+id/vid_base_recy"
-            layout="@layout/base_view_recyclerview" />
     </LinearLayout>
 </dev.widget.custom.CustomNestedScrollView>

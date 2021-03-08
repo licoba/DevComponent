@@ -2,7 +2,7 @@ apply from: rootProject.file(files.build_app_kotlin_gradle)
 
 android {
     defaultConfig {
-        applicationId "afkt.project"
+        applicationId "afkt.component"
     }
 
     sourceSets {
@@ -18,4 +18,7 @@ android {
 }
 
 dependencies {
+
+    // 核心基础依赖库
+    api project(':core')
 }

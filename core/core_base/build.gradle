@@ -17,22 +17,22 @@ dependencies {
     // https://github.com/afkT/DevUtils
 
     // DevApp Android 工具类库
-    implementation deps.dev.dev_app_x
+    api deps.dev.dev_app_x
 
     // DevAssist 快捷功能辅助类库
-    implementation deps.dev.dev_assist
+    api deps.dev.dev_assist
 
     // DevBase Base ( Activity、Fragment )、MVP、ViewBinding、ContentLayout 基类库
-    implementation deps.dev.dev_base
+    api deps.dev.dev_base
 
     // DevBaseMVVM MVVM ( ViewDataBinding + ViewModel ) 基类库
-    implementation deps.dev.dev_base_mvvm
+    api deps.dev.dev_base_mvvm
 
     // DevWidget 自定义 View UI 库
-    implementation deps.dev.dev_widget_x
+    api deps.dev.dev_widget_x
 
     // DevEnvironment Android 环境配置切换库
-    implementation deps.dev.dev_environment
+    api deps.dev.dev_environment
 //    kaptDebug deps.dev.dev_environment_compiler
 //    kaptRelease deps.dev.dev_environment_compiler_release
 
@@ -40,25 +40,25 @@ dependencies {
     // = Android =
     // ===========
 
-    implementation deps.kotlin.stdlib
-    implementation deps.kotlin.core
-    implementation deps.kotlin.lifecycle_runtime
-    implementation deps.kotlin.lifecycle_viewmodel
-    implementation deps.kotlin.lifecycle_livedata
-    implementation deps.kotlin.lifecycle_viewmodel_savedstate
-    implementation deps.kotlin.lifecycle_common_java8
-    implementation deps.kotlin.work_runtime_ktx
-    implementation deps.kotlin.work_runtime
-    implementation deps.kotlin.fragment_ktx
-    implementation deps.kotlin.activity_ktx
-    implementation deps.androidx.design
-    implementation deps.androidx.appcompat
-    implementation deps.androidx.appcompat_resources
-    implementation deps.androidx.cardview
-    implementation deps.androidx.recyclerview
-    implementation deps.androidx.multidex
-    implementation deps.androidx.constraint_layout
-    implementation deps.androidx.viewpager2
-    implementation deps.androidx.fragment
-    implementation deps.androidx.flexbox
+    api deps.kotlin.stdlib
+    api deps.kotlin.core
+    api deps.kotlin.lifecycle_runtime
+    api deps.kotlin.lifecycle_viewmodel
+    api deps.kotlin.lifecycle_livedata
+    api deps.kotlin.lifecycle_viewmodel_savedstate
+    api deps.kotlin.lifecycle_common_java8
+    api deps.kotlin.work_runtime_ktx
+    api deps.kotlin.work_runtime
+    api deps.kotlin.fragment_ktx
+    api deps.kotlin.activity_ktx
+    api deps.androidx.design
+    api deps.androidx.appcompat
+    api deps.androidx.appcompat_resources
+    api deps.androidx.cardview
+    api deps.androidx.recyclerview
+    api deps.androidx.multidex
+    api deps.androidx.constraint_layout
+    api deps.androidx.viewpager2
+    api deps.androidx.fragment
+    api deps.androidx.flexbox
 }

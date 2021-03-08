@@ -21,4 +21,4 @@
 #-renamesourcefileattribute SourceFile
 
 
--keep class afkt.project.databinding.** {*;}
+-keep class afkt.component.databinding.** {*;}

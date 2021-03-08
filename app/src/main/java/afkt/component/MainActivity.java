@@ -1,4 +1,4 @@
-package afkt.project;
+package afkt.component;
 
 import androidx.appcompat.app.AppCompatActivity;
 
