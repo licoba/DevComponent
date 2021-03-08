@@ -1,0 +1,36 @@
+apply from: rootProject.file(files.lib_app_kotlin)
+
+android.defaultConfig {
+    versionCode versions.core_base_lib_versionCode
+    versionName versions.core_base_lib_versionName
+    // CoreBaseLib Module Version
+    buildConfigField "int", "CoreBaseLib_VersionCode", "${versions.core_base_lib_versionCode}"
+    buildConfigField "String", "CoreBaseLib_Version", "\"${versions.core_base_lib_versionName}\""
+}
+
+dependencies {
+
+    // =================
+    // = Dev 系列开发库 =
+    // =================
+
+    // DevApp Android 工具类库
+    implementation deps.dev.dev_app_x
+
+    // DevAssist 快捷功能辅助类库
+    implementation deps.dev.dev_assist
+
+    // DevBase Base ( Activity、Fragment )、MVP、ViewBinding、ContentLayout 基类库
+    implementation deps.dev.dev_base
+
+    // DevBaseMVVM MVVM ( ViewDataBinding + ViewModel ) 基类库
+    implementation deps.dev.dev_base_mvvm
+
+    // DevWidget 自定义 View UI 库
+    implementation deps.dev.dev_widget_x
+
+    // DevEnvironment Android 环境配置切换库
+    implementation deps.dev.dev_environment
+    kaptDebug deps.dev.dev_environment_compiler
+    kaptRelease deps.dev.dev_environment_compiler_release
+}
