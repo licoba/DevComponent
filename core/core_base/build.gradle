@@ -1,0 +1,64 @@
+apply from: rootProject.file(files.lib_app_kotlin_gradle)
+
+android.defaultConfig {
+    versionCode versions.core_base_versionCode
+    versionName versions.core_base_versionName
+    // CoreBase Module Version
+    buildConfigField "int", "CoreBase_VersionCode", "${versions.core_base_versionCode}"
+    buildConfigField "String", "CoreBase_Version", "\"${versions.core_base_versionName}\""
+}
+
+dependencies {
+
+    // =================
+    // = Dev 系列开发库 =
+    // =================
+
+    // https://github.com/afkT/DevUtils
+
+    // DevApp Android 工具类库
+    implementation deps.dev.dev_app_x
+
+    // DevAssist 快捷功能辅助类库
+    implementation deps.dev.dev_assist
+
+    // DevBase Base ( Activity、Fragment )、MVP、ViewBinding、ContentLayout 基类库
+    implementation deps.dev.dev_base
+
+    // DevBaseMVVM MVVM ( ViewDataBinding + ViewModel ) 基类库
+    implementation deps.dev.dev_base_mvvm
+
+    // DevWidget 自定义 View UI 库
+    implementation deps.dev.dev_widget_x
+
+    // DevEnvironment Android 环境配置切换库
+    implementation deps.dev.dev_environment
+//    kaptDebug deps.dev.dev_environment_compiler
+//    kaptRelease deps.dev.dev_environment_compiler_release
+
+    // ===========
+    // = Android =
+    // ===========
+
+    implementation deps.kotlin.stdlib
+    implementation deps.kotlin.core
+    implementation deps.kotlin.lifecycle_runtime
+    implementation deps.kotlin.lifecycle_viewmodel
+    implementation deps.kotlin.lifecycle_livedata
+    implementation deps.kotlin.lifecycle_viewmodel_savedstate
+    implementation deps.kotlin.lifecycle_common_java8
+    implementation deps.kotlin.work_runtime_ktx
+    implementation deps.kotlin.work_runtime
+    implementation deps.kotlin.fragment_ktx
+    implementation deps.kotlin.activity_ktx
+    implementation deps.androidx.design
+    implementation deps.androidx.appcompat
+    implementation deps.androidx.appcompat_resources
+    implementation deps.androidx.cardview
+    implementation deps.androidx.recyclerview
+    implementation deps.androidx.multidex
+    implementation deps.androidx.constraint_layout
+    implementation deps.androidx.viewpager2
+    implementation deps.androidx.fragment
+    implementation deps.androidx.flexbox
+}

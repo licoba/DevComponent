@@ -1,6 +1,0 @@
-apply plugin: 'java-library'
-
-// 编码设置
-tasks.withType(JavaCompile) {
-    options.encoding = "UTF-8"
-}

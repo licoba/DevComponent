@@ -1,52 +1,46 @@
 ext {
 
     files = [
-            // Android 项目构建配置
-            build_app_gradle       : 'file/gradle/build_app.gradle',
             // Android Kotlin 项目构建配置
             build_app_kotlin_gradle: 'file/gradle/build_app_kotlin.gradle',
-
             // Android Kotlin Lib 通用配置
-            lib_app_kotlin_gradle  : 'file/gradle/lib_app_kotlin.gradle',
-
-            // Android lib 依赖配置
-            deps_android_lib       : 'file/gradle/deps/deps_android_lib.gradle',
-            // 第三方 lib 依赖配置
-            deps_other_lib         : 'file/gradle/deps/deps_other_lib.gradle',
-            // 性能检测相关 lib 依赖配置
-            deps_qa_lib            : 'file/gradle/deps/deps_qa_lib.gradle',
+            lib_app_kotlin_gradle  : 'file/gradle/lib_app_kotlin.gradle'
     ]
 
     versions = [
 
             // 版本号
-            versionCode              : 103,
+            versionCode          : 103,
             // 版本名
-            versionName              : '1.0.3',
+            versionName          : '1.0.3',
             // 支持最小的 SDK
-            lib_minSdkVersion        : 14,
+            lib_minSdkVersion    : 14,
             // 支持最小的 SDK
-            app_minSdkVersion        : 21,
+            app_minSdkVersion    : 21,
             // 编译 SDK 版本
-            compileSdkVersion        : 30,
+            compileSdkVersion    : 30,
             // 向前兼容 SDK 版本
-            targetSdkVersion         : 30,
+            targetSdkVersion     : 30,
             // 构建工具版本
-            buildToolsVersion        : '30.0.3',
+            buildToolsVersion    : '30.0.3',
             // java 版本
-            javaVersion              : JavaVersion.VERSION_1_8,
-            javaVersion_str          : '1.8',
+            javaVersion          : JavaVersion.VERSION_1_8,
+            javaVersion_str      : '1.8',
             // Kotlin 版本
-            kotlin_version           : '1.4.21',
+            kotlin_version       : '1.4.21',
 
 
             // =========
             // = 核心库 =
             // =========
 
+            // 核心空壳依赖库
+            core_versionCode     : 100,
+            core_versionName     : '1.0.0',
+
             // 核心基础依赖库
-            core_base_lib_versionCode: 100,
-            core_base_lib_versionName: '1.0.0',
+            core_base_versionCode: 100,
+            core_base_versionName: '1.0.0',
     ]
 
     deps = [
