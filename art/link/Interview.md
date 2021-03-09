@@ -56,7 +56,7 @@
 
 * [Android 中的缓存艺术，对比 RecyclerView 与 ListView 的缓存机制](https://mp.weixin.qq.com/s?__biz=MzA5MzI3NjE2MA==&mid=2650242735&idx=1&sn=09200b0ac9092147b3dc5ae693ce7604&chksm=88638fc0bf1406d6635dd9f5f7b5251cbaf6c561c94f174b2d06a879348da9d46e6edbf47d8f&mpshare=1&scene=24&srcid=0408EIW12EbGRDdZlQ0qX46q&key=f5afb9b49484b8d9ad0e1228a5fdf52cacbdafb7e2e72640053615bbb2978390e4be102b7ab0f007b9c9c2ad125d1a62ffb8cea1ac21d835385b460dee8343bed120d345a0ed0ab0fe6ca8ad2b80a933&ascene=14&uin=MjYzNjY5MTIzNA%3D%3D&devicetype=Windows+7+x64&version=62090070&lang=zh_CN&exportkey=A%2FrReXnMKH629lRuA%2F0ktlc%3D&pass_ticket=u4da2d5YKGOBypbY2jCbP0B9wJMzn0v7OetyMpDLVvvQHkNPqJzJtr3zMYNUdacs)
 
-* [Android 代码内存优化建议 - Android 官方篇](https://androidperformance.com/2015/07/20/Android-Performance-Memory-Google/)
+* [Android 代码内存优化建议 - Android 官方篇](https://androidperformance.com/2015/07/20/Android-Performance-Memory-Google)
 
 * [Android 内存优化大盘点](https://mp.weixin.qq.com/s/ghupyR4z0yYD-Fsd14rgEg)
 
@@ -82,7 +82,7 @@
 
 ### 题目
 
-* [面经网-互联网程序员面试题汇总](https://v2ee.cn/)
+* [面经网-互联网程序员面试题汇总](https://v2ee.cn)
 
 * [这是一份面向 Android 开发者的复习指南](https://mp.weixin.qq.com/s?__biz=MzAxMTI4MTkwNQ==&mid=2650830500&idx=1&sn=7503d4f3821435a72233bc2fab7fcdc8&chksm=80b7a23ab7c02b2c3b0030dcd8678d17a8908d03d5d2c4489314d6b2cb2f280e0359ea5f37ad&scene=126&sessionid=1588123318&key=06b2d50d5506e6bd5638f43347695f880a5b5f1f70babf37e41b60c7a460b8623049c84b8bd58b9429bce63b23ba0496e14933fc4bafb28ce3b363d8b3858158297a74e74bce24e385f9f3d4f500dbca&ascene=14&uin=MjYzNjY5MTIzNA%3D%3D&devicetype=Windows+7+x64&version=62090070&lang=zh_CN&exportkey=A99XiWwTBUtNmUwUgpqbHaI%3D&pass_ticket=u4da2d5YKGOBypbY2jCbP0B9wJMzn0v7OetyMpDLVvvQHkNPqJzJtr3zMYNUdacs)
 

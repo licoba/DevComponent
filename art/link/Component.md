@@ -10,8 +10,6 @@
 
 * [Android 组件化开发实践（四）：组件间通信问题](https://www.jianshu.com/p/82b994fe532c)
 
-* [Android 彻底组件化方案实践](https://www.jianshu.com/p/1b1d77f58e84)
-
 * [Android Studio 组件化方案——多 module 编译常见问题](https://www.jianshu.com/p/bbc0511bdef8)
 
 * [Android 组件化开发原理](https://www.jianshu.com/p/394cff2c3504)
@@ -26,4 +24,10 @@
 
 * [Android 组件化之终极方案](https://www.cnblogs.com/cr330326/p/9785894.html)
 
-* [Component 组件化框架](https://github.com/xiaojinzi123/Component/)
+* [Component 组件化框架](https://github.com/xiaojinzi123/Component)
+
+### 其他
+
+* [总结一波安卓组件化开源方案](https://juejin.cn/post/6844903565035569166)
+
+

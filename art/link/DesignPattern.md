@@ -52,6 +52,3 @@
 
 * [《Head First设计模式》 读书笔记17 其余的模式 ( 三 ) 备忘录、原型、访问者](https://www.cnblogs.com/mengdd/archive/2013/05/12/3073741.html)
 
-
-
-
