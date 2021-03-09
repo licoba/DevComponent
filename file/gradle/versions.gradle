@@ -1,0 +1,81 @@
+ext {
+    versions = [
+
+            // 版本号
+            versionCode                        : 103,
+            // 版本名
+            versionName                        : '1.0.3',
+            // 支持最小的 SDK
+            lib_minSdkVersion                  : 14,
+            // 支持最小的 SDK
+            app_minSdkVersion                  : 21,
+            // 编译 SDK 版本
+            compileSdkVersion                  : 30,
+            // 向前兼容 SDK 版本
+            targetSdkVersion                   : 30,
+            // 构建工具版本
+            buildToolsVersion                  : '30.0.3',
+            // java 版本
+            javaVersion                        : JavaVersion.VERSION_1_8,
+            javaVersion_str                    : '1.8',
+            // Kotlin 版本
+            kotlin_version                     : '1.4.21',
+
+
+            // =========
+            // = 核心库 =
+            // =========
+
+            // 核心空壳依赖库
+            core_versionCode                   : 100,
+            core_versionName                   : '1.0.0',
+
+            // 核心基础依赖库
+            core_base_lib_versionCode          : 100,
+            core_base_lib_versionName          : '1.0.0',
+
+            // ==============
+            // = 核心库 libs =
+            // ==============
+
+            // 基础 ( 基类等 ) lib
+            core_lib_base_versionCode          : 100,
+            core_lib_base_versionName          : '1.0.0',
+
+            // 通用实体类 lib
+            core_lib_bean_versionCode          : 100,
+            core_lib_bean_versionName          : '1.0.0',
+
+            // 通用配置、常量 lib
+            core_lib_config_versionCode        : 100,
+            core_lib_config_versionName        : '1.0.0',
+
+            // 图片加载 lib
+            core_lib_image_versionCode         : 100,
+            core_lib_image_versionName         : '1.0.0',
+
+            // 资源选择 ( 如图片选择 ) lib
+            core_lib_media_selector_versionCode: 100,
+            core_lib_media_selector_versionName: '1.0.0',
+
+            // 网络框架 lib
+            core_lib_network_versionCode       : 100,
+            core_lib_network_versionName       : '1.0.0',
+
+            // 权限 lib
+            core_lib_permission_versionCode    : 100,
+            core_lib_permission_versionName    : '1.0.0',
+
+            // 存储、缓存 lib
+            core_lib_storage_versionCode       : 100,
+            core_lib_storage_versionName       : '1.0.0',
+
+            // 通用 UI 样式、资源、交互、控件 lib
+            core_lib_ui_versionCode            : 100,
+            core_lib_ui_versionName            : '1.0.0',
+
+            // 升级相关 lib
+            core_lib_upgrade_versionCode       : 100,
+            core_lib_upgrade_versionName       : '1.0.0',
+    ]
+}

@@ -3,7 +3,7 @@ apply from: rootProject.file(files.lib_app_kotlin_gradle)
 android.defaultConfig {
     versionCode versions.core_base_lib_versionCode
     versionName versions.core_base_lib_versionName
-    // CoreBaseLib Module Version
+    // Module Version
     buildConfigField "int", "CoreBaseLib_VersionCode", "${versions.core_base_lib_versionCode}"
     buildConfigField "String", "CoreBaseLib_Version", "\"${versions.core_base_lib_versionName}\""
 }
