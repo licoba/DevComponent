@@ -30,4 +30,5 @@
 
 * [总结一波安卓组件化开源方案](https://juejin.cn/post/6844903565035569166)
 
+* [Android彻底组件化 — 代码和资源隔离](https://www.jianshu.com/p/c7459b59dcd5)
 
