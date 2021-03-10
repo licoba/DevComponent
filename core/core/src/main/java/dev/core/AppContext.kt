@@ -32,12 +32,19 @@ open class AppContext : BaseAppContext() {
             DevJSONEngine.setEngine(GsonEngineImpl())
             DevPermissionEngine.setEngine(DevPermissionEngineImpl())
             DevLogEngine.setEngine(object : DevLoggerEngineImpl() {
-                override fun isPrintLog(): Boolean = !DevUtils.isDebug()
+                override fun isPrintLog(): Boolean = isAppDebug()
             })
         }
         // 初始化 Bugly
         Bugly.init(this)
     }
+
+    // ===========
+    // = 重写方法 =
+    // ===========
+
+    // APP 是否 debug 模式
+    open fun isAppDebug(): Boolean = false
 
     // 是否使用默认 Engine 配置
     open fun isEngineConfig(): Boolean = true
