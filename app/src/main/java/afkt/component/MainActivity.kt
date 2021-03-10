@@ -1,26 +1,16 @@
-package afkt.component;
+package afkt.component
 
-import android.os.Bundle;
-import android.widget.ImageView;
+import android.os.Bundle
+import android.widget.ImageView
+import androidx.appcompat.app.AppCompatActivity
+import dev.engine.image.DevImageEngine
 
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
+class MainActivity : AppCompatActivity() {
 
-import dev.core.lib.engine.image.GlideEngineImpl;
-import dev.engine.image.DevImageEngine;
-
-public class MainActivity
-        extends AppCompatActivity {
-
-    @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-        ImageView igview = new ImageView(this);
-        setContentView(igview);
-
-        DevImageEngine.setEngine(new GlideEngineImpl());
-
-        DevImageEngine.getEngine().display(igview, "https://picsum.photos/200");
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        val igview = ImageView(this)
+        setContentView(igview)
+        DevImageEngine.getEngine().display(igview, "https://picsum.photos/201")
     }
 }

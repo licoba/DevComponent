@@ -1,16 +1,10 @@
-package afkt.component.base;
+package afkt.component.base
 
-import androidx.multidex.MultiDexApplication;
+import dev.core.AppContext
 
 /**
  * detail: Base Application
  * @author Ttt
  */
-public class BaseApplication
-        extends MultiDexApplication {
-
-    @Override
-    public void onCreate() {
-        super.onCreate();
-    }
+class BaseApplication : AppContext() {
 }
