@@ -9,6 +9,11 @@ import dev.core.BuildConfig
 object AppDebug {
 
     /**
+     * APP 是否 Release 模式
+     */
+    fun isRelease(): Boolean = !BuildConfig.openDebug
+
+    /**
      * APP 是否 debug 模式
      */
     fun isOpenDebug(): Boolean = BuildConfig.openDebug

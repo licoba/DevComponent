@@ -16,12 +16,6 @@ import dev.engine.permission.DevPermissionEngine
 
 open class AppContext : BaseAppContext() {
 
-    override fun attachBaseContext(base: Context?) {
-        super.attachBaseContext(base)
-        // 初始化 DevUtils
-        DevUtils.init(base?.applicationContext)
-    }
-
     override fun onCreate() {
         super.onCreate()
 
