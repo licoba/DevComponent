@@ -50,13 +50,9 @@ ext {
             core_lib_config_versionCode        : 100,
             core_lib_config_versionName        : '1.0.0',
 
-            // 通用 Engine ( 图片、日志、JSON、权限 等 ) lib
+            // 通用 Engine ( 图片加载、日志、JSON、权限、资源选择 等 ) lib
             core_lib_engine_versionCode        : 100,
             core_lib_engine_versionName        : '1.0.0',
-
-            // 资源选择 ( 如图片选择 ) lib
-            core_lib_media_selector_versionCode: 100,
-            core_lib_media_selector_versionName: '1.0.0',
 
             // 网络框架 lib
             core_lib_network_versionCode       : 100,

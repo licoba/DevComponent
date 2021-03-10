@@ -1,4 +1,4 @@
-package dev.core.lib.engine.json;
+package dev.core.lib.engine.utils;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;

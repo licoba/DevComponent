@@ -25,10 +25,8 @@ dependencies {
     api project(':core_lib_bean')
     // 通用配置、常量 lib
     api project(':core_lib_config')
-    // 通用 Engine ( 图片、日志、JSON、权限 等 ) lib
+    // 通用 Engine ( 图片加载、日志、JSON、权限、资源选择 等 ) lib
     api project(':core_lib_engine')
-    // 资源选择 ( 如图片选择 ) lib
-    api project(':core_lib_media_selector')
     // 网络框架 lib
     api project(':core_lib_network')
     // 存储、缓存 lib

@@ -1,4 +1,4 @@
-package dev.core.lib.engine.json;
+package dev.core.lib.engine.utils;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -24,7 +24,7 @@ import dev.utils.JCLogUtils;
  *     @see <a href="https://www.jianshu.com/p/d62c2be60617"/>
  * </pre>
  */
-final class GsonUtils {
+public final class GsonUtils {
 
     private GsonUtils() {
     }
