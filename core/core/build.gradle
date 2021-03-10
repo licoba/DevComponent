@@ -1,5 +1,15 @@
 apply from: rootProject.file(files.lib_version_common_gradle)
 
+boolean openLog = isOpenLog.toBoolean()
+boolean openDebug = isOpenDebug.toBoolean()
+boolean showDebugTools = showDebugTools.toBoolean()
+
+android.defaultConfig {
+    buildConfigField("boolean", "openLog", "$openLog")
+    buildConfigField("boolean", "openDebug", "$openDebug")
+    buildConfigField("boolean", "showDebugTools", "$showDebugTools")
+}
+
 dependencies {
 
     // 核心基础依赖库

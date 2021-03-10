@@ -13,23 +13,10 @@
       }
     },
     {
-      "channel": "360cn",
-      "extraInfo": {
-        "key": "20161213"
-      }
-    },
-    {
-      "channel": "googleplay"
-    },
-    {
       "channel": "xiaomi"
     },
     {
-      "channel": "meizu"
-    },
-    {
-      "channel": "wandoujia",
-      "excludeDefaultExtraInfo": true
+      "channel": "baidu"
     },
     {
       "channel": "myapp",

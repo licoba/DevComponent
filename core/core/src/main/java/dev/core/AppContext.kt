@@ -3,6 +3,7 @@ package dev.core
 import android.content.Context
 import dev.DevUtils
 import dev.core.app.AppChannel
+import dev.core.app.AppDebug
 import dev.core.lib.base.BaseAppContext
 import dev.core.lib.engine.image.GlideEngineImpl
 import dev.core.lib.engine.json.GsonEngineImpl
@@ -26,6 +27,10 @@ open class AppContext : BaseAppContext() {
     override fun onCreate() {
         super.onCreate()
 
+        // 初始化 DevUtils debug 相关配置
+        if (AppDebug.isOpenDebug()) DevUtils.openDebug()
+        if (AppDebug.isOpenLog()) DevUtils.openLog()
+
         // 是否使用默认 Engine 配置
         if (isEngineConfig()) {
             // 初始化 Engine
@@ -33,7 +38,7 @@ open class AppContext : BaseAppContext() {
             DevJSONEngine.setEngine(GsonEngineImpl())
             DevPermissionEngine.setEngine(DevPermissionEngineImpl())
             DevLogEngine.setEngine(object : DevLoggerEngineImpl() {
-                override fun isPrintLog(): Boolean = isAppDebug()
+                override fun isPrintLog(): Boolean = AppDebug.isOpenDebug()
             })
         }
         // 初始化 Bugly
@@ -44,17 +49,14 @@ open class AppContext : BaseAppContext() {
     // = 重写方法 =
     // ===========
 
-    // APP 是否 debug 模式
-    open fun isAppDebug(): Boolean = false
-
     // 是否使用默认 Engine 配置
     open fun isEngineConfig(): Boolean = true
 
     // 获取 Bugly 配置
     open fun getBuglyConfig(): BuglyConfig? {
         return BuglyConfig(
-            key = (if (isAppDebug()) Bugly.KEY_DEBUG else Bugly.KEY_RELEASE),
-            debug = isAppDebug(),
+            key = (if (AppDebug.isOpenDebug()) Bugly.KEY_DEBUG else Bugly.KEY_RELEASE),
+            debug = AppDebug.isOpenDebug(),
             channel = AppChannel.getChannel()
         )
     }
