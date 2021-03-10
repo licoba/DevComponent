@@ -1,9 +1,7 @@
-package dev.core
+package dev.core.app
 
 import android.content.Context
 import dev.DevUtils
-import dev.core.app.AppChannel
-import dev.core.app.AppDebug
 import dev.core.lib.base.BaseAppContext
 import dev.core.lib.engine.image.GlideEngineImpl
 import dev.core.lib.engine.json.GsonEngineImpl

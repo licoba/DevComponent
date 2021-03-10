@@ -3,7 +3,7 @@ package dev.core.property
 import android.os.Process
 import com.tencent.bugly.crashreport.CrashReport
 import com.tencent.bugly.crashreport.CrashReport.UserStrategy
-import dev.core.AppContext
+import dev.core.app.AppContext
 import dev.utils.app.AppUtils
 import dev.utils.app.ProcessUtils
 

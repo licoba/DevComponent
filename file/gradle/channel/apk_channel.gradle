@@ -2,6 +2,7 @@ apply plugin: 'walle'
 
 def channelDir = new File(project.rootDir, "file/gradle/channel")
 
+// https://github.com/Meituan-Dianping/walle
 walle {
     // 指定渠道包的输出路径
     apkOutputFolder = new File("${project.buildDir}/outputs/channels");
