@@ -88,7 +88,7 @@ public class GlideEngineImpl
     public void preload(
             Context context,
             DevSource source,
-            dev.core.lib.engine.image.ImageConfig config
+            ImageConfig config
     ) {
         if (context != null && source != null && config != null) {
             RequestManager requestManager = Glide.with(context);
@@ -175,7 +175,7 @@ public class GlideEngineImpl
             ImageView imageView,
             String url
     ) {
-        display(imageView, DevSource.create(url), (dev.core.lib.engine.image.ImageConfig) null);
+        display(imageView, DevSource.create(url), (ImageConfig) null);
     }
 
     @Override
@@ -183,14 +183,14 @@ public class GlideEngineImpl
             ImageView imageView,
             DevSource source
     ) {
-        display(imageView, source, (dev.core.lib.engine.image.ImageConfig) null);
+        display(imageView, source, (ImageConfig) null);
     }
 
     @Override
     public void display(
             ImageView imageView,
             String url,
-            dev.core.lib.engine.image.ImageConfig config
+            ImageConfig config
     ) {
         display(imageView, DevSource.create(url), config);
     }
@@ -199,7 +199,7 @@ public class GlideEngineImpl
     public void display(
             ImageView imageView,
             DevSource source,
-            dev.core.lib.engine.image.ImageConfig config
+            ImageConfig config
     ) {
         if (imageView != null && imageView.getContext() != null) {
             RequestManager requestManager = Glide.with(imageView.getContext());
@@ -235,7 +235,7 @@ public class GlideEngineImpl
     public <T> void display(
             ImageView imageView,
             String url,
-            dev.core.lib.engine.image.ImageConfig config,
+            ImageConfig config,
             LoadListener<T> listener
     ) {
         display(imageView, DevSource.create(url), config, listener);
@@ -245,7 +245,7 @@ public class GlideEngineImpl
     public <T> void display(
             ImageView imageView,
             DevSource source,
-            dev.core.lib.engine.image.ImageConfig config,
+            ImageConfig config,
             LoadListener<T> listener
     ) {
         if (imageView != null && imageView.getContext() != null) {
@@ -268,7 +268,7 @@ public class GlideEngineImpl
             ImageView imageView,
             String url
     ) {
-        display(fragment, imageView, DevSource.create(url), (dev.core.lib.engine.image.ImageConfig) null);
+        display(fragment, imageView, DevSource.create(url), (ImageConfig) null);
     }
 
     @Override
@@ -277,7 +277,7 @@ public class GlideEngineImpl
             ImageView imageView,
             DevSource source
     ) {
-        display(fragment, imageView, source, (dev.core.lib.engine.image.ImageConfig) null);
+        display(fragment, imageView, source, (ImageConfig) null);
     }
 
     @Override
@@ -285,7 +285,7 @@ public class GlideEngineImpl
             Fragment fragment,
             ImageView imageView,
             String url,
-            dev.core.lib.engine.image.ImageConfig config
+            ImageConfig config
     ) {
         display(fragment, imageView, DevSource.create(url), config);
     }
@@ -295,7 +295,7 @@ public class GlideEngineImpl
             Fragment fragment,
             ImageView imageView,
             DevSource source,
-            dev.core.lib.engine.image.ImageConfig config
+            ImageConfig config
     ) {
         if (fragment != null && imageView != null) {
             if (canFragmentLoadImage(fragment)) {
@@ -336,7 +336,7 @@ public class GlideEngineImpl
             Fragment fragment,
             ImageView imageView,
             String url,
-            dev.core.lib.engine.image.ImageConfig config,
+            ImageConfig config,
             LoadListener<T> listener
     ) {
         display(fragment, imageView, DevSource.create(url), config, listener);
@@ -347,7 +347,7 @@ public class GlideEngineImpl
             Fragment fragment,
             ImageView imageView,
             DevSource source,
-            dev.core.lib.engine.image.ImageConfig config,
+            ImageConfig config,
             LoadListener<T> listener
     ) {
         if (fragment != null && imageView != null) {
@@ -372,7 +372,7 @@ public class GlideEngineImpl
     public <T> void loadImage(
             Context context,
             DevSource source,
-            dev.core.lib.engine.image.ImageConfig config,
+            ImageConfig config,
             LoadListener<T> listener
     ) {
         if (context != null && source != null && listener != null
@@ -401,7 +401,7 @@ public class GlideEngineImpl
     public <T> void loadImage(
             Fragment fragment,
             DevSource source,
-            dev.core.lib.engine.image.ImageConfig config,
+            ImageConfig config,
             LoadListener<T> listener
     ) {
         if (fragment != null && source != null && listener != null
@@ -430,7 +430,7 @@ public class GlideEngineImpl
     public <T> T loadImage(
             Context context,
             DevSource source,
-            dev.core.lib.engine.image.ImageConfig config,
+            ImageConfig config,
             Class type
     ) {
         if (context != null && source != null && type != null) {
@@ -486,7 +486,7 @@ public class GlideEngineImpl
     public void loadBitmap(
             Context context,
             DevSource source,
-            dev.core.lib.engine.image.ImageConfig config,
+            ImageConfig config,
             LoadListener<Bitmap> listener
     ) {
         loadImage(context, source, config, listener);
@@ -496,7 +496,7 @@ public class GlideEngineImpl
     public void loadBitmap(
             Fragment fragment,
             DevSource source,
-            dev.core.lib.engine.image.ImageConfig config,
+            ImageConfig config,
             LoadListener<Bitmap> listener
     ) {
         loadImage(fragment, source, config, listener);
@@ -506,7 +506,7 @@ public class GlideEngineImpl
     public Bitmap loadBitmap(
             Context context,
             DevSource source,
-            dev.core.lib.engine.image.ImageConfig config
+            ImageConfig config
     ) {
         return loadImage(context, source, config, Bitmap.class);
     }
@@ -517,7 +517,7 @@ public class GlideEngineImpl
     public void loadDrawable(
             Context context,
             DevSource source,
-            dev.core.lib.engine.image.ImageConfig config,
+            ImageConfig config,
             LoadListener<Drawable> listener
     ) {
         loadImage(context, source, config, listener);
@@ -527,7 +527,7 @@ public class GlideEngineImpl
     public void loadDrawable(
             Fragment fragment,
             DevSource source,
-            dev.core.lib.engine.image.ImageConfig config,
+            ImageConfig config,
             LoadListener<Drawable> listener
     ) {
         loadImage(fragment, source, config, listener);
@@ -537,7 +537,7 @@ public class GlideEngineImpl
     public Drawable loadDrawable(
             Context context,
             DevSource source,
-            dev.core.lib.engine.image.ImageConfig config
+            ImageConfig config
     ) {
         return loadImage(context, source, config, Drawable.class);
     }
@@ -613,11 +613,11 @@ public class GlideEngineImpl
     }
 
     /**
-     * 通过 {@link dev.core.lib.engine.image.ImageConfig} 构建 {@link RequestOptions}
-     * @param config {@link dev.core.lib.engine.image.ImageConfig}
+     * 通过 {@link ImageConfig} 构建 {@link RequestOptions}
+     * @param config {@link ImageConfig}
      * @return {@link RequestOptions}
      */
-    private RequestOptions buildRequestOptions(dev.core.lib.engine.image.ImageConfig config) {
+    private RequestOptions buildRequestOptions(ImageConfig config) {
         RequestOptions options = new RequestOptions();
         if (config != null) {
 
@@ -640,26 +640,26 @@ public class GlideEngineImpl
             }
 
             // scale type
-            if (config.getScaleType() == dev.core.lib.engine.image.ImageConfig.SCALE_CENTER_CROP) {
+            if (config.getScaleType() == ImageConfig.SCALE_CENTER_CROP) {
                 options = options.centerCrop();
-            } else if (config.getScaleType() == dev.core.lib.engine.image.ImageConfig.SCALE_FIT_CENTER) {
+            } else if (config.getScaleType() == ImageConfig.SCALE_FIT_CENTER) {
                 options = options.fitCenter();
             }
 
             // transform
-            if (config.getTransform() == dev.core.lib.engine.image.ImageConfig.TRANSFORM_CIRCLE) {
+            if (config.getTransform() == ImageConfig.TRANSFORM_CIRCLE) {
                 options = options.circleCrop();
-            } else if (config.getTransform() == dev.core.lib.engine.image.ImageConfig.TRANSFORM_ROUNDED_CORNERS) {
-                if (config.getScaleType() == dev.core.lib.engine.image.ImageConfig.SCALE_NONE) {
+            } else if (config.getTransform() == ImageConfig.TRANSFORM_ROUNDED_CORNERS) {
+                if (config.getScaleType() == ImageConfig.SCALE_NONE) {
                     options = options.transform(new RoundedCorners(config.getRoundedCornersRadius()));
-                } else if (config.getScaleType() == dev.core.lib.engine.image.ImageConfig.SCALE_CENTER_CROP) {
+                } else if (config.getScaleType() == ImageConfig.SCALE_CENTER_CROP) {
                     options = options.transform(
                             new MultiTransformation(
                                     new CenterCrop(),
                                     new RoundedCorners(config.getRoundedCornersRadius())
                             )
                     );
-                } else if (config.getScaleType() == dev.core.lib.engine.image.ImageConfig.SCALE_FIT_CENTER) {
+                } else if (config.getScaleType() == ImageConfig.SCALE_FIT_CENTER) {
                     options = options.transform(
                             new MultiTransformation(
                                     new FitCenter(),
@@ -667,12 +667,12 @@ public class GlideEngineImpl
                             )
                     );
                 }
-            } else if (config.getTransform() == dev.core.lib.engine.image.ImageConfig.TRANSFORM_NONE) {
+            } else if (config.getTransform() == ImageConfig.TRANSFORM_NONE) {
                 options = options.dontTransform(); // 不做渐入渐出转换
             }
 
             // placeholder
-            if (config.getErrorPlaceholder() != dev.core.lib.engine.image.ImageConfig.NO_PLACE_HOLDER) {
+            if (config.getErrorPlaceholder() != ImageConfig.NO_PLACE_HOLDER) {
                 options = options.error(config.getErrorPlaceholder());
             }
 
@@ -680,7 +680,7 @@ public class GlideEngineImpl
                 options = options.error(config.getErrorDrawable());
             }
 
-            if (config.getLoadingPlaceholder() != dev.core.lib.engine.image.ImageConfig.NO_PLACE_HOLDER) {
+            if (config.getLoadingPlaceholder() != ImageConfig.NO_PLACE_HOLDER) {
                 options = options.placeholder(config.getLoadingPlaceholder());
             }
 
@@ -697,14 +697,14 @@ public class GlideEngineImpl
     }
 
     /**
-     * 通过 {@link dev.core.lib.engine.image.ImageConfig} 构建 {@link RequestBuilder}
+     * 通过 {@link ImageConfig} 构建 {@link RequestBuilder}
      * @param request {@link RequestBuilder}
-     * @param config  {@link dev.core.lib.engine.image.ImageConfig}
+     * @param config  {@link ImageConfig}
      * @return {@link RequestBuilder}
      */
     private <T> RequestBuilder buildRequest(
             RequestBuilder<T> request,
-            dev.core.lib.engine.image.ImageConfig config
+            ImageConfig config
     ) {
         RequestOptions options = buildRequestOptions(config);
         request = request.apply(options);
@@ -721,15 +721,15 @@ public class GlideEngineImpl
     // ====================
 
     /**
-     * 通过 {@link RequestBuilder} 与 {@link dev.core.lib.engine.image.ImageConfig} 快捷显示方法
+     * 通过 {@link RequestBuilder} 与 {@link ImageConfig} 快捷显示方法
      * @param imageView {@link ImageView}
      * @param request   {@link RequestBuilder}
-     * @param config    {@link dev.core.lib.engine.image.ImageConfig}
+     * @param config    {@link ImageConfig}
      */
     private void priDisplayToRequestBuilder(
             ImageView imageView,
             RequestBuilder request,
-            dev.core.lib.engine.image.ImageConfig config
+            ImageConfig config
     ) {
         if (imageView != null && request != null) {
             buildRequest(request, config).into(imageView);
@@ -737,17 +737,17 @@ public class GlideEngineImpl
     }
 
     /**
-     * 通过 {@link RequestBuilder} 与 {@link dev.core.lib.engine.image.ImageConfig} 快捷显示方法
+     * 通过 {@link RequestBuilder} 与 {@link ImageConfig} 快捷显示方法
      * @param imageView {@link ImageView}
      * @param request   {@link RequestBuilder}
-     * @param config    {@link dev.core.lib.engine.image.ImageConfig}
+     * @param config    {@link ImageConfig}
      * @param source    {@link DevSource}
      * @param listener  {@link LoadListener}
      */
     private <T> void priDisplayToRequestBuilder(
             ImageView imageView,
             RequestBuilder request,
-            dev.core.lib.engine.image.ImageConfig config,
+            ImageConfig config,
             DevSource source,
             LoadListener<T> listener
     ) {
@@ -773,7 +773,7 @@ public class GlideEngineImpl
     private static class InnerDrawableViewTarget
             extends ImageViewTarget<Drawable> {
 
-        private final DevSource              mSource;
+        private final DevSource mSource;
         private final LoadListener<Drawable> mListener;
 
         InnerDrawableViewTarget(
@@ -816,7 +816,7 @@ public class GlideEngineImpl
     private static class InnerBitmapViewTarget
             extends ImageViewTarget<Drawable> {
 
-        private final DevSource            mSource;
+        private final DevSource mSource;
         private final LoadListener<Bitmap> mListener;
 
         InnerBitmapViewTarget(
@@ -861,7 +861,7 @@ public class GlideEngineImpl
     private static class InnerDrawableTarget
             extends CustomTarget<Drawable> {
 
-        private final DevSource              mSource;
+        private final DevSource mSource;
         private final LoadListener<Drawable> mListener;
 
         public InnerDrawableTarget(
@@ -900,7 +900,7 @@ public class GlideEngineImpl
     private static class InnerBitmapTarget
             extends CustomTarget<Bitmap> {
 
-        private final DevSource            mSource;
+        private final DevSource mSource;
         private final LoadListener<Bitmap> mListener;
 
         public InnerBitmapTarget(

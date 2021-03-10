@@ -9,7 +9,7 @@ import dev.engine.json.IJSONEngine;
  * @author Ttt
  */
 public class JSONConfig
-        extends IJSONEngine.JSONConfig {
+        extends IJSONEngine.EngineConfig {
 
     public Gson gson;
 }

@@ -9,7 +9,7 @@ import dev.engine.image.IImageEngine;
  * @author Ttt
  */
 public class ImageConfig
-        extends IImageEngine.ImageConfig {
+        extends IImageEngine.EngineConfig {
 
     // 是否缓存到 SDCard
     private boolean mCacheDisk   = true;
