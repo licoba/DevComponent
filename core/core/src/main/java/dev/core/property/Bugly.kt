@@ -13,6 +13,9 @@ import dev.utils.app.ProcessUtils
  */
 object Bugly {
 
+    const val KEY_DEBUG = "xx"
+    const val KEY_RELEASE = "xx"
+
     /**
      * 初始化 Bugly
      * @param appContext [AppContext]

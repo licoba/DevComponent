@@ -1,0 +1,14 @@
+apply plugin: 'walle'
+
+def channelDir = new File(project.rootDir, "file/gradle/channel")
+
+walle {
+    // 指定渠道包的输出路径
+    apkOutputFolder = new File("${project.buildDir}/outputs/channels");
+    // 定制渠道包的 APK 的文件名称
+    apkFileNameFormat = '${appName}-${packageName}-${channel}-${buildType}-v${versionName}-${versionCode}-${buildTime}.apk';
+    // 渠道配置文件
+    channelFile = new File(channelDir, "channel")
+    // 使用 JSON 配置方式
+    //configFile = new File(channelDir, "channel_config.json")
+}

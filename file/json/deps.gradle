@@ -187,6 +187,13 @@ dependencies {
 	// bugly_ndk
 	implementation 'com.tencent.bugly:nativecrashreport:3.8.0'
 
+	// = build_apk =
+
+	// walle
+	implementation 'com.meituan.android.walle:library:1.1.7'
+	// vas_dolly
+	implementation 'com.leon.channel:helper:2.0.3'
+
 	// = widget =
 
 	// gpuimage

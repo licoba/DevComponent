@@ -32,6 +32,9 @@ dependencies {
     // = 第三方库 =
     // ===========
 
+    // 瓦力多渠道打包 https://github.com/Meituan-Dianping/walle
+    api deps.build_apk.walle
+
     // Bugly https://bugly.qq.com/docs/
     api deps.property.bugly
     api deps.property.bugly_ndk

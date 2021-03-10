@@ -2,6 +2,7 @@ package dev.core
 
 import android.content.Context
 import dev.DevUtils
+import dev.core.app.AppChannel
 import dev.core.lib.base.BaseAppContext
 import dev.core.lib.engine.image.GlideEngineImpl
 import dev.core.lib.engine.json.GsonEngineImpl
@@ -50,5 +51,11 @@ open class AppContext : BaseAppContext() {
     open fun isEngineConfig(): Boolean = true
 
     // 获取 Bugly 配置
-    open fun getBuglyConfig(): BuglyConfig? = null
+    open fun getBuglyConfig(): BuglyConfig? {
+        return BuglyConfig(
+            key = (if (isAppDebug()) Bugly.KEY_DEBUG else Bugly.KEY_RELEASE),
+            debug = isAppDebug(),
+            channel = AppChannel.getChannel()
+        )
+    }
 }
