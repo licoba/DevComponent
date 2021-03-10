@@ -27,4 +27,12 @@ dependencies {
     api project(':core_lib_ui')
     // 升级相关 lib
     api project(':core_lib_upgrade')
+
+    // ===========
+    // = 第三方库 =
+    // ===========
+
+    // Bugly https://bugly.qq.com/docs/
+    api deps.property.bugly
+    api deps.property.bugly_ndk
 }

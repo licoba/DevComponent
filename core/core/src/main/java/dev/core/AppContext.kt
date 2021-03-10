@@ -7,6 +7,8 @@ import dev.core.lib.engine.image.GlideEngineImpl
 import dev.core.lib.engine.json.GsonEngineImpl
 import dev.core.lib.engine.log.DevLoggerEngineImpl
 import dev.core.lib.engine.permission.DevPermissionEngineImpl
+import dev.core.property.Bugly
+import dev.core.property.BuglyConfig
 import dev.engine.image.DevImageEngine
 import dev.engine.json.DevJSONEngine
 import dev.engine.log.DevLogEngine
@@ -23,8 +25,8 @@ open class AppContext : BaseAppContext() {
     override fun onCreate() {
         super.onCreate()
 
-        // 是否使用默认配置
-        if (isDefaultConfig()) {
+        // 是否使用默认 Engine 配置
+        if (isEngineConfig()) {
             // 初始化 Engine
             DevImageEngine.setEngine(GlideEngineImpl())
             DevJSONEngine.setEngine(GsonEngineImpl())
@@ -33,7 +35,13 @@ open class AppContext : BaseAppContext() {
                 override fun isPrintLog(): Boolean = !DevUtils.isDebug()
             })
         }
+        // 初始化 Bugly
+        Bugly.init(this)
     }
 
-    open fun isDefaultConfig(): Boolean = true
+    // 是否使用默认 Engine 配置
+    open fun isEngineConfig(): Boolean = true
+
+    // 获取 Bugly 配置
+    open fun getBuglyConfig(): BuglyConfig? = null
 }
