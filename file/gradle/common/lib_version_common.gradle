@@ -1,0 +1,15 @@
+apply from: rootProject.file(files.lib_app_kotlin_gradle)
+
+// 获取 lib 名 => settings.gradle 例 include ':core_lib_engine'
+def libName = project.getName() // core_lib_engine
+// 从 file/gradle/version.gradle 中获取对应的 lib 版本信息
+def libVersionCode = versions.get(libName + "_versionCode")
+def libVersionName = versions.get(libName + "_versionName")
+
+android.defaultConfig {
+    versionCode libVersionCode
+    versionName libVersionName
+    // Module Version
+    buildConfigField "int", libName + "_VersionCode", "${versionCode}"
+    buildConfigField "String", libName + "_Version", "\"${versionName}\""
+}

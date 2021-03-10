@@ -1,12 +1,4 @@
-apply from: rootProject.file(files.lib_app_kotlin_gradle)
-
-android.defaultConfig {
-    versionCode versions.core_base_lib_versionCode
-    versionName versions.core_base_lib_versionName
-    // Module Version
-    buildConfigField "int", "CoreBaseLib_VersionCode", "${versions.core_base_lib_versionCode}"
-    buildConfigField "String", "CoreBaseLib_Version", "\"${versions.core_base_lib_versionName}\""
-}
+apply from: rootProject.file(files.lib_version_common_gradle)
 
 /**
  * 该 Module 基于 Dev 系列开发库搭建, 且不存在任何代码属于核心 lib 依赖 ( 全部开发基于该 module )

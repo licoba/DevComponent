@@ -1,12 +1,4 @@
-apply from: rootProject.file(files.lib_app_kotlin_gradle)
-
-android.defaultConfig {
-    versionCode versions.core_lib_engine_versionCode
-    versionName versions.core_lib_engine_versionName
-    // Module Version
-    buildConfigField "int", "CoreLibEngine_VersionCode", "${versions.core_lib_engine_versionCode}"
-    buildConfigField "String", "CoreLibEngine_Version", "\"${versions.core_lib_engine_versionName}\""
-}
+apply from: rootProject.file(files.lib_version_common_gradle)
 
 dependencies {
 
