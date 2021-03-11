@@ -1,6 +1,5 @@
 package dev.core.app
 
-import android.content.Context
 import dev.DevUtils
 import dev.core.lib.base.BaseAppContext
 import dev.core.lib.engine.image.GlideEngineImpl
@@ -9,6 +8,7 @@ import dev.core.lib.engine.log.DevLoggerEngineImpl
 import dev.core.lib.engine.permission.DevPermissionEngineImpl
 import dev.core.property.Bugly
 import dev.core.property.BuglyConfig
+import dev.core.property.defaultBuglyConfig
 import dev.engine.image.DevImageEngine
 import dev.engine.json.DevJSONEngine
 import dev.engine.log.DevLogEngine
@@ -45,11 +45,5 @@ open class AppContext : BaseAppContext() {
     open fun isEngineConfig(): Boolean = true
 
     // 获取 Bugly 配置
-    open fun getBuglyConfig(): BuglyConfig? {
-        return BuglyConfig(
-            key = (if (AppDebug.isOpenDebug()) Bugly.KEY_DEBUG else Bugly.KEY_RELEASE),
-            debug = AppDebug.isOpenDebug(),
-            channel = AppChannel.getChannel()
-        )
-    }
+    open fun getBuglyConfig(): BuglyConfig? = defaultBuglyConfig()
 }

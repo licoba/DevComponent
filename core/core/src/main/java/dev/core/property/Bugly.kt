@@ -3,7 +3,9 @@ package dev.core.property
 import android.os.Process
 import com.tencent.bugly.crashreport.CrashReport
 import com.tencent.bugly.crashreport.CrashReport.UserStrategy
+import dev.core.app.AppChannel
 import dev.core.app.AppContext
+import dev.core.app.AppDebug
 import dev.utils.app.AppUtils
 import dev.utils.app.ProcessUtils
 
@@ -54,4 +56,13 @@ class BuglyConfig(
     val key: String,
     val debug: Boolean,
     val channel: String
+)
+
+/**
+ * 返回默认 Bugly 配置
+ */
+fun defaultBuglyConfig(): BuglyConfig? = BuglyConfig(
+    key = (if (AppDebug.isOpenDebug()) Bugly.KEY_DEBUG else Bugly.KEY_RELEASE),
+    debug = AppDebug.isOpenDebug(),
+    channel = AppChannel.getChannel()
 )
