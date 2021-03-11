@@ -2,7 +2,7 @@ package dev.core.lib.engine.json;
 
 import java.lang.reflect.Type;
 
-import dev.core.lib.engine.utils.FastjsonUtils;
+import dev.core.lib.utils.FastjsonUtils;
 import dev.engine.json.IJSONEngine;
 
 /**

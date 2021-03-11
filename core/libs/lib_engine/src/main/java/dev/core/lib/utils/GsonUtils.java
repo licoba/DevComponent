@@ -1,4 +1,4 @@
-package dev.core.lib.engine.utils;
+package dev.core.lib.utils;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;

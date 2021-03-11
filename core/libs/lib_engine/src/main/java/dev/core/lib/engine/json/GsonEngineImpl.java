@@ -2,7 +2,7 @@ package dev.core.lib.engine.json;
 
 import java.lang.reflect.Type;
 
-import dev.core.lib.engine.utils.GsonUtils;
+import dev.core.lib.utils.GsonUtils;
 import dev.engine.json.IJSONEngine;
 
 /**
