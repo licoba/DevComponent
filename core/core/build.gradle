@@ -50,4 +50,21 @@ dependencies {
     // Bugly https://bugly.qq.com/docs/
     api deps.property.bugly
     api deps.property.bugly_ndk
+
+    // ======================
+    // = 性能检测、排查相关库 =
+    // ======================
+
+    if (showDebugTools) {
+        // 内存检测工具 https://github.com/square/leakcanary
+        api deps.property.leakcanary
+//        // BlockCanary 性能监控组件 https://github.com/markzhai/AndroidPerformanceMonitor/blob/master/README_CN.md
+//        api deps.property.blockcanary_android
+        // 应用数据库展示 https://github.com/guolindev/Glance
+        api deps.property.glance
+        // 饿了么 UETool https://github.com/eleme/UETool/blob/master/README_zh.md
+        api deps.property.uetool
+//        // 滴滴出行 DoraemonKit http://www.dokit.cn
+//        api deps.property.dokitx
+    }
 }

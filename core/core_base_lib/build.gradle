@@ -70,6 +70,8 @@ dependencies {
     api deps.lib.rxandroid3
     // LiveEventBus 消息总线 https://github.com/JeremyLiao/LiveEventBus
     api deps.lib.live_eventbus
+    // 基于 mmap 的高性能通用 key-value 组件 https://github.com/Tencent/MMKV/blob/master/readme_cn.md
+    api deps.lib.mmkv
     // 今日头条屏幕适配方案终极版 https://github.com/JessYanCoding/AndroidAutoSize/blob/master/README-zh.md
     api deps.lib.autosize
     // 动画库 https://github.com/airbnb/lottie-android
@@ -77,6 +79,6 @@ dependencies {
     // 二维码 ZXing https://github.com/zxing/zxing
     api deps.lib.zxing_code // http://mvnrepository.com/artifact/com.google.zxing/core
     api deps.lib.zxing_android_code // android-core
-    // 基于 mmap 的高性能通用 key-value 组件 https://github.com/Tencent/MMKV/blob/master/readme_cn.md
-    api deps.lib.mmkv
+    // 功能面板切换辅助 https://github.com/YummyLau/PanelSwitchHelper/blob/master/README-zh.md
+    api deps.lib.panelSwitchHelper
 }

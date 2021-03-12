@@ -4,4 +4,21 @@ dependencies {
 
     // 核心基础依赖库 ( 编译但不参与打包 )
     compileOnly project(':core_base_lib')
+
+    // 依赖 Engine ( 编译但不参与打包 ) => 例 JSON 相关使用
+    compileOnly project(':core_lib_engine')
+
+    // ============
+    // = libs 依赖 =
+    // ============
+
+    // OkHttp3 网络请求框架 https://github.com/square/okhttp
+    api deps.lib.okhttp3
+    api deps.lib.okhttp3_logging
+    // Retrofit 网络请求库  https://github.com/square/retrofit
+    api deps.lib.retrofit
+    // Retrofit Gson Converter  https://github.com/square/retrofit/tree/master/retrofit-converters/gson
+    api deps.lib.retrofit_gson
+    // Retrofit RxJava3 Adapter  https://github.com/square/retrofit/tree/master/retrofit-adapters/rxjava3
+    api deps.lib.retrofit_rxjava3
 }

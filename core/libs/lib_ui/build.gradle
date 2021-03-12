@@ -5,9 +5,9 @@ dependencies {
     // 核心基础依赖库 ( 编译但不参与打包 )
     compileOnly project(':core_base_lib')
 
-    // ==============
-    // = Module 依赖 =
-    // ==============
+    // ============
+    // = libs 依赖 =
+    // ============
 
     // https://blog.csdn.net/qq_22393017/article/details/58099486
     // 图片缩放 https://github.com/chrisbanes/PhotoView
