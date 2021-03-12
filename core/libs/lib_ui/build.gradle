@@ -9,7 +9,8 @@ dependencies {
     // = libs 依赖 =
     // ============
 
-    // https://blog.csdn.net/qq_22393017/article/details/58099486
+    // 滚轮选择库 https://github.com/Bigkoo/Android-PickerView
+    api deps.widget.pickerview
     // 图片缩放 https://github.com/chrisbanes/PhotoView
     api deps.widget.photoview
     // RecyclerView 实现顶部吸附效果 https://github.com/Gavin-ZYX/StickyDecoration
@@ -25,4 +26,6 @@ dependencies {
     api deps.widget.smartrefresh_footer_classics // 经典加载
     // 下拉刷新框架 ( 横向 ) https://github.com/scwang90/SmartRefreshHorizontal
     api deps.widget.smartrefreshHorizontal
+    // Banner 库 https://github.com/youth5201314/banner
+    api deps.widget.banner
 }

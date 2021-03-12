@@ -21,6 +21,7 @@ ext {
                     dev_base                        : "com.afkt:DevBase:1.0.4",
                     dev_base_mvvm                   : "com.afkt:DevBaseMVVM:1.0.2",
                     dev_widget_x                    : "com.afkt:DevWidgetX:1.0.8",
+                    dev_java                        : "com.afkt:DevJava:1.2.9",
                     // 环境配置切换库
                     dev_environment                 : "com.afkt:DevEnvironment:1.0.2",
                     dev_environment_base            : "com.afkt:DevEnvironmentBase:1.0.2",
@@ -90,8 +91,6 @@ ext {
                     glide_compiler       : "com.github.bumptech.glide:compiler:4.12.0",
                     // Glide 图形库 https://github.com/wasabeef/glide-transformations
                     glide_transformations: "jp.wasabeef:glide-transformations:4.3.0",
-                    // EventBus 事件订阅分发 https://github.com/greenrobot/EventBus
-                    eventbus             : "org.greenrobot:eventbus:3.2.0",
                     // LiveEventBus 消息总线 https://github.com/JeremyLiao/LiveEventBus
                     live_eventbus        : "com.jeremyliao:live-event-bus-x:1.7.3",
                     // okip https://github.com/square/okio
@@ -110,9 +109,6 @@ ext {
                     rxjava3              : "io.reactivex.rxjava3:rxjava:3.0.7",
                     // RxAndroid3 https://github.com/ReactiveX/RxAndroid/tree/3.x
                     rxandroid3           : "io.reactivex.rxjava3:rxandroid:3.0.0",
-                    // OkHttp 拦截器抓包 https://github.com/DingProg/NetworkCaptureSelf
-                    networkCaptureSelf   : "com.github.DingProg.NetworkCaptureSelf:library:v1.0.1",
-                    networkCaptureSelf_op: "com.github.DingProg.NetworkCaptureSelf:library_no_op:v1.0.1",
                     // fastjson https://github.com/alibaba/fastjson
                     fastjson             : "com.alibaba:fastjson:1.2.73",
                     fastjson_android     : "com.alibaba:fastjson:1.1.72.android",
@@ -163,23 +159,23 @@ ext {
                     // ======================
 
                     // xCrash Android 应用崩溃捕获工具 https://github.com/iqiyi/xCrash/blob/master/README.zh-CN.md
-                    xcrash             : "com.iqiyi.xcrash:xcrash-android-lib:3.0.0",
+                    xcrash               : "com.iqiyi.xcrash:xcrash-android-lib:3.0.0",
                     // 应用数据库展示 https://github.com/guolindev/Glance
-                    glance             : "com.glance.guolindev:glance:1.0.0",
+                    glance               : "com.glance.guolindev:glance:1.0.0",
                     // 内存检测工具 https://github.com/square/leakcanary
-                    leakcanary         : "com.squareup.leakcanary:leakcanary-android:2.6",
+                    leakcanary           : "com.squareup.leakcanary:leakcanary-android:2.6",
                     // BlockCanary 性能监控组件 https://github.com/markzhai/AndroidPerformanceMonitor/blob/master/README_CN.md
-                    blockcanary_android: "com.github.markzhai:blockcanary-android:1.5.0",
-                    blockcanary_no_op  : "com.github.markzhai:blockcanary-no-op:1.5.0",
+                    blockcanary_android  : "com.github.markzhai:blockcanary-android:1.5.0",
+                    blockcanary_no_op    : "com.github.markzhai:blockcanary-no-op:1.5.0",
                     // 饿了么 UETool https://github.com/eleme/UETool/blob/master/README_zh.md
-                    uetool             : "me.ele:uetool:1.2.9",
-                    uetool_no_op       : "me.ele:uetool-no-op:1.2.9",
-                    // 滴滴出行 DoraemonKit http://www.dokit.cn
-                    dokitx             : "com.didichuxing.doraemonkit:dokitx:3.3.5",
-                    dokitx_no_op       : "com.didichuxing.doraemonkit:dokitx-no-op:3.3.5",
+                    uetool               : "me.ele:uetool:1.2.9",
+                    uetool_no_op         : "me.ele:uetool-no-op:1.2.9",
                     // Bugly https://bugly.qq.com/docs/
-                    bugly              : "com.tencent.bugly:crashreport:3.3.7",
-                    bugly_ndk          : "com.tencent.bugly:nativecrashreport:3.8.0",
+                    bugly                : "com.tencent.bugly:crashreport:3.3.7",
+                    bugly_ndk            : "com.tencent.bugly:nativecrashreport:3.8.0",
+                    // OkHttp 拦截器抓包 https://github.com/DingProg/NetworkCaptureSelf
+                    networkCaptureSelf   : "com.github.DingProg.NetworkCaptureSelf:library:v1.0.1",
+                    networkCaptureSelf_op: "com.github.DingProg.NetworkCaptureSelf:library_no_op:v1.0.1",
 
                     // 微信开源的资源混淆库 AndResGuard https://github.com/shwenzhang/AndResGuard/blob/master/README.zh-cn.md
 
@@ -196,12 +192,6 @@ ext {
             'widget'   : [
                     // 第三方简约小功能、UI 小组件等
 
-                    // GPU Filters https://github.com/cats-oss/android-gpuimage
-                    gpuimage                     : "jp.co.cyberagent.android:gpuimage:2.1.0",
-                    // 加载动画效果 https://github.com/Kyson/WhorlView
-                    whorlviewlibrary             : "com.tt:whorlviewlibrary:1.0.3",
-                    // 圆形 ImageView https://github.com/hdodenhof/CircleImageView
-                    circleimageview              : "de.hdodenhof:circleimageview:3.1.0",
                     // 滚轮选择库 https://github.com/Bigkoo/Android-PickerView
                     pickerview                   : "com.contrarywind:Android-PickerView:4.1.9", // https://blog.csdn.net/qq_22393017/article/details/58099486
                     // 图片缩放 https://github.com/chrisbanes/PhotoView

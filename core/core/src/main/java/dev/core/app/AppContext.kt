@@ -1,7 +1,9 @@
 package dev.core.app
 
 import android.util.Log
+import android.webkit.WebSettings
 import dev.DevUtils
+import dev.core.assist.WebViewAssist
 import dev.core.lib.base.BaseAppContext
 import dev.core.lib.engine.compress.LubanEngineImpl
 import dev.core.lib.engine.image.GlideEngineImpl
@@ -19,6 +21,9 @@ import dev.engine.log.DevLogEngine
 import dev.engine.media.DevMediaEngine
 import dev.engine.permission.DevPermissionEngine
 import dev.utils.LogPrintUtils
+import dev.utils.app.DeviceUtils
+import dev.utils.app.PathUtils
+import dev.utils.common.FileRecordUtils
 import dev.utils.common.StringUtils
 
 /**
@@ -32,17 +37,15 @@ open class AppContext : BaseAppContext() {
 
         // 初始化 DevUtils debug 相关配置
         if (AppDebug.isOpenDebug()) DevUtils.openDebug()
-        // 是否打印日志
-        if (AppDebug.isOpenLog()) {
-            DevUtils.openLog()
-            // 日志拦截 ( 方便调试 )
-            devLogInterceptor()
-        }
-
+        if (AppDebug.isOpenLog()) DevUtils.openLog()
         // 是否使用默认 Engine 配置
         if (isEngineConfig()) initializeEngine()
+        // Dev 系列工具类初始化
+        initializeDevUtils()
         // 初始化 Bugly
         Bugly.init(this)
+        // xCrash 提供捕获 java 崩溃、native 崩溃和 ANR 的能力, 不需要 root 权限或任何系统权限
+        xcrash.XCrash.init(this)
     }
 
     // ===========
@@ -74,25 +77,57 @@ open class AppContext : BaseAppContext() {
     }
 
     /**
-     * Dev 系列工具类日志拦截
+     * Dev 系列工具类初始化
      */
-    private fun devLogInterceptor() {
-        // 可进行日志拦截编码
-        //DevLogger.setPrint(DevLogger.Print());
-        //JCLogUtils.setPrint(JCLogUtils.Print());
-        LogPrintUtils.setPrint(LogPrintUtils.Print { logType, tag, message -> // 防止 null 处理
-            var message: String? = message ?: return@Print
-            // 进行编码处理
-            message = StringUtils.strEncode(message, "UTF-8")
-            when (logType) {
-                Log.VERBOSE -> Log.v(tag, message)
-                Log.DEBUG -> Log.d(tag, message)
-                Log.INFO -> Log.i(tag, message)
-                Log.WARN -> Log.w(tag, message)
-                Log.ERROR -> Log.e(tag, message)
-                Log.ASSERT -> Log.wtf(tag, message)
-                else -> Log.wtf(tag, message)
+    private fun initializeDevUtils() {
+        // 日志拦截 ( 方便调试 )
+        if (AppDebug.isOpenLog()) {
+            //DevLogger.setPrint(DevLogger.Print())
+            //JCLogUtils.setPrint(JCLogUtils.Print())
+            LogPrintUtils.setPrint(LogPrintUtils.Print { logType, tag, message -> // 防止 null 处理
+                var message: String? = message ?: return@Print
+                // 进行编码处理
+                message = StringUtils.strEncode(message, "UTF-8")
+                when (logType) {
+                    Log.VERBOSE -> Log.v(tag, message)
+                    Log.DEBUG -> Log.d(tag, message)
+                    Log.INFO -> Log.i(tag, message)
+                    Log.WARN -> Log.w(tag, message)
+                    Log.ERROR -> Log.e(tag, message)
+                    Log.ASSERT -> Log.wtf(tag, message)
+                    else -> Log.wtf(tag, message)
+                }
+            })
+        }
+        // 插入设备信息
+        FileRecordUtils.setInsertInfo(DeviceUtils.getAppDeviceInfo())
+        // 初始化 WebView 辅助类全局配置
+        initializeWebViewBuilder()
+    }
+
+    /**
+     * 初始化 WebView 辅助类全局配置
+     */
+    private fun initializeWebViewBuilder() {
+        val builder: WebViewAssist.Builder = WebViewAssist.Builder()
+            .setBuiltInZoomControls(true) // 显示内置缩放工具
+            .setDisplayZoomControls(true) // 显示缩放工具
+            .setAppCachePath( // Application Caches 地址
+                PathUtils.getInternal().getAppCachePath("cache")
+            )
+            .setDatabasePath( // 数据库缓存路径
+                PathUtils.getInternal().getAppCachePath("db")
+            )
+            .setRenderPriority(WebSettings.RenderPriority.HIGH) // 渲染优先级高
+            .setOnApplyListener { _, _ ->
+                DevLogEngine.getEngine().d("WebViewAssist Builder onApply")
             }
-        })
+        // 基础布局算法
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.KITKAT) {
+            builder.setLayoutAlgorithm(WebSettings.LayoutAlgorithm.TEXT_AUTOSIZING)
+        } else {
+            builder.setLayoutAlgorithm(WebSettings.LayoutAlgorithm.SINGLE_COLUMN)
+        }
+        WebViewAssist.setGlobalBuilder(builder)
     }
 }
