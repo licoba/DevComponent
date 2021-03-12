@@ -4,4 +4,25 @@ dependencies {
 
     // 核心基础依赖库 ( 编译但不参与打包 )
     compileOnly project(':core_base_lib')
+
+    // ==============
+    // = Module 依赖 =
+    // ==============
+
+    // https://blog.csdn.net/qq_22393017/article/details/58099486
+    // 图片缩放 https://github.com/chrisbanes/PhotoView
+    api deps.widget.photoview
+    // RecyclerView 实现顶部吸附效果 https://github.com/Gavin-ZYX/StickyDecoration
+    api deps.widget.stickyDecoration
+    // 下拉刷新框架 https://github.com/scwang90/SmartRefreshLayout
+    api deps.widget.smartrefreshlayout
+    api deps.widget.smartrefresh_header_classics // 经典刷新头
+    api deps.widget.smartrefresh_header_radar // 雷达刷新头
+    api deps.widget.smartrefresh_header_falsify // 虚拟刷新头
+    api deps.widget.smartrefresh_header_material // 谷歌刷新头
+    api deps.widget.smartrefresh_header_two_level // 二级刷新头
+    api deps.widget.smartrefresh_footer_ball // 球脉冲加载
+    api deps.widget.smartrefresh_footer_classics // 经典加载
+    // 下拉刷新框架 ( 横向 ) https://github.com/scwang90/SmartRefreshHorizontal
+    api deps.widget.smartrefreshHorizontal
 }

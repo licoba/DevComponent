@@ -59,4 +59,24 @@ dependencies {
     api deps.androidx.flexbox
     api deps.androidx.hilt_android
     kapt deps.androidx.hilt_android_compiler
+
+    // ===============
+    // = 第三方开发库 =
+    // ===============
+
+    // RxJava3 https://github.com/ReactiveX/RxJava/tree/3.x
+    api deps.lib.rxjava3
+    // RxAndroid3 https://github.com/ReactiveX/RxAndroid/tree/3.x
+    api deps.lib.rxandroid3
+    // LiveEventBus 消息总线 https://github.com/JeremyLiao/LiveEventBus
+    api deps.lib.live_eventbus
+    // 今日头条屏幕适配方案终极版 https://github.com/JessYanCoding/AndroidAutoSize/blob/master/README-zh.md
+    api deps.lib.autosize
+    // 动画库 https://github.com/airbnb/lottie-android
+    api deps.lib.lottie
+    // 二维码 ZXing https://github.com/zxing/zxing
+    api deps.lib.zxing_code // http://mvnrepository.com/artifact/com.google.zxing/core
+    api deps.lib.zxing_android_code // android-core
+    // 基于 mmap 的高性能通用 key-value 组件 https://github.com/Tencent/MMKV/blob/master/readme_cn.md
+    api deps.lib.mmkv
 }

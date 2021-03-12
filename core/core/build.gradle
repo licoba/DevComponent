@@ -10,6 +10,10 @@ android.defaultConfig {
     buildConfigField("boolean", "showDebugTools", "$showDebugTools")
 }
 
+/**
+ * 该 Module 依赖 core 核心开发库、核心第三方库等
+ * 统一维护核心库依赖, 对外只需要依赖该 Module 便可使用整个核心模块 ( core 文件以及内部所有 libs )
+ */
 dependencies {
 
     // 核心基础依赖库
