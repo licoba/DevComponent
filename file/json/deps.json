@@ -77,8 +77,8 @@
         "kluban": "com.github.forJrking:KLuban:1.0.5",
         "xxPermissions": "com.hjq:xxpermissions:9.8",
         "progressmanager": "me.jessyan:progressmanager:1.5.0",
-        "arouter_api": "com.alibaba:arouter-api:1.5.0",
-        "arouter_compiler": "com.alibaba:arouter-compiler:1.2.2"
+        "arouter_api": "com.alibaba:arouter-api:1.5.1",
+        "arouter_compiler": "com.alibaba:arouter-compiler:1.5.1"
     },
     "property": {
         "xcrash": "com.iqiyi.xcrash:xcrash-android-lib:3.0.0",

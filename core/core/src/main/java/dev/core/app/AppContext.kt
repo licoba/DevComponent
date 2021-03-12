@@ -11,6 +11,7 @@ import dev.core.lib.engine.json.GsonEngineImpl
 import dev.core.lib.engine.log.DevLoggerEngineImpl
 import dev.core.lib.engine.media.PictureSelectorEngineImpl
 import dev.core.lib.engine.permission.DevPermissionEngineImpl
+import dev.core.property.BlockCanaryKT
 import dev.core.property.Bugly
 import dev.core.property.BuglyConfig
 import dev.core.property.defaultBuglyConfig
@@ -42,10 +43,12 @@ open class AppContext : BaseAppContext() {
         if (isEngineConfig()) initializeEngine()
         // Dev 系列工具类初始化
         initializeDevUtils()
-        // 初始化 Bugly
+        // Bugly
         Bugly.init(this)
         // xCrash 提供捕获 java 崩溃、native 崩溃和 ANR 的能力, 不需要 root 权限或任何系统权限
         xcrash.XCrash.init(this)
+        // BlockCanary
+        BlockCanaryKT.init(this)
     }
 
     // ===========

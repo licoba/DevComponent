@@ -184,3 +184,5 @@
 
 * [Android EditText 两种方法限制输入两位小数](https://www.jianshu.com/p/dc2419de0abf)
 
+* [了解 uri、content provide、data android:host、android:scheme](https://blog.csdn.net/cike110120/article/details/46866735)
+

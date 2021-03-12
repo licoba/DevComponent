@@ -32,6 +32,6 @@ dependencies {
     api deps.lib.aria_m3u8 // 如果需要使用 m3u8 下载功能, 请增加该组件
 
     // OkHttp 拦截器抓包 https://github.com/DingProg/NetworkCaptureSelf
-    kaptDebug deps.property.networkCaptureSelf
-    kaptRelease deps.property.networkCaptureSelf_op
+    debugApi deps.property.networkCaptureSelf
+    releaseApi deps.property.networkCaptureSelf_op
 }

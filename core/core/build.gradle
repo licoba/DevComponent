@@ -62,11 +62,23 @@ dependencies {
     if (showDebugTools) {
         // 内存检测工具 https://github.com/square/leakcanary
         api deps.property.leakcanary
-//        // BlockCanary 性能监控组件 https://github.com/markzhai/AndroidPerformanceMonitor/blob/master/README_CN.md
-//        api deps.property.blockcanary_android
         // 应用数据库展示 https://github.com/guolindev/Glance
         api deps.property.glance
         // 饿了么 UETool https://github.com/eleme/UETool/blob/master/README_zh.md
         api deps.property.uetool
+        // BlockCanary 性能监控组件 https://github.com/markzhai/AndroidPerformanceMonitor/blob/master/README_CN.md
+        api deps.property.blockcanary_android
+    } else {
+        // 饿了么 UETool https://github.com/eleme/UETool/blob/master/README_zh.md
+        api deps.property.uetool_no_op
+        // BlockCanary 性能监控组件 https://github.com/markzhai/AndroidPerformanceMonitor/blob/master/README_CN.md
+        api deps.property.blockcanary_no_op
     }
+
+//    // 饿了么 UETool https://github.com/eleme/UETool/blob/master/README_zh.md
+//    debugApi deps.property.uetool
+//    releaseApi deps.property.uetool_no_op
+//    // BlockCanary 性能监控组件 https://github.com/markzhai/AndroidPerformanceMonitor/blob/master/README_CN.md
+//    debugApi deps.property.blockcanary_android
+//    releaseApi deps.property.blockcanary_no_op
 }

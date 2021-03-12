@@ -81,4 +81,8 @@ dependencies {
     api deps.lib.zxing_android_code // android-core
     // 功能面板切换辅助 https://github.com/YummyLau/PanelSwitchHelper/blob/master/README-zh.md
     api deps.lib.panelSwitchHelper
+
+    // ARouter 路由 https://github.com/alibaba/ARouter
+    api deps.lib.arouter_api // https://github.com/alibaba/ARouter/blob/master/README_CN.md
+    kapt deps.lib.arouter_compiler
 }
