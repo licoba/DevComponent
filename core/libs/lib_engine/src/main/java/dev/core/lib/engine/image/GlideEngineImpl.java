@@ -773,7 +773,7 @@ public class GlideEngineImpl
     private static class InnerDrawableViewTarget
             extends ImageViewTarget<Drawable> {
 
-        private final DevSource mSource;
+        private final DevSource              mSource;
         private final LoadListener<Drawable> mListener;
 
         InnerDrawableViewTarget(
@@ -816,7 +816,7 @@ public class GlideEngineImpl
     private static class InnerBitmapViewTarget
             extends ImageViewTarget<Drawable> {
 
-        private final DevSource mSource;
+        private final DevSource            mSource;
         private final LoadListener<Bitmap> mListener;
 
         InnerBitmapViewTarget(
@@ -861,7 +861,7 @@ public class GlideEngineImpl
     private static class InnerDrawableTarget
             extends CustomTarget<Drawable> {
 
-        private final DevSource mSource;
+        private final DevSource              mSource;
         private final LoadListener<Drawable> mListener;
 
         public InnerDrawableTarget(
@@ -900,7 +900,7 @@ public class GlideEngineImpl
     private static class InnerBitmapTarget
             extends CustomTarget<Bitmap> {
 
-        private final DevSource mSource;
+        private final DevSource            mSource;
         private final LoadListener<Bitmap> mListener;
 
         public InnerBitmapTarget(
