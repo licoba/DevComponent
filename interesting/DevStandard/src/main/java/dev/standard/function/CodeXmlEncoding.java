@@ -1,10 +1,12 @@
 package dev.standard.function;
 
 import java.io.File;
+import java.io.UnsupportedEncodingException;
 import java.util.LinkedHashSet;
 import java.util.List;
 
 import dev.standard.ApiConfig;
+import dev.utils.DevFinal;
 import dev.utils.common.FileUtils;
 import dev.utils.common.StringUtils;
 import dev.utils.common.assist.search.FileDepthFirstSearchUtils;
@@ -40,13 +42,22 @@ public final class CodeXmlEncoding {
                             return true;
                         }
 
-                        String data = new String(FileUtils.readFileBytes(file)); // , "UTF-8"
+                        String data = null;
+                        try {
+                            data = new String(FileUtils.readFileBytes(file), DevFinal.UTF_8);
+                        } catch (UnsupportedEncodingException e) {
+                            e.printStackTrace();
+                        }
                         if (data != null) {
                             if (!data.startsWith(STARTS_WITH)) {
                                 // 删减内容
                                 data = APPEND + data;
-                                // 替换内容
-                                FileUtils.saveFile(file.getAbsolutePath(), data.getBytes()); // "UTF-8"
+                                try {
+                                    // 替换内容
+                                    FileUtils.saveFile(file.getAbsolutePath(), data.getBytes(DevFinal.UTF_8));
+                                } catch (UnsupportedEncodingException e) {
+                                    e.printStackTrace();
+                                }
                                 // 存储路径
                                 sSets.add(FileUtils.getAbsolutePath(file));
                             }
@@ -63,7 +74,11 @@ public final class CodeXmlEncoding {
                         for (String path : sSets) {
                             System.out.println(path);
                         }
-                        System.out.println("搜索结束");
+                        try {
+                            System.out.println(new String("搜索结束".getBytes(DevFinal.UTF_8)));
+                        } catch (UnsupportedEncodingException e) {
+                            e.printStackTrace();
+                        }
                     }
                 }).query(ApiConfig.PROJECT_PATH, true);
     }
