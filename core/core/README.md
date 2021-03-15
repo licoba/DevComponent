@@ -5,7 +5,7 @@
 
 # 依赖信息
 
-```
+```groovy
 dependencies {
 
     // 核心基础依赖库

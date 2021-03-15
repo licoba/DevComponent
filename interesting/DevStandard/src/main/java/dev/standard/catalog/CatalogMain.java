@@ -112,7 +112,7 @@ final class CatalogMain {
                 .append(DevFinal.NEW_LINE_STR_X2)
                 .append("# 依赖信息")
                 .append(DevFinal.NEW_LINE_STR_X2)
-                .append("```")
+                .append("```groovy")
                 .append(DevFinal.NEW_LINE_STR)
                 .append(dependencies)
                 .append(DevFinal.NEW_LINE_STR)
