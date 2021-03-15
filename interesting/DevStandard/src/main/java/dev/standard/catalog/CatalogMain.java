@@ -76,11 +76,12 @@ final class CatalogMain {
                 if (gradleFile.exists()) {
                     generateDependenciesREADME(catelogPath, mapCatalog.get(catalog));
                 } else {
-                    String dir = dirName;
-                    if (StringUtils.isNotEmpty(dir)) {
-                        dir = "." + dirName;
+                    String dir = ".";
+                    if (StringUtils.isNotEmpty(dirName)) {
+                        dir += dirName + ".";
+                        dir = "." + StringUtils.clearStartsWith(dir, ".");
                     }
-                    generateDependenciesCatalog(path, dir + "." + name, mapCatalog);
+                    generateDependenciesCatalog(path, dir + name, mapCatalog);
                 }
             }
         }
