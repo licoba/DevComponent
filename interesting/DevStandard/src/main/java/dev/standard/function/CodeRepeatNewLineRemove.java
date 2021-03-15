@@ -5,8 +5,8 @@ import java.io.FileFilter;
 import java.util.HashMap;
 import java.util.List;
 
-import dev.standard.ApiConfig;
 import dev.standard.Utils;
+import dev.standard.catalog.Config;
 import dev.utils.common.FileIOUtils;
 import dev.utils.common.FileUtils;
 import dev.utils.common.MapUtils;
@@ -26,7 +26,7 @@ public final class CodeRepeatNewLineRemove {
 
     public static void main(String[] args) {
         // 获取文件列表
-        List<File> lists = FileUtils.listFilesInDirWithFilter(ApiConfig.PROJECT_PATH, new FileFilter() {
+        List<File> lists = FileUtils.listFilesInDirWithFilter(Config.PROJECT_PATH, new FileFilter() {
             @Override
             public boolean accept(File file) {
                 if (file.getAbsolutePath().indexOf("\\.") != -1) return false;

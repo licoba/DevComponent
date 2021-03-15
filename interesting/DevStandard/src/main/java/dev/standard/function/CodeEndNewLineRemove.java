@@ -5,7 +5,7 @@ import java.io.UnsupportedEncodingException;
 import java.util.LinkedHashSet;
 import java.util.List;
 
-import dev.standard.ApiConfig;
+import dev.standard.catalog.Config;
 import dev.utils.DevFinal;
 import dev.utils.common.FileUtils;
 import dev.utils.common.StringUtils;
@@ -84,6 +84,6 @@ public final class CodeEndNewLineRemove {
                             e.printStackTrace();
                         }
                     }
-                }).query(ApiConfig.PROJECT_PATH, true);
+                }).query(Config.PROJECT_PATH, true);
     }
 }
