@@ -75,16 +75,16 @@ public final class Config {
     ) {
         if (StringUtils.equals(path, CORE_LOCAL_PATH)) {
             builder.append(DevFinal.NEW_LINE_STR);
-            builder.append("## core/core");
-            builder.append(DevFinal.NEW_LINE_STR);
+            builder.append("# core/core");
+            builder.append(DevFinal.NEW_LINE_STR_X2);
             builder.append("> 该 Module 依赖 core 核心开发库、核心第三方库等");
-            builder.append(DevFinal.NEW_LINE_STR);
+            builder.append(DevFinal.NEW_LINE_STR).append(">").append(DevFinal.NEW_LINE_STR);
             builder.append("> 统一维护核心库依赖, 对外只需要依赖该 Module 便可使用整个核心模块 ( core 文件以及内部所有 libs )");
             builder.append(DevFinal.NEW_LINE_STR_X2);
             builder.append("## core/core_base_lib");
-            builder.append(DevFinal.NEW_LINE_STR);
+            builder.append(DevFinal.NEW_LINE_STR_X2);
             builder.append("> 该 Module 基于 Dev 系列开发库搭建, 且不存在任何代码属于核心 lib 依赖 ( 全部开发基于该 module )");
-            builder.append(DevFinal.NEW_LINE_STR);
+            builder.append(DevFinal.NEW_LINE_STR).append(">").append(DevFinal.NEW_LINE_STR);
             builder.append("> 用于统一维护基础核心开发库依赖, 如有必须依赖底层库在此添加");
         }
     }
