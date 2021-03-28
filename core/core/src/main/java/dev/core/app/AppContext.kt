@@ -2,6 +2,7 @@ package dev.core.app
 
 import android.util.Log
 import android.webkit.WebSettings
+import com.alibaba.android.arouter.launcher.ARouter
 import dev.DevUtils
 import dev.core.assist.WebViewAssist
 import dev.core.lib.base.BaseAppContext
@@ -35,6 +36,15 @@ open class AppContext : BaseAppContext() {
 
     override fun onCreate() {
         super.onCreate()
+
+        if (AppDebug.isOpenDebug()) {
+            ARouter.openLog()
+            ARouter.openDebug()
+            // 打印日志的时候打印线程堆栈
+            ARouter.printStackTrace()
+        }
+        // 尽可能早, 推荐在 Application 中初始化
+        ARouter.init(this)
 
         // 初始化 DevUtils debug 相关配置
         if (AppDebug.isOpenDebug()) DevUtils.openDebug()

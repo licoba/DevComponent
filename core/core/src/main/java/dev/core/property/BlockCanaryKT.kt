@@ -37,7 +37,7 @@ class AppBlockCanaryContext : BlockCanaryContext() {
 
     @SuppressLint("MissingPermission")
     override fun provideNetworkType(): String {
-        var type = "unknown";
+        var type = "unknown"
         try {
             type = NetWorkUtils.getNetworkType().name
         } catch (e: Exception) {
