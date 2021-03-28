@@ -1,7 +1,7 @@
 
 # About
 
-通用 Engine ( 图片加载、日志、JSON、权限、资源选择 ) lib
+通用 Engine ( 图片加载、日志、JSON、权限、资源选择、缓存 ) lib
 
 # 依赖信息
 

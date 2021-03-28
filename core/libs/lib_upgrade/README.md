@@ -10,5 +10,8 @@ dependencies {
 
     // 核心基础依赖库 ( 编译但不参与打包 )
     compileOnly project(':core_base_lib')
+
+    // 依赖网络框架 ( 编译但不参与打包 )
+    compileOnly project(':core_lib_network')
 }
 ```

@@ -43,6 +43,7 @@ final class CatalogMain {
                 .append("## 目录结构")
                 .append(DevFinal.NEW_LINE_STR_X2)
                 .append(catalog);
+        Config.insertREADME(path, builder);
         String readme = StringUtils.clearEndsWith(builder.toString(), "\n");
         try {
             FileUtils.saveFile(new File(path, "README.md"), readme.getBytes(DevFinal.UTF_8));
