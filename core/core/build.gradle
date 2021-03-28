@@ -33,8 +33,6 @@ dependencies {
     api project(':core_lib_engine')
     // 网络框架 lib
     api project(':core_lib_network')
-    // 存储、缓存 lib
-    api project(':core_lib_storage')
     // 通用 UI 样式、资源、交互、控件 lib
     api project(':core_lib_ui')
     // 升级相关 lib

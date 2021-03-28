@@ -57,10 +57,6 @@ ext {
             core_lib_network_versionCode       : 100,
             core_lib_network_versionName       : '1.0.0',
 
-            // 存储、缓存 lib
-            core_lib_storage_versionCode       : 100,
-            core_lib_storage_versionName       : '1.0.0',
-
             // 通用 UI 样式、资源、交互、控件 lib
             core_lib_ui_versionCode            : 100,
             core_lib_ui_versionName            : '1.0.0',

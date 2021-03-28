@@ -11,7 +11,6 @@
       - lib_config       | 通用配置、常量信息
       - lib_engine       | 通用 Engine ( 图片加载、日志、JSON、权限、资源选择、缓存 ) lib
       - lib_network      | 网络相关 lib ( 网络请求、上传下载 )
-      - lib_storage      | 存储相关功能
       - lib_ui           | 统一 style、widget、ui 相关组件
       - lib_upgrade      | 应用升级功能模块
 ```
