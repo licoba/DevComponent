@@ -82,4 +82,9 @@ class BaseTitleBar : LinearLayout {
     fun setTitle(@StringRes resId: Int): BaseTitleBar {
         return setTitle(ResourceUtils.getString(resId))
     }
+
+    fun setBackListener(listener: OnClickListener): BaseTitleBar {
+        binding.vidCubtbBackIgview.setOnClickListener(listener)
+        return this
+    }
 }

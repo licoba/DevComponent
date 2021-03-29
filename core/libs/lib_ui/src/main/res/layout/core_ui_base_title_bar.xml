@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/vid_cubtb_layout"
     android:layout_width="match_parent"
-    android:layout_height="@dimen/un_dp_50">
+    android:layout_height="@dimen/un_dp_45">
 
     <LinearLayout
         android:id="@+id/vid_cubtb_left_linear"
@@ -15,9 +15,10 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <dev.core.lib.ui.widget.BaseImageView
-            android:layout_width="@dimen/un_dp_50"
-            android:layout_height="@dimen/un_dp_50"
-            android:padding="@dimen/un_dp_5"
+            android:id="@+id/vid_cubtb_back_igview"
+            android:layout_width="@dimen/un_dp_45"
+            android:layout_height="@dimen/un_dp_45"
+            android:padding="@dimen/un_dp_10"
             android:scaleType="fitXY"
             android:src="@mipmap/op_arrow_left_black" />
     </LinearLayout>
@@ -28,8 +29,10 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         app:layout_constrainedWidth="true"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toRightOf="@id/vid_cubtb_left_linear"
-        app:layout_constraintRight_toLeftOf="@id/vid_cubtb_right_linear">
+        app:layout_constraintRight_toLeftOf="@id/vid_cubtb_right_linear"
+        app:layout_constraintTop_toTopOf="parent">
 
         <dev.core.lib.ui.widget.BaseTextView
             android:id="@+id/vid_cubtb_title_tv"
@@ -37,7 +40,7 @@
             android:layout_height="match_parent"
             android:gravity="center"
             android:textColor="@color/black"
-            android:textSize="@dimen/un_sp_25"
+            android:textSize="@dimen/un_sp_20"
             tools:text="Title" />
     </LinearLayout>
 
@@ -48,8 +51,6 @@
         android:orientation="horizontal"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:background="@color/red"
-        tools:layout_width="@dimen/un_dp_50">
-
+        tools:layout_width="@dimen/un_dp_45">
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
