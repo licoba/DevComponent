@@ -59,6 +59,7 @@ dependencies {
     api deps.androidx.flexbox
     api deps.androidx.hilt_android
     kapt deps.androidx.hilt_android_compiler
+    api deps.androidx.startup
 
     // ===============
     // = 第三方开发库 =

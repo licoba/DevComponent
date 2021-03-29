@@ -82,6 +82,8 @@ ext {
                     // Hilt 依赖注入 https://developer.android.google.cn/training/dependency-injection/hilt-android
                     hilt_android         : "com.google.dagger:hilt-android:2.28-alpha", // https://blog.csdn.net/petterp/article/details/106771203
                     hilt_android_compiler: "com.google.dagger:hilt-android-compiler:2.28-alpha",
+                    // https://developer.android.google.cn/topic/libraries/app-startup
+                    startup              : "androidx.startup:startup-runtime:1.0.0",
             ],
             'lib'      : [
                     // Gson https://github.com/google/gson

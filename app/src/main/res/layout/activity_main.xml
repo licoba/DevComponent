@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <dev.widget.custom.CustomNestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/color_f5"
@@ -10,26 +8,5 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="@dimen/un_dp_30"
-            android:layout_marginBottom="@dimen/un_dp_20"
-            android:clickable="true"
-            android:foreground="?attr/selectableItemBackground"
-            android:stateListAnimator="@drawable/touch"
-            app:cardCornerRadius="@dimen/un_dp_25"
-            app:cardElevation="@dimen/un_dp_10"
-            tools:targetApi="lollipop">
-
-            <ImageView
-                android:layout_width="@dimen/un_dp_120"
-                android:layout_height="@dimen/un_dp_120"
-                android:layout_gravity="center"
-                android:background="@mipmap/icon" />
-        </androidx.cardview.widget.CardView>
-    </LinearLayout>
+        android:orientation="vertical"></LinearLayout>
 </dev.widget.custom.CustomNestedScrollView>
