@@ -13,3 +13,6 @@ android.defaultConfig {
     buildConfigField "int", libName + "_VersionCode", "${versionCode}"
     buildConfigField "String", libName + "_Version", "\"${versionName}\""
 }
+
+// 资源统一前缀处理
+apply from: rootProject.file(files.lib_resource_prefix_common_gradle)
