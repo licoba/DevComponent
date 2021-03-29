@@ -19,7 +19,7 @@ import com.scwang.smart.refresh.layout.listener.OnRefreshListener
 import com.scwang.smart.refresh.layout.listener.OnRefreshLoadMoreListener
 import dev.assist.PageAssist
 import dev.core.lib.ui.assist.DevBaseRefreshAssist
-import dev.core_lib_ui.R
+import dev.core_lib_ui.databinding.CoreUiBaseRefreshViewBinding
 
 /**
  * detail: Base Refresh、Load View
@@ -63,7 +63,7 @@ class BaseRefreshView : LinearLayout {
     private var mBody: FrameLayout? = null
 
     // DevBase RefreshLayout 辅助类
-    private var mAssist = DevBaseRefreshAssist<String>()
+    private var mAssist = DevBaseRefreshAssist<Object>()
 
     /**
      * 默认初始化操作
@@ -71,13 +71,14 @@ class BaseRefreshView : LinearLayout {
     private fun init() {
         orientation = VERTICAL
         val context = context
+
         // 初始化 View
-        val view = LayoutInflater.from(context).inflate(R.layout.core_ui_base_refresh_view, null)
-        mBody = view.findViewById(R.id.vid_cubrv_frame)
+        var binding = CoreUiBaseRefreshViewBinding.inflate(LayoutInflater.from(context))
+        mBody = binding.vidCubrvFrame
         // 初始化 Refresh 数据
         mAssist
-            .setRecyclerView(view.findViewById(R.id.vid_cubrv_recy))
-            .setRefreshLayout(view.findViewById(R.id.vid_cubrv_refresh))
+            .setRecyclerView(binding.vidCubrvRecy)
+            .setRefreshLayout(binding.vidCubrvRefresh)
             .setRefreshHeader(ClassicsHeader(context)) // 刷新头
             .setRefreshFooter(ClassicsFooter(context)) // 刷新尾巴
             .setEnableRefresh(true) // 开启下拉刷新
@@ -87,7 +88,7 @@ class BaseRefreshView : LinearLayout {
 
         // 添加 View
         addView(
-            view,
+            binding.root,
             FrameLayout.LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT,
                 ViewGroup.LayoutParams.MATCH_PARENT
@@ -99,7 +100,7 @@ class BaseRefreshView : LinearLayout {
     // = DevBaseRefreshAssist =
     // ========================
 
-    fun getAssist(): DevBaseRefreshAssist<String> {
+    fun getAssist(): DevBaseRefreshAssist<Object> {
         return mAssist
     }
 
@@ -111,11 +112,11 @@ class BaseRefreshView : LinearLayout {
         return mBody
     }
 
-    fun getPageAssist(): PageAssist<String> {
+    fun getPageAssist(): PageAssist<Object> {
         return mAssist.getPageAssist()
     }
 
-    fun setPageAssist(pageAssist: PageAssist<String>): BaseRefreshView {
+    fun setPageAssist(pageAssist: PageAssist<Object>): BaseRefreshView {
         mAssist.setPageAssist(pageAssist)
         return this
     }
