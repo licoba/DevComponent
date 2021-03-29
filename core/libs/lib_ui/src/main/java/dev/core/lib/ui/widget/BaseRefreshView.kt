@@ -72,12 +72,12 @@ class BaseRefreshView : LinearLayout {
         orientation = VERTICAL
         val context = context
         // 初始化 View
-        val view = LayoutInflater.from(context).inflate(R.layout.base_refresh_view, null)
-        mBody = view.findViewById(R.id.vid_brv_frame)
+        val view = LayoutInflater.from(context).inflate(R.layout.core_ui_base_refresh_view, null)
+        mBody = view.findViewById(R.id.vid_cubrv_frame)
         // 初始化 Refresh 数据
         mAssist
-            .setRecyclerView(view.findViewById(R.id.vid_brv_recy))
-            .setRefreshLayout(view.findViewById(R.id.vid_brv_refresh))
+            .setRecyclerView(view.findViewById(R.id.vid_cubrv_recy))
+            .setRefreshLayout(view.findViewById(R.id.vid_cubrv_refresh))
             .setRefreshHeader(ClassicsHeader(context)) // 刷新头
             .setRefreshFooter(ClassicsFooter(context)) // 刷新尾巴
             .setEnableRefresh(true) // 开启下拉刷新
