@@ -9,6 +9,7 @@
     </data>
 
     <dev.widget.custom.CustomNestedScrollView
+        android:id="@+id/vid_am_scroll"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/color_f5"
@@ -22,7 +23,7 @@
             <ImageView
                 android:id="@+id/vid_am_igview"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="100dp" />
 
         </LinearLayout>
     </dev.widget.custom.CustomNestedScrollView>

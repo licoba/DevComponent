@@ -1,10 +1,8 @@
 package afkt.component
 
 import afkt.component.databinding.ActivityMainBinding
-import android.graphics.Color
 import android.os.Bundle
 import androidx.lifecycle.ViewModel
-import dev.core.app.AppChannel
 import dev.core.lib.base.BaseActivity
 import dev.engine.image.DevImageEngine
 import dev.utils.app.ViewUtils
@@ -18,12 +16,13 @@ class MainActivity : BaseActivity<ActivityMainBinding, ViewModel>() {
 
         titleBar.setTitle("在吗").setBackListener { finish() }
 
-        ViewUtils.setBackgroundColor(binding.root, Color.BLACK)
-
         DevImageEngine.getEngine().display(binding.vidAmIgview, "https://picsum.photos/201")
 
 //        // 当前渠道
 //        ToastTintUtils.success(AppChannel.getChannel())
+        ViewUtils.getWidthHeightExact(
+            binding.vidAmIgview
+        ) { view, width, height -> ToastTintUtils.success("$height") };
     }
 
     override fun baseLayoutId(): Int = R.layout.activity_main

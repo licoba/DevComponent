@@ -9,6 +9,7 @@ import android.widget.FrameLayout
 import android.widget.LinearLayout
 import androidx.annotation.RequiresApi
 import androidx.annotation.StringRes
+import dev.core_lib_ui.R
 import dev.core_lib_ui.databinding.CoreUiBaseTitleBarBinding
 import dev.utils.app.ResourceUtils
 
@@ -65,7 +66,7 @@ class BaseTitleBar : LinearLayout {
             binding.root,
             FrameLayout.LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT,
-                ViewGroup.LayoutParams.MATCH_PARENT
+                ResourceUtils.getDimensionInt(R.dimen.un_dp_45)
             )
         )
     }
