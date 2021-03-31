@@ -902,7 +902,7 @@ public class WebViewAssist {
     public static class Builder {
 
         // WebView 辅助类
-        private WebViewAssist mWebViewAssist;
+        private WebViewAssist   mWebViewAssist;
         // 应用配置监听事件
         private OnApplyListener mApplyListener;
 
