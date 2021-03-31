@@ -1,7 +1,7 @@
 
 # About
 
-用户 Module
+用户信息相关 Module
 
 # 依赖信息
 

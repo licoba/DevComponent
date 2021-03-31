@@ -1,7 +1,7 @@
 
 # About
 
-首页 Module
+首页 ( 底部 Button 导航 ) Module
 
 # 依赖信息
 

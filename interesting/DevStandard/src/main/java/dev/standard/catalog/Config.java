@@ -84,12 +84,15 @@ public final class Config {
         sModuleCatalogMap.put(".module_commodity", "商品相关 Module");
         sModuleCatalogMap.put(".module_main", "首页 Module");
         sModuleCatalogMap.put(".module_qrcode", "二维码扫描、生成相关 Module");
-        sModuleCatalogMap.put(".module_splash", "启动页 Module");
+        sModuleCatalogMap.put(".module_splash", "启动页 ( 广告页、首次启动引导页 ) Module");
         sModuleCatalogMap.put(".module_temp_a", "这是一个 占位演示 A Module");
         sModuleCatalogMap.put(".module_temp_b", "这是一个 占位演示 B Module");
         sModuleCatalogMap.put(".module_user", "用户 Module");
 
         sModuleAboutMap.putAll(sModuleCatalogMap);
+        sModuleAboutMap.put(".module_commodity", "商品相关 ( 如商品详情、购物车、商品列表复用等 ) Module");
+        sModuleAboutMap.put(".module_main", "首页 ( 底部 Button 导航 ) Module");
+        sModuleAboutMap.put(".module_user", "用户信息相关 Module");
     }
 
     /**
