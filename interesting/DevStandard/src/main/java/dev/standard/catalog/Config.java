@@ -53,6 +53,21 @@ public final class Config {
     // Module 忽略目录
     public static final List<String>        sModuleIgnoreCatalogs = new ArrayList<>();
 
+    // ==========
+    // = Libs =
+    // ==========
+
+    // Libs 文件名
+    public static final String              LIBS_DIR_NAME       = "libs";
+    // Libs 文件本地路径
+    public static final String              LIBS_LOCAL_PATH     = USER_DIR + File.separator + LIBS_DIR_NAME;
+    // Libs 文件目录注释
+    public static final Map<String, String> sLibsCatalogMap     = new HashMap<>();
+    // Libs About 注释
+    public static final Map<String, String> sLibsAboutMap       = new HashMap<>();
+    // Libs 忽略目录
+    public static final List<String>        sLibsIgnoreCatalogs = new ArrayList<>();
+
     static {
 
         // ========
@@ -93,6 +108,16 @@ public final class Config {
         sModuleAboutMap.put(".module_commodity", "商品相关 ( 如商品详情、购物车、商品列表复用等 ) Module");
         sModuleAboutMap.put(".module_main", "首页 ( 底部 Button 导航 ) Module");
         sModuleAboutMap.put(".module_user", "用户信息相关 Module");
+
+        // ==========
+        // = Libs =
+        // ==========
+
+        sLibsCatalogMap.put("libs", "根目录");
+        sLibsCatalogMap.put(".lib_circle_igview", "clone CircleImageView 修改源码使用 ( 例 )");
+        sLibsCatalogMap.put(".lib_commodity", "商品通用快捷工具库 ( 方便复用 )");
+
+        sLibsAboutMap.putAll(sLibsCatalogMap);
     }
 
     /**
@@ -112,7 +137,13 @@ public final class Config {
         } else if (StringUtils.equals(path, MODULE_LOCAL_PATH)) {
             builder.append("# About");
             builder.append(DevFinal.NEW_LINE_STR_X2);
-            builder.append("该目录下的 Module 在 `isModular=true` 的情况下，都属于独立的应用可单独运行，为 `false` 则都属于功能模块，被主体应用 ( 壳 ) 所依赖使用");
+            builder.append("该目录下的 Module 在 `isModular=true` 的情况下，都属于独立的应用可单独运行");
+            builder.append("，为 `false` 则都属于功能模块，被主体应用 ( 壳 ) 所依赖使用");
+            builder.append(DevFinal.NEW_LINE_STR);
+        } else if (StringUtils.equals(path, LIBS_LOCAL_PATH)) {
+            builder.append("# About");
+            builder.append(DevFinal.NEW_LINE_STR_X2);
+            builder.append("该目录属于 项目模块快捷工具封装复用、第三方库 clone 对源码进行差异化修改使用等存储目录");
             builder.append(DevFinal.NEW_LINE_STR);
         }
     }
