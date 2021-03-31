@@ -5,7 +5,7 @@ dependencies {
 	// dev_app_x
 	implementation 'com.afkt:DevAppX:2.2.3'
 	// dev_assist
-	implementation 'com.afkt:DevAssist:1.1.8'
+	implementation 'com.afkt:DevAssist:1.1.9'
 	// dev_base
 	implementation 'com.afkt:DevBase:1.0.4'
 	// dev_base_mvvm
