@@ -43,7 +43,7 @@ final class CatalogMain {
             final int layer,
             final boolean generateDependenciesCatalog
     ) {
-        String        catalog = CatalogGenerate.generate(path, dirName, mapCatalog, listIgnoreCatalog, layer);
+        String catalog = CatalogGenerate.generate(path, dirName, mapCatalog, listIgnoreCatalog, layer);
         StringBuilder builder = new StringBuilder();
         // 插入文档头部内容
         Config.insertHeadREADME(path, builder);
@@ -76,10 +76,10 @@ final class CatalogMain {
             final String dirName,
             final Map<String, String> mapAbout
     ) {
-        File     root  = new File(path, dirName.replaceAll("\\.", "//"));
+        File root = new File(path, dirName.replaceAll("\\.", "//"));
         String[] names = root.list();
         for (String name : names) {
-            String catalog     = dirName + "." + name;
+            String catalog = dirName + "." + name;
             String catelogPath = path + catalog.replaceAll("\\.", "//") + File.separator;
             if (mapAbout.containsKey(catalog)) {
                 File gradleFile = new File(catelogPath + "build.gradle");

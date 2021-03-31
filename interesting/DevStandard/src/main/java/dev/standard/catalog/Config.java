@@ -82,12 +82,14 @@ public final class Config {
 
         sModuleCatalogMap.put("module", "根目录");
         sModuleCatalogMap.put(".module_commodity", "商品相关 Module");
-        sModuleCatalogMap.put(".module_main", "首页 ( 底部存在 Button ) Module");
+        sModuleCatalogMap.put(".module_main", "首页 Module");
         sModuleCatalogMap.put(".module_qrcode", "二维码扫描、生成相关 Module");
         sModuleCatalogMap.put(".module_splash", "启动页 Module");
-        sModuleCatalogMap.put(".module_temp_a", "**这是一个 占位演示 ~~A 模块~~**");
-        sModuleCatalogMap.put(".module_temp_b", "**这是一个 占位演示 ~~B 模块~~**");
+        sModuleCatalogMap.put(".module_temp_a", "这是一个 占位演示 A Module");
+        sModuleCatalogMap.put(".module_temp_b", "这是一个 占位演示 B Module");
         sModuleCatalogMap.put(".module_user", "用户 Module");
+
+        sModuleAboutMap.putAll(sModuleCatalogMap);
     }
 
     /**
@@ -102,12 +104,12 @@ public final class Config {
         if (StringUtils.equals(path, CORE_LOCAL_PATH)) {
             builder.append("# About");
             builder.append(DevFinal.NEW_LINE_STR_X2);
-            builder.append("该目录属于核心基础库代码, 整个组件化项目基于该基础上进行开发");
+            builder.append("该目录属于核心基础库代码，整个组件化项目基于该基础上进行开发");
             builder.append(DevFinal.NEW_LINE_STR);
         } else if (StringUtils.equals(path, MODULE_LOCAL_PATH)) {
             builder.append("# About");
             builder.append(DevFinal.NEW_LINE_STR_X2);
-            builder.append("该目录下的 Module 在 `isModular=true` 的情况下, 都属于独立的应用可单独运行, 为 `false` 则都属于功能模块, 被主体应用 ( 壳 ) 所依赖使用");
+            builder.append("该目录下的 Module 在 `isModular=true` 的情况下，都属于独立的应用可单独运行，为 `false` 则都属于功能模块，被主体应用 ( 壳 ) 所依赖使用");
             builder.append(DevFinal.NEW_LINE_STR);
         }
     }
@@ -127,13 +129,13 @@ public final class Config {
             builder.append(DevFinal.NEW_LINE_STR_X2);
             builder.append("> 该 Module 依赖 core 核心开发库、核心第三方库等");
             builder.append(DevFinal.NEW_LINE_STR).append(">").append(DevFinal.NEW_LINE_STR);
-            builder.append("> 统一维护核心库依赖, 对外只需要依赖该 Module 便可使用整个核心模块 ( core 文件以及内部所有 libs )");
+            builder.append("> 统一维护核心库依赖，对外只需要依赖该 Module 便可使用整个核心模块 ( core 文件以及内部所有 libs )");
             builder.append(DevFinal.NEW_LINE_STR_X2);
             builder.append("## core/core_base_lib");
             builder.append(DevFinal.NEW_LINE_STR_X2);
-            builder.append("> 该 Module 基于 Dev 系列开发库搭建, 且不存在任何代码属于核心 lib 依赖 ( 全部开发基于该 module )");
+            builder.append("> 该 Module 基于 Dev 系列开发库搭建，且不存在任何代码属于核心 lib 依赖 ( 全部开发基于该 module )");
             builder.append(DevFinal.NEW_LINE_STR).append(">").append(DevFinal.NEW_LINE_STR);
-            builder.append("> 用于统一维护基础核心开发库依赖, 如有必须依赖底层库在此添加");
+            builder.append("> 用于统一维护基础核心开发库依赖，如有必须依赖底层库在此添加");
         }
     }
 }
