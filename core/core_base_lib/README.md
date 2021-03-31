@@ -40,6 +40,7 @@ dependencies {
 
     api deps.kotlin.stdlib
     api deps.kotlin.core
+    api deps.kotlin.coroutines
     api deps.kotlin.lifecycle_runtime
     api deps.kotlin.lifecycle_viewmodel
     api deps.kotlin.lifecycle_livedata
@@ -61,6 +62,7 @@ dependencies {
     api deps.androidx.flexbox
     api deps.androidx.hilt_android
     kapt deps.androidx.hilt_android_compiler
+    api deps.androidx.startup
 
     // ===============
     // = 第三方开发库 =

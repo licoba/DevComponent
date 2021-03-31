@@ -18,7 +18,7 @@ final class CatalogMain {
     public static void main(String[] args) {
         // 生成 core 目录结构
         generateCatalog(Config.CORE_LOCAL_PATH, Config.CORE_DIR_NAME, Config.sCoreCatalogMap,
-                Config.sCoreIgnoreCatalogs, 1, true);
+                Config.sCoreAboutMap, Config.sCoreIgnoreCatalogs, 1, true);
     }
 
     /**
@@ -26,6 +26,7 @@ final class CatalogMain {
      * @param path              文件路径
      * @param dirName           文件名
      * @param mapCatalog        对应目录注释
+     * @param mapAbout          About 注释
      * @param listIgnoreCatalog 忽略目录
      * @param layer             目录层级
      */
@@ -33,17 +34,22 @@ final class CatalogMain {
             final String path,
             final String dirName,
             final Map<String, String> mapCatalog,
+            final Map<String, String> mapAbout,
             final List<String> listIgnoreCatalog,
             final int layer,
             final boolean generateDependenciesCatalog
     ) {
         String        catalog = CatalogGenerate.generate(path, dirName, mapCatalog, listIgnoreCatalog, layer);
         StringBuilder builder = new StringBuilder();
+        // 插入文档头部内容
+        Config.insertHeadREADME(path, builder);
+        // 文档内容
         builder.append(DevFinal.NEW_LINE_STR)
                 .append("## 目录结构")
                 .append(DevFinal.NEW_LINE_STR_X2)
                 .append(catalog);
-        Config.insertREADME(path, builder);
+        // 插入文档尾部内容
+        Config.insertTailREADME(path, builder);
         String readme = StringUtils.clearEndsWith(builder.toString(), "\n");
         try {
             FileUtils.saveFile(new File(path, "README.md"), readme.getBytes(DevFinal.UTF_8));
@@ -51,38 +57,38 @@ final class CatalogMain {
             e.printStackTrace();
         }
         if (generateDependenciesCatalog) {
-            generateDependenciesCatalog(path, "", mapCatalog);
+            generateDependenciesCatalog(path, "", mapAbout);
         }
     }
 
     /**
      * 生成依赖目录文件
-     * @param path       文件路径
-     * @param dirName    文件名
-     * @param mapCatalog 对应目录注释
+     * @param path     文件路径
+     * @param dirName  文件名
+     * @param mapAbout About 注释
      */
     private static void generateDependenciesCatalog(
             final String path,
             final String dirName,
-            final Map<String, String> mapCatalog
+            final Map<String, String> mapAbout
     ) {
         File     root  = new File(path, dirName.replaceAll("\\.", "//"));
         String[] names = root.list();
         for (String name : names) {
             String catalog     = dirName + "." + name;
             String catelogPath = path + catalog.replaceAll("\\.", "//") + File.separator;
-            if (mapCatalog.containsKey(catalog)) {
+            if (mapAbout.containsKey(catalog)) {
                 File gradleFile = new File(catelogPath + "build.gradle");
                 // 文件存在则进行生成
                 if (gradleFile.exists()) {
-                    generateDependenciesREADME(catelogPath, mapCatalog.get(catalog));
+                    generateDependenciesREADME(catelogPath, mapAbout.get(catalog));
                 } else {
                     String dir = ".";
                     if (StringUtils.isNotEmpty(dirName)) {
                         dir += dirName + ".";
                         dir = "." + StringUtils.clearStartsWith(dir, ".");
                     }
-                    generateDependenciesCatalog(path, dir + name, mapCatalog);
+                    generateDependenciesCatalog(path, dir + name, mapAbout);
                 }
             }
         }
