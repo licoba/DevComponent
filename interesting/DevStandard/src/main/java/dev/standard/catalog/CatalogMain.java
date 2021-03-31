@@ -19,6 +19,10 @@ final class CatalogMain {
         // 生成 core 目录结构
         generateCatalog(Config.CORE_LOCAL_PATH, Config.CORE_DIR_NAME, Config.sCoreCatalogMap,
                 Config.sCoreAboutMap, Config.sCoreIgnoreCatalogs, 1, true);
+
+        // 生成 module 目录结构
+        generateCatalog(Config.MODULE_LOCAL_PATH, Config.MODULE_DIR_NAME, Config.sModuleCatalogMap,
+                Config.sModuleAboutMap, Config.sModuleIgnoreCatalogs, 0, true);
     }
 
     /**

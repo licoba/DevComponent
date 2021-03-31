@@ -81,16 +81,13 @@ public final class Config {
         // ==========
 
         sModuleCatalogMap.put("module", "根目录");
-        sModuleCatalogMap.put(".module", "核心基础整合库 ( 内部集成 core libs, 对外依赖该 module 即可 )");
-        sModuleCatalogMap.put(".core_base_lib", "基础核心开发库依赖 ( libs 便捷依赖统一维护 )");
-        sModuleCatalogMap.put(".libs", "具体功能拆分, 封装 lib");
-        sModuleCatalogMap.put(".libs.lib_base", "基类相关 ( Activity、Application 等 )");
-        sModuleCatalogMap.put(".libs.lib_bean", "通用实体类 ( module 实体类下沉 )");
-        sModuleCatalogMap.put(".libs.lib_config", "通用配置、常量信息");
-        sModuleCatalogMap.put(".libs.lib_engine", "通用 Engine ( 图片加载、日志、JSON、权限、资源选择、缓存 ) lib");
-        sModuleCatalogMap.put(".libs.lib_network", "网络相关 lib ( 网络请求、上传下载 )");
-        sModuleCatalogMap.put(".libs.lib_ui", "统一 style、widget、ui 相关组件");
-        sModuleCatalogMap.put(".libs.lib_upgrade", "应用升级功能模块");
+        sModuleCatalogMap.put(".module_commodity", "商品相关 Module");
+        sModuleCatalogMap.put(".module_main", "首页 ( 底部存在 Button ) Module");
+        sModuleCatalogMap.put(".module_qrcode", "二维码扫描、生成相关 Module");
+        sModuleCatalogMap.put(".module_splash", "启动页 Module");
+        sModuleCatalogMap.put(".module_temp_a", "**这是一个 占位演示 ~~A 模块~~**");
+        sModuleCatalogMap.put(".module_temp_b", "**这是一个 占位演示 ~~B 模块~~**");
+        sModuleCatalogMap.put(".module_user", "用户 Module");
     }
 
     /**
@@ -106,6 +103,11 @@ public final class Config {
             builder.append("# About");
             builder.append(DevFinal.NEW_LINE_STR_X2);
             builder.append("该目录属于核心基础库代码, 整个组件化项目基于该基础上进行开发");
+            builder.append(DevFinal.NEW_LINE_STR);
+        } else if (StringUtils.equals(path, MODULE_LOCAL_PATH)) {
+            builder.append("# About");
+            builder.append(DevFinal.NEW_LINE_STR_X2);
+            builder.append("该目录下的 Module 在 `isModular=true` 的情况下, 都属于独立的应用可单独运行, 为 `false` 则都属于功能模块, 被主体应用 ( 壳 ) 所依赖使用");
             builder.append(DevFinal.NEW_LINE_STR);
         }
     }
