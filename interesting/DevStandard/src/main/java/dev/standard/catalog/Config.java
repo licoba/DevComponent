@@ -23,6 +23,17 @@ public final class Config {
     // 项目路径
     public static final String PROJECT_PATH = new File(System.getProperty("user.dir")).getAbsolutePath();
 
+    // ===============
+    // = Interesting =
+    // ===============
+
+    // Interesting 文件名
+    public static final String              INTERESTING_DIR_NAME   = "interesting";
+    // Interesting 项目本地路径
+    public static final String              INTERESTING_LOCAL_PATH = USER_DIR + File.separator + INTERESTING_DIR_NAME;
+    // Interesting 文件目录注释
+    public static final Map<String, String> sInterestingCatalogMap = new HashMap<>();
+
     // ========
     // = Core =
     // ========
@@ -118,6 +129,13 @@ public final class Config {
         sLibsCatalogMap.put(".lib_commodity", "商品通用快捷工具库 ( 方便复用 )");
 
         sLibsAboutMap.putAll(sLibsCatalogMap);
+
+        // ===============
+        // = Interesting =
+        // ===============
+
+        sInterestingCatalogMap.put("interesting", "根目录");
+        sInterestingCatalogMap.put(".DevStandard", "项目规范统一检测、生成替换等");
     }
 
     /**
@@ -144,6 +162,11 @@ public final class Config {
             builder.append("# About");
             builder.append(DevFinal.NEW_LINE_STR_X2);
             builder.append("该目录属于 项目模块快捷工具封装复用、第三方库 clone 对源码进行差异化修改使用等存储目录");
+            builder.append(DevFinal.NEW_LINE_STR);
+        } else if (StringUtils.equals(path, INTERESTING_LOCAL_PATH)) {
+            builder.append("# About");
+            builder.append(DevFinal.NEW_LINE_STR_X2);
+            builder.append("该目录主要存储一些有趣的试验、代码生成、规范检测项目");
             builder.append(DevFinal.NEW_LINE_STR);
         }
     }

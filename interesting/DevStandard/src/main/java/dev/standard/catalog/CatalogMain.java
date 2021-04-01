@@ -16,6 +16,11 @@ import dev.utils.common.StringUtils;
 final class CatalogMain {
 
     public static void main(String[] args) {
+
+        // 生成 interesting 目录结构
+        generateCatalog(Config.INTERESTING_LOCAL_PATH, Config.INTERESTING_DIR_NAME, Config.sInterestingCatalogMap,
+                null, null, 0, false);
+
         // 生成 core 目录结构
         generateCatalog(Config.CORE_LOCAL_PATH, Config.CORE_DIR_NAME, Config.sCoreCatalogMap,
                 Config.sCoreAboutMap, Config.sCoreIgnoreCatalogs, 1, true);
