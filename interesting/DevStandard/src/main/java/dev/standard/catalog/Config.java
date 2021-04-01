@@ -95,7 +95,6 @@ public final class Config {
         sCoreCatalogMap.put(".libs.lib_engine", "通用 Engine ( 图片加载、日志、JSON、权限、资源选择、缓存 ) lib");
         sCoreCatalogMap.put(".libs.lib_network", "网络相关 lib ( 网络请求、上传下载 )");
         sCoreCatalogMap.put(".libs.lib_ui", "统一 style、widget、ui 相关组件");
-        sCoreCatalogMap.put(".libs.lib_upgrade", "应用升级功能模块");
 
         sCoreIgnoreCatalogs.add("core");
         sCoreIgnoreCatalogs.add("core_base_lib");

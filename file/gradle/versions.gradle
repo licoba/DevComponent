@@ -60,9 +60,5 @@ ext {
             // 通用 UI 样式、资源、交互、控件 lib
             core_lib_ui_versionCode     : 100,
             core_lib_ui_versionName     : '1.0.0',
-
-            // 升级相关 lib
-            core_lib_upgrade_versionCode: 100,
-            core_lib_upgrade_versionName: '1.0.0',
     ]
 }

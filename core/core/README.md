@@ -27,8 +27,6 @@ dependencies {
     api project(':core_lib_network')
     // 通用 UI 样式、资源、交互、控件 lib
     api project(':core_lib_ui')
-    // 升级相关 lib
-    api project(':core_lib_upgrade')
 
     // ===========
     // = 第三方库 =
@@ -102,12 +100,14 @@ dependencies {
 # main/java 目录结构
 
 ```
-- java                   
-   - dev                 
-      - core             
-         - app           
-         - assist        
-         - property      
-         - receiver      
-         - utils         
+- java                     
+   - dev                   
+      - core               
+         - app             
+         - assist          
+         - function        
+            - upgrade      
+         - property        
+         - receiver        
+         - utils           
 ```

@@ -35,8 +35,6 @@ dependencies {
     api project(':core_lib_network')
     // 通用 UI 样式、资源、交互、控件 lib
     api project(':core_lib_ui')
-    // 升级相关 lib
-    api project(':core_lib_upgrade')
 
     // ===========
     // = 第三方库 =
