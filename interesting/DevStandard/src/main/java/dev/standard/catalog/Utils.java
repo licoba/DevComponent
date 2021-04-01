@@ -200,5 +200,53 @@ public final class Utils {
                         .append(catalog);
             }
         }
+
+        File assetsFile = new File(path, "src/main/assets");
+        if (assetsFile.exists()) {
+            String catalog = CatalogGenerate.generate(assetsFile.getAbsolutePath()
+                    , "assets", new HashMap<>(), new ArrayList<>(), Integer.MAX_VALUE);
+            if (StringUtils.isNotEmpty(catalog)) {
+                catalog = catalog.replaceAll("\\| null", "");
+                builder.append(DevFinal.NEW_LINE_STR_X2)
+                        .append("# main/assets 目录结构")
+                        .append(DevFinal.NEW_LINE_STR_X2)
+                        .append(catalog);
+            }
+        }
+
+        File libsFile = new File(path, "/libs");
+        if (libsFile.exists()) {
+            String        libsPath    = libsFile.getAbsolutePath();
+            List<File>    lists       = FileUtils.listFilesInDir(libsFile, true);
+            List<String>  listNames   = new ArrayList<>();
+            StringBuilder libsBuilder = new StringBuilder();
+            for (File file : lists) {
+                String filePath = file.getAbsolutePath();
+                String tempPath = new File(libsFile, file.getName()).getAbsolutePath();
+                if (filePath.equals(tempPath)) {
+                    if (file.isFile()) {
+                        filePath = null;
+                        listNames.add(file.getName());
+                    } else {
+                        filePath = String.format("【%s】", file.getName());
+                    }
+                } else {
+                    filePath = filePath.replace(libsPath, "");
+                }
+                if (filePath != null) {
+                    libsBuilder.append(filePath).append(DevFinal.NEW_LINE_STR_X2);
+                }
+            }
+            if (listNames.size() != 0) {
+                libsBuilder.append("【libs - root】").append(DevFinal.NEW_LINE_STR_X2);
+                for (String name : listNames) {
+                    libsBuilder.append(name).append(DevFinal.NEW_LINE_STR_X2);
+                }
+            }
+            builder.append(DevFinal.NEW_LINE_STR)
+                    .append("# main/libs 目录结构")
+                    .append(DevFinal.NEW_LINE_STR_X2)
+                    .append(libsBuilder);
+        }
     }
 }
