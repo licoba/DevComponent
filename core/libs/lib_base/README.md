@@ -15,3 +15,12 @@ dependencies {
     compileOnly project(':core_lib_ui')
 }
 ```
+
+# AndroidManifest
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<manifest package="dev.core_lib_base">
+
+</manifest>
+```

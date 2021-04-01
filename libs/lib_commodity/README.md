@@ -12,3 +12,13 @@ dependencies {
     api project(':core')
 }
 ```
+
+# AndroidManifest
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="afkt.libs.commodity">
+
+</manifest>
+```

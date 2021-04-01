@@ -138,11 +138,40 @@ final class CatalogMain {
                 .append(dependencies)
                 .append(DevFinal.NEW_LINE_STR)
                 .append("```");
+        // 保存 AndroidManifest README
+        generateAndroidManifestREADME(builder, path);
         String readme = builder.toString();
         try {
             FileUtils.saveFile(new File(path, "README.md"), readme.getBytes(DevFinal.UTF_8));
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
+        }
+    }
+
+    /**
+     * 生成 AndroidManifest 信息
+     * @param builder {@link StringBuilder}
+     * @param path    文件路径
+     */
+    private static void generateAndroidManifestREADME(
+            final StringBuilder builder,
+            final String path
+    ) {
+        // 读取文件
+        String content = null;
+        try {
+            content = new String(FileUtils.readFileBytes(new File(path, "src/main/AndroidManifest.xml")), DevFinal.UTF_8);
+        } catch (Exception e) {
+        }
+        if (StringUtils.isNotEmpty(content)) {
+            builder.append(DevFinal.NEW_LINE_STR_X2)
+                    .append("# AndroidManifest")
+                    .append(DevFinal.NEW_LINE_STR_X2)
+                    .append("```xml")
+                    .append(DevFinal.NEW_LINE_STR)
+                    .append(content)
+                    .append(DevFinal.NEW_LINE_STR)
+                    .append("```");
         }
     }
 }

@@ -18,3 +18,12 @@ dependencies {
     compileOnly project(':core_lib_config')
 }
 ```
+
+# AndroidManifest
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<manifest package="dev.core_lib_bean">
+
+</manifest>
+```
