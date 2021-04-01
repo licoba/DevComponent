@@ -45,3 +45,26 @@ dependencies {
 
 </manifest>
 ```
+
+# main/java 目录结构
+
+```
+- java                           
+   - dev                         
+      - core                     
+         - lib                   
+            - ui                 
+               - assist          
+               - widget          
+```
+
+
+# main/res 目录结构
+
+```
+- res                            
+   - layout                      
+   - mipmap-xxxhdpi              
+   - values                      
+   - values-zh                   
+```

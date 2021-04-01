@@ -21,3 +21,12 @@ dependencies {
     package="afkt.module.splash">
 </manifest>
 ```
+
+# main/java 目录结构
+
+```
+- java                           
+   - afkt                        
+      - module                   
+         - splash                
+```

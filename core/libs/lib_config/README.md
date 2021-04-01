@@ -21,3 +21,13 @@ dependencies {
 
 </manifest>
 ```
+
+# main/java 目录结构
+
+```
+- java                           
+   - dev                         
+      - core                     
+         - lib                   
+            - config             
+```

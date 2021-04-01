@@ -5,7 +5,7 @@
 ## 目录结构
 
 ```
-- libs                      | 根目录
-   - lib_circle_igview      | clone CircleImageView 修改源码使用 ( 例 )
-   - lib_commodity          | 商品通用快捷工具库 ( 方便复用 )
+- libs                           | 根目录
+   - lib_circle_igview           | clone CircleImageView 修改源码使用 ( 例 )
+   - lib_commodity               | 商品通用快捷工具库 ( 方便复用 )
 ```

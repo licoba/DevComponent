@@ -47,3 +47,22 @@ dependencies {
     <uses-permission android:name="android.permission.CAMERA" />
 </manifest>
 ```
+
+# main/java 目录结构
+
+```
+- java                           
+   - dev                         
+      - core                     
+         - lib                   
+            - engine             
+               - cache           
+               - compress        
+               - image           
+               - json            
+               - log             
+               - media           
+               - permission      
+               - storage         
+            - utils              
+```

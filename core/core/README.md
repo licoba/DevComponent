@@ -98,3 +98,16 @@ dependencies {
     </application>
 </manifest>
 ```
+
+# main/java 目录结构
+
+```
+- java                   
+   - dev                 
+      - core             
+         - app           
+         - assist        
+         - property      
+         - receiver      
+         - utils         
+```

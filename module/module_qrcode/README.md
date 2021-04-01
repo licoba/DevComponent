@@ -21,3 +21,12 @@ dependencies {
     package="afkt.module.qrcode">
 </manifest>
 ```
+
+# main/java 目录结构
+
+```
+- java                           
+   - afkt                        
+      - module                   
+         - qrcode                
+```
