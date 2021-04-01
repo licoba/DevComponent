@@ -188,6 +188,7 @@ public final class Utils {
                         .append(catalog);
             }
         }
+
         File resFile = new File(path, "src/main/res");
         if (resFile.exists()) {
             String catalog = CatalogGenerate.generate(resFile.getAbsolutePath()
