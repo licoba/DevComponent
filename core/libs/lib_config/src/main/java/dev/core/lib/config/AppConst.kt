@@ -18,5 +18,4 @@ object AppConst {
     // 用户默认背景
     const val USER_BACKGROUND_URL = "https://picsum.photos/id/13/1080/420"
 
-
 }

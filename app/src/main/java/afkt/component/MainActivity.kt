@@ -13,7 +13,6 @@ class MainActivity : BaseActivity<ActivityMainBinding, ViewModel>() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-
         titleBar.setTitle("在吗").setBackListener { finish() }
 
         DevImageEngine.getEngine().display(binding.vidAmIgview, "https://picsum.photos/201")

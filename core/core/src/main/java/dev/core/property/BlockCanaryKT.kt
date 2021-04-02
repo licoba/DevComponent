@@ -8,7 +8,6 @@ import dev.utils.LogPrintUtils
 import dev.utils.app.AppUtils
 import dev.utils.app.NetWorkUtils
 
-
 /**
  * detail: BlockCanary 初始化
  * @author Ttt
