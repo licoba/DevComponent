@@ -1,18 +1,17 @@
 apply from: rootProject.file('file/gradle/versions.gradle')
+apply from: rootProject.file('file/gradle/modular.gradle')
 
 ext {
 
     files = [
             // Android Kotlin 项目构建配置
-            build_app_kotlin_gradle          : 'file/gradle/build_app_kotlin.gradle',
+            build_app_kotlin_gradle  : 'file/gradle/build/build_app_kotlin.gradle',
             // Android Kotlin Lib 通用配置
-            lib_app_kotlin_gradle            : 'file/gradle/lib_app_kotlin.gradle',
+            lib_app_kotlin_gradle    : 'file/gradle/build/lib_app_kotlin.gradle',
             // Lib 版本创建通用配置
-            lib_version_common_gradle        : 'file/gradle/common/lib_version_common.gradle',
-            // lib 资源前缀统一处理
-            lib_resource_prefix_common_gradle: 'file/gradle/common/lib_resource_prefix_common.gradle',
+            lib_version_common_gradle: 'file/gradle/build/lib_version_common.gradle',
             // APK 多渠道打包
-            apk_channel_gradle               : 'file/gradle/channel/apk_channel.gradle',
+            apk_channel_gradle       : 'file/gradle/channel/apk_channel.gradle',
     ]
 
     deps = [

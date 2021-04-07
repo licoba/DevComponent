@@ -17,8 +17,7 @@ dependencies {
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
-<manifest package="afkt.module.main">
-</manifest>
+<manifest package="afkt.module.main" />
 ```
 
 # main/java 目录结构

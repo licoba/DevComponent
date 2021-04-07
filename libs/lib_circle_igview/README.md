@@ -1,32 +1,41 @@
 
 # About
 
-clone CircleImageView 修改源码使用 ( 例 )
-
-# 依赖信息
-
-```groovy
-dependencies {
-
-    // 核心基础依赖库
-    api project(':core')
-}
-```
+clone CircleImageView 修改源码使用 ( 用于演示, 推荐使用 Material ShapeableImageView )
 
 # AndroidManifest
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
-<manifest package="afkt.libs.circle">
-
-</manifest>
+<manifest package="de.hdodenhof.circleimageview" />
 ```
 
 # main/java 目录结构
 
 ```
 - java                           
-   - afkt                        
-      - libs                     
-         - circle                
+   - de                          
+      - hdodenhof                
+         - circleimageview       
+```
+
+
+# main/res 目录结构
+
+```
+- res                            
+   - values                      
+```
+
+# Usage
+
+```xml
+<de.hdodenhof.circleimageview.CircleImageView
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:id="@+id/profile_image"
+	android:layout_width="96dp"
+	android:layout_height="96dp"
+	android:src="@drawable/profile"
+	app:civ_border_width="2dp"
+	app:civ_border_color="#FF000000"/>
 ```

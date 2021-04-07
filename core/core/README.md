@@ -11,9 +11,9 @@ dependencies {
     // 核心基础依赖库
     api project(':core_base_lib')
 
-    // ===============
-    // = core - libs =
-    // ===============
+    // ====================
+    // = core - 核心开发库 =
+    // ====================
 
     // 基础 ( 基类等 ) lib
     api project(':core_lib_base')
@@ -28,9 +28,16 @@ dependencies {
     // 通用 UI 样式、资源、交互、控件 lib
     api project(':core_lib_ui')
 
-    // ===========
-    // = 第三方库 =
-    // ===========
+    // ======================
+    // = libs - 模块封装复用 =
+    // ======================
+
+    // 依赖 lib_commodity
+    api project(':lib_commodity')
+
+    // ===============
+    // = 第三方库依赖 =
+    // ===============
 
     // 瓦力多渠道打包 https://github.com/Meituan-Dianping/walle
     api deps.build_apk.walle
@@ -82,7 +89,12 @@ dependencies {
     <!-- 读取手机状态 -->
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 
-    <application>
+    <application
+        android:largeHeap="true"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:requestLegacyExternalStorage="false"
+        android:supportsRtl="true"
+        android:usesCleartextTraffic="true">
 
         <!-- 屏幕适配 -->
 
@@ -100,14 +112,21 @@ dependencies {
 # main/java 目录结构
 
 ```
-- java                     
-   - dev                   
-      - core               
-         - app             
-         - assist          
-         - function        
-            - upgrade      
-         - property        
-         - receiver        
-         - utils           
+- java                   
+   - dev                 
+      - core             
+         - app           
+         - assist        
+         - function      
+         - property      
+         - receiver      
+         - utils         
+```
+
+
+# main/res 目录结构
+
+```
+- res                    
+   - xml                 
 ```

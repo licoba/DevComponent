@@ -17,8 +17,7 @@ dependencies {
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
-<manifest package="afkt.module.splash">
-</manifest>
+<manifest package="afkt.module.splash" />
 ```
 
 # main/java 目录结构

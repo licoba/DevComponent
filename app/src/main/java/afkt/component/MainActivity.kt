@@ -3,10 +3,7 @@ package afkt.component
 import afkt.component.databinding.ActivityMainBinding
 import android.os.Bundle
 import androidx.lifecycle.ViewModel
-import dev.core.lib.base.BaseActivity
-import dev.engine.image.DevImageEngine
-import dev.utils.app.ViewUtils
-import dev.utils.app.toast.ToastTintUtils
+import dev.core.lib.base.app.BaseActivity
 
 class MainActivity : BaseActivity<ActivityMainBinding, ViewModel>() {
 
@@ -15,13 +12,8 @@ class MainActivity : BaseActivity<ActivityMainBinding, ViewModel>() {
 
         titleBar.setTitle("在吗").setBackListener { finish() }
 
-        DevImageEngine.getEngine().display(binding.vidAmIgview, "https://picsum.photos/201")
-
 //        // 当前渠道
 //        ToastTintUtils.success(AppChannel.getChannel())
-        ViewUtils.getWidthHeightExact(
-            binding.vidAmIgview
-        ) { view, width, height -> ToastTintUtils.success("$height") };
     }
 
     override fun baseLayoutId(): Int = R.layout.activity_main

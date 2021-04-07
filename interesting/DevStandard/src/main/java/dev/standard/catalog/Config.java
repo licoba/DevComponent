@@ -6,9 +6,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import dev.utils.DevFinal;
-import dev.utils.common.StringUtils;
-
 /**
  * detail: 目录生成配置
  * @author Ttt
@@ -64,9 +61,9 @@ public final class Config {
     // Module 忽略目录
     public static final List<String>        sModuleIgnoreCatalogs = new ArrayList<>();
 
-    // ==========
+    // ========
     // = Libs =
-    // ==========
+    // ========
 
     // Libs 文件名
     public static final String              LIBS_DIR_NAME       = "libs";
@@ -119,15 +116,16 @@ public final class Config {
         sModuleAboutMap.put(".module_main", "首页 ( 底部 Button 导航 ) Module");
         sModuleAboutMap.put(".module_user", "用户信息相关 Module");
 
-        // ==========
+        // ========
         // = Libs =
-        // ==========
+        // ========
 
         sLibsCatalogMap.put("libs", "根目录");
         sLibsCatalogMap.put(".lib_circle_igview", "clone CircleImageView 修改源码使用 ( 例 )");
-        sLibsCatalogMap.put(".lib_commodity", "商品通用快捷工具库 ( 方便复用 )");
+        sLibsCatalogMap.put(".lib_commodity", "商品通用快捷工具库 ( 方便复用 - 例 )");
 
         sLibsAboutMap.putAll(sLibsCatalogMap);
+        sLibsAboutMap.put(".lib_circle_igview", "clone CircleImageView 修改源码使用 ( 用于演示, 推荐使用 Material ShapeableImageView )");
 
         // ===============
         // = Interesting =
@@ -135,63 +133,5 @@ public final class Config {
 
         sInterestingCatalogMap.put("interesting", "根目录");
         sInterestingCatalogMap.put(".DevStandard", "项目规范统一检测、生成替换等");
-    }
-
-    /**
-     * 插入文档头部内容
-     * @param path    文件路径 ( 模块 )
-     * @param builder 待插入 {@link StringBuilder}
-     */
-    public static void insertHeadREADME(
-            final String path,
-            final StringBuilder builder
-    ) {
-        if (StringUtils.equals(path, CORE_LOCAL_PATH)) {
-            builder.append("# About");
-            builder.append(DevFinal.NEW_LINE_STR_X2);
-            builder.append("该目录属于核心基础库代码，整个组件化项目基于该基础上进行开发");
-            builder.append(DevFinal.NEW_LINE_STR);
-        } else if (StringUtils.equals(path, MODULE_LOCAL_PATH)) {
-            builder.append("# About");
-            builder.append(DevFinal.NEW_LINE_STR_X2);
-            builder.append("该目录下的 Module 在 `isModular=true` 的情况下，都属于独立的应用可单独运行");
-            builder.append("，为 `false` 则都属于功能模块，被主体应用 ( 壳 ) 所依赖使用");
-            builder.append(DevFinal.NEW_LINE_STR);
-        } else if (StringUtils.equals(path, LIBS_LOCAL_PATH)) {
-            builder.append("# About");
-            builder.append(DevFinal.NEW_LINE_STR_X2);
-            builder.append("该目录属于 项目模块快捷工具封装复用、第三方库 clone 对源码进行差异化修改使用等存储目录");
-            builder.append(DevFinal.NEW_LINE_STR);
-        } else if (StringUtils.equals(path, INTERESTING_LOCAL_PATH)) {
-            builder.append("# About");
-            builder.append(DevFinal.NEW_LINE_STR_X2);
-            builder.append("该目录主要存储一些有趣的试验、代码生成、规范检测项目");
-            builder.append(DevFinal.NEW_LINE_STR);
-        }
-    }
-
-    /**
-     * 插入文档尾部内容
-     * @param path    文件路径 ( 模块 )
-     * @param builder 待插入 {@link StringBuilder}
-     */
-    public static void insertTailREADME(
-            final String path,
-            final StringBuilder builder
-    ) {
-        if (StringUtils.equals(path, CORE_LOCAL_PATH)) {
-            builder.append(DevFinal.NEW_LINE_STR);
-            builder.append("# core/core");
-            builder.append(DevFinal.NEW_LINE_STR_X2);
-            builder.append("> 该 Module 依赖 core 核心开发库、核心第三方库等");
-            builder.append(DevFinal.NEW_LINE_STR).append(">").append(DevFinal.NEW_LINE_STR);
-            builder.append("> 统一维护核心库依赖，对外只需要依赖该 Module 便可使用整个核心模块 ( core 文件以及内部所有 libs )");
-            builder.append(DevFinal.NEW_LINE_STR_X2);
-            builder.append("## core/core_base_lib");
-            builder.append(DevFinal.NEW_LINE_STR_X2);
-            builder.append("> 该 Module 基于 Dev 系列开发库搭建，且不存在任何代码属于核心 lib 依赖 ( 全部开发基于该 module )");
-            builder.append(DevFinal.NEW_LINE_STR).append(">").append(DevFinal.NEW_LINE_STR);
-            builder.append("> 用于统一维护基础核心开发库依赖，如有必须依赖底层库在此添加");
-        }
     }
 }

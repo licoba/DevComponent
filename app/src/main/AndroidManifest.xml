@@ -10,15 +10,12 @@
 
     <application
         android:name="afkt.component.base.BaseApplication"
-        android:allowBackup="true"
-        android:icon="@mipmap/core_ui_icon_launcher"
+        android:allowBackup="false"
+        android:icon="@mipmap/icon_launcher"
         android:label="@string/app_name"
-        android:requestLegacyExternalStorage="false"
-        android:roundIcon="@mipmap/core_ui_icon_launcher_round"
-        android:supportsRtl="true"
+        android:roundIcon="@mipmap/icon_launcher_round"
         android:theme="@style/AppTheme"
-        android:usesCleartextTraffic="true"
-        tools:replace="android:requestLegacyExternalStorage">
+        tools:replace="android:label, android:allowBackup, android:icon, android:roundIcon">
 
         <!-- LAUNCHER -->
 

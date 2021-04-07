@@ -11,9 +11,9 @@ dependencies {
     // 核心基础依赖库 ( 编译但不参与打包 )
     compileOnly project(':core_base_lib')
 
-    // ============
-    // = libs 依赖 =
-    // ============
+    // ======================
+    // = libs - 第三方库依赖 =
+    // ======================
 
     // 滚轮选择库 https://github.com/Bigkoo/Android-PickerView
     api deps.widget.pickerview
@@ -63,8 +63,26 @@ dependencies {
 
 ```
 - res                            
+   - mipmap-xxxhdpi              
+   - values                      
+   - values-zh                   
+```
+
+
+# main/res-base 目录结构
+
+```
+- res-base                       
    - layout                      
    - mipmap-xxxhdpi              
+```
+
+
+# main/res-commodity 目录结构
+
+```
+- res-commodity                  
+   - drawable-xxhdpi             
    - values                      
    - values-zh                   
 ```

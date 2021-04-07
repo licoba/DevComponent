@@ -19,9 +19,9 @@ dependencies {
     // 核心基础依赖库
     api project(':core_base_lib')
 
-    // ===============
-    // = core - libs =
-    // ===============
+    // ====================
+    // = core - 核心开发库 =
+    // ====================
 
     // 基础 ( 基类等 ) lib
     api project(':core_lib_base')
@@ -36,9 +36,16 @@ dependencies {
     // 通用 UI 样式、资源、交互、控件 lib
     api project(':core_lib_ui')
 
-    // ===========
-    // = 第三方库 =
-    // ===========
+    // ======================
+    // = libs - 模块封装复用 =
+    // ======================
+
+    // 依赖 lib_commodity
+    api project(':lib_commodity')
+
+    // ===============
+    // = 第三方库依赖 =
+    // ===============
 
     // 瓦力多渠道打包 https://github.com/Meituan-Dianping/walle
     api deps.build_apk.walle

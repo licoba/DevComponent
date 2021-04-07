@@ -14,9 +14,9 @@ dependencies {
     // 依赖 Engine ( 编译但不参与打包 ) => 例 JSON 相关使用
     compileOnly project(':core_lib_engine')
 
-    // ============
-    // = libs 依赖 =
-    // ============
+    // ======================
+    // = libs - 第三方库依赖 =
+    // ======================
 
     // okip https://github.com/square/okio
     api deps.lib.okio
@@ -37,9 +37,10 @@ dependencies {
     api deps.lib.aria_sftp // 如果需要使用 ftp, 请增加该组件
     api deps.lib.aria_m3u8 // 如果需要使用 m3u8 下载功能, 请增加该组件
 
-    // OkHttp 拦截器抓包 https://github.com/DingProg/NetworkCaptureSelf
-    debugApi deps.property.networkCaptureSelf
-    releaseApi deps.property.networkCaptureSelf_op
+//    // android:authorities="com.ding.library" => INSTALL_FAILED_CONFLICTING_PROVIDER
+//    // OkHttp 拦截器抓包 https://github.com/DingProg/NetworkCaptureSelf
+//    debugApi deps.property.networkCaptureSelf
+//    releaseApi deps.property.networkCaptureSelf_op
 }
 ```
 

@@ -16,6 +16,9 @@ dependencies {
 
     // 依赖 Config ( 编译但不参与打包 )
     compileOnly project(':core_lib_config')
+
+    // 依赖 lib_commodity ( 编译但不参与打包 )
+    compileOnly project(':lib_commodity')
 }
 ```
 

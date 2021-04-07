@@ -9,7 +9,7 @@ import androidx.appcompat.widget.AppCompatImageView
  * @author Ttt
  * 便于全局控制、替换字体、样式等
  */
-class BaseImageView : AppCompatImageView {
+open class BaseImageView : AppCompatImageView {
 
     constructor(context: Context) : super(context)
 

@@ -1,7 +1,5 @@
 apply from: rootProject.file(files.lib_version_common_gradle)
 
-boolean showDebugTools = showDebugTools.toBoolean()
-
 dependencies {
 
     // 核心基础依赖库
