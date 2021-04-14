@@ -1,0 +1,29 @@
+{
+  "defaultExtraInfo": {
+    "key2": "20161213",
+    "key": "20161212"
+  },
+  "channelInfoList": [
+    {
+      "channel": "meituan",
+      "alias": "美团",
+      "extraInfo": {
+        "buildtime": "20161212",
+        "hash": "123"
+      }
+    },
+    {
+      "channel": "xiaomi"
+    },
+    {
+      "channel": "baidu"
+    },
+    {
+      "channel": "myapp",
+      "excludeDefaultExtraInfo": true,
+      "extraInfo": {
+        "key": "20161212"
+      }
+    }
+  ]
+}

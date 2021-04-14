@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<dev.core.lib.ui.widget.BaseTextView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/vid_afm_context_tv"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:padding="@dimen/un_dp_20"
+    android:textColor="@color/white"
+    android:textSize="@dimen/un_sp_30"
+    tools:background="@color/skyblue"
+    tools:text="AAA"
+    tools:theme="@style/AppTheme" />
