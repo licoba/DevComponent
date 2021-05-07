@@ -1,6 +1,6 @@
 apply plugin: 'walle'
 
-def channelDir = new File(project.rootDir, "file/gradle/channel")
+def channelDir = new File(rootDir, "file/gradle/channel")
 
 // https://github.com/Meituan-Dianping/walle
 walle {
