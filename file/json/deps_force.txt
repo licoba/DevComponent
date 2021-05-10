@@ -3,25 +3,25 @@ dependencies {
 	// = dev =
 
 	// dev_app_x
-	"com.afkt:DevAppX:2.2.3",
+	"io.github.afkt:DevAppX:2.2.4",
 	// dev_assist
-	"com.afkt:DevAssist:1.1.9",
+	"io.github.afkt:DevAssist:1.2.0",
 	// dev_base
-	"com.afkt:DevBase:1.0.4",
+	"io.github.afkt:DevBase:1.0.5",
 	// dev_base_mvvm
-	"com.afkt:DevBaseMVVM:1.0.2",
+	"io.github.afkt:DevBaseMVVM:1.0.3",
 	// dev_widget_x
-	"com.afkt:DevWidgetX:1.0.9",
+	"io.github.afkt:DevWidgetX:1.1.0",
 	// dev_java
-	"com.afkt:DevJava:1.3.0",
+	"io.github.afkt:DevJava:1.3.1",
 	// dev_environment
-	"com.afkt:DevEnvironment:1.0.2",
+	"io.github.afkt:DevEnvironment:1.0.3",
 	// dev_environment_base
-	"com.afkt:DevEnvironmentBase:1.0.2",
+	"io.github.afkt:DevEnvironmentBase:1.0.3",
 	// dev_environment_compiler
-	"com.afkt:DevEnvironmentCompiler:1.0.2",
+	"io.github.afkt:DevEnvironmentCompiler:1.0.3",
 	// dev_environment_compiler_release
-	"com.afkt:DevEnvironmentCompilerRelease:1.0.2",
+	"io.github.afkt:DevEnvironmentCompilerRelease:1.0.3",
 
 	// = kotlin =
 
