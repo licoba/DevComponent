@@ -38,8 +38,8 @@ object ProjectUtils {
         var config: ImageConfig? = sConfigVariable.getVariableValue(roundDP)
         if (config != null) return config
         config = ImageConfig.create()
-        config.roundedCornersRadius = SizeUtils.dipConvertPx(roundDP.toFloat())
-        config.transform = ImageConfig.TRANSFORM_ROUNDED_CORNERS
+        config.setRoundedCornersRadius(SizeUtils.dipConvertPx(roundDP.toFloat()))
+        config.setTransform(ImageConfig.TRANSFORM_ROUNDED_CORNERS)
         sConfigVariable.putVariable(roundDP, config)
         return config
     }

@@ -1,7 +1,7 @@
 package dev.core.lib.engine.json
 
+import dev.core.lib.utils.GsonUtils
 import dev.engine.json.IJSONEngine
-import dev.other.GsonUtils
 import java.lang.reflect.Type
 
 /**

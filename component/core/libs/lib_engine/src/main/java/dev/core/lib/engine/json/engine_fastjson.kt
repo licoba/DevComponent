@@ -1,7 +1,7 @@
 package dev.core.lib.engine.json
 
+import dev.core.lib.utils.FastjsonUtils
 import dev.engine.json.IJSONEngine
-import dev.other.FastjsonUtils
 import java.lang.reflect.Type
 
 /**

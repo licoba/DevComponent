@@ -25,8 +25,8 @@ import com.luck.picture.lib.tools.PictureFileUtils
 import com.luck.picture.lib.widget.longimage.ImageSource
 import com.luck.picture.lib.widget.longimage.ImageViewState
 import com.luck.picture.lib.widget.longimage.SubsamplingScaleImageView
+import dev.core_lib_engine.R
 import dev.engine.media.IMediaEngine
-import dev.other.R
 import dev.utils.LogPrintUtils
 
 /**

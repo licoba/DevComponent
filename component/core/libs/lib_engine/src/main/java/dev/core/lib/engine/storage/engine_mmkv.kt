@@ -1,9 +1,9 @@
 package dev.core.lib.engine.storage
 
 import com.tencent.mmkv.MMKV
+import dev.core.lib.utils.MMKVUtils
 import dev.engine.json.DevJSONEngine
 import dev.engine.storage.IStorageEngine
-import dev.other.MMKVUtils
 import dev.utils.common.ConvertUtils
 import dev.utils.common.cipher.Cipher
 import java.lang.reflect.Type

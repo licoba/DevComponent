@@ -1,10 +1,10 @@
 package dev.core.lib.engine.compress
 
+import dev.core.lib.utils.LubanUtils
 import dev.engine.compress.ICompressEngine
 import dev.engine.compress.listener.CompressFilter
 import dev.engine.compress.listener.OnCompressListener
 import dev.engine.compress.listener.OnRenameListener
-import dev.other.LubanUtils
 import top.zibin.luban.CompressionPredicate
 import java.io.File
 
