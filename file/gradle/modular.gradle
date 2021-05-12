@@ -23,87 +23,87 @@ ext {
     // 每个模块各自信息
     modularVersion = [
             // 主程序 ( 壳 ) 版本信息
-            // TODO 非模块化情况下, 打包最终使用该信息 ( 'app' 根据 project.getName() )
-            'app'             : [
+            // TODO 非模块化情况下, 打包最终使用该信息 ( "app" 根据 project.getName() )
+            "app"             : [
                     // 版本号
                     versionCode  : 100,
                     // 版本名
-                    versionName  : '1.0.0',
+                    versionName  : "1.0.0",
                     // 包名
-                    applicationId: 'afkt.component',
+                    applicationId: "afkt.component",
                     // 模块名
-                    moduleName   : 'APP',
+                    moduleName   : "APP",
             ],
             // 演示 AAA Module
-            'module_aaa'      : [
+            "module_aaa"      : [
                     // 版本号
                     versionCode  : 100,
                     // 版本名
-                    versionName  : '1.0.0',
+                    versionName  : "1.0.0",
                     // 包名
-                    applicationId: 'afkt.module.aaa',
+                    applicationId: "afkt.module.aaa",
                     // 模块名
-                    moduleName   : 'AAA',
+                    moduleName   : "AAA",
             ],
             // 商品相关 Module
-            'module_commodity': [
+            "module_commodity": [
                     // 版本号
                     versionCode  : 100,
                     // 版本名
-                    versionName  : '1.0.0',
+                    versionName  : "1.0.0",
                     // 包名
-                    applicationId: 'afkt.module.commodity',
+                    applicationId: "afkt.module.commodity",
                     // 模块名
-                    moduleName   : 'COMMODITY',
+                    moduleName   : "COMMODITY",
             ],
             // 首页 Module
-            'module_main'     : [
+            "module_main"     : [
                     // 版本号
                     versionCode  : 100,
                     // 版本名
-                    versionName  : '1.0.0',
+                    versionName  : "1.0.0",
                     // 包名
-                    applicationId: 'afkt.module.main',
+                    applicationId: "afkt.module.main",
                     // 模块名
-                    moduleName   : 'MAIN',
+                    moduleName   : "MAIN",
             ],
             // 启动页 ( 广告页、首次启动引导页 ) Module
-            'module_splash'   : [
+            "module_splash"   : [
                     // 版本号
                     versionCode  : 100,
                     // 版本名
-                    versionName  : '1.0.0',
+                    versionName  : "1.0.0",
                     // 包名
-                    applicationId: 'afkt.module.splash',
+                    applicationId: "afkt.module.splash",
                     // 模块名
-                    moduleName   : 'SPLASH',
+                    moduleName   : "SPLASH",
             ],
             // 用户 Module
-            'module_user'     : [
+            "module_user"     : [
                     // 版本号
                     versionCode  : 100,
                     // 版本名
-                    versionName  : '1.0.0',
+                    versionName  : "1.0.0",
                     // 包名
-                    applicationId: 'afkt.module.user',
+                    applicationId: "afkt.module.user",
                     // 模块名
-                    moduleName   : 'USER',
+                    moduleName   : "USER",
             ],
     ]
 
     // 签名配置信息
     modularSigning = [
-            'release': [
-                    storeFile    : 'file/sign/demo.jks',
-                    storePassword: '123456',
-                    keyAlias     : 'demo',
-                    keyPassword  : '123456',
+            "release": [
+                    storeFile    : "file/sign/demo.jks",
+                    storePassword: "123456",
+                    keyAlias     : "demo",
+                    keyPassword  : "123456",
             ],
-            'debug'  : [
-                    storeFile    : 'file/sign/demo.jks',
-                    storePassword: '123456',
-                    keyAlias     : 'demo',
-                    keyPassword  : '123456',
+            "debug"  : [
+                    storeFile    : "file/sign/demo.jks",
+                    storePassword: "123456",
+                    keyAlias     : "demo",
+                    keyPassword  : "123456",
             ]
     ]
 }
