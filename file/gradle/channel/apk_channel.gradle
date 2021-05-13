@@ -5,10 +5,10 @@ def channelDir = new File(rootDir, "file/gradle/channel")
 // https://github.com/Meituan-Dianping/walle
 walle {
     // 指定渠道包的输出路径
-    apkOutputFolder = new File("${project.buildDir}/outputs/channels");
+    apkOutputFolder = new File("${project.buildDir}/outputs/channels")
     // 定制渠道包的 APK 的文件名称
-    apkFileNameFormat = '${channel}-${buildType}-v${versionName}-${versionCode}-${buildTime}.apk';
-//    apkFileNameFormat = '${appName}-${packageName}-${channel}-${buildType}-v${versionName}-${versionCode}-${buildTime}.apk';
+    apkFileNameFormat = '${channel}-${buildType}-v${versionName}-${versionCode}-${buildTime}.apk'
+//    apkFileNameFormat = '${appName}-${packageName}-${channel}-${buildType}-v${versionName}-${versionCode}-${buildTime}.apk'
     // 渠道配置文件
     channelFile = new File(channelDir, "channel")
     // 使用 JSON 配置方式

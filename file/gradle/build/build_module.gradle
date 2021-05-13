@@ -32,19 +32,19 @@ android {
         main {
 //            // 判断是否模块化, 加载不同的 AndroidManifest
 //            if (isModular.toBoolean()) {
-//                manifest.srcFile 'buildSrc/AndroidManifest.xml'
+//                manifest.srcFile "buildSrc/AndroidManifest.xml"
 //            } else {
-//                manifest.srcFile 'src/main/AndroidManifest.xml'
+//                manifest.srcFile "src/main/AndroidManifest.xml"
 //            }
 
             // 判断是否模块化, 加载不同的 AndroidManifest
             if (isModular.toBoolean()) {
-                manifest.srcFile 'buildSrc/AndroidManifest.xml'
+                manifest.srcFile "buildSrc/AndroidManifest.xml"
                 if (!manifest.srcFile.exists()) { // 解决没 buildSrc/xml 文件无法 sync、clean 操作
-                    manifest.srcFile 'src/main/AndroidManifest.xml'
+                    manifest.srcFile "src/main/AndroidManifest.xml"
                 }
             } else {
-                manifest.srcFile 'src/main/AndroidManifest.xml'
+                manifest.srcFile "src/main/AndroidManifest.xml"
             }
         }
     }
