@@ -195,3 +195,5 @@
 * [Jetpack 新成员 App Startup 一篇就懂](https://blog.csdn.net/guolin_blog/article/details/108026357)
 
 * [Jetpack 全家桶之 App Startup 看完源码后真不是你们说的那样](https://blog.csdn.net/yanbober/article/details/110202923)
+
+* [【Jetpack篇】Paging 的新增与删除](https://juejin.cn/post/6901296420410638343)
