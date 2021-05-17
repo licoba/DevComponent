@@ -4,6 +4,7 @@ import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,11 +26,30 @@ import dev.utils.common.StringUtils;
  */
 public class ColorSortMain {
 
+    // 项目路径
+    private static final String PROJECT_PATH = new File(System.getProperty("user.dir")).getAbsolutePath();
+    // colors.xml 文件路径
+    private static final String COLORS_XML   = "/src/main/res/values/colors.xml";
+
     public static void main(String[] args)
             throws Exception {
         // colors.xml 文件地址
-        String xmlPath = "app/src/main/res/values/colors.xml";
+        String xmlPath = new File(
+                PROJECT_PATH + "/app",
+                COLORS_XML
+        ).getAbsolutePath();
 
+        // color xml 排序
+        colorXMLSort(xmlPath);
+    }
+
+    /**
+     * Color Xml 颜色排序方法
+     * @param xmlPath colors.xml 文件路径
+     * @throws Exception
+     */
+    private static void colorXMLSort(final String xmlPath)
+            throws Exception {
         // 解析 colors.xml
         new SAXXml(xmlPath).analysisColorsXml(new SAXXml.DocumentListener() {
             @Override
