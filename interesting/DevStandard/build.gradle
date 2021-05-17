@@ -1,13 +1,9 @@
-apply plugin: 'java-library'
+apply from: rootProject.file(files.build_library_java_gradle)
 
 dependencies {
-    implementation deps.dev.dev_java
-
+    implementation deps.kotlin.stdlib
+    // DevApp Android 工具类库
+    implementation deps.dev.dev_app_x
     // Gson https://github.com/google/gson
     implementation deps.lib.gson
-}
-
-// 编码设置
-tasks.withType(JavaCompile) {
-    options.encoding = "UTF-8"
 }

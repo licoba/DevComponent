@@ -16,6 +16,9 @@ ext {
             build_library_version_gradle: "file/gradle/build/build_library_version.gradle",
             // APK 多渠道打包
             apk_channel_gradle          : "file/gradle/channel/apk_channel.gradle",
+
+            // Java Lib 构建通用配置 ( 方便使用 kotlin 运行 main, plugin 为 android kotlin )
+            build_library_java_gradle   : "file/gradle/build/build_library_java.gradle",
     ]
 
     deps = [

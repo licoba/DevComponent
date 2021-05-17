@@ -19,14 +19,6 @@ clone CircleImageView 修改源码使用 ( 用于演示, 推荐使用 Material S
          - circleimageview          
 ```
 
-
-# main/res 目录结构
-
-```
-- res                               
-   - values                         
-```
-
 # Usage
 
 ```xml

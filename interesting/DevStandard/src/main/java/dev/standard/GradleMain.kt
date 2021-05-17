@@ -1,39 +1,39 @@
-package dev.standard;
+package dev.standard
 
-import java.math.BigInteger;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
+import java.math.BigInteger
+import java.security.MessageDigest
+import java.security.NoSuchAlgorithmException
 
 /**
  * detail: 获取 Gradle 文件夹下随机名字
  * @author Ttt
- * <pre>
- *     Gradle 缓存目录文件命名规则
- *     @see <a href="https://www.cnblogs.com/rainboy2010/p/7062279.html"/>
- *     @see <a href="https://services.gradle.org/distributions"/>
- *     Android Gradle 插件版本说明
- *     @see <a href="https://developer.android.google.cn/studio/releases/gradle-plugin"/>
- *     <p></p>
- *     快捷搜索、下载地址:
- *     distributionUrl=https\://services.gradle.org/distributions/gradle-6.5-all.zip
- *     C:\Users\Administrator\.gradle\wrapper\dists
- * </pre>
+ * Gradle 缓存目录文件命名规则
+ * https://www.cnblogs.com/rainboy2010/p/7062279.html
+ * https://services.gradle.org/distributions
+ * Android Gradle 插件版本说明
+ * https://developer.android.google.cn/studio/releases/gradle-plugin
+ * 快捷搜索、下载地址:
+ * distributionUrl=https\://services.gradle.org/distributions/gradle-6.5-all.zip
+ * C:\Users\Administrator\.gradle\wrapper\dists
  */
-class GradleMain {
+internal object GradleMain {
 
-    public static void main(String[] args) {
-        String data = getGradleFileName("https://services.gradle.org/distributions/gradle-6.5-all.zip");
-        System.out.println(data); // 2oz4ud9k3tuxjg84bbf55q0tn
+    @JvmStatic
+    fun main(args: Array<String>) {
+        val data = getGradleFileName(
+            "https://services.gradle.org/distributions/gradle-6.5-all.zip"
+        )
+        println(data) // 2oz4ud9k3tuxjg84bbf55q0tn
     }
 
-    private static String getGradleFileName(final String distributionUrl) {
+    private fun getGradleFileName(distributionUrl: String): String? {
         try {
-            MessageDigest messageDigest = MessageDigest.getInstance("MD5");
-            messageDigest.update(distributionUrl.getBytes());
-            return new BigInteger(1, messageDigest.digest()).toString(36);
-        } catch (NoSuchAlgorithmException e) {
-            e.printStackTrace();
+            val messageDigest = MessageDigest.getInstance("MD5")
+            messageDigest.update(distributionUrl.toByteArray())
+            return BigInteger(1, messageDigest.digest()).toString(36)
+        } catch (e: NoSuchAlgorithmException) {
+            e.printStackTrace()
         }
-        return null;
+        return null
     }
 }
