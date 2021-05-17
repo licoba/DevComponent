@@ -64,16 +64,21 @@ open class AppContext : BaseAppContext() {
                 PathUtils.getInternal().getAppCachePath("db")
             )
             .setRenderPriority(WebSettings.RenderPriority.HIGH) // 渲染优先级高
-            .setOnApplyListener { _, _ ->
-                DevLogEngine.getEngine()?.apply {
-                    d("WebViewAssist Builder onApply")
+            .setOnApplyListener(object : WebViewAssist.Builder.OnApplyListener{
+                override fun onApply(
+                    webViewAssist: WebViewAssist?,
+                    builder: WebViewAssist.Builder
+                ) {
+                    DevLogEngine.getEngine()?.apply {
+                        d("WebViewAssist Builder onApply")
+                    }
                 }
-            }
+            })
         // 基础布局算法
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.KITKAT) {
-            builder.layoutAlgorithm = WebSettings.LayoutAlgorithm.TEXT_AUTOSIZING
+            builder.setLayoutAlgorithm(WebSettings.LayoutAlgorithm.TEXT_AUTOSIZING)
         } else {
-            builder.layoutAlgorithm = WebSettings.LayoutAlgorithm.SINGLE_COLUMN
+            builder.setLayoutAlgorithm(WebSettings.LayoutAlgorithm.SINGLE_COLUMN)
         }
         WebViewAssist.setGlobalBuilder(builder)
     }

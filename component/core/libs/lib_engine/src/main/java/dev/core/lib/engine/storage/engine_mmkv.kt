@@ -46,7 +46,7 @@ class MMKVStorageEngineImpl(
         mHolder.removeValueForKey(key)
     }
 
-    override fun removeForKeys(keys: Array<out String>?) {
+    override fun removeForKeys(keys: Array<String?>?) {
         mHolder.removeValuesForKeys(keys)
     }
 
