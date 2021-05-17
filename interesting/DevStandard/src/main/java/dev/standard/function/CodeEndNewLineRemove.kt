@@ -1,89 +1,96 @@
-package dev.standard.function;
+package dev.standard.function
 
-import java.io.File;
-import java.io.UnsupportedEncodingException;
-import java.util.LinkedHashSet;
-import java.util.List;
-
-import dev.standard.catalog.Config;
-import dev.utils.DevFinal;
-import dev.utils.common.FileUtils;
-import dev.utils.common.StringUtils;
-import dev.utils.common.assist.search.FileDepthFirstSearchUtils;
+import dev.standard.catalog.Config
+import dev.utils.DevFinal
+import dev.utils.common.FileUtils
+import dev.utils.common.StringUtils
+import dev.utils.common.assist.search.FileDepthFirstSearchUtils
+import java.io.File
+import java.io.UnsupportedEncodingException
+import java.util.*
 
 /**
  * detail: 代码结尾换行移除
  * @author Ttt
  */
-public final class CodeEndNewLineRemove {
+object CodeEndNewLineRemove {
 
-    private static final LinkedHashSet<String> sSets            = new LinkedHashSet<>();
-    // 结尾符合
-    private static final String                SYMBOL           = ""; // }
+    private val sSets = LinkedHashSet<String>()
+
+    // 结尾符号
+    private const val SYMBOL = "" // }
+
     // 检查 Key
-    private static final String                END_KEY          = SYMBOL + StringUtils.NEW_LINE_STR;
+    private val END_KEY = SYMBOL + StringUtils.NEW_LINE_STR
+
     // 追加内容
-    private static final String                APPEND           = SYMBOL;
+    private const val APPEND = SYMBOL
+
     // 忽略文件后缀
-    private static final String[]              IGNORE_SUFFIX    = {"md", "txt", "bat"};
+    private val IGNORE_SUFFIX = arrayOf("md", "txt", "bat")
+
     // 是否忽略后缀
-    private static final boolean               IS_IGNORE_SUFFIX = false;
+    private const val IS_IGNORE_SUFFIX = false
 
-    public static void main(String[] args) {
-        new FileDepthFirstSearchUtils()
-                .setSearchHandler(new FileDepthFirstSearchUtils.SearchHandler() {
-                    @Override
-                    public boolean isHandlerFile(File file) {
-                        return true;
+    @JvmStatic
+    fun main(args: Array<String>) {
+        FileDepthFirstSearchUtils()
+            .setSearchHandler(object : FileDepthFirstSearchUtils.SearchHandler {
+                override fun isHandlerFile(file: File): Boolean {
+                    return true
+                }
+
+                override fun isAddToList(file: File): Boolean {
+                    if (file.absolutePath.indexOf("\\.") != -1) return false
+
+                    val fileSuffix = FileUtils.getFileSuffix(file)
+                    if (!IS_IGNORE_SUFFIX && StringUtils.isOrEquals(fileSuffix, *IGNORE_SUFFIX)) {
+                        return true
                     }
 
-                    @Override
-                    public boolean isAddToList(File file) {
-                        if (file.getAbsolutePath().indexOf("\\.") != -1) return false;
-
-                        String fileSuffix = FileUtils.getFileSuffix(file);
-                        if (!IS_IGNORE_SUFFIX && StringUtils.isOrEquals(fileSuffix, IGNORE_SUFFIX)) {
-                            return true;
-                        }
-
-                        String data = null;
-                        try {
-                            data = new String(FileUtils.readFileBytes(file), DevFinal.UTF_8);
-                        } catch (UnsupportedEncodingException e) {
-                            e.printStackTrace();
-                        }
-                        if (data != null) {
-                            if (data.endsWith(END_KEY)) {
-                                // 删减内容
-                                data = data.substring(0, data.length() - END_KEY.length()) + APPEND;
-                                try {
-                                    // 替换内容
-                                    FileUtils.saveFile(file.getAbsolutePath(), data.getBytes(DevFinal.UTF_8));
-                                } catch (UnsupportedEncodingException e) {
-                                    e.printStackTrace();
-                                }
-                                // 存储路径
-                                sSets.add(FileUtils.getAbsolutePath(file));
+                    var data: String? = null
+                    try {
+                        data = String(
+                            FileUtils.readFileBytes(file),
+                            charset(DevFinal.UTF_8)
+                        )
+                    } catch (e: UnsupportedEncodingException) {
+                        e.printStackTrace()
+                    }
+                    data?.let {
+                        if (it.endsWith(END_KEY)) {
+                            // 删减内容
+                            val subData = it.substring(0, it.length - END_KEY.length) + APPEND
+                            try {
+                                // 替换内容
+                                FileUtils.saveFile(
+                                    file.absolutePath,
+                                    subData.toByteArray(charset(DevFinal.UTF_8))
+                                )
+                            } catch (e: UnsupportedEncodingException) {
+                                e.printStackTrace()
                             }
+                            // 存储路径
+                            sSets.add(FileUtils.getAbsolutePath(file))
                         }
-                        return true;
                     }
+                    return true
+                }
 
-                    @Override
-                    public void onEndListener(
-                            List<FileDepthFirstSearchUtils.FileItem> lists,
-                            long startTime,
-                            long endTime
-                    ) {
-                        for (String path : sSets) {
-                            System.out.println(path);
-                        }
-                        try {
-                            System.out.println(new String("搜索结束".getBytes(DevFinal.UTF_8)));
-                        } catch (UnsupportedEncodingException e) {
-                            e.printStackTrace();
-                        }
+                override fun onEndListener(
+                    lists: List<FileDepthFirstSearchUtils.FileItem>,
+                    startTime: Long,
+                    endTime: Long
+                ) {
+                    for (path in sSets) {
+                        println(path)
                     }
-                }).query(Config.PROJECT_PATH, true);
+                    try {
+                        println(String("搜索结束".toByteArray(charset(DevFinal.UTF_8))))
+                    } catch (e: UnsupportedEncodingException) {
+                        e.printStackTrace()
+                    }
+                }
+            }).query(Config.PROJECT_PATH, true)
     }
 }

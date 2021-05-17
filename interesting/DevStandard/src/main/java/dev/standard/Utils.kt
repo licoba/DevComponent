@@ -1,15 +1,12 @@
-package dev.standard;
+package dev.standard
 
-import com.google.gson.GsonBuilder;
+import com.google.gson.GsonBuilder
 
 /**
  * detail: 内部工具类
  * @author Ttt
  */
-public final class Utils {
-
-    private Utils() {
-    }
+object Utils {
 
     // ========
     // = Gson =
@@ -18,12 +15,12 @@ public final class Utils {
     /**
      * 创建 GsonBuilder
      * @param serializeNulls 是否序列化null值
-     * @return {@link GsonBuilder}
+     * @return [GsonBuilder]
      */
-    private static GsonBuilder createGson(final boolean serializeNulls) {
-        final GsonBuilder builder = new GsonBuilder();
-        if (serializeNulls) builder.serializeNulls();
-        return builder;
+    private fun createGson(serializeNulls: Boolean): GsonBuilder {
+        val builder = GsonBuilder()
+        if (serializeNulls) builder.serializeNulls()
+        return builder
     }
 
     /**
@@ -32,18 +29,19 @@ public final class Utils {
      * @param includeNulls 是否序列化null值
      * @return 格式化 JSON 数据
      */
-    public static String toJsonFormat(
-            final Object data,
-            final boolean includeNulls
-    ) {
+    fun toJsonFormat(
+        data: Any?,
+        includeNulls: Boolean
+    ): String {
         if (data != null) {
             try {
                 // 返回 JSON格式数据 - 格式化
-                return createGson(includeNulls).setPrettyPrinting().create().toJson(data);
-            } catch (Exception e) {
-                e.printStackTrace();
+                return createGson(includeNulls)
+                    .setPrettyPrinting().create().toJson(data)
+            } catch (e: Exception) {
+                e.printStackTrace()
             }
         }
-        return "";
+        return ""
     }
 }

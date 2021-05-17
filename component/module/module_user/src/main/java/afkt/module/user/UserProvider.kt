@@ -16,7 +16,6 @@ import dev.utils.common.ChineseUtils
 import dev.utils.common.DevCommonUtils
 import dev.utils.common.RandomUtils
 
-
 @Route(path = UserRouter.PATH_USER_PROVIDER, group = UserRouter.GROUP)
 class UserProvider : IUserProvider {
 

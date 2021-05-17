@@ -43,7 +43,6 @@ class ShopCartAdapter() :
     ) {
         val item: CommodityBean = getDataItem(position)
 
-
         // 商品信息
         ViewHelper.get()
             .setText(

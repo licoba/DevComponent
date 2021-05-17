@@ -1,6 +1,5 @@
 package dev.core.lib.bean.commodity.enums
 
-
 // =============
 // = 商品 label =
 // =============

@@ -1,77 +1,77 @@
-package dev.standard.function;
+package dev.standard.function
 
-import java.io.File;
-import java.io.FileFilter;
-import java.util.HashMap;
-import java.util.List;
-
-import dev.standard.Utils;
-import dev.standard.catalog.Config;
-import dev.utils.common.FileIOUtils;
-import dev.utils.common.FileUtils;
-import dev.utils.common.MapUtils;
-import dev.utils.common.StringUtils;
+import dev.standard.Utils
+import dev.standard.catalog.Config
+import dev.utils.common.FileIOUtils
+import dev.utils.common.FileUtils
+import dev.utils.common.MapUtils
+import dev.utils.common.StringUtils
+import java.io.File
+import java.io.FileFilter
+import java.util.*
 
 /**
  * detail: 代码重复换行检测
  * @author Ttt
  */
-public final class CodeRepeatNewLineRemove {
+object CodeRepeatNewLineRemove {
 
     // 代码注释重复换行记录
-    private static final HashMap<String, List<String>> sAnnotationRepeatLineMap = new HashMap<>();
+    private val sAnnotationRepeatLineMap = HashMap<String, List<String>>()
 
-    // 忽略文件后缀
-    private static final String[] SUFFIX = {"kt", "xml", "java", "gradle",};
+    // 匹配文件后缀
+    private val SUFFIX = arrayOf("kt", "xml", "java", "gradle")
 
-    public static void main(String[] args) {
+    @JvmStatic
+    fun main(args: Array<String>) {
         // 获取文件列表
-        List<File> lists = FileUtils.listFilesInDirWithFilter(Config.PROJECT_PATH, new FileFilter() {
-            @Override
-            public boolean accept(File file) {
-                if (file.getAbsolutePath().indexOf("\\.") != -1) return false;
-                if (file.getAbsolutePath().indexOf("\\build\\") != -1) return false;
-                if (file.isDirectory()) return false;
+        val lists = FileUtils.listFilesInDirWithFilter(
+            Config.PROJECT_PATH, FileFilter { file ->
+                if (file.absolutePath.indexOf("\\.") != -1) return@FileFilter false
+                if (file.absolutePath.indexOf("\\build\\") != -1) return@FileFilter false
+                if (file.isDirectory) return@FileFilter false
 
-                String fileSuffix = FileUtils.getFileSuffix(file);
-                return StringUtils.isOrEquals(fileSuffix, SUFFIX);
-            }
-        }, true);
-
-        for (File file : lists) {
-            readFile(file);
+                val fileSuffix = FileUtils.getFileSuffix(file)
+                return@FileFilter StringUtils.isOrEquals(fileSuffix, *SUFFIX)
+            }, true
+        )
+        for (file in lists) {
+            readFile(file)
         }
-
-        String json = Utils.toJsonFormat(sAnnotationRepeatLineMap, true);
+        val json = Utils.toJsonFormat(sAnnotationRepeatLineMap, true)
         // 打印文件多余换行信息
-        System.out.println(json);
+        println(json)
     }
 
     /**
      * 读取文件
      * @param file 文件
      */
-    private static void readFile(final File file) {
+    private fun readFile(file: File) {
         // 读取文件内容
-        List<String> lists = FileIOUtils.readFileToList(file, 0, Integer.MAX_VALUE);
+        val lists = FileIOUtils.readFileToList(file, 0, Int.MAX_VALUE)
 
         // 判断是否需要判断 重复出现情况
-        boolean repeat = false;
+        var repeat = false
         // 循环判断
-        for (int i = 0, len = lists.size(); i < len; i++) {
+        for (i in 0 until lists.size) {
             // 获取每一行代码
-            String code = lists.get(i);
+            val code = lists[i]
             // 判断是否 null
-            boolean isSpace = StringUtils.isSpace(code);
+            val isSpace = StringUtils.isSpace(code)
             // 防止为 null
             if (!isSpace) {
-                repeat = false; // 不需要判断重复
+                repeat = false // 不需要判断重复
             } else {
                 if (code != null && repeat) {
-                    MapUtils.putToList(sAnnotationRepeatLineMap, file.getName(), (i + 1) + "");
+                    MapUtils.putToList(
+                        sAnnotationRepeatLineMap,
+                        file.name,
+                        (i + 1).toString()
+                    )
                 }
                 // 表示需要检测重复
-                repeat = true;
+                repeat = true
             }
         }
     }
