@@ -64,7 +64,7 @@ open class AppContext : BaseAppContext() {
                 PathUtils.getInternal().getAppCachePath("db")
             )
             .setRenderPriority(WebSettings.RenderPriority.HIGH) // 渲染优先级高
-            .setOnApplyListener(object : WebViewAssist.Builder.OnApplyListener{
+            .setOnApplyListener(object : WebViewAssist.Builder.OnApplyListener {
                 override fun onApply(
                     webViewAssist: WebViewAssist?,
                     builder: WebViewAssist.Builder
