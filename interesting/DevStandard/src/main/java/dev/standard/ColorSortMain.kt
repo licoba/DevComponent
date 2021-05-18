@@ -1,46 +1,40 @@
-package dev.standard;
+package dev.standard
 
-import org.xml.sax.Attributes;
-import org.xml.sax.SAXException;
-import org.xml.sax.helpers.DefaultHandler;
-
-import java.io.File;
-import java.util.ArrayList;
-import java.util.List;
-
-import javax.xml.parsers.SAXParser;
-import javax.xml.parsers.SAXParserFactory;
-
-import dev.utils.DevFinal;
-import dev.utils.common.CollectionUtils;
-import dev.utils.common.ColorUtils;
-import dev.utils.common.FileUtils;
-import dev.utils.common.StringUtils;
+import dev.utils.DevFinal
+import dev.utils.common.CollectionUtils
+import dev.utils.common.ColorUtils.ColorInfo
+import dev.utils.common.FileUtils
+import dev.utils.common.StringUtils
+import org.xml.sax.Attributes
+import org.xml.sax.SAXException
+import org.xml.sax.helpers.DefaultHandler
+import java.io.File
+import java.util.*
+import javax.xml.parsers.SAXParserFactory
 
 /**
  * detail: Color 排序方法
  * @author Ttt
- * <pre>
- *     可用于 colors.xml 颜色排序, 并且统一整个项目 color 规范替换命名等等
- * </pre>
+ * 可用于 colors.xml 颜色排序, 并且统一整个项目 color 规范替换命名等等
  */
-public class ColorSortMain {
+object ColorSortMain {
 
     // 项目路径
-    private static final String PROJECT_PATH = new File(System.getProperty("user.dir")).getAbsolutePath();
-    // colors.xml 文件路径
-    private static final String COLORS_XML   = "/src/main/res/values/colors.xml";
+    private val PROJECT_PATH = File(System.getProperty("user.dir")).absolutePath
 
-    public static void main(String[] args)
-            throws Exception {
+    // colors.xml 文件路径
+    private const val COLORS_XML = "/src/main/res/values/colors.xml"
+
+    @Throws(Exception::class)
+    @JvmStatic
+    fun main(args: Array<String>) {
         // colors.xml 文件地址
-        String xmlPath = new File(
-                PROJECT_PATH + "/app",
-                COLORS_XML
-        ).getAbsolutePath();
+        val xmlPath = File(
+            "$PROJECT_PATH/app", COLORS_XML
+        ).absolutePath
 
         // color xml 排序
-        colorXMLSort(xmlPath);
+        colorXMLSort(xmlPath)
     }
 
     /**
@@ -48,57 +42,72 @@ public class ColorSortMain {
      * @param xmlPath colors.xml 文件路径
      * @throws Exception
      */
-    private static void colorXMLSort(final String xmlPath)
-            throws Exception {
+    @Throws(Exception::class)
+    private fun colorXMLSort(xmlPath: String) {
         // 解析 colors.xml
-        new SAXXml(xmlPath).analysisColorsXml(new SAXXml.DocumentListener() {
-            @Override
-            public void onEnd(List<ColorUtils.ColorInfo> lists) {
+        SAXXml(xmlPath).analysisColorsXml(object : SAXXml.DocumentListener {
+            override fun onEnd(lists: List<ColorInfo>) {
                 if (CollectionUtils.isEmpty(lists)) {
-                    System.out.println(" list is empty");
-                    return;
+                    println(" list is empty")
+                    return
                 }
-                // 根据色调排序
-                ColorUtils.sortHSB(lists);
+//                // 根据色调排序
+//                ColorUtils.sortHSB(lists)
+                Collections.sort(lists, object : Comparator<ColorInfo> {
+                    override fun compare(
+                        c1: ColorInfo,
+                        c2: ColorInfo
+                    ): Int {
+                        val diff = c1.hue - c2.hue
+                        if (diff > 0) {
+                            return 1
+                        } else if (diff < 0) {
+                            return -1
+                        }
+                        return 0
+                    }
+                })
                 // 生成 XML 文件内容
-                String content = Builder.createXML(lists);
+                val content = Builder.createXML(lists)
                 // 覆盖处理
-                boolean result = FileUtils.saveFile(xmlPath, StringUtils.getBytes(content));
+                val result = FileUtils.saveFile(xmlPath, StringUtils.getBytes(content))
                 // 获取结果
-                System.out.println("result: " + result);
+                println("result: $result")
             }
-        });
+        })
     }
 
     /**
      * detail: XML 创建处理
      * @author Ttt
      */
-    static final class Builder {
+    internal object Builder {
 
         // XML 内容
-        private static final String XML_CONTENT = "%s\t<color name=\"%s\">%s</color>";
+        private const val XML_CONTENT = "%s\t<color name=\"%s\">%s</color>"
 
         /**
          * 创建 XML
          * @param lists Color 信息集合
          * @return XML 文件内容
          */
-        public static String createXML(final List<ColorUtils.ColorInfo> lists) {
-            StringBuilder builder = new StringBuilder();
-            builder.append("<?xml version=\"1.0\" encoding=\"utf-8\"?>");
-            builder.append(DevFinal.NEW_LINE_STR);
-            builder.append("<resources>");
+        fun createXML(lists: List<ColorInfo>): String {
+            val builder = StringBuilder()
+            builder.append("<?xml version=\"1.0\" encoding=\"utf-8\"?>")
+            builder.append(DevFinal.NEW_LINE_STR)
+            builder.append("<resources>")
             // 解析数据
-            for (ColorUtils.ColorInfo colorInfo : lists) {
-                builder.append(String.format(
+            for (colorInfo in lists) {
+                builder.append(
+                    String.format(
                         XML_CONTENT, DevFinal.NEW_LINE_STR,
-                        colorInfo.getKey(), colorInfo.getValue()
-                ));
+                        colorInfo.key, colorInfo.value
+                    )
+                )
             }
-            builder.append(DevFinal.NEW_LINE_STR);
-            builder.append("</resources>");
-            return builder.toString();
+            builder.append(DevFinal.NEW_LINE_STR)
+            builder.append("</resources>")
+            return builder.toString()
         }
     }
 
@@ -106,102 +115,88 @@ public class ColorSortMain {
      * detail: SAX 解析 XML 内部类
      * @author Ttt
      */
-    static final class SAXXml {
-
+    internal class SAXXml(
         // colors.xml 文件地址
-        private final String xmlPath;
-
-        private SAXXml(String xmlPath) {
-            this.xmlPath = xmlPath;
-        }
+        private val xmlPath: String
+    ) {
 
         /**
          * 解析 Colors.xml 内容
          * @param listener 监听事件
          * @throws Exception
          */
-        public void analysisColorsXml(final DocumentListener listener)
-                throws Exception {
+        @Throws(Exception::class)
+        fun analysisColorsXml(listener: DocumentListener) {
             // 获取 SAXParserFactory 实例
-            SAXParserFactory factory = SAXParserFactory.newInstance();
+            val factory = SAXParserFactory.newInstance()
             // 获取 SAXParser 实例
-            SAXParser saxParser = factory.newSAXParser();
+            val saxParser = factory.newSAXParser()
             // 创建 Handler 对象并进行解析
-            saxParser.parse(xmlPath, new SAXDemoHandel(listener));
+            saxParser.parse(xmlPath, SAXHandler(listener))
         }
 
         /**
          * detail: 解析 Handler
          * @author Ttt
          */
-        class SAXDemoHandel
-                extends DefaultHandler {
-
-            private       String                     colorKey;
-            private       String                     colorValue;
+        internal inner class SAXHandler(
             // 解析事件
-            private final DocumentListener           listener;
+            private val listener: DocumentListener
+        ) : DefaultHandler() {
+
+            private var colorKey: String? = null
+            private var colorValue: String? = null
+
             // 解析集合
-            private final List<ColorUtils.ColorInfo> lists = new ArrayList<>();
+            private val lists: MutableList<ColorInfo> = ArrayList()
 
-            public SAXDemoHandel(DocumentListener listener) {
-                this.listener = listener;
+            @Throws(SAXException::class)
+            override fun startDocument() {
+                super.startDocument() // SAX 解析开始
             }
 
-            @Override
-            public void startDocument()
-                    throws SAXException {
-                super.startDocument(); // SAX 解析开始
-            }
-
-            @Override
-            public void endDocument()
-                    throws SAXException {
-                super.endDocument(); // SAX 解析结束
+            @Throws(SAXException::class)
+            override fun endDocument() {
+                super.endDocument() // SAX 解析结束
                 // 触发回调
-                if (listener != null) {
-                    listener.onEnd(lists);
+                listener.onEnd(lists)
+            }
+
+            @Throws(SAXException::class)
+            override fun startElement(
+                uri: String,
+                localName: String,
+                qName: String,
+                attributes: Attributes
+            ) {
+                super.startElement(uri, localName, qName, attributes)
+                if (qName == "color") {
+                    colorKey = attributes.getValue("name")
                 }
             }
 
-            @Override
-            public void startElement(
-                    String uri,
-                    String localName,
-                    String qName,
-                    Attributes attributes
-            )
-                    throws SAXException {
-                super.startElement(uri, localName, qName, attributes);
-                if (qName.equals("color")) {
-                    this.colorKey = attributes.getValue("name");
+            @Throws(SAXException::class)
+            override fun endElement(
+                uri: String,
+                localName: String,
+                qName: String
+            ) {
+                super.endElement(uri, localName, qName)
+                if (qName == "color") {
+                    lists.add(ColorInfo(colorKey, colorValue))
                 }
             }
 
-            @Override
-            public void endElement(
-                    String uri,
-                    String localName,
-                    String qName
-            )
-                    throws SAXException {
-                super.endElement(uri, localName, qName);
-                if (qName.equals("color")) {
-                    lists.add(new ColorUtils.ColorInfo(colorKey, colorValue));
-                }
-            }
-
-            @Override
-            public void characters(
-                    char[] ch,
-                    int start,
-                    int length
-            )
-                    throws SAXException {
-                super.characters(ch, start, length);
-                String value = new String(ch, start, length).trim();
-                if (!value.equals("")) {
-                    this.colorValue = value;
+            @Throws(SAXException::class)
+            override fun characters(
+                ch: CharArray,
+                start: Int,
+                length: Int
+            ) {
+                super.characters(ch, start, length)
+                val value = String(ch, start, length).trim { it <= ' ' }
+                if (value != "") {
+                    colorValue = value // 可设置全部值转大写、小写
                 }
             }
         }
@@ -210,13 +205,12 @@ public class ColorSortMain {
          * detail: Xml Document 解析监听事件
          * @author Ttt
          */
-        public interface DocumentListener {
-
+        interface DocumentListener {
             /**
              * 解析结束触发
              * @param lists 解析集合
              */
-            void onEnd(List<ColorUtils.ColorInfo> lists);
+            fun onEnd(lists: List<ColorInfo>)
         }
     }
 }
