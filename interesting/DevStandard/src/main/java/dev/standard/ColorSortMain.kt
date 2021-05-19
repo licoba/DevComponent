@@ -2,6 +2,7 @@ package dev.standard
 
 import dev.utils.DevFinal
 import dev.utils.common.CollectionUtils
+import dev.utils.common.ColorUtils
 import dev.utils.common.ColorUtils.ColorInfo
 import dev.utils.common.FileUtils
 import dev.utils.common.StringUtils
@@ -51,22 +52,10 @@ object ColorSortMain {
                     println(" list is empty")
                     return
                 }
-//                // 根据色调排序
-//                ColorUtils.sortHSB(lists)
-                Collections.sort(lists, object : Comparator<ColorInfo> {
-                    override fun compare(
-                        c1: ColorInfo,
-                        c2: ColorInfo
-                    ): Int {
-                        val diff = c1.hue - c2.hue
-                        if (diff > 0) {
-                            return 1
-                        } else if (diff < 0) {
-                            return -1
-                        }
-                        return 0
-                    }
-                })
+                // 饱和度排序
+                ColorUtils.sortSaturation(lists)
+                // 色相排序
+                ColorUtils.sortHUE(lists)
                 // 生成 XML 文件内容
                 val content = Builder.createXML(lists)
                 // 覆盖处理

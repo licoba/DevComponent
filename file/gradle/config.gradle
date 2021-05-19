@@ -27,12 +27,12 @@ ext {
                     // https://search.maven.org/search?q=io.github.afkt
                     // https://repo1.maven.org/maven2/io/github/afkt/
                     // https://mvnrepository.com/search?q=io.github.afkt
-                    dev_app_x                       : "io.github.afkt:DevAppX:2.2.4",
-                    dev_assist                      : "io.github.afkt:DevAssist:1.2.0",
-                    dev_base                        : "io.github.afkt:DevBase:1.0.5",
-                    dev_base_mvvm                   : "io.github.afkt:DevBaseMVVM:1.0.3",
+                    dev_app_x                       : "io.github.afkt:DevAppX:2.2.5",
+                    dev_assist                      : "io.github.afkt:DevAssist:1.2.1",
+                    dev_base                        : "io.github.afkt:DevBase:1.0.6",
+                    dev_base_mvvm                   : "io.github.afkt:DevBaseMVVM:1.0.4",
                     dev_widget_x                    : "io.github.afkt:DevWidgetX:1.1.0",
-                    dev_java                        : "io.github.afkt:DevJava:1.3.1",
+                    dev_java                        : "io.github.afkt:DevJava:1.3.2",
                     // 环境配置切换库
                     dev_environment                 : "io.github.afkt:DevEnvironment:1.0.3",
                     dev_environment_base            : "io.github.afkt:DevEnvironmentBase:1.0.3",
