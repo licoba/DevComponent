@@ -28,6 +28,7 @@ import dev.utils.app.PathUtils
 import dev.utils.app.image.ImageUtils
 import dev.utils.common.FileUtils
 import dev.utils.common.RandomUtils
+import dev.utils.common.StreamUtils
 import dev.utils.common.encrypt.MD5Utils
 import java.io.File
 import java.util.*
@@ -576,9 +577,9 @@ class GlideEngineImpl : IImageEngine<ImageConfig> {
         return priConvertImageFormat(context, sources, config, listener)
     }
 
-    // ===========
+    // ==========
     // = 内部方法 =
-    // ===========
+    // ==========
 
     /**
      * Fragment 是否能够用于加载图片
@@ -616,6 +617,20 @@ class GlideEngineImpl : IImageEngine<ImageConfig> {
                 source.mBytes != null -> {
                     manager.load(source.mBytes)
                 }
+                source.mInputStream != null -> {
+                    val bytes = StreamUtils.inputStreamToBytes(source.mInputStream)
+                    if (bytes != null) {
+                        manager.load(bytes)
+                    } else {
+                        null
+                    }
+                }
+                source.mDrawable != null -> {
+                    manager.load(source.mDrawable)
+                }
+                source.mBitmap != null -> {
+                    manager.load(source.mBitmap)
+                }
                 else -> {
                     throw IllegalArgumentException("UnSupport source")
                 }
@@ -651,6 +666,20 @@ class GlideEngineImpl : IImageEngine<ImageConfig> {
                 source.mBytes != null -> {
                     request.load(source.mBytes)
                 }
+                source.mInputStream != null -> {
+                    val bytes = StreamUtils.inputStreamToBytes(source.mInputStream)
+                    if (bytes != null) {
+                        request.load(bytes)
+                    } else {
+                        null
+                    }
+                }
+                source.mDrawable != null -> {
+                    request.load(source.mDrawable)
+                }
+                source.mBitmap != null -> {
+                    request.load(source.mBitmap)
+                }
                 else -> {
                     throw IllegalArgumentException("UnSupport source")
                 }
@@ -667,9 +696,9 @@ class GlideEngineImpl : IImageEngine<ImageConfig> {
         var options = RequestOptions()
         config?.let { config ->
 
-            // =============
+            // ============
             // = 初始化配置 =
-            // =============
+            // ============
 
             // DiskCache
             options = if (config.isCacheDisk()) {
@@ -765,9 +794,9 @@ class GlideEngineImpl : IImageEngine<ImageConfig> {
         return request
     }
 
-    // ====================
+    // ===================
     // = 内部 Display 方法 =
-    // ====================
+    // ===================
 
     /**
      * 通过 [RequestBuilder] 与 [ImageConfig] 快捷显示方法
@@ -822,9 +851,9 @@ class GlideEngineImpl : IImageEngine<ImageConfig> {
         }
     }
 
-    // ===============
+    // =============
     // = 内部加载事件 =
-    // ===============
+    // =============
 
     private class InnerDrawableViewTarget(
         view: ImageView?,
@@ -934,9 +963,9 @@ class GlideEngineImpl : IImageEngine<ImageConfig> {
         override fun onLoadCleared(placeholder: Drawable?) {}
     }
 
-    // ====================
+    // ==================
     // = 转换图片格式并存储 =
-    // ====================
+    // ==================
 
     /**
      * 私有转换图片格式处理方法

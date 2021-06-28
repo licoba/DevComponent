@@ -10,9 +10,9 @@ import java.lang.reflect.Type
  */
 class GsonEngineImpl : IJSONEngine<JSONConfig> {
 
-    // ===========
+    // ==========
     // = 转换方法 =
-    // ===========
+    // ==========
 
     override fun toJson(obj: Any?): String? {
         return GsonUtils.toJson(obj)
@@ -55,9 +55,9 @@ class GsonEngineImpl : IJSONEngine<JSONConfig> {
         return GsonUtils.fromJson(json, typeOfT, config?.gson)
     }
 
-    // ===========
+    // ==========
     // = 其他方法 =
-    // ===========
+    // ==========
 
     override fun isJSON(json: String?): Boolean {
         return GsonUtils.isJSON(json)

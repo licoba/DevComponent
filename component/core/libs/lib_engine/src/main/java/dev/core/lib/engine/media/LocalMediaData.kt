@@ -1,21 +1,32 @@
 package dev.core.lib.engine.media
 
-import com.luck.picture.lib.config.PictureMimeType
 import com.luck.picture.lib.entity.LocalMedia
 import dev.engine.media.IMediaEngine
+import dev.utils.DevFinal
+import dev.utils.common.StringUtils
 
 /**
  * detail: Local Media Selector Data
  * @author Ttt
  */
-class LocalMediaData : IMediaEngine.MediaData {
+class LocalMediaData : IMediaEngine.EngineData {
 
-    var localMedia: LocalMedia? = null
+    private var mLocalMedia: LocalMedia? = null
 
     constructor()
 
     constructor(localMedia: LocalMedia?) {
-        this.localMedia = localMedia
+        this.mLocalMedia = localMedia
+    }
+
+    // =
+
+    fun getLocalMedia(): LocalMedia? {
+        return mLocalMedia
+    }
+
+    fun setLocalMedia(localMedia: LocalMedia) {
+        this.mLocalMedia = localMedia
     }
 
     /**
@@ -24,11 +35,11 @@ class LocalMediaData : IMediaEngine.MediaData {
      * @return 本地资源路径
      */
     fun getLocalMediaPath(original: Boolean): String? {
-        localMedia?.let {
+        mLocalMedia?.let {
             if (original) return it.path
             // 判断资源类型
             val mimeType = it.mimeType
-            return if (PictureMimeType.isHasImage(mimeType)) { // 图片
+            return if (StringUtils.isStartsWith(mimeType, DevFinal.IMAGE)) { // 图片
                 if (it.isCompressed) { // 是否压缩图片
                     it.compressPath
                 } else if (it.isCut) { // 是否裁减图片

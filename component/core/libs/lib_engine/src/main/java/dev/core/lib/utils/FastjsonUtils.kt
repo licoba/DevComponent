@@ -18,9 +18,9 @@ object FastjsonUtils {
     // 日志 TAG
     private val TAG = FastjsonUtils::class.java.simpleName
 
-    // ===========
+    // ==========
     // = 转换方法 =
-    // ===========
+    // ==========
 
     /**
      * 将对象转换为 JSON String
@@ -82,9 +82,9 @@ object FastjsonUtils {
         return null
     }
 
-    // ===========
+    // ==========
     // = 其他方法 =
-    // ===========
+    // ==========
 
     /**
      * 判断字符串是否 JSON 格式

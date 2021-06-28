@@ -22,7 +22,6 @@ import dev.utils.app.DeviceUtils
 import dev.utils.app.logger.DevLogger
 import dev.utils.app.logger.LogConfig
 import dev.utils.app.logger.LogLevel
-import dev.utils.common.FileRecordUtils
 import dev.utils.common.StringUtils
 
 /**
@@ -109,7 +108,5 @@ class CoreModule private constructor() : BaseModule(CoreModule::class.java.simpl
                 tag = AppConst.LOG_TAG
             })
         }
-        // 插入设备信息
-        FileRecordUtils.setInsertInfo(DeviceUtils.getAppDeviceInfo())
     }
 }

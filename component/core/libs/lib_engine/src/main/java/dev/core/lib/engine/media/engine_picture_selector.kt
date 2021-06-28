@@ -233,9 +233,9 @@ class PictureSelectorEngineImpl : IMediaEngine<MediaConfig, LocalMediaData> {
     // 全局配置信息
     private val PIC_CONFIG = MediaConfig()
 
-    // ===============
+    // =============
     // = 对外公开方法 =
-    // ===============
+    // =============
 
     override fun openCamera(activity: Activity?): Boolean {
         return openCamera(activity, PIC_CONFIG)
@@ -295,9 +295,9 @@ class PictureSelectorEngineImpl : IMediaEngine<MediaConfig, LocalMediaData> {
         return forResult(pictureSelectionModel)
     }
 
-    // ===========
+    // ==========
     // = 配置方法 =
-    // ===========
+    // ==========
 
     override fun getConfig(): MediaConfig {
         return PIC_CONFIG
@@ -331,9 +331,9 @@ class PictureSelectorEngineImpl : IMediaEngine<MediaConfig, LocalMediaData> {
         PIC_CONFIG.setMinimumCompressSize(minimumCompressSize)
     }
 
-    // ===========
+    // ==========
     // = 其他方法 =
-    // ===========
+    // ==========
 
     override fun deleteCacheDirFile(
         context: Context?,
@@ -401,9 +401,9 @@ class PictureSelectorEngineImpl : IMediaEngine<MediaConfig, LocalMediaData> {
         return if (lists.size > 0) lists[0] else null
     }
 
-    // ===========
-    // = 内部处理 =
-    // ===========
+    // =============
+    // = 内部处理方法 =
+    // =============
 
     /**
      * 获取图片选择器对象
@@ -491,11 +491,11 @@ class PictureSelectorEngineImpl : IMediaEngine<MediaConfig, LocalMediaData> {
                 .rotateEnabled(isCrop) // 裁剪是否可旋转图片 true or false
                 .scaleEnabled(isCrop) // 裁剪是否可放大缩小图片 true or false
 
-            // 设置拍照保存地址
+            // 设置拍照存储地址
             if (!TextUtils.isEmpty(config.getCameraSavePath())) {
                 pictureSelectionModel.setOutputCameraPath(config.getCameraSavePath())
             }
-            // 设置压缩图片保存地址
+            // 设置压缩图片存储地址
             if (!TextUtils.isEmpty(config.getCompressSavePath())) {
                 pictureSelectionModel.compressSavePath(config.getCompressSavePath())
             }
@@ -518,7 +518,7 @@ class PictureSelectorEngineImpl : IMediaEngine<MediaConfig, LocalMediaData> {
     private fun convertList(lists: List<LocalMediaData?>?): List<LocalMedia?> {
         val medias: MutableList<LocalMedia?> = ArrayList()
         lists?.forEach {
-            it?.localMedia?.let { media ->
+            it?.getLocalMedia()?.let { media ->
                 medias.add(media)
             }
         }

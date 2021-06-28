@@ -1,42 +1,41 @@
-package dev.core.lib.engine.storage
+package dev.core.lib.engine.keyvalue
 
 import com.tencent.mmkv.MMKV
 import dev.core.lib.utils.MMKVUtils
 import dev.engine.json.DevJSONEngine
-import dev.engine.storage.IStorageEngine
+import dev.engine.keyvalue.IKeyValueEngine
 import dev.utils.common.ConvertUtils
 import dev.utils.common.cipher.Cipher
 import java.lang.reflect.Type
 
 /**
- * detail: MMKV Storage Config
+ * detail: MMKV Key-Value Config
  * @author Ttt
  */
 class MMKVConfig(
-    storageID: String?,
     cipher: Cipher?,
     val mmkv: MMKV
-) : IStorageEngine.EngineConfig(storageID, cipher)
+) : IKeyValueEngine.EngineConfig(cipher)
 
 /**
- * detail: MMKV Storage Engine 实现
+ * detail: MMKV Key-Value Engine 实现
  * @author Ttt
  */
-class MMKVStorageEngineImpl(
+class MMKVKeyValueEngineImpl(
     private val mConfig: MMKVConfig
-) : IStorageEngine<MMKVConfig> {
+) : IKeyValueEngine<MMKVConfig> {
 
     // MMKV
     private val mHolder: MMKVUtils.Holder
 
     init {
         // MMKV Holder
-        mHolder = MMKVUtils.putHolder(config.storageID, config.mmkv)
+        mHolder = MMKVUtils.putHolder(config.mmkv.mmapID(), config.mmkv)
     }
 
-    // ===============
+    // =============
     // = 对外公开方法 =
-    // ===============
+    // =============
 
     override fun getConfig(): MMKVConfig {
         return mConfig

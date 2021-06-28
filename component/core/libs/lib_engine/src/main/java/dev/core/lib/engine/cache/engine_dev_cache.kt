@@ -19,9 +19,9 @@ class DevCacheEngineImpl(
     private val mConfig: CacheConfig
 ) : ICacheEngine<CacheConfig?, DataItem?> {
 
-    // ===============
+    // =============
     // = 对外公开方法 =
-    // ===============
+    // =============
 
     override fun getConfig(): CacheConfig? {
         return mConfig
@@ -217,7 +217,7 @@ class DevCacheEngineImpl(
         value: T,
         validTime: Long
     ): Boolean {
-        val json = DevJSONEngine.getEngine().toJson(validTime)
+        val json = DevJSONEngine.getEngine().toJson(value)
         return mConfig.mDevCache.put(key, json, validTime)
     }
 

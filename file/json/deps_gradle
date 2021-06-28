@@ -3,9 +3,9 @@ dependencies {
 	// = dev =
 
 	// dev_app_x
-	implementation 'io.github.afkt:DevAppX:2.2.5'
+	implementation 'io.github.afkt:DevAppX:2.2.8'
 	// dev_assist
-	implementation 'io.github.afkt:DevAssist:1.2.1'
+	implementation 'io.github.afkt:DevAssist:1.2.5'
 	// dev_base
 	implementation 'io.github.afkt:DevBase:1.0.6'
 	// dev_base_mvvm
@@ -13,7 +13,7 @@ dependencies {
 	// dev_widget_x
 	implementation 'io.github.afkt:DevWidgetX:1.1.0'
 	// dev_java
-	implementation 'io.github.afkt:DevJava:1.3.2'
+	implementation 'io.github.afkt:DevJava:1.3.5'
 	// dev_environment
 	implementation 'io.github.afkt:DevEnvironment:1.0.3'
 	// dev_environment_base
@@ -30,23 +30,23 @@ dependencies {
 	// core
 	implementation 'androidx.core:core-ktx:1.3.2'
 	// coroutines
-	implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.3'
+	implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.0'
 	// lifecycle_runtime
-	implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.3.0'
+	implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.3.1'
 	// lifecycle_viewmodel
-	implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.0'
+	implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1'
 	// lifecycle_livedata
-	implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.3.0'
+	implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.3.1'
 	// lifecycle_viewmodel_savedstate
-	implementation 'androidx.lifecycle:lifecycle-viewmodel-savedstate:2.3.0'
+	implementation 'androidx.lifecycle:lifecycle-viewmodel-savedstate:2.3.1'
 	// lifecycle_common_java8
-	implementation 'androidx.lifecycle:lifecycle-common-java8:2.3.0'
+	implementation 'androidx.lifecycle:lifecycle-common-java8:2.3.1'
 	// room_runtime
-	implementation 'androidx.room:room-runtime:2.2.6'
+	implementation 'androidx.room:room-runtime:2.3.0'
 	// room_compiler
-	implementation 'androidx.room:room-compiler:2.2.6'
+	implementation 'androidx.room:room-compiler:2.3.0'
 	// room_ktx
-	implementation 'androidx.room:room-ktx:2.2.6'
+	implementation 'androidx.room:room-ktx:2.3.0'
 	// work_runtime_ktx
 	implementation 'androidx.work:work-runtime-ktx:2.5.0'
 	// work_runtime
@@ -54,20 +54,20 @@ dependencies {
 	// datastore_preferences
 	implementation 'androidx.datastore:datastore-preferences:1.0.0-alpha06'
 	// fragment_ktx
-	implementation 'androidx.fragment:fragment-ktx:1.3.0'
+	implementation 'androidx.fragment:fragment-ktx:1.3.3'
 	// activity_ktx
-	implementation 'androidx.activity:activity-ktx:1.2.0'
+	implementation 'androidx.activity:activity-ktx:1.2.3'
 
 	// = androidx =
 
 	// appcompat
-	implementation 'androidx.appcompat:appcompat:1.2.0'
+	implementation 'androidx.appcompat:appcompat:1.3.0-rc01'
 	// appcompat_resources
-	implementation 'androidx.appcompat:appcompat-resources:1.2.0'
+	implementation 'androidx.appcompat:appcompat-resources:1.3.0-rc01'
 	// cardview
 	implementation 'androidx.cardview:cardview:1.0.0'
 	// recyclerview
-	implementation 'androidx.recyclerview:recyclerview:1.1.0'
+	implementation 'androidx.recyclerview:recyclerview:1.2.0'
 	// multidex
 	implementation 'androidx.multidex:multidex:2.0.1'
 	// constraint_layout
@@ -79,20 +79,20 @@ dependencies {
 	// design
 	implementation 'com.google.android.material:material:1.3.0'
 	// fragment
-	implementation 'androidx.fragment:fragment:1.3.0'
+	implementation 'androidx.fragment:fragment:1.3.3'
 	// flexbox
 	implementation 'com.google.android:flexbox:2.0.1'
 	// hilt_android
-	implementation 'com.google.dagger:hilt-android:2.28-alpha'
+	implementation 'com.google.dagger:hilt-android:2.36'
 	// hilt_android_compiler
-	implementation 'com.google.dagger:hilt-android-compiler:2.28-alpha'
+	implementation 'com.google.dagger:hilt-android-compiler:2.36'
 	// startup
 	implementation 'androidx.startup:startup-runtime:1.0.0'
 
 	// = lib =
 
 	// gson
-	implementation 'com.google.code.gson:gson:2.8.6'
+	implementation 'com.google.code.gson:gson:2.8.7'
 	// glide
 	implementation 'com.github.bumptech.glide:glide:4.12.0'
 	// glide_compiler
@@ -100,13 +100,13 @@ dependencies {
 	// glide_transformations
 	implementation 'jp.wasabeef:glide-transformations:4.3.0'
 	// live_eventbus
-	implementation 'com.jeremyliao:live-event-bus-x:1.7.3'
+	implementation 'io.github.jeremyliao:live-event-bus-x:1.8.0'
 	// okio
-	implementation 'com.squareup.okio:okio:2.9.0'
+	implementation 'com.squareup.okio:okio:2.10.0'
 	// okhttp3
-	implementation 'com.squareup.okhttp3:okhttp:4.9.0'
+	implementation 'com.squareup.okhttp3:okhttp:4.9.1'
 	// okhttp3_logging
-	implementation 'com.squareup.okhttp3:logging-interceptor:4.9.0'
+	implementation 'com.squareup.okhttp3:logging-interceptor:4.9.1'
 	// retrofit
 	implementation 'com.squareup.retrofit2:retrofit:2.9.0'
 	// retrofit_gson
@@ -114,47 +114,57 @@ dependencies {
 	// retrofit_rxjava3
 	implementation 'com.squareup.retrofit2:adapter-rxjava3:2.9.0'
 	// rxjava3
-	implementation 'io.reactivex.rxjava3:rxjava:3.0.7'
+	implementation 'io.reactivex.rxjava3:rxjava:3.0.13'
 	// rxandroid3
 	implementation 'io.reactivex.rxjava3:rxandroid:3.0.0'
+	// rxlifecycle
+	implementation 'com.trello.rxlifecycle4:rxlifecycle:4.0.2'
+	// rxlifecycle_kotlin
+	implementation 'com.trello.rxlifecycle4:rxlifecycle-kotlin:4.0.2'
+	// rxlifecycle_android_lifecycle_kotlin
+	implementation 'com.trello.rxlifecycle4:rxlifecycle-android-lifecycle-kotlin:4.0.2'
+	// auto_dispose
+	implementation 'com.uber.autodispose2:autodispose:2.0.0'
+	// auto_dispose_android
+	implementation 'com.uber.autodispose2:autodispose-android:2.0.0'
+	// auto_dispose_lifecycle
+	implementation 'com.uber.autodispose2:autodispose-androidx-lifecycle:2.0.0'
 	// fastjson
 	implementation 'com.alibaba:fastjson:1.2.73'
 	// fastjson_android
 	implementation 'com.alibaba:fastjson:1.1.72.android'
-	// anchors
-	implementation 'com.effective.android:anchors:1.1.3'
 	// panelSwitchHelper
 	implementation 'com.effective.android:panelSwitchHelper-androidx:1.3.13'
 	// pictureSelector
-	implementation 'com.github.LuckSiege.PictureSelector:picture_library:v2.6.0'
+	implementation 'io.github.lucksiege:pictureselector:v2.7.3-rc03'
 	// lottie
-	implementation 'com.airbnb.android:lottie:3.6.1'
+	implementation 'com.airbnb.android:lottie:3.7.0'
 	// aria_core
-	implementation 'com.arialyy.aria:core:3.8.15'
+	implementation 'com.arialyy.aria:core:3.8.12'
 	// aria_compiler
-	implementation 'com.arialyy.aria:compiler:3.8.15'
+	implementation 'com.arialyy.aria:compiler:3.8.12'
 	// aria_ftp
-	implementation 'com.arialyy.aria:ftpComponent:3.8.15'
+	implementation 'com.arialyy.aria:ftpComponent:3.8.12'
 	// aria_sftp
-	implementation 'com.arialyy.aria:sftpComponent:3.8.15'
+	implementation 'com.arialyy.aria:sftpComponent:3.8.12'
 	// aria_m3u8
-	implementation 'com.arialyy.aria:m3u8Component:3.8.15'
+	implementation 'com.arialyy.aria:m3u8Component:3.8.12'
 	// zxing_code
 	implementation 'com.google.zxing:core:3.4.1'
 	// zxing_android_code
 	implementation 'com.google.zxing:android-core:3.3.0'
 	// mmkv
-	implementation 'com.tencent:mmkv-static:1.2.7'
+	implementation 'com.tencent:mmkv-static:1.2.9'
 	// autosize
 	implementation 'me.jessyan:autosize:1.2.1'
 	// sqlcipher
-	implementation 'net.zetetic:android-database-sqlcipher:4.4.2'
+	implementation 'net.zetetic:android-database-sqlcipher:4.4.3'
 	// luban
 	implementation 'top.zibin:Luban:1.1.8'
 	// kluban
-	implementation 'com.github.forJrking:KLuban:1.0.5'
+	implementation 'com.github.forJrking:KLuban:1.1.0'
 	// xxPermissions
-	implementation 'com.hjq:xxpermissions:9.8'
+	implementation 'com.hjq:xxpermissions:11.5'
 	// progressmanager
 	implementation 'me.jessyan:progressmanager:1.5.0'
 	// arouter_api
@@ -164,24 +174,28 @@ dependencies {
 
 	// = property =
 
-	// xcrash
-	implementation 'com.iqiyi.xcrash:xcrash-android-lib:3.0.0'
-	// glance
-	implementation 'com.glance.guolindev:glance:1.0.0'
-	// leakcanary
-	implementation 'com.squareup.leakcanary:leakcanary-android:2.6'
-	// blockcanary_android
-	implementation 'com.github.markzhai:blockcanary-android:1.5.0'
-	// blockcanary_no_op
-	implementation 'com.github.markzhai:blockcanary-no-op:1.5.0'
+	// bugly
+	implementation 'com.tencent.bugly:crashreport:3.3.92'
+	// bugly_ndk
+	implementation 'com.tencent.bugly:nativecrashreport:3.9.0'
 	// uetool
 	implementation 'me.ele:uetool:1.2.9'
 	// uetool_no_op
 	implementation 'me.ele:uetool-no-op:1.2.9'
-	// bugly
-	implementation 'com.tencent.bugly:crashreport:3.3.7'
-	// bugly_ndk
-	implementation 'com.tencent.bugly:nativecrashreport:3.8.0'
+	// leakcanary
+	implementation 'com.squareup.leakcanary:leakcanary-android:2.7'
+	// blockcanary_android
+	implementation 'com.github.markzhai:blockcanary-android:1.5.0'
+	// blockcanary_no_op
+	implementation 'com.github.markzhai:blockcanary-no-op:1.5.0'
+	// xcrash
+	implementation 'com.iqiyi.xcrash:xcrash-android-lib:3.0.0'
+	// dokitx
+	implementation 'com.didichuxing.doraemonkit:dokitx:3.3.5'
+	// dokitx_no_op
+	implementation 'com.didichuxing.doraemonkit:dokitx-no-op:3.3.5'
+	// glance
+	implementation 'com.glance.guolindev:glance:1.0.0'
 	// networkCaptureSelf
 	implementation 'com.github.DingProg.NetworkCaptureSelf:library:v1.0.1'
 	// networkCaptureSelf_op
@@ -201,25 +215,25 @@ dependencies {
 	// photoview
 	implementation 'com.github.chrisbanes:PhotoView:2.3.0'
 	// banner
-	implementation 'com.youth.banner:banner:2.1.0'
+	implementation 'io.github.youth5201314:banner:2.2.2'
 	// stickyDecoration
 	implementation 'com.gavin.com.library:stickyDecoration:1.5.3'
 	// smartrefreshlayout
-	implementation 'com.scwang.smart:refresh-layout-kernel:2.0.1'
+	implementation 'com.scwang.smart:refresh-layout-kernel:2.0.3'
 	// smartrefresh_header_classics
-	implementation 'com.scwang.smart:refresh-header-classics:2.0.1'
+	implementation 'com.scwang.smart:refresh-header-classics:2.0.3'
 	// smartrefresh_header_radar
-	implementation 'com.scwang.smart:refresh-header-radar:2.0.1'
+	implementation 'com.scwang.smart:refresh-header-radar:2.0.3'
 	// smartrefresh_header_falsify
-	implementation 'com.scwang.smart:refresh-header-falsify:2.0.1'
+	implementation 'com.scwang.smart:refresh-header-falsify:2.0.3'
 	// smartrefresh_header_material
-	implementation 'com.scwang.smart:refresh-header-material:2.0.1'
+	implementation 'com.scwang.smart:refresh-header-material:2.0.3'
 	// smartrefresh_header_two_level
-	implementation 'com.scwang.smart:refresh-header-two-level:2.0.1'
+	implementation 'com.scwang.smart:refresh-header-two-level:2.0.3'
 	// smartrefresh_footer_ball
-	implementation 'com.scwang.smart:refresh-footer-ball:2.0.1'
+	implementation 'com.scwang.smart:refresh-footer-ball:2.0.3'
 	// smartrefresh_footer_classics
-	implementation 'com.scwang.smart:refresh-footer-classics:2.0.1'
+	implementation 'com.scwang.smart:refresh-footer-classics:2.0.3'
 	// smartrefreshHorizontal
 	implementation 'com.scwang.smart:refresh-layout-horizontal:2.0.0'
 	// baserecyclerviewadapterhelper
