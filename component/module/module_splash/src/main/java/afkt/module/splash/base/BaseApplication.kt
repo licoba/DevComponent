@@ -8,9 +8,9 @@ import dev.core.app.AppContext
  */
 class BaseApplication : AppContext() {
 
-    // ===========
+    // ==========
     // = 重写方法 =
-    // ===========
+    // ==========
 
     override fun onCreate() {
         super.onCreate()

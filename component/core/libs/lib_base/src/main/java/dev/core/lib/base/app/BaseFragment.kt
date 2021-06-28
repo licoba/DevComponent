@@ -55,9 +55,9 @@ open abstract class BaseFragment<VDB : ViewDataBinding, VM : ViewModel> : DevBas
         initOrder()
     }
 
-    // ===========
+    // ==========
     // = 接口方法 =
-    // ===========
+    // ==========
 
     override fun baseLayoutView(): View? = null
 
@@ -67,9 +67,9 @@ open abstract class BaseFragment<VDB : ViewDataBinding, VM : ViewModel> : DevBas
 
     override fun isStatusBarFrame(): Boolean = false
 
-    // ===========
+    // ==========
     // = 内部操作 =
-    // ===========
+    // ==========
 
     // StatusBar View
     lateinit var statusBar: View

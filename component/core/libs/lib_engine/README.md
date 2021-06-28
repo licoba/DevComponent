@@ -11,9 +11,9 @@ dependencies {
     // 核心基础依赖库 ( 编译但不参与打包 )
     compileOnly project(':core_base_lib')
 
-    // ======================
+    // ====================
     // = libs - 第三方库依赖 =
-    // ======================
+    // ====================
 
     // Glide 加载框架 https://github.com/bumptech/glide
     api deps.lib.glide

@@ -25,9 +25,9 @@ dependencies {
     // 核心基础依赖库
     api project(':core_base_lib')
 
-    // ====================
+    // ===================
     // = core - 核心开发库 =
-    // ====================
+    // ===================
 
     // 基础 ( 基类等 ) lib
     api project(':core_lib_base')
@@ -44,9 +44,9 @@ dependencies {
     // 通用工具库
     api project(':core_lib_utils')
 
-    // ===============
+    // =============
     // = 第三方库依赖 =
-    // ===============
+    // =============
 
     // 瓦力多渠道打包 https://github.com/Meituan-Dianping/walle
     api deps.build_apk.walle
@@ -59,9 +59,9 @@ dependencies {
     api deps.lib.arouter_api // https://github.com/alibaba/ARouter/blob/master/README_CN.md
     kapt deps.lib.arouter_compiler
 
-    // ======================
+    // ====================
     // = 性能检测、排查相关库 =
-    // ======================
+    // ====================
 
     // xCrash Android 应用崩溃捕获工具 https://github.com/iqiyi/xCrash/blob/master/README.zh-CN.md
     api deps.property.xcrash

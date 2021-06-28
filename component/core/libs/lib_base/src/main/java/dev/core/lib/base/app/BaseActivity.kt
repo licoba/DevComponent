@@ -55,15 +55,15 @@ open abstract class BaseActivity<VDB : ViewDataBinding, VM : ViewModel> : DevBas
         initOrder()
     }
 
-    // ===========
+    // ==========
     // = 接口方法 =
-    // ===========
+    // ==========
 
     override fun baseLayoutView(): View? = null
 
-    // ===========
+    // ==========
     // = 内部操作 =
-    // ===========
+    // ==========
 
     // StatusBar View
     lateinit var statusBar: View

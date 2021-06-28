@@ -76,9 +76,9 @@ class WifiReceiver private constructor() : BroadcastReceiver() {
         fun onWifiSwitch(isOpenWifi: Boolean)
     }
 
-    // ===============
+    // =============
     // = 对外公开方法 =
-    // ===============
+    // =============
 
     companion object {
 
@@ -121,9 +121,9 @@ class WifiReceiver private constructor() : BroadcastReceiver() {
             sListener = listener
         }
 
-        // ========
+        // =======
         // = 常量 =
-        // ========
+        // =======
 
         private const val BASE = 302030
 
@@ -170,9 +170,9 @@ class WifiReceiver private constructor() : BroadcastReceiver() {
         const val UNKNOWN = BASE + 14
     }
 
-    // ===========
+    // ==========
     // = 内部方法 =
-    // ===========
+    // ==========
 
     /**
      * 收到广播时处理

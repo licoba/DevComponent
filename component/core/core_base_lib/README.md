@@ -8,9 +8,9 @@
 ```groovy
 dependencies {
 
-    // =================
+    // ================
     // = Dev 系列开发库 =
-    // =================
+    // ================
 
     // https://github.com/afkT/DevUtils
 
@@ -64,9 +64,9 @@ dependencies {
     kapt deps.androidx.hilt_android_compiler
     api deps.androidx.startup
 
-    // ===============
+    // =============
     // = 第三方开发库 =
-    // ===============
+    // =============
 
     // RxJava3 https://github.com/ReactiveX/RxJava/tree/3.x
     api deps.lib.rxjava3

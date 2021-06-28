@@ -22,9 +22,9 @@ object CommodityRouter {
     // 购物车 Fragment
     const val PATH_SHOP_CART_FRAGMENT = "/commodity/shop/cart/fragment"
 
-    // ===========
+    // ==========
     // = 快捷方法 =
-    // ===========
+    // ==========
 
     /**
      * 内部传入 [GROUP] 尽量各个模块直接通过对应 [build] 方法跳转

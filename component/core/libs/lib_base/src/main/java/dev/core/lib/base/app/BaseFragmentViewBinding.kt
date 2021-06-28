@@ -61,9 +61,9 @@ open abstract class BaseFragmentViewBinding<VB : ViewBinding> : DevBaseContentVi
         initOrder()
     }
 
-    // ===========
+    // ==========
     // = 接口方法 =
-    // ===========
+    // ==========
 
     override fun baseLayoutView(): View? = null
 
@@ -73,9 +73,9 @@ open abstract class BaseFragmentViewBinding<VB : ViewBinding> : DevBaseContentVi
 
     override fun isStatusBarFrame(): Boolean = false
 
-    // ===========
+    // ==========
     // = 内部操作 =
-    // ===========
+    // ==========
 
     // StatusBar View
     lateinit var statusBar: View
@@ -114,9 +114,9 @@ open abstract class BaseFragmentViewBinding<VB : ViewBinding> : DevBaseContentVi
     override fun initViewModel() {
     }
 
-    // =============
+    // ============
     // = 内部初始化 =
-    // =============
+    // ============
 
     private fun priInitialize() {
         ARouter.getInstance().inject(this)

@@ -61,9 +61,9 @@ class ShopCartAdapter() :
             ProjectUtils.getRoundConfig3()
         )
 
-        // ===========
+        // ==========
         // = 多选处理 =
-        // ===========
+        // ==========
 
         val key = getMultiSelectKey(item, position)
         val selectIGView = holder.binding.vidCascIgview
@@ -94,9 +94,9 @@ class ShopCartAdapter() :
         return position.toString()
     }
 
-    // ===============
+    // =============
     // = 操作监听事件 =
-    // ===============
+    // =============
 
     // 选择事件通知事件
     var selectListener: OnSelectListener? = null

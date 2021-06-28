@@ -20,9 +20,9 @@ object SplashRouter {
     // 模块入口
     const val PATH_LAUNCHER = "/${GROUP}/launcher"
 
-    // ===========
+    // ==========
     // = 快捷方法 =
-    // ===========
+    // ==========
 
     /**
      * 内部传入 [GROUP] 尽量各个模块直接通过对应 [build] 方法跳转

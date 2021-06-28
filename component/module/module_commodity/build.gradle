@@ -2,9 +2,9 @@ apply from: rootProject.file(files.build_module_gradle)
 
 dependencies {
 
-    // ======================
+    // ====================
     // = libs - 模块封装复用 =
-    // ======================
+    // ====================
 
     // 依赖 lib_commodity
     api project(':lib_commodity')
