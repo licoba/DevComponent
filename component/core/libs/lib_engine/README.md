@@ -60,6 +60,7 @@ dependencies {
                - compress        
                - image           
                - json            
+               - keyvalue        
                - log             
                - media           
                - permission      

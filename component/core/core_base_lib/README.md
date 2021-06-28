@@ -72,6 +72,14 @@ dependencies {
     api deps.lib.rxjava3
     // RxAndroid3 https://github.com/ReactiveX/RxAndroid/tree/3.x
     api deps.lib.rxandroid3
+    // RxLifecycle https://github.com/trello/RxLifecycle
+    api deps.lib.rxlifecycle
+    api deps.lib.rxlifecycle_kotlin
+    api deps.lib.rxlifecycle_android_lifecycle_kotlin
+    // AutoDispose 自动绑定解绑 https://github.com/uber/AutoDispose
+    api deps.lib.auto_dispose
+    api deps.lib.auto_dispose_android
+    api deps.lib.auto_dispose_lifecycle
     // LiveEventBus 消息总线 https://github.com/JeremyLiao/LiveEventBus
     api deps.lib.live_eventbus
     // 基于 mmap 的高性能通用 key-value 组件 https://github.com/Tencent/MMKV/blob/master/readme_cn.md
