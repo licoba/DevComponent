@@ -36,10 +36,30 @@ Unused assignment
 
 
 
+Unused Declaration java
+
+
+
 lambda alternative
 
 
 
 anonymous type can be replaced with lambda
+
+
+
+=========
+= Regex =
+=========
+
+
+
+Dev[\w]+Engine\.(get|set)Engine\(
+
+
+
+android\:id\=\"\@\+id\/[^v]
+
+
 
 

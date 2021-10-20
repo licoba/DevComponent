@@ -56,14 +56,4 @@ dependencies {
       - core                     
          - lib                   
             - engine             
-               - cache           
-               - compress        
-               - image           
-               - json            
-               - keyvalue        
-               - log             
-               - media           
-               - permission      
-               - storage         
-            - utils              
 ```

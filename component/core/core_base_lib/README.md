@@ -26,6 +26,9 @@ dependencies {
     // DevBaseMVVM MVVM ( ViewDataBinding + ViewModel ) 基类库
     api deps.dev.dev_base_mvvm
 
+    // DevEngine 第三方框架解耦、一键替换第三方库
+    api deps.dev.dev_engine
+
     // DevWidget 自定义 View UI 库
     api deps.dev.dev_widget_x
 
