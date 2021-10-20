@@ -1,7 +1,7 @@
 package dev.core.lib.utils
 
 import dev.base.DevVariable
-import dev.core.lib.engine.image.ImageConfig
+import dev.engine.image.ImageConfig
 import dev.utils.app.SizeUtils
 
 object ProjectUtils {

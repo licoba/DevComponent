@@ -14,7 +14,7 @@ import dev.core.lib.bean.commodity.CommodityBean
 import dev.core.lib.utils.ProjectUtils
 import dev.engine.image.DevImageEngine
 import dev.utils.app.ViewUtils
-import dev.utils.app.helper.ViewHelper
+import dev.utils.app.helper.view.ViewHelper
 import dev.utils.common.BigDecimalUtils
 import java.math.BigDecimal
 
@@ -27,7 +27,7 @@ class ShopCartAdapter() :
 
     init {
         setMultiSelectMap(DevMultiSelectMap())
-            .setPage(DevPage<Int>(1, 10))
+            .setPage(DevPage(1, 10))
     }
 
     override fun onCreateViewHolder(
@@ -46,13 +46,14 @@ class ShopCartAdapter() :
         // 商品信息
         ViewHelper.get()
             .setText(
-                holder.binding.vidCascNameTv,
-                appendLabel(item.commodityName, item.type).create()
+                appendLabel(item.commodityName, item.type).create(),
+                holder.binding.vidCascNameTv
             )
             .setText(
-                holder.binding.vidCascPriceTv, "￥" + BigDecimalUtils.round(
+                "￥" + BigDecimalUtils.round(
                     item.price, 2, BigDecimal.ROUND_HALF_UP
-                )
+                ),
+                holder.binding.vidCascPriceTv
             )
         // 商品图片
         DevImageEngine.getEngine().display(
@@ -68,9 +69,9 @@ class ShopCartAdapter() :
         val key = getMultiSelectKey(item, position)
         val selectIGView = holder.binding.vidCascIgview
         // 是否显示编辑按钮、以及是否选中
-        ViewHelper.get().setVisibility(isEditState, selectIGView)
+        ViewHelper.get().setVisibilitys(isEditState, selectIGView)
             .setSelected(mMultiSelectMap.isSelectKey(key), selectIGView)
-            .setOnClicks(View.OnClickListener {
+            .setOnClick(View.OnClickListener {
                 if (!isEditState) return@OnClickListener
                 // 反选处理
                 mMultiSelectMap.toggle(key, item)

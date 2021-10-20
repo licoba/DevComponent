@@ -5,20 +5,8 @@ import android.util.Log
 import dev.DevUtils
 import dev.core.app.AppDebug
 import dev.core.lib.config.AppConst
-import dev.core.lib.engine.compress.LubanEngineImpl
-import dev.core.lib.engine.image.GlideEngineImpl
-import dev.core.lib.engine.json.GsonEngineImpl
-import dev.core.lib.engine.log.DevLoggerEngineImpl
-import dev.core.lib.engine.media.PictureSelectorEngineImpl
-import dev.core.lib.engine.permission.DevPermissionEngineImpl
-import dev.engine.compress.DevCompressEngine
-import dev.engine.image.DevImageEngine
-import dev.engine.json.DevJSONEngine
-import dev.engine.log.DevLogEngine
-import dev.engine.media.DevMediaEngine
-import dev.engine.permission.DevPermissionEngine
+import dev.engine.DevEngine
 import dev.utils.LogPrintUtils
-import dev.utils.app.DeviceUtils
 import dev.utils.app.logger.DevLogger
 import dev.utils.app.logger.LogConfig
 import dev.utils.app.logger.LogLevel
@@ -49,7 +37,7 @@ class CoreModule private constructor() : BaseModule(CoreModule::class.java.simpl
         if (AppDebug.isOpenLog()) DevUtils.openLog()
 
         // DevAssist Engine 初始化
-        initializeEngine()
+        initializeEngine(context)
         // Dev 系列工具类初始化
         initializeDevUtils()
     }
@@ -61,15 +49,10 @@ class CoreModule private constructor() : BaseModule(CoreModule::class.java.simpl
     /**
      * DevAssist Engine 初始化
      */
-    private fun initializeEngine() {
-        DevImageEngine.setEngine(GlideEngineImpl())
-        DevJSONEngine.setEngine(GsonEngineImpl())
-        DevPermissionEngine.setEngine(DevPermissionEngineImpl())
-        DevMediaEngine.setEngine(PictureSelectorEngineImpl())
-        DevCompressEngine.setEngine(LubanEngineImpl())
-        DevLogEngine.setEngine(object : DevLoggerEngineImpl() {
-            override fun isPrintLog(): Boolean = AppDebug.isOpenDebug()
-        })
+    private fun initializeEngine(context: Context) {
+        // 使用内部默认实现 Engine ( 使用 MMKV 必须调用 defaultMMKVInitialize() )
+        DevEngine.defaultMMKVInitialize(context.applicationContext)
+            .defaultEngine(DevEngine.getMMKVConfig())
     }
 
     /**
@@ -95,7 +78,7 @@ class CoreModule private constructor() : BaseModule(CoreModule::class.java.simpl
                 }
             })
             // 初始化 Logger 配置
-            DevLogger.init(LogConfig().apply {
+            DevLogger.initialize(LogConfig().apply {
                 logLevel = LogLevel.DEBUG // 日志级别
                 tag = AppConst.LOG_TAG
                 methodCount = 0 // 堆栈方法总数 ( 显示经过的方法 )
@@ -103,7 +86,7 @@ class CoreModule private constructor() : BaseModule(CoreModule::class.java.simpl
             })
         } else {
             // 初始化 Logger 配置
-            DevLogger.init(LogConfig().apply {
+            DevLogger.initialize(LogConfig().apply {
                 logLevel = LogLevel.ERROR // 只打印 Error 级别日志
                 tag = AppConst.LOG_TAG
             })

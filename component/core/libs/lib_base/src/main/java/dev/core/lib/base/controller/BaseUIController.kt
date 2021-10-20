@@ -2,7 +2,7 @@ package dev.core.lib.base.controller
 
 import dev.base.utils.assist.DevBaseContentAssist
 import dev.utils.app.ViewUtils
-import dev.utils.app.helper.QuickHelper
+import dev.utils.app.helper.quick.QuickHelper
 
 /**
  * detail: 基础 UI 控制封装

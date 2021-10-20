@@ -21,7 +21,7 @@ import dev.core.router.commodity.CommodityRouter
 import dev.utils.DevFinal
 import dev.utils.app.ResourceUtils
 import dev.utils.app.ViewUtils
-import dev.utils.app.helper.QuickHelper
+import dev.utils.app.helper.quick.QuickHelper
 import dev.utils.app.toast.ToastTintUtils
 import dev.utils.common.ChineseUtils
 import dev.utils.common.RandomUtils
@@ -204,13 +204,13 @@ class ShopCartFragment : BaseFragmentViewBinding<CommodityFragmentShopCartBindin
     ): BaseTextView? {
         return context?.let {
             QuickHelper.get(BaseTextView(it))
-                .setVisibility(false) // 默认隐藏
+                .setVisibilitys(false) // 默认隐藏
                 .setText(text)
                 .setBold()
-                .setTextColor(ResourceUtils.getColor(R.color.white))
+                .setTextColors(ResourceUtils.getColor(R.color.white))
                 .setTextSizeBySp(13.0f)
                 .setPadding(ResourceUtils.getDimensionInt(R.dimen.un_dp_10))
-                .setOnClicks(onClickListener)
+                .setOnClick(onClickListener)
                 .getView()
         }
     }
