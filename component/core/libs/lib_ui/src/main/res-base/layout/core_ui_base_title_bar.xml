@@ -38,9 +38,9 @@
         <dev.core.lib.ui.widget.BaseTextView
             android:id="@+id/vid_cubtb_title_tv"
             android:layout_width="match_parent"
-            android:includeFontPadding="false"
             android:layout_height="match_parent"
             android:gravity="center"
+            android:includeFontPadding="false"
             android:textColor="@color/black"
             android:textSize="@dimen/un_sp_20"
             tools:text="Title" />
