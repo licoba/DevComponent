@@ -49,9 +49,6 @@ dependencies {
     // = 性能检测、排查相关库 =
     // ====================
 
-    // xCrash Android 应用崩溃捕获工具 https://github.com/iqiyi/xCrash/blob/master/README.zh-CN.md
-    api deps.property.xcrash
-
     // 是否编译调试工具
     if (showDebugTools) {
         // 内存检测工具 https://github.com/square/leakcanary

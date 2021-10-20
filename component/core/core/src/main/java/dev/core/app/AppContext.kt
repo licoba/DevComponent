@@ -31,8 +31,6 @@ open class AppContext : BaseAppContext() {
 
         // Bugly
         Bugly.init(this)
-        // xCrash 提供捕获 java 崩溃、native 崩溃和 ANR 的能力, 不需要 root 权限或任何系统权限
-        xcrash.XCrash.init(this)
         // BlockCanary
         BlockCanaryKT.init(this)
         // 初始化 WebView 辅助类全局配置

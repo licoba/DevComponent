@@ -23,12 +23,6 @@ dependencies {
     api deps.lib.retrofit_gson
     // Retrofit RxJava3 Adapter  https://github.com/square/retrofit/tree/master/retrofit-adapters/rxjava3
     api deps.lib.retrofit_rxjava3
-    // Aria 下载可以很简单 https://github.com/AriaLyy/Aria
-    api deps.lib.aria_core
-    kapt deps.lib.aria_compiler
-    api deps.lib.aria_ftp // 如果需要使用 ftp, 请增加该组件
-    api deps.lib.aria_sftp // 如果需要使用 ftp, 请增加该组件
-    api deps.lib.aria_m3u8 // 如果需要使用 m3u8 下载功能, 请增加该组件
 
 //    // android:authorities="com.ding.library" => INSTALL_FAILED_CONFLICTING_PROVIDER
 //    // OkHttp 拦截器抓包 https://github.com/DingProg/NetworkCaptureSelf
