@@ -24,6 +24,10 @@
 
 ### 功能
 
+####
+
+* [AAR、Lib 合并 fat-aar-android](https://github.com/kezong/fat-aar-android/blob/master/README_CN.md)
+
 #### 插件化、热修复
 
 * [360 RePlugin](https://github.com/Qihoo360/RePlugin/blob/master/README_CN.md)

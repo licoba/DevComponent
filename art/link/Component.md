@@ -22,11 +22,13 @@
 
 * [Android 组件化方案](https://blog.csdn.net/guiying712/article/details/55213884)
 
-* [使用阿里ARouter路由实现组件化（模块化）开发流程](https://blog.csdn.net/huangxiaoguo1/article/details/78753555)
+* [使用阿里 ARouter 路由实现组件化（模块化）开发流程](https://blog.csdn.net/huangxiaoguo1/article/details/78753555)
 
 * [Android 组件化之终极方案](https://www.cnblogs.com/cr330326/p/9785894.html)
 
 * [Component 组件化框架](https://github.com/xiaojinzi123/Component)
+  
+* [MVVM + 组件化 + ARouter 实现](https://mp.weixin.qq.com/s/l-wU8jQ-veide8oliqjS_g)
 
 ### 其他
 

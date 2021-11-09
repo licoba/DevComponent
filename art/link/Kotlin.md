@@ -44,4 +44,6 @@
 
 * [Kotlin 下的 5 种单例模式](https://www.jianshu.com/p/5797b3d0ebd0)
 
-* [Kotlin（二） 高级函数（函数作为形参，函数作为参数）](https://blog.csdn.net/lckj686/article/details/80588897)
+* [Kotlin（二） 高级函数（函数作为形参、函数作为参数）](https://blog.csdn.net/lckj686/article/details/80588897)
+  
+* [Kotlin 可见性修饰符 public、private、protected、internal](https://blog.csdn.net/sinat_21693123/article/details/80841720)
