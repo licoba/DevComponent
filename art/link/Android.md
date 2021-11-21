@@ -45,6 +45,8 @@
 * [Android 主题切换（Theme）实现日夜间功能](https://www.jianshu.com/p/0cd03c878def)
 
 * [Android 主题换肤 无缝切换](https://www.jianshu.com/p/af7c0585dd5b)
+  
+* [Android 官方深色模式在项目中应用](https://mp.weixin.qq.com/s/aPXMO9f3FRwE8hapzkP5pA)
 
 #### Hook
 
