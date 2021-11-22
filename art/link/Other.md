@@ -6,7 +6,7 @@
 
 * [IntelliJ IDEA 代码检查规范 QAPlug](https://blog.csdn.net/jizi7618937/article/details/51500725)
 
-* [编码 5 分钟, 命名 2 小时? 史上最全的 Java 命名规范参考!](https://mp.weixin.qq.com/s?__biz=MzIxNjA5MTM2MA==&mid=2652436955&idx=1&sn=eaa2cb9d3e3730f6a7566028e8667cb2)
+* [编码 5 分钟, 命名 2 小时? 史上最全的 Java 命名规范参考!](https://blog.csdn.net/lisheng19870305/article/details/103462810)
 
 * [Cz 工具集使用介绍 - 规范 Git 提交说明 ( ChangeLog )](https://blog.csdn.net/weixin_33890526/article/details/91393527)
 
