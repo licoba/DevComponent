@@ -18,7 +18,7 @@ ping www.bintray.com
 
 
 
-adb logcat > D:/1.txt
+adb logcat > D:/logcat.txt
 
 
 
@@ -61,5 +61,15 @@ Dev[\w]+Engine\.(get|set)Engine\(
 android\:id\=\"\@\+id\/[^v]
 
 
+
+\/\/[ ]+\/\*
+
+
+
+\/\/[ ]{5,10000}
+
+
+
+[abcdefg]:/
 
 
