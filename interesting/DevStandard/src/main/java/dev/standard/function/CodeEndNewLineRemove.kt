@@ -21,7 +21,7 @@ object CodeEndNewLineRemove {
     private const val SYMBOL = "" // }
 
     // 检查 Key
-    private val END_KEY = SYMBOL + StringUtils.NEW_LINE_STR
+    private val END_KEY = SYMBOL + DevFinal.SYMBOL.NEW_LINE
 
     // 追加内容
     private const val APPEND = SYMBOL
@@ -52,7 +52,7 @@ object CodeEndNewLineRemove {
                     try {
                         data = String(
                             FileUtils.readFileBytes(file),
-                            charset(DevFinal.UTF_8)
+                            charset(DevFinal.ENCODE.UTF_8)
                         )
                     } catch (e: UnsupportedEncodingException) {
                         e.printStackTrace()
@@ -65,7 +65,7 @@ object CodeEndNewLineRemove {
                                 // 替换内容
                                 FileUtils.saveFile(
                                     file.absolutePath,
-                                    subData.toByteArray(charset(DevFinal.UTF_8))
+                                    subData.toByteArray(charset(DevFinal.ENCODE.UTF_8))
                                 )
                             } catch (e: UnsupportedEncodingException) {
                                 e.printStackTrace()
@@ -86,7 +86,7 @@ object CodeEndNewLineRemove {
                         println(path)
                     }
                     try {
-                        println(String("搜索结束".toByteArray(charset(DevFinal.UTF_8))))
+                        println(String("搜索结束".toByteArray(charset(DevFinal.ENCODE.UTF_8))))
                     } catch (e: UnsupportedEncodingException) {
                         e.printStackTrace()
                     }

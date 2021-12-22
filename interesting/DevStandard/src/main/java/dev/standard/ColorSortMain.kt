@@ -83,18 +83,18 @@ object ColorSortMain {
         fun createXML(lists: List<ColorInfo>): String {
             val builder = StringBuilder()
             builder.append("<?xml version=\"1.0\" encoding=\"utf-8\"?>")
-            builder.append(DevFinal.NEW_LINE_STR)
+            builder.append(DevFinal.SYMBOL.NEW_LINE)
             builder.append("<resources>")
             // 解析数据
             for (colorInfo in lists) {
                 builder.append(
                     String.format(
-                        XML_CONTENT, DevFinal.NEW_LINE_STR,
+                        XML_CONTENT, DevFinal.SYMBOL.NEW_LINE,
                         colorInfo.key, colorInfo.value
                     )
                 )
             }
-            builder.append(DevFinal.NEW_LINE_STR)
+            builder.append(DevFinal.SYMBOL.NEW_LINE)
             builder.append("</resources>")
             return builder.toString()
         }

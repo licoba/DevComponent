@@ -21,7 +21,7 @@ object CodeXmlEncoding {
     private const val STARTS_WITH = "<?xml version=\"1.0\" encoding=\"utf-8\"?>"
 
     // 追加内容
-    private val APPEND = STARTS_WITH + StringUtils.NEW_LINE_STR
+    private val APPEND = STARTS_WITH + DevFinal.SYMBOL.NEW_LINE
 
     // 文件后缀
     private val SUFFIX = arrayOf("xml")
@@ -46,7 +46,7 @@ object CodeXmlEncoding {
                     try {
                         data = String(
                             FileUtils.readFileBytes(file),
-                            charset(DevFinal.UTF_8)
+                            charset(DevFinal.ENCODE.UTF_8)
                         )
                     } catch (e: UnsupportedEncodingException) {
                         e.printStackTrace()
@@ -59,7 +59,7 @@ object CodeXmlEncoding {
                                 // 替换内容
                                 FileUtils.saveFile(
                                     file.absolutePath,
-                                    appendData.toByteArray(charset(DevFinal.UTF_8))
+                                    appendData.toByteArray(charset(DevFinal.ENCODE.UTF_8))
                                 )
                             } catch (e: UnsupportedEncodingException) {
                                 e.printStackTrace()
@@ -80,7 +80,7 @@ object CodeXmlEncoding {
                         println(path)
                     }
                     try {
-                        println(String("搜索结束".toByteArray(charset(DevFinal.UTF_8))))
+                        println(String("搜索结束".toByteArray(charset(DevFinal.ENCODE.UTF_8))))
                     } catch (e: UnsupportedEncodingException) {
                         e.printStackTrace()
                     }

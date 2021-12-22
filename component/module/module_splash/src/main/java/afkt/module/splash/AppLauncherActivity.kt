@@ -36,23 +36,23 @@ class AppLauncherActivity : BaseActivityViewBinding<ViewBinding>() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        var value = if (BuildConfig.isModular) "【模块化运行】" else "【整合运行】"
+        val value = if (BuildConfig.isModular) "【模块化运行】" else "【整合运行】"
 
         ToastTintUtils.normal("延迟进入【首页容器页】")
 
         // 调用其他模块数据
-        var isLogin: Boolean = UserRouter.userProvider()?.isLogin() == true
+        val isLogin: Boolean = UserRouter.userProvider()?.isLogin() == true
         DevLogEngine.getEngine().d("是否登录了 ${isLogin}")
         DevLogEngine.getEngine().d("是否存在 UserProvider ${UserRouter.userProvider()}")
 
         GlobalScope.launch {
             delay(2000L)
             // 直接通过 postcard.navigation() 跳转会显示 AppTheme.Launcher style windowBackground
-            var postcard = SplashRouter.buildAppMain()
-                .withObject(DevFinal.DATA, AfkT(value))
+            val postcard = SplashRouter.buildAppMain()
+                .withObject(DevFinal.STR.DATA, AfkT(value))
             try {
                 LogisticsCenter.completion(postcard)
-                var intent = Intent(mActivity, postcard.destination)
+                val intent = Intent(mActivity, postcard.destination)
                 intent.putExtras(postcard.extras)
                 startActivity(intent)
             } catch (e: Exception) {
@@ -61,11 +61,11 @@ class AppLauncherActivity : BaseActivityViewBinding<ViewBinding>() {
         }
     }
 
-    override fun baseLayoutView(): View? {
-        var igview = ImageView(this)
-        igview.setBackgroundResource(R.drawable.launcher_gradient_bg)
-        igview.scaleType = ImageView.ScaleType.FIT_XY
-        return igview
+    override fun baseLayoutView(): View {
+        val igView = ImageView(this)
+        igView.setBackgroundResource(R.drawable.launcher_gradient_bg)
+        igView.scaleType = ImageView.ScaleType.FIT_XY
+        return igView
     }
 
     override fun onBackPressed() {

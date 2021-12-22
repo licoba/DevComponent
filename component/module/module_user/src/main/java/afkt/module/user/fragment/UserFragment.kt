@@ -22,7 +22,7 @@ import dev.utils.DevFinal
 class UserFragment : BaseFragmentViewBinding<UserFragmentBinding>() {
 
     @JvmField
-    @Autowired(name = DevFinal.DATA)
+    @Autowired(name = DevFinal.STR.DATA)
     var afkt: AfkT? = null
 
     override fun baseLayoutId(): Int = R.layout.user_fragment

@@ -31,7 +31,7 @@ import kotlinx.coroutines.*
 class ShopCartFragment : BaseFragmentViewBinding<CommodityFragmentShopCartBinding>() {
 
     @JvmField
-    @Autowired(name = DevFinal.DATA)
+    @Autowired(name = DevFinal.STR.DATA)
     var afkt: AfkT? = null
 
     // 购物车 Adapter

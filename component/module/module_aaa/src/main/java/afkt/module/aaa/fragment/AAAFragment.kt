@@ -15,7 +15,7 @@ import dev.utils.DevFinal
 class AAAFragment : BaseFragmentViewBinding<AaaFragmentBinding>() {
 
     @JvmField
-    @Autowired(name = DevFinal.DATA)
+    @Autowired(name = DevFinal.STR.DATA)
     var afkt: AfkT? = null
 
     override fun baseLayoutId(): Int = R.layout.aaa_fragment

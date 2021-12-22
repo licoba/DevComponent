@@ -21,17 +21,17 @@ class MainAdapter(
             0 -> {
                 AAARouter.build(
                     AAARouter.PATH_AAA_FRAGMENT
-                ).withObject(DevFinal.DATA, afkt).navigation() as Fragment
+                ).withObject(DevFinal.STR.DATA, afkt).navigation() as Fragment
             }
             1 -> {
                 CommodityRouter.build(
                     CommodityRouter.PATH_SHOP_CART_FRAGMENT
-                ).withObject(DevFinal.DATA, afkt).navigation() as Fragment
+                ).withObject(DevFinal.STR.DATA, afkt).navigation() as Fragment
             }
             else -> {
                 UserRouter.build(
                     UserRouter.PATH_USER_FRAGMENT
-                ).withObject(DevFinal.DATA, afkt).navigation() as Fragment
+                ).withObject(DevFinal.STR.DATA, afkt).navigation() as Fragment
             }
         }
     }

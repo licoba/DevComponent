@@ -41,7 +41,7 @@ class AppLauncherActivity : BaseActivityViewBinding<ViewBinding>() {
         GlobalScope.launch {
             delay(2000L)
             UserRouter.build(UserRouter.PATH_MAIN)
-                .withObject(DevFinal.DATA, AfkT("【模块化运行】"))
+                .withObject(DevFinal.STR.DATA, AfkT("【模块化运行】"))
                 .navigation()
             finish()
         }

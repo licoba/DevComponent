@@ -19,7 +19,7 @@ import dev.utils.app.toast.ToastTintUtils
 class MainContainerActivity : BaseActivityViewBinding<MainActivityBinding>() {
 
     @JvmField
-    @Autowired(name = DevFinal.DATA)
+    @Autowired(name = DevFinal.STR.DATA)
     var afkt: AfkT? = null
 
     override fun baseLayoutId(): Int = R.layout.main_activity
@@ -39,7 +39,7 @@ class MainContainerActivity : BaseActivityViewBinding<MainActivityBinding>() {
     }
 
     override fun onBackPressed() {
-        if (!ClickUtils.isFastDoubleClick(DevFinal.TAG, 1500L)) {
+        if (!ClickUtils.isFastDoubleClick(DevFinal.STR.TAG, 1500L)) {
             ToastTintUtils.info("再按一次，退出应用")
             return
         }

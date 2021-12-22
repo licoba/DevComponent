@@ -41,17 +41,17 @@ class AppLauncherActivity : BaseActivityViewBinding<ViewBinding>() {
         GlobalScope.launch {
             delay(2000L)
             AAARouter.build(AAARouter.PATH_MAIN)
-                .withObject(DevFinal.DATA, AfkT("【模块化运行】"))
+                .withObject(DevFinal.STR.DATA, AfkT("【模块化运行】"))
                 .navigation()
             finish()
         }
     }
 
-    override fun baseLayoutView(): View? {
-        var igview = ImageView(this)
-        igview.setBackgroundResource(R.drawable.launcher_gradient_bg)
-        igview.scaleType = ImageView.ScaleType.FIT_XY
-        return igview
+    override fun baseLayoutView(): View {
+        val igView = ImageView(this)
+        igView.setBackgroundResource(R.drawable.launcher_gradient_bg)
+        igView.scaleType = ImageView.ScaleType.FIT_XY
+        return igView
     }
 
     override fun onBackPressed() {
