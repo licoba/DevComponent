@@ -19,7 +19,7 @@ import dev.utils.app.ScreenUtils
  * detail: Base MVVM Fragment
  * @author Ttt
  */
-open abstract class BaseFragment<VDB : ViewDataBinding, VM : ViewModel> : DevBaseContentMVVMFragment<VDB, VM>(),
+abstract class BaseFragment<VDB : ViewDataBinding, VM : ViewModel> : DevBaseContentMVVMFragment<VDB, VM>(),
     BaseController {
 
     // 基础 UI 控制封装

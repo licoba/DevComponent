@@ -24,7 +24,7 @@ import dev.utils.app.ScreenUtils
  * detail: Base ViewBinding Fragment
  * @author Ttt
  */
-open abstract class BaseFragmentViewBinding<VB : ViewBinding> : DevBaseContentViewBindingFragment<VB>(),
+abstract class BaseFragmentViewBinding<VB : ViewBinding> : DevBaseContentViewBindingFragment<VB>(),
     BaseController,
     IDevBaseViewModel<ViewModel> {
 
@@ -126,7 +126,7 @@ open abstract class BaseFragmentViewBinding<VB : ViewBinding> : DevBaseContentVi
     // = Activity Provider =
     // =====================
 
-    override fun <T : ViewModel?> getActivityViewModel(modelClass: Class<T>): T? {
+    override fun <T : ViewModel> getActivityViewModel(modelClass: Class<T>): T? {
         return viewModelAssist.getActivityViewModelCache(activity, modelClass)
     }
 
@@ -134,11 +134,11 @@ open abstract class BaseFragmentViewBinding<VB : ViewBinding> : DevBaseContentVi
     // = Fragment Provider =
     // =====================
 
-    override fun <T : ViewModel?> getFragmentViewModel(modelClass: Class<T>): T? {
+    override fun <T : ViewModel> getFragmentViewModel(modelClass: Class<T>): T? {
         return null
     }
 
-    override fun <T : ViewModel?> getFragmentViewModel(
+    override fun <T : ViewModel> getFragmentViewModel(
         fragment: Fragment?,
         modelClass: Class<T>
     ): T? {
@@ -149,7 +149,7 @@ open abstract class BaseFragmentViewBinding<VB : ViewBinding> : DevBaseContentVi
     // = Application Provider =
     // ========================
 
-    override fun <T : ViewModel?> getAppViewModel(
+    override fun <T : ViewModel> getAppViewModel(
         application: Application?,
         modelClass: Class<T>
     ): T? {

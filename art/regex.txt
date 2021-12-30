@@ -14,38 +14,7 @@
 
 
 
-ping www.bintray.com
-
-
-
 adb logcat > D:/logcat.txt
-
-
-
-===========
-= Analyze =
-===========
-
-
-
-Missing permissions
-
-
-
-Unused assignment
-
-
-
-Unused Declaration java
-
-
-
-lambda alternative
-
-
-
-anonymous type can be replaced with lambda
-
 
 
 =========
@@ -71,5 +40,12 @@ android\:id\=\"\@\+id\/[^v]
 
 
 [abcdefg]:/
+[abcdefg]:\\
 
 
+
+((implementation)|(api))[ ]+['"]
+
+
+?>
+T : [\w<>]+\?\>

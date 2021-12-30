@@ -20,7 +20,7 @@ import dev.utils.app.ScreenUtils
  * detail: Base MVVM Activity
  * @author Ttt
  */
-open abstract class BaseActivity<VDB : ViewDataBinding, VM : ViewModel> : DevBaseContentMVVMActivity<VDB, VM>(),
+abstract class BaseActivity<VDB : ViewDataBinding, VM : ViewModel> : DevBaseContentMVVMActivity<VDB, VM>(),
     BaseController {
 
     // Activity
