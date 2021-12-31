@@ -47,11 +47,11 @@ class AppLauncherActivity : BaseActivityViewBinding<ViewBinding>() {
         }
     }
 
-    override fun baseLayoutView(): View? {
-        var igview = ImageView(this)
-        igview.setBackgroundResource(R.drawable.launcher_gradient_bg)
-        igview.scaleType = ImageView.ScaleType.FIT_XY
-        return igview
+    override fun baseLayoutView(): View {
+        return ImageView(this).apply {
+            setBackgroundResource(R.drawable.launcher_gradient_bg)
+            scaleType = ImageView.ScaleType.FIT_XY
+        }
     }
 
     override fun onBackPressed() {

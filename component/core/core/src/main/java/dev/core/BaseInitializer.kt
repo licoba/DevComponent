@@ -12,7 +12,7 @@ abstract class BaseInitializer<T> : Initializer<T> {
 
     override fun dependencies(): MutableList<Class<out Initializer<*>>> {
         // 需要在 CoreInitializer 初始化后才初始化该模块
-        var lists: MutableList<Class<out Initializer<*>>> =
+        val lists: MutableList<Class<out Initializer<*>>> =
             mutableListOf(CoreInitializer::class.java)
         lists.addAll(dependencies_abs())
         return lists

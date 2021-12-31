@@ -1,9 +1,9 @@
 package dev.core.lib.bean.user
 
 import android.os.Parcelable
-import dev.core.lib.bean.SexEnum
-import dev.core.lib.bean.UserLevelEnum
-import dev.core.lib.bean.UserStateEnum
+import dev.core.lib.bean.user.enums.SexEnum
+import dev.core.lib.bean.user.enums.UserLevelEnum
+import dev.core.lib.bean.user.enums.UserStateEnum
 import dev.core.lib.config.AppConst
 import kotlinx.android.parcel.Parcelize
 

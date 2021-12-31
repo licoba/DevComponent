@@ -1,4 +1,4 @@
-package afkt.libs.commodity
+package afkt.libs.commodity.utils
 
 import dev.utils.common.BigDecimalUtils
 import dev.utils.common.NumberUtils

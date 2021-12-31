@@ -1,4 +1,4 @@
-package afkt.libs.commodity
+package afkt.libs.commodity.utils
 
 /**
  * detail: 通用判断

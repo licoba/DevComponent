@@ -9,7 +9,7 @@ import com.alibaba.android.arouter.core.LogisticsCenter
 import com.alibaba.android.arouter.facade.annotation.Route
 import dev.core.lib.base.app.BaseActivityViewBinding
 import dev.core.lib.bean.AfkT
-import dev.core.lib.config.main.SplashRouter
+import dev.core.router.splash.SplashRouter
 import dev.core.router.user.UserRouter
 import dev.engine.log.DevLogEngine
 import dev.utils.DevFinal
@@ -62,10 +62,10 @@ class AppLauncherActivity : BaseActivityViewBinding<ViewBinding>() {
     }
 
     override fun baseLayoutView(): View {
-        val igView = ImageView(this)
-        igView.setBackgroundResource(R.drawable.launcher_gradient_bg)
-        igView.scaleType = ImageView.ScaleType.FIT_XY
-        return igView
+        return ImageView(this).apply {
+            setBackgroundResource(R.drawable.launcher_gradient_bg)
+            scaleType = ImageView.ScaleType.FIT_XY
+        }
     }
 
     override fun onBackPressed() {

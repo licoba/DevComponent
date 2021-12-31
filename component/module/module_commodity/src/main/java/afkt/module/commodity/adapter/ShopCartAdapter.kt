@@ -1,6 +1,6 @@
 package afkt.module.commodity.adapter
 
-import afkt.libs.commodity.appendLabel
+import afkt.libs.commodity.utils.appendLabel
 import afkt.module.commodity.R
 import afkt.module.commodity.databinding.CommodityAdapterShopCartBinding
 import android.view.View

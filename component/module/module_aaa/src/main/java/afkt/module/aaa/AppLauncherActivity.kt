@@ -48,10 +48,10 @@ class AppLauncherActivity : BaseActivityViewBinding<ViewBinding>() {
     }
 
     override fun baseLayoutView(): View {
-        val igView = ImageView(this)
-        igView.setBackgroundResource(R.drawable.launcher_gradient_bg)
-        igView.scaleType = ImageView.ScaleType.FIT_XY
-        return igView
+        return ImageView(this).apply {
+            setBackgroundResource(R.drawable.launcher_gradient_bg)
+            scaleType = ImageView.ScaleType.FIT_XY
+        }
     }
 
     override fun onBackPressed() {

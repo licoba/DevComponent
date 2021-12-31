@@ -77,7 +77,7 @@ class DevBaseRefreshAssist<T> {
 
     /**
      * 设置 LayoutManager
-     * @param layoutManager [LayoutManager]
+     * @param layoutManager [RecyclerView.LayoutManager]
      * @return [DevBaseRefreshAssist]
      */
     fun setLayoutManager(layoutManager: RecyclerView.LayoutManager): DevBaseRefreshAssist<T> {

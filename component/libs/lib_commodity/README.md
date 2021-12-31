@@ -42,7 +42,7 @@ dependencies {
    - afkt                           
       - libs                        
          - commodity                
-            - uitls                 
+            - utils                 
 ```
 
 

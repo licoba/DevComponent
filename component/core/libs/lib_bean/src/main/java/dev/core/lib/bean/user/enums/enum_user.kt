@@ -1,4 +1,4 @@
-package dev.core.lib.bean
+package dev.core.lib.bean.user.enums
 
 /**
  * detail: 性别

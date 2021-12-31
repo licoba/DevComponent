@@ -1,4 +1,4 @@
-package dev.receiver
+package dev.core.receiver
 
 import android.annotation.SuppressLint
 import android.content.BroadcastReceiver

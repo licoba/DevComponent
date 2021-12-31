@@ -1,4 +1,3 @@
 package dev.core.function
 
-class A {
-}
+class A

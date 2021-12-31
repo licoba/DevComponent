@@ -61,7 +61,7 @@ class BuglyConfig(
 /**
  * 返回默认 Bugly 配置
  */
-fun defaultBuglyConfig(): BuglyConfig? = BuglyConfig(
+fun defaultBuglyConfig(): BuglyConfig = BuglyConfig(
     key = (if (AppDebug.isOpenDebug()) Bugly.KEY_DEBUG else Bugly.KEY_RELEASE),
     debug = AppDebug.isOpenDebug(),
     channel = AppChannel.getChannel()

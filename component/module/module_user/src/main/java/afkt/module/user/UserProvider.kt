@@ -5,9 +5,9 @@ import android.util.Log
 import com.alibaba.android.arouter.facade.annotation.Route
 import dev.core.CoreConst
 import dev.core.app.AppDebug
-import dev.core.lib.bean.SexEnum
-import dev.core.lib.bean.UserLevelEnum
-import dev.core.lib.bean.UserStateEnum
+import dev.core.lib.bean.user.enums.SexEnum
+import dev.core.lib.bean.user.enums.UserLevelEnum
+import dev.core.lib.bean.user.enums.UserStateEnum
 import dev.core.lib.bean.user.UserInfo
 import dev.core.lib.config.AppConst
 import dev.core.router.user.IUserProvider

@@ -3,7 +3,6 @@ package afkt.module.commodity.fragment
 import afkt.module.commodity.R
 import afkt.module.commodity.adapter.ShopCartAdapter
 import afkt.module.commodity.databinding.CommodityFragmentShopCartBinding
-import afkt.project.ui.widget.decoration.LastLineItemDecoration
 import android.graphics.Color
 import android.os.Bundle
 import android.view.Gravity
@@ -25,6 +24,7 @@ import dev.utils.app.helper.quick.QuickHelper
 import dev.utils.app.toast.ToastTintUtils
 import dev.utils.common.ChineseUtils
 import dev.utils.common.RandomUtils
+import dev.widget.decoration.LastLineItemDecoration
 import kotlinx.coroutines.*
 
 @Route(path = CommodityRouter.PATH_SHOP_CART_FRAGMENT, group = CommodityRouter.GROUP)
@@ -55,7 +55,7 @@ class ShopCartFragment : BaseFragmentViewBinding<CommodityFragmentShopCartBindin
         mAdapter.setDataList(newList(15), false)
         // 添加分割线
         binding.vidCfscRefresh.getRecyclerView()?.addItemDecoration(
-            LastLineItemDecoration(ResourceUtils.getDimension(R.dimen.un_dp_10), Color.TRANSPARENT)
+            LastLineItemDecoration(ResourceUtils.getDimension(R.dimen.un_dp_10))
         )
         // 绑定适配器、设置加载事件
         binding.vidCfscRefresh.setAdapter(mAdapter)

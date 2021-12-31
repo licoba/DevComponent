@@ -1,4 +1,4 @@
-package dev.core.lib.config.main
+package dev.core.router.splash
 
 import com.alibaba.android.arouter.facade.Postcard
 import com.alibaba.android.arouter.launcher.ARouter
