@@ -27,3 +27,27 @@ anonymous type can be replaced with lambda
 
 
 local 'var' is never modified
+
+
+
+class member can have private
+
+
+
+unnecessary type argument
+
+
+
+explicit 'get' or 'set' call
+
+
+
+usage of redundant or deprecated syntax or deprecated
+
+
+
+two comparisons should be converted to a range check
+
+
+
+replace java static method with kotlin analog
