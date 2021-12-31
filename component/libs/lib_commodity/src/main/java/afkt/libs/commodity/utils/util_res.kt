@@ -51,7 +51,7 @@ fun appendLabel(
 ): SpanUtils {
     // 拼接标题
     val span = SpanUtils()
-    var labelICON = getCommodityLabelDrawable(type)
+    val labelICON = getCommodityLabelDrawable(type)
     if (labelICON != null) {
         span.appendImage(labelICON, SpanUtils.ALIGN_CENTER).append(" ")
     }

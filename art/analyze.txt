@@ -25,12 +25,16 @@ lambda alternative
 anonymous type can be replaced with lambda
 
 
+==========
+= Kotlin =
+==========
 
-local 'var' is never modified
+
+local 'var' is never modified and can be declared as 'val'
 
 
 
-class member can have private
+class member can have 'private' visibility
 
 
 
@@ -51,3 +55,15 @@ two comparisons should be converted to a range check
 
 
 replace java static method with kotlin analog
+
+
+
+package name does not match containing directory
+
+
+
+Redundant curly braces in string template
+
+
+
+Remove empty primary constructor

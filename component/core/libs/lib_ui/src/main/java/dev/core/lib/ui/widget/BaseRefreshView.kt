@@ -73,7 +73,7 @@ class BaseRefreshView : LinearLayout {
         val context = context
 
         // 初始化 View
-        var binding = CoreUiBaseRefreshViewBinding.inflate(LayoutInflater.from(context))
+        val binding = CoreUiBaseRefreshViewBinding.inflate(LayoutInflater.from(context))
         mBody = binding.vidCubrvFrame
         // 初始化 Refresh 数据
         mAssist

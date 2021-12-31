@@ -42,7 +42,7 @@ class AppLauncherActivity : BaseActivityViewBinding<ViewBinding>() {
 
         // 调用其他模块数据
         val isLogin: Boolean = UserRouter.userProvider()?.isLogin() == true
-        DevLogEngine.getEngine().d("是否登录了 ${isLogin}")
+        DevLogEngine.getEngine().d("是否登录了 $isLogin")
         DevLogEngine.getEngine().d("是否存在 UserProvider ${UserRouter.userProvider()}")
 
         GlobalScope.launch {

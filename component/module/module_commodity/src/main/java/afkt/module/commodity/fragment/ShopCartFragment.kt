@@ -3,7 +3,6 @@ package afkt.module.commodity.fragment
 import afkt.module.commodity.R
 import afkt.module.commodity.adapter.ShopCartAdapter
 import afkt.module.commodity.databinding.CommodityFragmentShopCartBinding
-import android.graphics.Color
 import android.os.Bundle
 import android.view.Gravity
 import android.view.View
@@ -80,7 +79,7 @@ class ShopCartFragment : BaseFragmentViewBinding<CommodityFragmentShopCartBindin
                         delay(1000L)
                         withContext(Dispatchers.Main) {
                             mAdapter.page.apply {
-                                var number = nextPage().page
+                                val number = nextPage().page
                                 isLastPage = (number >= 5)
                             }
                             // 结束加载状态
@@ -95,7 +94,7 @@ class ShopCartFragment : BaseFragmentViewBinding<CommodityFragmentShopCartBindin
     }
 
     private fun newList(count: Int): MutableList<CommodityBean> {
-        var lists = mutableListOf<CommodityBean>()
+        val lists = mutableListOf<CommodityBean>()
         for (i in 1..count) {
             lists.add(
                 CommodityBean(
@@ -133,7 +132,7 @@ class ShopCartFragment : BaseFragmentViewBinding<CommodityFragmentShopCartBindin
 
     private fun addEditButton() {
         context?.let { context ->
-            var linear = LinearLayout(context)
+            val linear = LinearLayout(context)
             linear.orientation = LinearLayout.HORIZONTAL
             linear.gravity = Gravity.RIGHT
 

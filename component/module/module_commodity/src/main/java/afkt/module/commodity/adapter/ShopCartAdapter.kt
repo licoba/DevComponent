@@ -22,7 +22,7 @@ import java.math.BigDecimal
  * detail: 购物车 Adapter
  * @author Ttt
  */
-class ShopCartAdapter() :
+class ShopCartAdapter :
     DevDataAdapterExt2<CommodityBean, DevBaseViewBindingVH<CommodityAdapterShopCartBinding>>() {
 
     init {
