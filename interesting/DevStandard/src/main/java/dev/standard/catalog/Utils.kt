@@ -383,7 +383,7 @@ object Utils {
                 .append(DevFinal.SYMBOL.NEW_LINE)
                 .append("\txmlns:app=\"http://schemas.android.com/apk/res-auto\"")
                 .append(DevFinal.SYMBOL.NEW_LINE)
-                .append("\tandroid:id=\"@+id/profile_image\"")
+                .append("\tandroid:id=\"@+id/vid_profile_image\"")
                 .append(DevFinal.SYMBOL.NEW_LINE)
                 .append("\tandroid:layout_width=\"96dp\"")
                 .append(DevFinal.SYMBOL.NEW_LINE)
