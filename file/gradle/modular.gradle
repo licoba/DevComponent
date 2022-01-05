@@ -30,7 +30,7 @@ ext {
                     // 版本名
                     versionName  : "1.0.0",
                     // 包名
-                    applicationId: "afkt.component",
+                    applicationId: "afkt_replace.component",
                     // 模块名
                     moduleName   : "APP",
             ],
@@ -41,7 +41,7 @@ ext {
                     // 版本名
                     versionName  : "1.0.0",
                     // 包名
-                    applicationId: "afkt.module.aaa",
+                    applicationId: "afkt_replace.module.aaa",
                     // 模块名
                     moduleName   : "AAA",
             ],
@@ -52,7 +52,7 @@ ext {
                     // 版本名
                     versionName  : "1.0.0",
                     // 包名
-                    applicationId: "afkt.module.commodity",
+                    applicationId: "afkt_replace.module.commodity",
                     // 模块名
                     moduleName   : "COMMODITY",
             ],
@@ -63,7 +63,7 @@ ext {
                     // 版本名
                     versionName  : "1.0.0",
                     // 包名
-                    applicationId: "afkt.module.main",
+                    applicationId: "afkt_replace.module.main",
                     // 模块名
                     moduleName   : "MAIN",
             ],
@@ -74,7 +74,7 @@ ext {
                     // 版本名
                     versionName  : "1.0.0",
                     // 包名
-                    applicationId: "afkt.module.splash",
+                    applicationId: "afkt_replace.module.splash",
                     // 模块名
                     moduleName   : "SPLASH",
             ],
@@ -85,7 +85,7 @@ ext {
                     // 版本名
                     versionName  : "1.0.0",
                     // 包名
-                    applicationId: "afkt.module.user",
+                    applicationId: "afkt_replace.module.user",
                     // 模块名
                     moduleName   : "USER",
             ],

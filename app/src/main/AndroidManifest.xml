@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="afkt.component">
+    package="afkt_replace.component">
 
     <!-- 所有文件管理权限 -->
     <uses-permission

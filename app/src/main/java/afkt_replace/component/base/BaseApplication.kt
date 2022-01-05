@@ -1,4 +1,4 @@
-package afkt.component.base
+package afkt_replace.component.base
 
 import dev.core.app.AppContext
 

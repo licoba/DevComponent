@@ -16,7 +16,7 @@ dependencies {
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="afkt.module.main">
+    package="afkt_replace.module.main">
 
     <application>
         <provider
@@ -25,7 +25,7 @@ dependencies {
             android:exported="false"
             tools:node="merge">
             <meta-data
-                android:name="afkt.module.main.MainInitializer"
+                android:name="afkt_replace.module.main.MainInitializer"
                 android:value="@string/androidx_startup" />
         </provider>
 

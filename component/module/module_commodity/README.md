@@ -23,7 +23,7 @@ dependencies {
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="afkt.module.commodity">
+    package="afkt_replace.module.commodity">
 
     <application>
         <provider
@@ -32,7 +32,7 @@ dependencies {
             android:exported="false"
             tools:node="merge">
             <meta-data
-                android:name="afkt.module.commodity.CommodityInitializer"
+                android:name="afkt_replace.module.commodity.CommodityInitializer"
                 android:value="@string/androidx_startup" />
         </provider>
 

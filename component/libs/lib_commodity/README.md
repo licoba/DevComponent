@@ -19,7 +19,7 @@ dependencies {
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="afkt.libs.commodity">
+    package="afkt_replace.libs.commodity">
 
     <application>
         <provider
@@ -28,7 +28,7 @@ dependencies {
             android:exported="false"
             tools:node="merge">
             <meta-data
-                android:name="afkt.libs.commodity.CommodityLibraryInitializer"
+                android:name="afkt_replace.libs.commodity.CommodityLibraryInitializer"
                 android:value="@string/androidx_startup" />
         </provider>
     </application>

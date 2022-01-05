@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="afkt.module.user">
+    package="afkt_replace.module.user">
 
     <application>
         <provider
@@ -10,7 +10,7 @@
             android:exported="false"
             tools:node="merge">
             <meta-data
-                android:name="afkt.module.user.UserInitializer"
+                android:name="afkt_replace.module.user.UserInitializer"
                 android:value="@string/androidx_startup" />
         </provider>
 
