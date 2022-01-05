@@ -15,7 +15,7 @@ import afkt_replace.core.lib.base.app.BaseFragmentViewBinding
 import afkt_replace.core.lib.bean.AfkT
 import afkt_replace.core.lib.bean.commodity.CommodityBean
 import afkt_replace.core.lib.ui.widget.BaseTextView
-import dev.core.router.commodity.CommodityRouter
+import afkt_replace.core.router.commodity.CommodityRouter
 import dev.utils.DevFinal
 import dev.utils.app.ResourceUtils
 import dev.utils.app.ViewUtils

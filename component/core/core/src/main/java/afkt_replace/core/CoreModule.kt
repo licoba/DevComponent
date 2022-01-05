@@ -3,7 +3,7 @@ package afkt_replace.core
 import android.content.Context
 import android.util.Log
 import dev.DevUtils
-import dev.core.app.AppDebug
+import afkt_replace.core.app.AppDebug
 import afkt_replace.core.lib.config.AppConst
 import dev.engine.DevEngine
 import dev.utils.LogPrintUtils

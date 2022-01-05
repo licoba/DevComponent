@@ -4,9 +4,9 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import afkt_replace.core.lib.bean.AfkT
-import dev.core.router.aaa.AAARouter
-import dev.core.router.commodity.CommodityRouter
-import dev.core.router.user.UserRouter
+import afkt_replace.core.router.aaa.AAARouter
+import afkt_replace.core.router.commodity.CommodityRouter
+import afkt_replace.core.router.user.UserRouter
 import dev.utils.DevFinal
 
 class MainAdapter(

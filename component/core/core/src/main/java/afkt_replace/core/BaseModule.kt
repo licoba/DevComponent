@@ -1,7 +1,7 @@
 package afkt_replace.core
 
 import android.util.Log
-import dev.core.app.AppDebug
+import afkt_replace.core.app.AppDebug
 
 /**
  * detail: Base Module ( ContentProvider Initializer )

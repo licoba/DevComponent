@@ -6,7 +6,7 @@ import android.widget.ImageView
 import androidx.viewbinding.ViewBinding
 import afkt_replace.core.lib.base.app.BaseActivityViewBinding
 import afkt_replace.core.lib.bean.AfkT
-import dev.core.router.commodity.CommodityRouter
+import afkt_replace.core.router.commodity.CommodityRouter
 import dev.utils.DevFinal
 import dev.utils.app.toast.ToastTintUtils
 import kotlinx.coroutines.GlobalScope

@@ -2,7 +2,7 @@ package afkt_replace.core.router.commodity
 
 import com.alibaba.android.arouter.facade.Postcard
 import com.alibaba.android.arouter.launcher.ARouter
-import dev.core.router.aaa.AAARouter.GROUP
+import afkt_replace.core.router.aaa.AAARouter.GROUP
 
 /**
  * detail: Commodity Module Router

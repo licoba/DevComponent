@@ -9,7 +9,7 @@ import com.alibaba.android.arouter.facade.annotation.Autowired
 import com.alibaba.android.arouter.facade.annotation.Route
 import afkt_replace.core.lib.base.app.BaseActivityViewBinding
 import afkt_replace.core.lib.bean.AfkT
-import dev.core.router.aaa.AAARouter
+import afkt_replace.core.router.aaa.AAARouter
 import dev.utils.DevFinal
 import dev.utils.app.ClickUtils
 import dev.utils.app.toast.ToastTintUtils

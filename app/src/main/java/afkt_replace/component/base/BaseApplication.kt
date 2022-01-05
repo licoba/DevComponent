@@ -1,6 +1,6 @@
 package afkt_replace.component.base
 
-import dev.core.app.AppContext
+import afkt_replace.core.app.AppContext
 
 /**
  * detail: Base Application

@@ -9,8 +9,8 @@ import android.widget.FrameLayout
 import android.widget.LinearLayout
 import androidx.annotation.RequiresApi
 import androidx.annotation.StringRes
-import dev.core_lib_ui.R
-import dev.core_lib_ui.databinding.CoreUiBaseTitleBarBinding
+import afkt_replace.core_lib_ui.R
+import afkt_replace.core_lib_ui.databinding.CoreUiBaseTitleBarBinding
 import dev.utils.app.ResourceUtils
 
 /**

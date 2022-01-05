@@ -1,7 +1,7 @@
 package afkt_replace.core.router.user
 
 import afkt_replace.core.lib.bean.user.UserInfo
-import dev.core.router.BaseProvider
+import afkt_replace.core.router.BaseProvider
 
 /**
  * detail: User 各个组件通讯接口

@@ -12,7 +12,7 @@ import dev.base.DevSource
 import afkt_replace.core.lib.base.app.BaseFragmentViewBinding
 import afkt_replace.core.lib.bean.AfkT
 import afkt_replace.core.lib.utils.ProjectUtils
-import dev.core.router.user.UserRouter
+import afkt_replace.core.router.user.UserRouter
 import dev.engine.DevEngine
 import dev.engine.image.listener.DrawableListener
 import dev.utils.DevFinal

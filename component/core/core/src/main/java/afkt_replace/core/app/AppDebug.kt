@@ -1,6 +1,6 @@
 package afkt_replace.core.app
 
-import dev.core.BuildConfig
+import afkt_replace.core.BuildConfig
 
 /**
  * detail: APP Debug、Release ( 区分 )

@@ -19,7 +19,7 @@ import com.scwang.smart.refresh.layout.listener.OnRefreshListener
 import com.scwang.smart.refresh.layout.listener.OnRefreshLoadMoreListener
 import dev.assist.PageAssist
 import afkt_replace.core.lib.ui.assist.DevBaseRefreshAssist
-import dev.core_lib_ui.databinding.CoreUiBaseRefreshViewBinding
+import afkt_replace.core_lib_ui.databinding.CoreUiBaseRefreshViewBinding
 
 /**
  * detail: Base Refresh、Load View
