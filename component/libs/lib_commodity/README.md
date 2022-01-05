@@ -39,7 +39,7 @@ dependencies {
 
 ```
 - java                              
-   - afkt                           
+   - afkt_replace                           
       - libs                        
          - commodity                
             - utils                 

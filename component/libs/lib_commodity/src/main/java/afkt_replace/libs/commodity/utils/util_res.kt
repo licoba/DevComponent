@@ -1,6 +1,6 @@
-package afkt.libs.commodity.utils
+package afkt_replace.libs.commodity.utils
 
-import afkt.libs.commodity.R
+import afkt_replace.libs.commodity.R
 import android.graphics.drawable.Drawable
 import dev.core.lib.bean.commodity.enums.CommodityLabel
 import dev.utils.app.ResourceUtils

@@ -1,4 +1,4 @@
-package afkt.libs.commodity
+package afkt_replace.libs.commodity
 
 import android.content.Context
 import dev.core.BaseModule

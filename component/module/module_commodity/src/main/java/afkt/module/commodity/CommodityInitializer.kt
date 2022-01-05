@@ -1,6 +1,6 @@
 package afkt.module.commodity
 
-import afkt.libs.commodity.CommodityLibraryInitializer
+import afkt_replace.libs.commodity.CommodityLibraryInitializer
 import android.content.Context
 import androidx.startup.Initializer
 import dev.core.BaseInitializer
