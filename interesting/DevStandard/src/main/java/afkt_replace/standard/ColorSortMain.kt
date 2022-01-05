@@ -1,5 +1,6 @@
 package afkt_replace.standard
 
+import afkt_replace.standard.catalog.Config
 import dev.utils.DevFinal
 import dev.utils.common.CollectionUtils
 import dev.utils.common.ColorUtils
@@ -20,9 +21,6 @@ import javax.xml.parsers.SAXParserFactory
  */
 object ColorSortMain {
 
-    // 项目路径
-    private val PROJECT_PATH = File(System.getProperty("user.dir")).absolutePath
-
     // colors.xml 文件路径
     private const val COLORS_XML = "/src/main/res/values/colors.xml"
 
@@ -31,7 +29,7 @@ object ColorSortMain {
     fun main(args: Array<String>) {
         // colors.xml 文件地址
         val xmlPath = File(
-            "$PROJECT_PATH/app", COLORS_XML
+            "${Config.PROJECT_PATH}/app", COLORS_XML
         ).absolutePath
 
         // color xml 排序

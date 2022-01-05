@@ -13,7 +13,7 @@ object Config {
     val USER_DIR = System.getProperty("user.dir")
 
     // 项目路径
-    val PROJECT_PATH = File(System.getProperty("user.dir")).absolutePath
+    val PROJECT_PATH = File(USER_DIR).absolutePath
 
     // ===============
     // = Interesting =

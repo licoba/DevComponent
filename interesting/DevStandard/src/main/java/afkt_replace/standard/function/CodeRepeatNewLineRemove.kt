@@ -27,8 +27,9 @@ object CodeRepeatNewLineRemove {
         // 获取文件列表
         val lists = FileUtils.listFilesInDirWithFilter(
             Config.PROJECT_PATH, FileFilter { file ->
-                if (file.absolutePath.indexOf("\\.") != -1) return@FileFilter false
-                if (file.absolutePath.indexOf("\\build\\") != -1) return@FileFilter false
+                val absolutePath = file.absolutePath
+                if (Code.isHidden(absolutePath)) return@FileFilter false
+                if (absolutePath.contains("\\build\\")) return@FileFilter false
                 if (file.isDirectory) return@FileFilter false
 
                 val fileSuffix = FileUtils.getFileSuffix(file)
