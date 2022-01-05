@@ -1,7 +1,7 @@
 package afkt_replace.module.aaa.fragment
 
 import afkt_replace.core.lib.base.app.BaseFragmentViewBinding
-import afkt_replace.core.lib.bean.AfkT
+import afkt_replace.core.lib.bean.ThemeIntent
 import afkt_replace.core.router.aaa.AAARouter
 import afkt_replace.module.aaa.R
 import afkt_replace.module.aaa.databinding.AaaFragmentBinding
@@ -16,7 +16,7 @@ class AAAFragment : BaseFragmentViewBinding<AaaFragmentBinding>() {
 
     @JvmField
     @Autowired(name = DevFinal.STR.DATA)
-    var afkt: AfkT? = null
+    var themeIntent: ThemeIntent? = null
 
     override fun baseLayoutId(): Int = R.layout.aaa_fragment
 
@@ -26,8 +26,8 @@ class AAAFragment : BaseFragmentViewBinding<AaaFragmentBinding>() {
     ) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.vidContentTv.text = "$TAG \r\n ${afkt?.value}"
+        binding.vidContentTv.text = "$TAG \r\n ${themeIntent?.value}"
 
-        afkt?.let { uiController.setAllBackground(it.color) }
+        themeIntent?.let { uiController.setAllBackground(it.color) }
     }
 }

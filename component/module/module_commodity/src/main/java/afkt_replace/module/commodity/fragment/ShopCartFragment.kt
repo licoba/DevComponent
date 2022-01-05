@@ -1,7 +1,7 @@
 package afkt_replace.module.commodity.fragment
 
 import afkt_replace.core.lib.base.app.BaseFragmentViewBinding
-import afkt_replace.core.lib.bean.AfkT
+import afkt_replace.core.lib.bean.ThemeIntent
 import afkt_replace.core.lib.bean.commodity.CommodityBean
 import afkt_replace.core.lib.ui.widget.BaseTextView
 import afkt_replace.core.router.commodity.CommodityRouter
@@ -31,7 +31,7 @@ class ShopCartFragment : BaseFragmentViewBinding<CommodityFragmentShopCartBindin
 
     @JvmField
     @Autowired(name = DevFinal.STR.DATA)
-    var afkt: AfkT? = null
+    var themeIntent: ThemeIntent? = null
 
     // 购物车 Adapter
     var mAdapter = ShopCartAdapter()
@@ -40,7 +40,7 @@ class ShopCartFragment : BaseFragmentViewBinding<CommodityFragmentShopCartBindin
 
     override fun preLoad() {
         super.preLoad()
-        afkt?.let { uiController.setAllBackground(it.color) }
+        themeIntent?.let { uiController.setAllBackground(it.color) }
         addEditButton()
     }
 

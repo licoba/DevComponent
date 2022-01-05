@@ -1,7 +1,7 @@
 package afkt_replace.module.user.fragment
 
 import afkt_replace.core.lib.base.app.BaseFragmentViewBinding
-import afkt_replace.core.lib.bean.AfkT
+import afkt_replace.core.lib.bean.ThemeIntent
 import afkt_replace.core.lib.utils.ProjectUtils
 import afkt_replace.core.router.user.UserRouter
 import afkt_replace.module.user.R
@@ -22,7 +22,7 @@ class UserFragment : BaseFragmentViewBinding<UserFragmentBinding>() {
 
     @JvmField
     @Autowired(name = DevFinal.STR.DATA)
-    var afkt: AfkT? = null
+    var themeIntent: ThemeIntent? = null
 
     override fun baseLayoutId(): Int = R.layout.user_fragment
 
@@ -32,7 +32,7 @@ class UserFragment : BaseFragmentViewBinding<UserFragmentBinding>() {
     ) {
         super.onViewCreated(view, savedInstanceState)
 
-        afkt?.let { uiController.setAllBackground(it.color) }
+        themeIntent?.let { uiController.setAllBackground(it.color) }
 
         UserRouter.userProvider()?.apply {
             // 如果已经登录了

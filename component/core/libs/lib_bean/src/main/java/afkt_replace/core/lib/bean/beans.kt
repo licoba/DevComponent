@@ -6,7 +6,7 @@ import dev.utils.common.ColorUtils
  * detail: 自定义对象 ARouter 传递
  * @author Ttt
  */
-open class AfkT() {
+open class ThemeIntent() {
 
     var value: String? = null
 

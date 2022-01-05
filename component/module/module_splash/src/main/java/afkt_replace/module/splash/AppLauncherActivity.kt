@@ -1,7 +1,7 @@
 package afkt_replace.module.splash
 
 import afkt_replace.core.lib.base.app.BaseActivityViewBinding
-import afkt_replace.core.lib.bean.AfkT
+import afkt_replace.core.lib.bean.ThemeIntent
 import afkt_replace.core.router.splash.SplashRouter
 import afkt_replace.core.router.user.UserRouter
 import android.content.Intent
@@ -49,7 +49,7 @@ class AppLauncherActivity : BaseActivityViewBinding<ViewBinding>() {
             delay(2000L)
             // 直接通过 postcard.navigation() 跳转会显示 AppTheme.Launcher style windowBackground
             val postcard = SplashRouter.buildAppMain()
-                .withObject(DevFinal.STR.DATA, AfkT(value))
+                .withObject(DevFinal.STR.DATA, ThemeIntent(value))
             try {
                 LogisticsCenter.completion(postcard)
                 val intent = Intent(mActivity, postcard.destination)

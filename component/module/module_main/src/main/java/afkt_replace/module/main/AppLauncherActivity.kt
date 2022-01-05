@@ -1,7 +1,7 @@
 package afkt_replace.module.main
 
 import afkt_replace.core.lib.base.app.BaseActivityViewBinding
-import afkt_replace.core.lib.bean.AfkT
+import afkt_replace.core.lib.bean.ThemeIntent
 import afkt_replace.core.router.main.MainRouter
 import android.os.Bundle
 import android.view.View
@@ -41,7 +41,7 @@ class AppLauncherActivity : BaseActivityViewBinding<ViewBinding>() {
         GlobalScope.launch {
             delay(2000L)
             MainRouter.build(MainRouter.PATH_MAIN)
-                .withObject(DevFinal.STR.DATA, AfkT("【模块化运行】"))
+                .withObject(DevFinal.STR.DATA, ThemeIntent("【模块化运行】"))
                 .navigation()
             finish()
         }

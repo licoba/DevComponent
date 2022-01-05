@@ -1,7 +1,7 @@
 package afkt_replace.module.main.activity
 
 import afkt_replace.core.lib.base.app.BaseActivityViewBinding
-import afkt_replace.core.lib.bean.AfkT
+import afkt_replace.core.lib.bean.ThemeIntent
 import afkt_replace.core.router.main.MainRouter
 import afkt_replace.module.main.BuildConfig
 import afkt_replace.module.main.R
@@ -20,7 +20,7 @@ class MainContainerActivity : BaseActivityViewBinding<MainActivityBinding>() {
 
     @JvmField
     @Autowired(name = DevFinal.STR.DATA)
-    var afkt: AfkT? = null
+    var themeIntent: ThemeIntent? = null
 
     override fun baseLayoutId(): Int = R.layout.main_activity
 
@@ -31,10 +31,10 @@ class MainContainerActivity : BaseActivityViewBinding<MainActivityBinding>() {
             .setTitleColor(Color.WHITE)
             .goneBackView()
 
-        afkt?.let { uiController.setAllBackground(it.color) }
+        themeIntent?.let { uiController.setAllBackground(it.color) }
 
         if (!BuildConfig.isModular) {
-            binding.vidViewpager.adapter = MainAdapter(afkt, this)
+            binding.vidViewpager.adapter = MainAdapter(themeIntent, this)
         }
     }
 

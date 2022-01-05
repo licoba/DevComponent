@@ -1,7 +1,7 @@
 package afkt_replace.module.aaa.activity
 
 import afkt_replace.core.lib.base.app.BaseActivityViewBinding
-import afkt_replace.core.lib.bean.AfkT
+import afkt_replace.core.lib.bean.ThemeIntent
 import afkt_replace.core.router.aaa.AAARouter
 import afkt_replace.module.aaa.BuildConfig
 import android.graphics.Color
@@ -19,7 +19,7 @@ class MainContainerActivity : BaseActivityViewBinding<ViewBinding>() {
 
     @JvmField
     @Autowired(name = DevFinal.STR.DATA)
-    var afkt: AfkT? = null
+    var themeIntent: ThemeIntent? = null
 
     override fun baseLayoutId(): Int = 0
 
@@ -34,7 +34,7 @@ class MainContainerActivity : BaseActivityViewBinding<ViewBinding>() {
             .setTitleColor(Color.WHITE)
             .goneBackView()
 
-        afkt?.let { uiController.setAllBackground(it.color) }
+        themeIntent?.let { uiController.setAllBackground(it.color) }
 
         (AAARouter.build(AAARouter.PATH_AAA_FRAGMENT)
             .with(intent.extras).navigation() as? Fragment)?.let { fragment ->

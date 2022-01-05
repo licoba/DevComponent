@@ -1,6 +1,6 @@
 package afkt_replace.module.main.adapter
 
-import afkt_replace.core.lib.bean.AfkT
+import afkt_replace.core.lib.bean.ThemeIntent
 import afkt_replace.core.router.aaa.AAARouter
 import afkt_replace.core.router.commodity.CommodityRouter
 import afkt_replace.core.router.user.UserRouter
@@ -10,7 +10,7 @@ import androidx.viewpager2.adapter.FragmentStateAdapter
 import dev.utils.DevFinal
 
 class MainAdapter(
-    var afkt: AfkT?,
+    var themeIntent: ThemeIntent?,
     fragmentActivity: FragmentActivity
 ) : FragmentStateAdapter(fragmentActivity) {
 
@@ -21,17 +21,17 @@ class MainAdapter(
             0 -> {
                 AAARouter.build(
                     AAARouter.PATH_AAA_FRAGMENT
-                ).withObject(DevFinal.STR.DATA, afkt).navigation() as Fragment
+                ).withObject(DevFinal.STR.DATA, themeIntent).navigation() as Fragment
             }
             1 -> {
                 CommodityRouter.build(
                     CommodityRouter.PATH_SHOP_CART_FRAGMENT
-                ).withObject(DevFinal.STR.DATA, afkt).navigation() as Fragment
+                ).withObject(DevFinal.STR.DATA, themeIntent).navigation() as Fragment
             }
             else -> {
                 UserRouter.build(
                     UserRouter.PATH_USER_FRAGMENT
-                ).withObject(DevFinal.STR.DATA, afkt).navigation() as Fragment
+                ).withObject(DevFinal.STR.DATA, themeIntent).navigation() as Fragment
             }
         }
     }
