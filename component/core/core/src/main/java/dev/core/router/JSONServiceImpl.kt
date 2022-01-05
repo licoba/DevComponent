@@ -12,7 +12,7 @@ class JSONServiceImpl : SerializationService {
     override fun init(context: Context?) {
     }
 
-    override fun <T : Any?> json2Object(
+    override fun <T : Any> json2Object(
         input: String?,
         clazz: Class<T>?
     ): T {
@@ -23,7 +23,7 @@ class JSONServiceImpl : SerializationService {
         return DevEngine.getJSON()?.toJson(instance)
     }
 
-    override fun <T : Any?> parseObject(
+    override fun <T : Any> parseObject(
         input: String?,
         clazz: Type?
     ): T {
