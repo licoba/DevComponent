@@ -1,11 +1,11 @@
 package afkt_replace.core.property
 
-import android.os.Process
-import com.tencent.bugly.crashreport.CrashReport
-import com.tencent.bugly.crashreport.CrashReport.UserStrategy
 import afkt_replace.core.app.AppChannel
 import afkt_replace.core.app.AppContext
 import afkt_replace.core.app.AppDebug
+import android.os.Process
+import com.tencent.bugly.crashreport.CrashReport
+import com.tencent.bugly.crashreport.CrashReport.UserStrategy
 import dev.utils.app.AppUtils
 import dev.utils.app.ProcessUtils
 

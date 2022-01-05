@@ -1,7 +1,7 @@
 package afkt_replace.core.app
 
-import android.os.Parcelable
 import afkt_replace.core.BuildConfig
+import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize
 
 /**

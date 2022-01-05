@@ -1,5 +1,7 @@
 package afkt_replace.core.lib.ui.widget
 
+import afkt_replace.core_lib_ui.R
+import afkt_replace.core_lib_ui.databinding.CoreUiBaseTitleBarBinding
 import android.content.Context
 import android.os.Build
 import android.util.AttributeSet
@@ -9,8 +11,6 @@ import android.widget.FrameLayout
 import android.widget.LinearLayout
 import androidx.annotation.RequiresApi
 import androidx.annotation.StringRes
-import afkt_replace.core_lib_ui.R
-import afkt_replace.core_lib_ui.databinding.CoreUiBaseTitleBarBinding
 import dev.utils.app.ResourceUtils
 
 /**

@@ -1,5 +1,9 @@
 package afkt_replace.module.splash
 
+import afkt_replace.core.lib.base.app.BaseActivityViewBinding
+import afkt_replace.core.lib.bean.AfkT
+import afkt_replace.core.router.splash.SplashRouter
+import afkt_replace.core.router.user.UserRouter
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
@@ -7,10 +11,6 @@ import android.widget.ImageView
 import androidx.viewbinding.ViewBinding
 import com.alibaba.android.arouter.core.LogisticsCenter
 import com.alibaba.android.arouter.facade.annotation.Route
-import afkt_replace.core.lib.base.app.BaseActivityViewBinding
-import afkt_replace.core.lib.bean.AfkT
-import afkt_replace.core.router.splash.SplashRouter
-import afkt_replace.core.router.user.UserRouter
 import dev.engine.DevEngine
 import dev.utils.DevFinal
 import dev.utils.app.toast.ToastTintUtils

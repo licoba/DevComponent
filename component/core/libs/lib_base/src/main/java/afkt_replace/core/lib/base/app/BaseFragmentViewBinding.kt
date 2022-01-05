@@ -1,5 +1,8 @@
 package afkt_replace.core.lib.base.app
 
+import afkt_replace.core.lib.base.controller.BaseController
+import afkt_replace.core.lib.base.controller.BaseUIController
+import afkt_replace.core.lib.ui.widget.BaseTitleBar
 import android.app.Application
 import android.graphics.Color
 import android.os.Bundle
@@ -15,9 +18,6 @@ import com.alibaba.android.arouter.launcher.ARouter
 import dev.base.able.IDevBaseViewModel
 import dev.base.expand.content.DevBaseContentViewBindingFragment
 import dev.base.utils.assist.DevBaseViewModelAssist
-import afkt_replace.core.lib.base.controller.BaseController
-import afkt_replace.core.lib.base.controller.BaseUIController
-import afkt_replace.core.lib.ui.widget.BaseTitleBar
 import dev.utils.app.ScreenUtils
 
 /**

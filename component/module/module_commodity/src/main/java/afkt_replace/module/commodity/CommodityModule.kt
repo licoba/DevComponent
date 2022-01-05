@@ -1,7 +1,7 @@
 package afkt_replace.module.commodity
 
-import android.content.Context
 import afkt_replace.core.BaseModule
+import android.content.Context
 
 /**
  * detail: Commodity Module ( ContentProvider Initializer )

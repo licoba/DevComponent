@@ -1,5 +1,7 @@
 package afkt_replace.core.lib.ui.widget
 
+import afkt_replace.core.lib.ui.assist.DevBaseRefreshAssist
+import afkt_replace.core_lib_ui.databinding.CoreUiBaseRefreshViewBinding
 import android.content.Context
 import android.os.Build
 import android.util.AttributeSet
@@ -18,8 +20,6 @@ import com.scwang.smart.refresh.layout.listener.OnLoadMoreListener
 import com.scwang.smart.refresh.layout.listener.OnRefreshListener
 import com.scwang.smart.refresh.layout.listener.OnRefreshLoadMoreListener
 import dev.assist.PageAssist
-import afkt_replace.core.lib.ui.assist.DevBaseRefreshAssist
-import afkt_replace.core_lib_ui.databinding.CoreUiBaseRefreshViewBinding
 
 /**
  * detail: Base Refresh、Load View

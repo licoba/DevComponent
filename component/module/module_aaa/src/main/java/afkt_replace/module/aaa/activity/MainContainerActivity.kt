@@ -1,5 +1,8 @@
 package afkt_replace.module.aaa.activity
 
+import afkt_replace.core.lib.base.app.BaseActivityViewBinding
+import afkt_replace.core.lib.bean.AfkT
+import afkt_replace.core.router.aaa.AAARouter
 import afkt_replace.module.aaa.BuildConfig
 import android.graphics.Color
 import android.os.Bundle
@@ -7,9 +10,6 @@ import androidx.fragment.app.Fragment
 import androidx.viewbinding.ViewBinding
 import com.alibaba.android.arouter.facade.annotation.Autowired
 import com.alibaba.android.arouter.facade.annotation.Route
-import afkt_replace.core.lib.base.app.BaseActivityViewBinding
-import afkt_replace.core.lib.bean.AfkT
-import afkt_replace.core.router.aaa.AAARouter
 import dev.utils.DevFinal
 import dev.utils.app.ClickUtils
 import dev.utils.app.toast.ToastTintUtils

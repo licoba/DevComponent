@@ -1,12 +1,12 @@
 package afkt_replace.module.user
 
+import afkt_replace.core.lib.base.app.BaseActivityViewBinding
+import afkt_replace.core.lib.bean.AfkT
+import afkt_replace.core.router.user.UserRouter
 import android.os.Bundle
 import android.view.View
 import android.widget.ImageView
 import androidx.viewbinding.ViewBinding
-import afkt_replace.core.lib.base.app.BaseActivityViewBinding
-import afkt_replace.core.lib.bean.AfkT
-import afkt_replace.core.router.user.UserRouter
 import dev.utils.DevFinal
 import dev.utils.app.toast.ToastTintUtils
 import kotlinx.coroutines.GlobalScope

@@ -1,8 +1,5 @@
 package afkt_replace.module.user
 
-import android.content.Context
-import android.util.Log
-import com.alibaba.android.arouter.facade.annotation.Route
 import afkt_replace.core.CoreConst
 import afkt_replace.core.app.AppDebug
 import afkt_replace.core.lib.bean.user.UserInfo
@@ -12,6 +9,9 @@ import afkt_replace.core.lib.bean.user.enums.UserStateEnum
 import afkt_replace.core.lib.config.AppConst
 import afkt_replace.core.router.user.IUserProvider
 import afkt_replace.core.router.user.UserRouter
+import android.content.Context
+import android.util.Log
+import com.alibaba.android.arouter.facade.annotation.Route
 import dev.utils.common.ChineseUtils
 import dev.utils.common.DevCommonUtils
 import dev.utils.common.RandomUtils

@@ -1,5 +1,10 @@
 package afkt_replace.module.commodity.fragment
 
+import afkt_replace.core.lib.base.app.BaseFragmentViewBinding
+import afkt_replace.core.lib.bean.AfkT
+import afkt_replace.core.lib.bean.commodity.CommodityBean
+import afkt_replace.core.lib.ui.widget.BaseTextView
+import afkt_replace.core.router.commodity.CommodityRouter
 import afkt_replace.module.commodity.R
 import afkt_replace.module.commodity.adapter.ShopCartAdapter
 import afkt_replace.module.commodity.databinding.CommodityFragmentShopCartBinding
@@ -11,11 +16,6 @@ import com.alibaba.android.arouter.facade.annotation.Autowired
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.scwang.smart.refresh.layout.api.RefreshLayout
 import com.scwang.smart.refresh.layout.listener.OnRefreshLoadMoreListener
-import afkt_replace.core.lib.base.app.BaseFragmentViewBinding
-import afkt_replace.core.lib.bean.AfkT
-import afkt_replace.core.lib.bean.commodity.CommodityBean
-import afkt_replace.core.lib.ui.widget.BaseTextView
-import afkt_replace.core.router.commodity.CommodityRouter
 import dev.utils.DevFinal
 import dev.utils.app.ResourceUtils
 import dev.utils.app.ViewUtils

@@ -1,7 +1,7 @@
 package afkt_replace.module.user
 
-import android.content.Context
 import afkt_replace.core.BaseModule
+import android.content.Context
 
 /**
  * detail: User Module ( ContentProvider Initializer )

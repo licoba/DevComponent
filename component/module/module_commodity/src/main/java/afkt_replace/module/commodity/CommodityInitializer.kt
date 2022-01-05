@@ -3,7 +3,6 @@ package afkt_replace.module.commodity
 import afkt_replace.libs.commodity.CommodityLibraryInitializer
 import android.content.Context
 import androidx.startup.Initializer
-import afkt_replace.core.BaseInitializer
 
 /**
  * detail: Commodity Module ( App Startup Initializer )

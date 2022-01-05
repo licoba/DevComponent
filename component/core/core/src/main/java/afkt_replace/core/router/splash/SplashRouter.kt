@@ -1,9 +1,9 @@
 package afkt_replace.core.router.splash
 
-import com.alibaba.android.arouter.facade.Postcard
-import com.alibaba.android.arouter.launcher.ARouter
 import afkt_replace.core.router.aaa.AAARouter.GROUP
 import afkt_replace.core.router.main.MainRouter
+import com.alibaba.android.arouter.facade.Postcard
+import com.alibaba.android.arouter.launcher.ARouter
 
 /**
  * detail: Splash Module Router

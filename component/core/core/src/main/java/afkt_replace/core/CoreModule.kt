@@ -1,10 +1,10 @@
 package afkt_replace.core
 
+import afkt_replace.core.app.AppDebug
+import afkt_replace.core.lib.config.AppConst
 import android.content.Context
 import android.util.Log
 import dev.DevUtils
-import afkt_replace.core.app.AppDebug
-import afkt_replace.core.lib.config.AppConst
 import dev.engine.DevEngine
 import dev.utils.LogPrintUtils
 import dev.utils.app.logger.DevLogger

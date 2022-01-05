@@ -1,7 +1,7 @@
 package afkt_replace.module.main
 
-import android.content.Context
 import afkt_replace.core.BaseModule
+import android.content.Context
 
 /**
  * detail: Main Module ( ContentProvider Initializer )

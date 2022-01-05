@@ -1,12 +1,12 @@
 package afkt_replace.module.main.adapter
 
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentActivity
-import androidx.viewpager2.adapter.FragmentStateAdapter
 import afkt_replace.core.lib.bean.AfkT
 import afkt_replace.core.router.aaa.AAARouter
 import afkt_replace.core.router.commodity.CommodityRouter
 import afkt_replace.core.router.user.UserRouter
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentActivity
+import androidx.viewpager2.adapter.FragmentStateAdapter
 import dev.utils.DevFinal
 
 class MainAdapter(

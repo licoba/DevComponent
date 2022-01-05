@@ -1,5 +1,9 @@
 package afkt_replace.module.user.fragment
 
+import afkt_replace.core.lib.base.app.BaseFragmentViewBinding
+import afkt_replace.core.lib.bean.AfkT
+import afkt_replace.core.lib.utils.ProjectUtils
+import afkt_replace.core.router.user.UserRouter
 import afkt_replace.module.user.R
 import afkt_replace.module.user.databinding.UserFragmentBinding
 import android.annotation.SuppressLint
@@ -9,10 +13,6 @@ import android.view.View
 import com.alibaba.android.arouter.facade.annotation.Autowired
 import com.alibaba.android.arouter.facade.annotation.Route
 import dev.base.DevSource
-import afkt_replace.core.lib.base.app.BaseFragmentViewBinding
-import afkt_replace.core.lib.bean.AfkT
-import afkt_replace.core.lib.utils.ProjectUtils
-import afkt_replace.core.router.user.UserRouter
 import dev.engine.DevEngine
 import dev.engine.image.listener.DrawableListener
 import dev.utils.DevFinal

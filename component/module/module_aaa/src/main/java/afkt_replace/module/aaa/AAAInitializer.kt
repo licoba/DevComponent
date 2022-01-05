@@ -2,7 +2,6 @@ package afkt_replace.module.aaa
 
 import android.content.Context
 import androidx.startup.Initializer
-import afkt_replace.core.BaseInitializer
 import java.util.*
 
 /**

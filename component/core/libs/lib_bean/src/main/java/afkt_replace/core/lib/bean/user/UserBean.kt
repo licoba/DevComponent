@@ -1,10 +1,10 @@
 package afkt_replace.core.lib.bean.user
 
-import android.os.Parcelable
 import afkt_replace.core.lib.bean.user.enums.SexEnum
 import afkt_replace.core.lib.bean.user.enums.UserLevelEnum
 import afkt_replace.core.lib.bean.user.enums.UserStateEnum
 import afkt_replace.core.lib.config.AppConst
+import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize
 
 /**

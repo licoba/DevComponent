@@ -1,13 +1,13 @@
 package afkt_replace.core.app
 
-import android.webkit.WebSettings
-import com.alibaba.android.arouter.launcher.ARouter
 import afkt_replace.core.assist.WebViewAssist
 import afkt_replace.core.lib.base.BaseAppContext
 import afkt_replace.core.property.BlockCanaryKT
 import afkt_replace.core.property.Bugly
 import afkt_replace.core.property.BuglyConfig
 import afkt_replace.core.property.defaultBuglyConfig
+import android.webkit.WebSettings
+import com.alibaba.android.arouter.launcher.ARouter
 import dev.engine.DevEngine
 import dev.utils.app.PathUtils
 
