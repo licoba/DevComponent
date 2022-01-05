@@ -4,7 +4,7 @@
     package="afkt_replace.module.user">
 
     <!--
-        android:name="dev.core.app.AppContext"
+        android:name="afkt_replace.core.app.AppContext"
     -->
 
     <application

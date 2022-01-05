@@ -2,14 +2,14 @@ package afkt.module.user
 
 import android.content.Context
 import androidx.startup.Initializer
-import dev.core.BaseInitializer
+import afkt_replace.core.BaseInitializer
 import java.util.*
 
 /**
  * detail: User Module ( App Startup Initializer )
  * @author Ttt
  */
-class UserInitializer : BaseInitializer<UserModule>() {
+class UserInitializer : afkt_replace.core.BaseInitializer<UserModule>() {
 
     override fun create(context: Context): UserModule {
         UserModule.instance.initialize(context)

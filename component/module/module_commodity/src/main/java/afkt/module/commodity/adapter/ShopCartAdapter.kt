@@ -9,8 +9,8 @@ import dev.adapter.DevDataAdapterExt2
 import dev.base.DevPage
 import dev.base.adapter.DevBaseViewBindingVH
 import dev.base.adapter.newBindingViewHolder
-import dev.core.lib.bean.commodity.CommodityBean
-import dev.core.lib.utils.ProjectUtils
+import afkt_replace.core.lib.bean.commodity.CommodityBean
+import afkt_replace.core.lib.utils.ProjectUtils
 import dev.engine.DevEngine
 import dev.utils.app.ViewUtils
 import dev.utils.app.helper.view.ViewHelper

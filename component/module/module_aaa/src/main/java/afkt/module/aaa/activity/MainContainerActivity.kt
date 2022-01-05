@@ -7,8 +7,8 @@ import androidx.fragment.app.Fragment
 import androidx.viewbinding.ViewBinding
 import com.alibaba.android.arouter.facade.annotation.Autowired
 import com.alibaba.android.arouter.facade.annotation.Route
-import dev.core.lib.base.app.BaseActivityViewBinding
-import dev.core.lib.bean.AfkT
+import afkt_replace.core.lib.base.app.BaseActivityViewBinding
+import afkt_replace.core.lib.bean.AfkT
 import dev.core.router.aaa.AAARouter
 import dev.utils.DevFinal
 import dev.utils.app.ClickUtils

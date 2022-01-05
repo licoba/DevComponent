@@ -9,9 +9,9 @@ import android.view.View
 import com.alibaba.android.arouter.facade.annotation.Autowired
 import com.alibaba.android.arouter.facade.annotation.Route
 import dev.base.DevSource
-import dev.core.lib.base.app.BaseFragmentViewBinding
-import dev.core.lib.bean.AfkT
-import dev.core.lib.utils.ProjectUtils
+import afkt_replace.core.lib.base.app.BaseFragmentViewBinding
+import afkt_replace.core.lib.bean.AfkT
+import afkt_replace.core.lib.utils.ProjectUtils
 import dev.core.router.user.UserRouter
 import dev.engine.DevEngine
 import dev.engine.image.listener.DrawableListener

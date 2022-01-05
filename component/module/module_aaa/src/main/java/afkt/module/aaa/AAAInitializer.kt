@@ -2,14 +2,14 @@ package afkt.module.aaa
 
 import android.content.Context
 import androidx.startup.Initializer
-import dev.core.BaseInitializer
+import afkt_replace.core.BaseInitializer
 import java.util.*
 
 /**
  * detail: AAA Module ( App Startup Initializer )
  * @author Ttt
  */
-class AAAInitializer : BaseInitializer<AAAModule>() {
+class AAAInitializer : afkt_replace.core.BaseInitializer<AAAModule>() {
 
     override fun create(context: Context): AAAModule {
         AAAModule.instance.initialize(context)

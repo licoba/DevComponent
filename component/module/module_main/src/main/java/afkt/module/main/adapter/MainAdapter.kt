@@ -3,7 +3,7 @@ package afkt.module.main.adapter
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import dev.core.lib.bean.AfkT
+import afkt_replace.core.lib.bean.AfkT
 import dev.core.router.aaa.AAARouter
 import dev.core.router.commodity.CommodityRouter
 import dev.core.router.user.UserRouter

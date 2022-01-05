@@ -81,7 +81,7 @@ dependencies {
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="dev.core">
+    package="afkt_replace.core">
 
     <!-- 读取手机状态 -->
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
@@ -111,7 +111,7 @@ dependencies {
             android:exported="false"
             tools:node="merge">
             <meta-data
-                android:name="dev.core.CoreInitializer"
+                android:name="afkt_replace.core.CoreInitializer"
                 android:value="@string/androidx_startup" />
         </provider>
     </application>

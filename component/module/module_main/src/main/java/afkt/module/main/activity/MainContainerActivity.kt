@@ -8,8 +8,8 @@ import android.graphics.Color
 import android.os.Bundle
 import com.alibaba.android.arouter.facade.annotation.Autowired
 import com.alibaba.android.arouter.facade.annotation.Route
-import dev.core.lib.base.app.BaseActivityViewBinding
-import dev.core.lib.bean.AfkT
+import afkt_replace.core.lib.base.app.BaseActivityViewBinding
+import afkt_replace.core.lib.bean.AfkT
 import dev.core.router.main.MainRouter
 import dev.utils.DevFinal
 import dev.utils.app.ClickUtils

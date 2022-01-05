@@ -11,10 +11,10 @@ import com.alibaba.android.arouter.facade.annotation.Autowired
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.scwang.smart.refresh.layout.api.RefreshLayout
 import com.scwang.smart.refresh.layout.listener.OnRefreshLoadMoreListener
-import dev.core.lib.base.app.BaseFragmentViewBinding
-import dev.core.lib.bean.AfkT
-import dev.core.lib.bean.commodity.CommodityBean
-import dev.core.lib.ui.widget.BaseTextView
+import afkt_replace.core.lib.base.app.BaseFragmentViewBinding
+import afkt_replace.core.lib.bean.AfkT
+import afkt_replace.core.lib.bean.commodity.CommodityBean
+import afkt_replace.core.lib.ui.widget.BaseTextView
 import dev.core.router.commodity.CommodityRouter
 import dev.utils.DevFinal
 import dev.utils.app.ResourceUtils

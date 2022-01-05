@@ -19,12 +19,12 @@
         app:dev_backgroundColor="@color/white"
         app:dev_radius="@dimen/un_dp_20">
 
-        <dev.core.lib.ui.widget.BaseImageView
+        <afkt_replace.core.lib.ui.widget.BaseImageView
             android:id="@+id/vid_avatar_igview"
             android:layout_width="@dimen/un_dp_200"
             android:layout_height="@dimen/un_dp_200" />
 
-        <dev.core.lib.ui.widget.BaseTextView
+        <afkt_replace.core.lib.ui.widget.BaseTextView
             android:id="@+id/vid_nickname_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

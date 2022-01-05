@@ -7,8 +7,8 @@ import android.widget.ImageView
 import androidx.viewbinding.ViewBinding
 import com.alibaba.android.arouter.core.LogisticsCenter
 import com.alibaba.android.arouter.facade.annotation.Route
-import dev.core.lib.base.app.BaseActivityViewBinding
-import dev.core.lib.bean.AfkT
+import afkt_replace.core.lib.base.app.BaseActivityViewBinding
+import afkt_replace.core.lib.bean.AfkT
 import dev.core.router.splash.SplashRouter
 import dev.core.router.user.UserRouter
 import dev.engine.DevEngine

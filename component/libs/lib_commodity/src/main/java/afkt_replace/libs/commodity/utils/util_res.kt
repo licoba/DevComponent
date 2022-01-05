@@ -2,7 +2,7 @@ package afkt_replace.libs.commodity.utils
 
 import afkt_replace.libs.commodity.R
 import android.graphics.drawable.Drawable
-import dev.core.lib.bean.commodity.enums.CommodityLabel
+import afkt_replace.core.lib.bean.commodity.enums.CommodityLabel
 import dev.utils.app.ResourceUtils
 import dev.utils.app.SpanUtils
 

@@ -3,13 +3,13 @@ package afkt.module.commodity
 import afkt_replace.libs.commodity.CommodityLibraryInitializer
 import android.content.Context
 import androidx.startup.Initializer
-import dev.core.BaseInitializer
+import afkt_replace.core.BaseInitializer
 
 /**
  * detail: Commodity Module ( App Startup Initializer )
  * @author Ttt
  */
-class CommodityInitializer : BaseInitializer<CommodityModule>() {
+class CommodityInitializer : afkt_replace.core.BaseInitializer<CommodityModule>() {
 
     override fun create(context: Context): CommodityModule {
         CommodityModule.instance.initialize(context)

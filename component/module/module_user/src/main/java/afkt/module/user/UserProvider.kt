@@ -5,11 +5,11 @@ import android.util.Log
 import com.alibaba.android.arouter.facade.annotation.Route
 import dev.core.CoreConst
 import dev.core.app.AppDebug
-import dev.core.lib.bean.user.UserInfo
-import dev.core.lib.bean.user.enums.SexEnum
-import dev.core.lib.bean.user.enums.UserLevelEnum
-import dev.core.lib.bean.user.enums.UserStateEnum
-import dev.core.lib.config.AppConst
+import afkt_replace.core.lib.bean.user.UserInfo
+import afkt_replace.core.lib.bean.user.enums.SexEnum
+import afkt_replace.core.lib.bean.user.enums.UserLevelEnum
+import afkt_replace.core.lib.bean.user.enums.UserStateEnum
+import afkt_replace.core.lib.config.AppConst
 import dev.core.router.user.IUserProvider
 import dev.core.router.user.UserRouter
 import dev.utils.common.ChineseUtils

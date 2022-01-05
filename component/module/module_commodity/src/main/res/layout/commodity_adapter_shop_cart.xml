@@ -20,7 +20,7 @@
         app:dev_backgroundColor="@color/white"
         app:dev_radius="@dimen/un_dp_10">
 
-        <dev.core.lib.ui.widget.BaseImageView
+        <afkt_replace.core.lib.ui.widget.BaseImageView
             android:id="@+id/vid_igview"
             android:layout_width="@dimen/un_dp_20"
             android:layout_height="@dimen/un_dp_20"
@@ -48,7 +48,7 @@
                 app:dev_borderWidth="@dimen/un_dp_1"
                 app:dev_radius="@dimen/un_dp_3">
 
-                <dev.core.lib.ui.widget.BaseImageView
+                <afkt_replace.core.lib.ui.widget.BaseImageView
                     android:id="@+id/vid_pic_igview"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent" />
@@ -62,7 +62,7 @@
                 android:layout_toRightOf="@id/vid_pic_frame"
                 android:orientation="vertical">
 
-                <dev.core.lib.ui.widget.BaseTextView
+                <afkt_replace.core.lib.ui.widget.BaseTextView
                     android:id="@+id/vid_name_tv"
                     style="@style/AppTheme.Base_TextView"
                     android:layout_width="match_parent"
@@ -76,7 +76,7 @@
                     android:textSize="@dimen/un_sp_16"
                     tools:text="商品名" />
 
-                <dev.core.lib.ui.widget.BaseTextView
+                <afkt_replace.core.lib.ui.widget.BaseTextView
                     android:id="@+id/vid_price_tv"
                     style="@style/AppTheme.Base_TextView"
                     android:layout_width="match_parent"
