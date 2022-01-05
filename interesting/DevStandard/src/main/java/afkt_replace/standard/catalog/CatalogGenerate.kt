@@ -1,4 +1,4 @@
-package dev.standard.catalog
+package afkt_replace.standard.catalog
 
 import dev.utils.common.CollectionUtils
 import dev.utils.common.FileUtils.FileList

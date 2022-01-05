@@ -1,4 +1,4 @@
-package dev.standard
+package afkt_replace.standard
 
 import java.math.BigInteger
 import java.security.MessageDigest

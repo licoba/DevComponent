@@ -1,4 +1,4 @@
-package dev.standard.catalog
+package afkt_replace.standard.catalog
 
 import java.io.File
 import java.util.*

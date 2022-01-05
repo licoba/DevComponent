@@ -1,4 +1,4 @@
-package dev.standard.catalog
+package afkt_replace.standard.catalog
 
 /**
  * detail: 目录生成 Main 方法

@@ -1,4 +1,4 @@
-package dev.standard
+package afkt_replace.standard
 
 import dev.utils.DevFinal
 import dev.utils.common.CollectionUtils

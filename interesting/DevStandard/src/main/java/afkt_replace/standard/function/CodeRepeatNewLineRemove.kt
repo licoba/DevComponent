@@ -1,7 +1,7 @@
-package dev.standard.function
+package afkt_replace.standard.function
 
-import dev.standard.Utils
-import dev.standard.catalog.Config
+import afkt_replace.standard.Utils
+import afkt_replace.standard.catalog.Config
 import dev.utils.common.FileIOUtils
 import dev.utils.common.FileUtils
 import dev.utils.common.MapUtils
