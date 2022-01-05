@@ -29,7 +29,7 @@ open class BaseHolder {
 //            holder: DevBaseViewBindingVH<CoreUiBaseTitleBarBinding>,
 //            position: Int
 //        ) {
-//            holder.binding.vidCubtbBackIgview
+//            holder.binding.vidBackIgview
 //        }
 //    }
 }

@@ -53,11 +53,11 @@ class ShopCartFragment : BaseFragmentViewBinding<CommodityFragmentShopCartBindin
         // 设置数据源
         mAdapter.setDataList(newList(15), false)
         // 添加分割线
-        binding.vidCfscRefresh.getRecyclerView()?.addItemDecoration(
+        binding.vidRefresh.getRecyclerView()?.addItemDecoration(
             LastLineItemDecoration(ResourceUtils.getDimension(R.dimen.un_dp_10))
         )
         // 绑定适配器、设置加载事件
-        binding.vidCfscRefresh.setAdapter(mAdapter)
+        binding.vidRefresh.setAdapter(mAdapter)
             .setOnRefreshLoadMoreListener(object : OnRefreshLoadMoreListener {
                 override fun onRefresh(refreshLayout: RefreshLayout) {
                     GlobalScope.launch {
@@ -65,7 +65,7 @@ class ShopCartFragment : BaseFragmentViewBinding<CommodityFragmentShopCartBindin
                         withContext(Dispatchers.Main) {
                             mAdapter.page.setPage(1).isLastPage = false
                             // 结束刷新状态
-                            binding.vidCfscRefresh.finishRefresh()
+                            binding.vidRefresh.finishRefresh()
                             // 重置数据源
                             mAdapter.setDataList(newList(15))
                         }
@@ -83,7 +83,7 @@ class ShopCartFragment : BaseFragmentViewBinding<CommodityFragmentShopCartBindin
                                 isLastPage = (number >= 5)
                             }
                             // 结束加载状态
-                            binding.vidCfscRefresh.finishLoadMore()
+                            binding.vidRefresh.finishLoadMore()
                                 .setNoMoreData(mAdapter.page.isLastPage)
                             // 累加数据源
                             mAdapter.addDatas(newList(RandomUtils.getRandom(5, 10)))

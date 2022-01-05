@@ -21,7 +21,7 @@
         app:dev_radius="@dimen/un_dp_10">
 
         <dev.core.lib.ui.widget.BaseImageView
-            android:id="@+id/vid_casc_igview"
+            android:id="@+id/vid_igview"
             android:layout_width="@dimen/un_dp_20"
             android:layout_height="@dimen/un_dp_20"
             android:layout_gravity="center"
@@ -37,7 +37,7 @@
             android:layout_marginBottom="@dimen/un_dp_10">
 
             <dev.widget.ui.round.RoundFrameLayout
-                android:id="@+id/vid_casc_pic_frame"
+                android:id="@+id/vid_pic_frame"
                 android:layout_width="@dimen/un_dp_70"
                 android:layout_height="@dimen/un_dp_70"
                 android:layout_alignParentLeft="true"
@@ -49,7 +49,7 @@
                 app:dev_radius="@dimen/un_dp_3">
 
                 <dev.core.lib.ui.widget.BaseImageView
-                    android:id="@+id/vid_casc_pic_igview"
+                    android:id="@+id/vid_pic_igview"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent" />
             </dev.widget.ui.round.RoundFrameLayout>
@@ -59,11 +59,11 @@
                 android:layout_height="match_parent"
                 android:layout_alignParentRight="true"
                 android:layout_marginLeft="@dimen/un_dp_8"
-                android:layout_toRightOf="@id/vid_casc_pic_frame"
+                android:layout_toRightOf="@id/vid_pic_frame"
                 android:orientation="vertical">
 
                 <dev.core.lib.ui.widget.BaseTextView
-                    android:id="@+id/vid_casc_name_tv"
+                    android:id="@+id/vid_name_tv"
                     style="@style/AppTheme.Base_TextView"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -77,7 +77,7 @@
                     tools:text="商品名" />
 
                 <dev.core.lib.ui.widget.BaseTextView
-                    android:id="@+id/vid_casc_price_tv"
+                    android:id="@+id/vid_price_tv"
                     style="@style/AppTheme.Base_TextView"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"

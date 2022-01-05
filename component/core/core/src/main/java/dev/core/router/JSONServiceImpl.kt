@@ -3,7 +3,7 @@ package dev.core.router
 import android.content.Context
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.alibaba.android.arouter.facade.service.SerializationService
-import dev.engine.json.DevJSONEngine
+import dev.engine.DevEngine
 import java.lang.reflect.Type
 
 @Route(path = "/service/json_serialization")
@@ -20,13 +20,13 @@ class JSONServiceImpl : SerializationService {
     }
 
     override fun object2Json(instance: Any?): String? {
-        return DevJSONEngine.getEngine()?.toJson(instance)
+        return DevEngine.getJSON()?.toJson(instance)
     }
 
     override fun <T : Any?> parseObject(
         input: String?,
         clazz: Type?
     ): T {
-        return DevJSONEngine.getEngine()?.fromJson<T>(input, clazz) as T
+        return DevEngine.getJSON()?.fromJson<T>(input, clazz) as T
     }
 }

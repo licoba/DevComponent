@@ -74,11 +74,11 @@ class BaseRefreshView : LinearLayout {
 
         // 初始化 View
         val binding = CoreUiBaseRefreshViewBinding.inflate(LayoutInflater.from(context))
-        mBody = binding.vidCubrvFrame
+        mBody = binding.vidFrame
         // 初始化 Refresh 数据
         mAssist
-            .setRecyclerView(binding.vidCubrvRecy)
-            .setRefreshLayout(binding.vidCubrvRefresh)
+            .setRecyclerView(binding.vidRecy)
+            .setRefreshLayout(binding.vidRefresh)
             .setRefreshHeader(ClassicsHeader(context)) // 刷新头
             .setRefreshFooter(ClassicsFooter(context)) // 刷新尾巴
             .setEnableRefresh(true) // 开启下拉刷新

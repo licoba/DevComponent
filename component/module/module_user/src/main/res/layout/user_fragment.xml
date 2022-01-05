@@ -2,7 +2,7 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/vid_uf_content_tv"
+    android:id="@+id/vid_content_tv"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center_horizontal"
@@ -20,12 +20,12 @@
         app:dev_radius="@dimen/un_dp_20">
 
         <dev.core.lib.ui.widget.BaseImageView
-            android:id="@+id/vid_uf_avatar_igview"
+            android:id="@+id/vid_avatar_igview"
             android:layout_width="@dimen/un_dp_200"
             android:layout_height="@dimen/un_dp_200" />
 
         <dev.core.lib.ui.widget.BaseTextView
-            android:id="@+id/vid_uf_nickname_tv"
+            android:id="@+id/vid_nickname_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/un_dp_20"

@@ -9,10 +9,9 @@ import dev.adapter.DevDataAdapterExt2
 import dev.base.DevPage
 import dev.base.adapter.DevBaseViewBindingVH
 import dev.base.adapter.newBindingViewHolder
-import dev.base.multiselect.DevMultiSelectMap
 import dev.core.lib.bean.commodity.CommodityBean
 import dev.core.lib.utils.ProjectUtils
-import dev.engine.image.DevImageEngine
+import dev.engine.DevEngine
 import dev.utils.app.ViewUtils
 import dev.utils.app.helper.view.ViewHelper
 import dev.utils.common.BigDecimalUtils
@@ -26,8 +25,7 @@ class ShopCartAdapter :
     DevDataAdapterExt2<CommodityBean, DevBaseViewBindingVH<CommodityAdapterShopCartBinding>>() {
 
     init {
-        setMultiSelectMap(DevMultiSelectMap())
-            .setPage(DevPage(1, 10))
+        page = DevPage(1, 10)
     }
 
     override fun onCreateViewHolder(
@@ -47,17 +45,17 @@ class ShopCartAdapter :
         ViewHelper.get()
             .setText(
                 appendLabel(item.commodityName, item.type).create(),
-                holder.binding.vidCascNameTv
+                holder.binding.vidNameTv
             )
             .setText(
                 "￥" + BigDecimalUtils.round(
                     item.price, 2, BigDecimal.ROUND_HALF_UP
                 ),
-                holder.binding.vidCascPriceTv
+                holder.binding.vidPriceTv
             )
         // 商品图片
-        DevImageEngine.getEngine().display(
-            holder.binding.vidCascPicIgview,
+        DevEngine.getImage().display(
+            holder.binding.vidPicIgview,
             item.picture,
             ProjectUtils.getRoundConfig3()
         )
@@ -67,7 +65,7 @@ class ShopCartAdapter :
         // ==========
 
         val key = getMultiSelectKey(item, position)
-        val selectIGView = holder.binding.vidCascIgview
+        val selectIGView = holder.binding.vidIgview
         // 是否显示编辑按钮、以及是否选中
         ViewHelper.get().setVisibilitys(isEditState, selectIGView)
             .setSelected(mMultiSelectMap.isSelectKey(key), selectIGView)

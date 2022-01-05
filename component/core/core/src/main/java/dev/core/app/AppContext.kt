@@ -8,7 +8,7 @@ import dev.core.property.BlockCanaryKT
 import dev.core.property.Bugly
 import dev.core.property.BuglyConfig
 import dev.core.property.defaultBuglyConfig
-import dev.engine.log.DevLogEngine
+import dev.engine.DevEngine
 import dev.utils.app.PathUtils
 
 /**
@@ -67,7 +67,7 @@ open class AppContext : BaseAppContext() {
                     webViewAssist: WebViewAssist?,
                     builder: WebViewAssist.Builder
                 ) {
-                    DevLogEngine.getEngine()?.apply {
+                    DevEngine.getLog()?.apply {
                         d("WebViewAssist Builder onApply")
                     }
                 }

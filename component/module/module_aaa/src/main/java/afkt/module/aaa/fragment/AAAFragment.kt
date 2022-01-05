@@ -26,7 +26,7 @@ class AAAFragment : BaseFragmentViewBinding<AaaFragmentBinding>() {
     ) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.vidAfContentTv.text = "$TAG \r\n ${afkt?.value}"
+        binding.vidContentTv.text = "$TAG \r\n ${afkt?.value}"
 
         afkt?.let { uiController.setAllBackground(it.color) }
     }

@@ -76,7 +76,7 @@ class BaseTitleBar : LinearLayout {
     // ===========
 
     fun setTitle(title: String?): BaseTitleBar {
-        binding.vidCubtbTitleTv.text = title
+        binding.vidTitleTv.text = title
         return this
     }
 
@@ -85,17 +85,17 @@ class BaseTitleBar : LinearLayout {
     }
 
     fun setTitleColor(color: Int): BaseTitleBar {
-        binding.vidCubtbTitleTv.setTextColor(color)
+        binding.vidTitleTv.setTextColor(color)
         return this
     }
 
     fun setBackListener(listener: OnClickListener): BaseTitleBar {
-        binding.vidCubtbBackIgview.setOnClickListener(listener)
+        binding.vidBackIgview.setOnClickListener(listener)
         return this
     }
 
     fun goneBackView(): BaseTitleBar {
-        binding.vidCubtbBackIgview.visibility = GONE
+        binding.vidBackIgview.visibility = GONE
         return this
     }
 }

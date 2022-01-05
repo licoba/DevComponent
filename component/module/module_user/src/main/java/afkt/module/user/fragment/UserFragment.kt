@@ -13,9 +13,8 @@ import dev.core.lib.base.app.BaseFragmentViewBinding
 import dev.core.lib.bean.AfkT
 import dev.core.lib.utils.ProjectUtils
 import dev.core.router.user.UserRouter
-import dev.engine.image.DevImageEngine
+import dev.engine.DevEngine
 import dev.engine.image.listener.DrawableListener
-import dev.engine.log.DevLogEngine
 import dev.utils.DevFinal
 
 @Route(path = UserRouter.PATH_USER_FRAGMENT, group = UserRouter.GROUP)
@@ -39,15 +38,15 @@ class UserFragment : BaseFragmentViewBinding<UserFragmentBinding>() {
             // 如果已经登录了
             if (isLogin()) {
                 getUserInfo()?.let { user ->
-                    binding.vidUfNicknameTv.text = user.nickName
+                    binding.vidNicknameTv.text = user.nickName
                     // 加载用户图片
-                    DevImageEngine.getEngine().display(
-                        binding.vidUfAvatarIgview,
+                    DevEngine.getImage().display(
+                        binding.vidAvatarIgview,
                         user.avatar,
                         ProjectUtils.getRoundConfig10()
                     )
                     // 加载背景
-                    DevImageEngine.getEngine().loadDrawable(
+                    DevEngine.getImage().loadDrawable(
                         activity,
                         DevSource.create(user.background),
                         null,
@@ -57,7 +56,7 @@ class UserFragment : BaseFragmentViewBinding<UserFragmentBinding>() {
                                 source: DevSource?,
                                 value: Drawable?
                             ) {
-                                binding.vidUfContentTv.background = value
+                                binding.vidContentTv.background = value
                             }
 
                             override fun onStart(source: DevSource?) {
@@ -67,13 +66,13 @@ class UserFragment : BaseFragmentViewBinding<UserFragmentBinding>() {
                                 source: DevSource?,
                                 throwable: Throwable?
                             ) {
-                                DevLogEngine.getEngine().eTag(TAG, throwable)
+                                DevEngine.getLog().eTag(TAG, throwable)
                             }
                         }
                     )
                 }
             } else {
-                binding.vidUfNicknameTv.text = "用户未登录"
+                binding.vidNicknameTv.text = "用户未登录"
             }
         }
     }

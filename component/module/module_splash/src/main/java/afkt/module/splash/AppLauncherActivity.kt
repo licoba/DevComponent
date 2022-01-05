@@ -11,7 +11,7 @@ import dev.core.lib.base.app.BaseActivityViewBinding
 import dev.core.lib.bean.AfkT
 import dev.core.router.splash.SplashRouter
 import dev.core.router.user.UserRouter
-import dev.engine.log.DevLogEngine
+import dev.engine.DevEngine
 import dev.utils.DevFinal
 import dev.utils.app.toast.ToastTintUtils
 import kotlinx.coroutines.GlobalScope
@@ -42,8 +42,8 @@ class AppLauncherActivity : BaseActivityViewBinding<ViewBinding>() {
 
         // 调用其他模块数据
         val isLogin: Boolean = UserRouter.userProvider()?.isLogin() == true
-        DevLogEngine.getEngine().d("是否登录了 $isLogin")
-        DevLogEngine.getEngine().d("是否存在 UserProvider ${UserRouter.userProvider()}")
+        DevEngine.getLog().d("是否登录了 $isLogin")
+        DevEngine.getLog().d("是否存在 UserProvider ${UserRouter.userProvider()}")
 
         GlobalScope.launch {
             delay(2000L)
