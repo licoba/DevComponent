@@ -2,13 +2,13 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/vid_layout"
+    android:id="@+id/vid_cl"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     tools:layout_height="@dimen/un_dp_45">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/vid_left_constraint"
+        android:id="@+id/vid_left_cl"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:orientation="horizontal"
@@ -16,7 +16,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <afkt_replace.core.lib.ui.widget.BaseImageView
-            android:id="@+id/vid_back_igview"
+            android:id="@+id/vid_back_iv"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:padding="@dimen/un_dp_10"
@@ -28,7 +28,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <LinearLayout
-        android:id="@+id/vid_title_linear"
+        android:id="@+id/vid_title_ll"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
@@ -47,7 +47,7 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/vid_right_linear"
+        android:id="@+id/vid_right_ll"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:orientation="horizontal"

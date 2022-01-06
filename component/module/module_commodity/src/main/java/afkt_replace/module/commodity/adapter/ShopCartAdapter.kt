@@ -55,7 +55,7 @@ class ShopCartAdapter :
             )
         // 商品图片
         DevEngine.getImage().display(
-            holder.binding.vidPicIgview,
+            holder.binding.vidPicIv,
             item.picture,
             ProjectUtils.getRoundConfig3()
         )
@@ -65,7 +65,7 @@ class ShopCartAdapter :
         // ==========
 
         val key = getMultiSelectKey(item, position)
-        val selectIGView = holder.binding.vidIgview
+        val selectIGView = holder.binding.vidIv
         // 是否显示编辑按钮、以及是否选中
         ViewHelper.get().setVisibilitys(isEditState, selectIGView)
             .setSelected(mMultiSelectMap.isSelectKey(key), selectIGView)

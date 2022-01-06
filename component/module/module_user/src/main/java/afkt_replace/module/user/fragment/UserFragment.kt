@@ -41,7 +41,7 @@ class UserFragment : BaseFragmentViewBinding<UserFragmentBinding>() {
                     binding.vidNicknameTv.text = user.nickName
                     // 加载用户图片
                     DevEngine.getImage().display(
-                        binding.vidAvatarIgview,
+                        binding.vidAvatarIv,
                         user.avatar,
                         ProjectUtils.getRoundConfig10()
                     )

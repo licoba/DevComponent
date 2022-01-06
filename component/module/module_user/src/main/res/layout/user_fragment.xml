@@ -20,7 +20,7 @@
         app:dev_radius="@dimen/un_dp_20">
 
         <afkt_replace.core.lib.ui.widget.BaseImageView
-            android:id="@+id/vid_avatar_igview"
+            android:id="@+id/vid_avatar_iv"
             android:layout_width="@dimen/un_dp_200"
             android:layout_height="@dimen/un_dp_200" />
 

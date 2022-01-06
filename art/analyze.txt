@@ -1,5 +1,11 @@
 
 
+Analyze -> Run Inspection by Name
+
+
+Analyze -> Inspect Code
+
+
 ===========
 = Analyze =
 ===========

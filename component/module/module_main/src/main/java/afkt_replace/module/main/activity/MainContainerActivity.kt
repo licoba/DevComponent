@@ -34,7 +34,7 @@ class MainContainerActivity : BaseActivityViewBinding<MainActivityBinding>() {
         themeIntent?.let { uiController.setAllBackground(it.color) }
 
         if (!BuildConfig.isModular) {
-            binding.vidViewpager.adapter = MainAdapter(themeIntent, this)
+            binding.vidVp.adapter = MainAdapter(themeIntent, this)
         }
     }
 

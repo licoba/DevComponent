@@ -90,12 +90,12 @@ class BaseTitleBar : LinearLayout {
     }
 
     fun setBackListener(listener: OnClickListener): BaseTitleBar {
-        binding.vidBackIgview.setOnClickListener(listener)
+        binding.vidBackIv.setOnClickListener(listener)
         return this
     }
 
     fun goneBackView(): BaseTitleBar {
-        binding.vidBackIgview.visibility = GONE
+        binding.vidBackIv.visibility = GONE
         return this
     }
 }
