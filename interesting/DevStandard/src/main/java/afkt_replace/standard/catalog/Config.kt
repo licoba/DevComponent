@@ -162,6 +162,7 @@ object Config {
         // ===============
 
         sInterestingCatalogMap["interesting"] = "根目录"
+        sInterestingCatalogMap[".DevReplace"] = "快捷替换组件化模板包名"
         sInterestingCatalogMap[".DevStandard"] = "项目规范统一检测、生成替换等"
     }
 }

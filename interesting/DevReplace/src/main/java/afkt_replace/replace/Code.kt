@@ -14,18 +14,12 @@ object Code {
     // 项目路径
     val PROJECT_PATH = File(USER_DIR).absolutePath
 
-    // 组件化项目名 ( 目前, 待替换 )
-    const val COMPONENT_PROJECT_NAME = "DevComponent"
-
     // 组件化项目包名 ( 目前, 待替换 )
     const val COMPONENT_PACKNAME = "afkt_replace"
 
     // ==========
     // = 替换参数 =
     // ==========
-
-    // 替换项目名
-    const val REPLACE_PROJECT_NAME = ""
 
     // 替换包名
     const val REPLACE_PACKNAME = ""
@@ -91,25 +85,25 @@ object Code {
     }
 
     /**
-     * 替换组件化模板项目名、包名
+     * 替换组件化模板包名
      * @param fileList 搜索结果
      * <p></p>
-     * 例: 项目为 QTComponent, 包名为 com.qt
+     * 例: 项目包名为 com.qt
      * 修改以下参数的结果为
-     * 把该项目文件夹修改为 QTComponent
      * 把项目包名修改为 com.qt
      *
-     * // 替换项目名
-     * const val REPLACE_PROJECT_NAME = "QTComponent"
      * // 替换包名
      * const val REPLACE_PACKNAME = "com.qt"
      *
      * 执行成功后续操作:
      * 全局搜索 afkt_replace ( COMPONENT_PACKNAME ) 字符串
      * 并替换为 com.qt ( REPLACE_PACKNAME )
-     * 整个流程结束, 至此成功将项目文件名、包名替换为指定信息
+     * 整个流程结束, 至此成功将该项目包名替换为指定信息
      * 最后只需 clean project 并进行 rebuild 即可使用该组件化模板
      * 进行个人、公司项目开发
+     * tips:
+     * 执行该操作结束后记得把 .git 文件删除再 pull 到服务器上
+     * 项目文件名 ( DevComponent ) 直接手动修改即可
      */
     fun replaceComponent(fileList: List<File>) {
         if (!StringUtils.isSpace(REPLACE_PACKNAME)) {
@@ -131,10 +125,6 @@ object Code {
                     FileUtils.moveDir(it, newFile) { true }
                 }
             }
-        }
-        // 最后才修改文件夹名, 防止历史路径错乱
-        if (!StringUtils.isSpace(REPLACE_PROJECT_NAME)) {
-            FileUtils.rename(PROJECT_PATH, REPLACE_PROJECT_NAME)
         }
     }
 

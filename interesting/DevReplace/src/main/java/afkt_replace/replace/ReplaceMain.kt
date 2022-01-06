@@ -5,7 +5,7 @@ import dev.utils.common.assist.search.FileDepthFirstSearchUtils
 import java.io.File
 
 /**
- * detail: 快捷替换组件化模板项目名、包名
+ * detail: 快捷替换组件化模板包名
  * @author Ttt
  * DevReplace lib 主要用于替换该组件化模板项目名、包名
  * 便于直接使用该模板进行组件化开发, 减少使用者包名替换、重新搭建组件化流程
