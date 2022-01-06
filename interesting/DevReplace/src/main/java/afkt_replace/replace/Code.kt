@@ -112,6 +112,12 @@ object Code {
      * const val REPLACE_PROJECT_NAME = "QTComponent"
      * // 替换包名
      * const val REPLACE_PACKNAME = "com.qt"
+     *
+     * 执行成功后续操作:
+     * 全局搜索 afkt_replace ( COMPONENT_PACKNAME ) 字符串
+     * 并替换为 com.qt ( REPLACE_PACKNAME )
+     * 整个流程结束, 至此成功将项目名、包名替换为指定数值
+     * 最后只需要 clean project 并进行 rebuild 即可
      */
     fun replaceComponent(fileList: List<File>) {
         if (IS_REPLACE_PACKNAME) {
