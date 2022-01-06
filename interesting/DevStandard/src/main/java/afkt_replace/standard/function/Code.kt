@@ -8,12 +8,15 @@ object Code {
      * @return `true` yes, `false` no
      */
     fun isHidden(path: String?): Boolean {
-        if (path != null) {
-            val temp = path.replace("/../..".toRegex(), "")
+        return path?.let {
+            val temp: String = it.replace("/../..".toRegex(), "")
                 .replace("\\...\\...".toRegex(), "")
-//                .replace("\\..\\..", "");
-            return temp.contains("\\.")
-        }
-        return false
+                .replace("\\..\\..".toRegex(), "")
+            // 判断是否存在特殊情况
+            if (temp.contains("..")) {
+                println("path replace 未彻底 : $it")
+            }
+            return temp.contains("\\.") || temp.contains("/.")
+        } ?: false
     }
 }
