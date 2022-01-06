@@ -116,8 +116,9 @@ object Code {
      * 执行成功后续操作:
      * 全局搜索 afkt_replace ( COMPONENT_PACKNAME ) 字符串
      * 并替换为 com.qt ( REPLACE_PACKNAME )
-     * 整个流程结束, 至此成功将项目名、包名替换为指定数值
-     * 最后只需要 clean project 并进行 rebuild 即可
+     * 整个流程结束, 至此成功将项目文件名、包名替换为指定信息
+     * 最后只需 clean project 并进行 rebuild 即可使用该组件化模板
+     * 进行个人、公司项目开发
      */
     fun replaceComponent(fileList: List<File>) {
         if (IS_REPLACE_PACKNAME) {
