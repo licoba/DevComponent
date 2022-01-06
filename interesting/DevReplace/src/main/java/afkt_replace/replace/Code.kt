@@ -23,12 +23,6 @@ object Code {
     // = 替换参数 =
     // ==========
 
-    // 是否替换项目名
-    const val IS_REPLACE_PROJECT_NAME = false
-
-    // 是否替换包名
-    const val IS_REPLACE_PACKNAME = false
-
     // 替换项目名
     const val REPLACE_PROJECT_NAME = ""
 
@@ -101,13 +95,9 @@ object Code {
      * <p></p>
      * 例: 项目为 QTComponent, 包名为 com.qt
      * 修改以下参数的结果为
-     * 把该项目文件夹修改为 QTComponent ( IS_REPLACE_PROJECT_NAME 控制 )
-     * 把项目包名修改为 com.qt ( IS_REPLACE_PACKNAME 控制 )
+     * 把该项目文件夹修改为 QTComponent
+     * 把项目包名修改为 com.qt
      *
-     * // 是否替换项目名
-     * const val IS_REPLACE_PROJECT_NAME = true
-     * // 是否替换包名
-     * const val IS_REPLACE_PACKNAME = true
      * // 替换项目名
      * const val REPLACE_PROJECT_NAME = "QTComponent"
      * // 替换包名
@@ -121,13 +111,13 @@ object Code {
      * 进行个人、公司项目开发
      */
     fun replaceComponent(fileList: List<File>) {
-        if (IS_REPLACE_PACKNAME) {
+        if (!StringUtils.isSpace(REPLACE_PACKNAME)) {
             fileList.forEach {
 
             }
         }
         // 最后才修改文件夹名, 防止历史路径错乱
-        if (IS_REPLACE_PROJECT_NAME) {
+        if (!StringUtils.isSpace(REPLACE_PROJECT_NAME)) {
 
         }
     }
