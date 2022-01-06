@@ -35,6 +35,7 @@ internal object ReplaceMain {
                     println("搜索结束".toUTF8())
                     val fileList = Code.toReplaceDirectoryList(lists)
                     Code.replaceComponent(fileList)
+                    println("执行成功".toUTF8())
                 }
             }).query(Code.PROJECT_PATH, true)
     }

@@ -1,6 +1,7 @@
 package afkt_replace.replace
 
 import dev.utils.DevFinal
+import dev.utils.common.FileUtils
 import dev.utils.common.StringUtils
 import dev.utils.common.assist.search.FileDepthFirstSearchUtils
 import java.io.File
@@ -112,13 +113,26 @@ object Code {
      */
     fun replaceComponent(fileList: List<File>) {
         if (!StringUtils.isSpace(REPLACE_PACKNAME)) {
+            // 判断包名是否需要创建文件夹
+            val directory = if (REPLACE_PACKNAME.contains("\\.".toRegex())) {
+                // 包名替换为 xx/xx/xx path 结构
+                REPLACE_PACKNAME.replace(
+                    "\\.".toRegex(), "/"
+                )
+            } else {
+                REPLACE_PACKNAME
+            }
+            // 循环目录结构
             fileList.forEach {
-
+                if (it.exists()) {
+                    val newFile = FileUtils.getFile(it.parent, directory)
+                    FileUtils.createFolder(newFile)
+                }
             }
         }
         // 最后才修改文件夹名, 防止历史路径错乱
         if (!StringUtils.isSpace(REPLACE_PROJECT_NAME)) {
-
+            FileUtils.rename(PROJECT_PATH, REPLACE_PROJECT_NAME)
         }
     }
 
