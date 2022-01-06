@@ -29,8 +29,7 @@ object CodeRepeatNewLineRemove {
             Config.PROJECT_PATH, FileFilter { file ->
                 val absolutePath = file.absolutePath
                 if (Code.isHidden(absolutePath)) return@FileFilter false
-                if (absolutePath.contains("\\build\\")) return@FileFilter false;
-                if (absolutePath.contains("/build/")) return@FileFilter false;
+                if (Code.isBuild(absolutePath)) return@FileFilter false
                 if (file.isDirectory) return@FileFilter false
 
                 val fileSuffix = FileUtils.getFileSuffix(file)

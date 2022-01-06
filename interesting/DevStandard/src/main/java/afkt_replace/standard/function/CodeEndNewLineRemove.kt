@@ -43,6 +43,7 @@ object CodeEndNewLineRemove {
                 override fun isAddToList(file: File): Boolean {
                     val absolutePath = file.absolutePath
                     if (Code.isHidden(absolutePath)) return false
+                    if (Code.isBuild(absolutePath)) return false
 
                     val fileSuffix = FileUtils.getFileSuffix(file)
                     if (!IS_IGNORE_SUFFIX && StringUtils.isOrEquals(fileSuffix, *IGNORE_SUFFIX)) {

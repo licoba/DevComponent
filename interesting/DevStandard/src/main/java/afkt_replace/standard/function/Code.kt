@@ -19,4 +19,17 @@ object Code {
             return temp.contains("\\.") || temp.contains("/.")
         } ?: false
     }
+
+    /**
+     * 是否 Build 文件、文件夹
+     * @param path 待判断文件路径
+     * @return `true` yes, `false` no
+     */
+    fun isBuild(path: String?): Boolean {
+        return path?.let {
+            if (it.contains("\\build\\")) return true
+            if (it.contains("/build/")) return true
+            return false
+        } ?: false
+    }
 }

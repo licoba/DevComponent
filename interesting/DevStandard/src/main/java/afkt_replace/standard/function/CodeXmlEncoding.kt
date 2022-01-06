@@ -37,6 +37,7 @@ object CodeXmlEncoding {
                 override fun isAddToList(file: File): Boolean {
                     val absolutePath = file.absolutePath
                     if (Code.isHidden(absolutePath)) return false
+                    if (Code.isBuild(absolutePath)) return false
 
                     val fileSuffix = FileUtils.getFileSuffix(file)
                     if (!StringUtils.isOrEquals(fileSuffix, *SUFFIX)) {
