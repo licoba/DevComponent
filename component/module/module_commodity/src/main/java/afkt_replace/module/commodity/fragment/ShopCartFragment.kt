@@ -113,22 +113,22 @@ class ShopCartFragment : BaseFragmentViewBinding<CommodityFragmentShopCartBindin
     // ==========
 
     // 编辑按钮
-    var editView: BaseTextView? = null
+    private var editView: BaseTextView? = null
 
     // 取消编辑按钮
-    var cancelView: BaseTextView? = null
+    private var cancelView: BaseTextView? = null
 
     // 确定按钮
-    var confirmView: BaseTextView? = null
+    private var confirmView: BaseTextView? = null
 
     // 全选按钮
-    var allSelectView: BaseTextView? = null
+    private var allSelectView: BaseTextView? = null
 
     // 非全选按钮
-    var unAllSelectView: BaseTextView? = null
+    private var unAllSelectView: BaseTextView? = null
 
     // 反选按钮
-    var inverseSelectView: BaseTextView? = null
+    private var inverseSelectView: BaseTextView? = null
 
     private fun addEditButton() {
         context?.let { context ->
@@ -165,10 +165,10 @@ class ShopCartFragment : BaseFragmentViewBinding<CommodityFragmentShopCartBindin
 
             linear.addView(createTextView("确定") {
                 val builder = StringBuilder()
-                builder.append("是否全选: ").append(mAdapter.isSelectAll())
-                builder.append("\n是否选中: ").append(mAdapter.isSelect())
-                builder.append("\n选中数量: ").append(mAdapter.getSelectSize())
-                builder.append("\n总数: ").append(mAdapter.getDataCount())
+                builder.append("是否全选: ").append(mAdapter.isSelectAll)
+                builder.append("\n是否选中: ").append(mAdapter.isSelect)
+                builder.append("\n选中数量: ").append(mAdapter.selectSize)
+                builder.append("\n总数: ").append(mAdapter.dataCount)
                 ToastTintUtils.normal(builder.toString())
             }.also { confirmView = it })
 

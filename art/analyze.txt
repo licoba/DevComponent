@@ -67,3 +67,11 @@ Redundant curly braces in string template
 
 
 Remove empty primary constructor
+
+
+
+Remove redundant qualifier name
+
+
+
+Accessor call that can be replaced with property access syntax
