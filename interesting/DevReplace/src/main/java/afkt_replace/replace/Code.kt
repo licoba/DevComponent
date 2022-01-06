@@ -122,11 +122,13 @@ object Code {
             } else {
                 REPLACE_PACKNAME
             }
-            // 循环目录结构
+            // 循环目录
             fileList.forEach {
                 if (it.exists()) {
                     val newFile = FileUtils.getFile(it.parent, directory)
                     FileUtils.createFolder(newFile)
+                    // 移动文件夹 - 如果存在则进行覆盖
+                    FileUtils.moveDir(it, newFile) { true }
                 }
             }
         }
