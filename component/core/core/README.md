@@ -122,7 +122,7 @@ dependencies {
 
 ```
 - java                       
-   - dev                     
+   - afkt_replace            
       - core                 
          - app               
          - assist            
@@ -135,7 +135,6 @@ dependencies {
             - main           
             - splash         
             - user           
-         - utils             
 ```
 
 

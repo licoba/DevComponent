@@ -26,7 +26,7 @@ dependencies {
 
 ```
 - java                           
-   - dev                         
+   - afkt_replace                
       - core                     
          - lib                   
             - config             

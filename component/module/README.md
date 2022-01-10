@@ -5,10 +5,10 @@
 ## 目录结构
 
 ```
-- module                            | 根目录
-   - module_aaa                     | 演示 AAA Module
-   - module_commodity               | 商品相关 Module
-   - module_main                    | 首页 Module
-   - module_splash                  | 启动页 ( 广告页、首次启动引导页 ) Module
-   - module_user                    | 用户 Module
+- module                         | 根目录
+   - module_aaa                  | 演示 AAA Module
+   - module_commodity            | 商品相关 Module
+   - module_main                 | 首页 Module
+   - module_splash               | 启动页 ( 广告页、首次启动引导页 ) Module
+   - module_user                 | 用户 Module
 ```

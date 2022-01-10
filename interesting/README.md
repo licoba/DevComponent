@@ -6,5 +6,6 @@
 
 ```
 - interesting         | 根目录
+   - DevReplace       | 快捷替换组件化模板包名
    - DevStandard      | 项目规范统一检测、生成替换等
 ```
