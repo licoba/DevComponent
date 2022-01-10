@@ -3,6 +3,7 @@ package afkt_replace.standard.catalog
 import dev.utils.DevFinal
 import dev.utils.common.FileUtils
 import dev.utils.common.StringUtils
+import dev.utils.common.comparator.ComparatorUtils
 import java.io.File
 import java.io.UnsupportedEncodingException
 import java.util.*
@@ -68,7 +69,8 @@ object Utils {
         mapAbout: Map<String, String>?
     ) {
         val root = File(path, dirName.replace("\\.".toRegex(), "//"))
-        val names = root.list()
+        val names = FileUtils.listOrEmpty(root)
+        ComparatorUtils.sortWindowsExplorerStringSimpleComparatorAsc(names)
         for (name in names) {
             val catalog = "$dirName.$name"
             val catelogPath = path + catalog.replace("\\.".toRegex(), "//") + File.separator
@@ -223,7 +225,8 @@ object Utils {
         }
 
         val mainFile = File(path, "src/main")
-        val mainFiles = mainFile.listFiles()
+        val mainFiles = FileUtils.listFilesOrEmpty(mainFile)
+        ComparatorUtils.sortWindowsExplorerFileSimpleComparatorAsc(mainFiles)
         if (mainFiles != null) {
             for (mrFile in mainFiles) {
                 val mainResFileName = mrFile.name

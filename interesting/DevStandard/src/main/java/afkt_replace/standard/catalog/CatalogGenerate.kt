@@ -1,8 +1,10 @@
 package afkt_replace.standard.catalog
 
 import dev.utils.common.CollectionUtils
+import dev.utils.common.FileUtils
 import dev.utils.common.FileUtils.FileList
 import dev.utils.common.StringUtils
+import dev.utils.common.comparator.ComparatorUtils
 import java.io.File
 
 /**
@@ -76,7 +78,8 @@ internal object CatalogGenerate {
         // 获取文件路径
         val baseFile = File(path)
         // 获取子文件
-        val files: Array<File> = baseFile.listFiles()
+        val files = FileUtils.listFilesOrEmpty(baseFile)
+        ComparatorUtils.sortWindowsExplorerFileSimpleComparatorAsc(files)
         for (file in files) {
             val name: String = file.name
             // 隐藏文件跳过
