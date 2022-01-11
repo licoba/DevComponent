@@ -111,7 +111,11 @@ abstract class BaseActivityViewBinding<VB : ViewBinding> : DevBaseContentViewBin
     // ============
 
     private fun priInitialize() {
-        ARouter.getInstance().inject(this)
+        try {
+            ARouter.getInstance().inject(this)
+        } catch (e: Exception) {
+            assist.printLog(e, "ARouter inject")
+        }
     }
 
     // =====================

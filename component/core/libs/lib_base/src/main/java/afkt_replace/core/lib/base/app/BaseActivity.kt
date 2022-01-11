@@ -102,6 +102,10 @@ abstract class BaseActivity<VDB : ViewDataBinding, VM : ViewModel> : DevBaseCont
     // =============
 
     private fun priInitialize() {
-        ARouter.getInstance().inject(this)
+        try {
+            ARouter.getInstance().inject(this)
+        } catch (e: Exception) {
+            assist.printLog(e, "ARouter inject")
+        }
     }
 }
