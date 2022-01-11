@@ -80,6 +80,8 @@
 
 * [一份涵盖大部分 Java 程序员所需要掌握的核心知识](https://github.com/Snailclimb/JavaGuide)
 
+* [一份涵盖大部分 Java 程序员所需要掌握的核心知识2](https://github.com/WiSiW/JavaGuide)
+
 ### 题目
 
 * [面经网-互联网程序员面试题汇总](https://v2ee.cn)
