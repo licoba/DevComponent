@@ -1,4 +1,4 @@
-package afkt_replace.module.aaa.base
+package afkt_replace.module.template.base
 
 import afkt_replace.core.app.AppContext
 

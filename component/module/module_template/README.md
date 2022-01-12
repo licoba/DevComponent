@@ -1,7 +1,7 @@
 
 # About
 
-演示 AAA Module
+模板 Module ( 便于 copy )
 
 # 依赖信息
 
@@ -16,7 +16,7 @@ dependencies {
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="afkt_replace.module.aaa">
+    package="afkt_replace.module.template">
 
     <application>
         <provider
@@ -25,7 +25,7 @@ dependencies {
             android:exported="false"
             tools:node="merge">
             <meta-data
-                android:name="afkt_replace.module.aaa.AAAInitializer"
+                android:name="afkt_replace.module.template.TemplateInitializer"
                 android:value="@string/androidx_startup" />
         </provider>
 

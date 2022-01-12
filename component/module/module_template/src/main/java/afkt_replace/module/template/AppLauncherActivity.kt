@@ -1,8 +1,8 @@
-package afkt_replace.module.aaa
+package afkt_replace.module.template
 
 import afkt_replace.core.lib.base.app.BaseActivityViewBinding
 import afkt_replace.core.lib.bean.ThemeIntent
-import afkt_replace.core.router.aaa.AAARouter
+import afkt_replace.core.router.template.TemplateRouter
 import android.os.Bundle
 import android.view.View
 import android.widget.ImageView
@@ -40,7 +40,7 @@ class AppLauncherActivity : BaseActivityViewBinding<ViewBinding>() {
 
         GlobalScope.launch {
             delay(2000L)
-            AAARouter.build(AAARouter.PATH_MAIN)
+            TemplateRouter.build(TemplateRouter.PATH_MAIN)
                 .withObject(DevFinal.STR.DATA, ThemeIntent("【模块化运行】"))
                 .navigation()
             finish()

@@ -1,6 +1,5 @@
 package afkt_replace.core.router.commodity
 
-import afkt_replace.core.router.aaa.AAARouter.GROUP
 import com.alibaba.android.arouter.facade.Postcard
 import com.alibaba.android.arouter.launcher.ARouter
 

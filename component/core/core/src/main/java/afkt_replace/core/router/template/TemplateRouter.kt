@@ -1,15 +1,15 @@
-package afkt_replace.core.router.aaa
+package afkt_replace.core.router.template
 
 import com.alibaba.android.arouter.facade.Postcard
 import com.alibaba.android.arouter.launcher.ARouter
 
 /**
- * detail: AAA Module Router
+ * detail: Template Module Router
  * @author Ttt
  */
-object AAARouter {
+object TemplateRouter {
 
-    const val GROUP = "aaa"
+    const val GROUP = "template"
 
     // ========
     // = PATH =

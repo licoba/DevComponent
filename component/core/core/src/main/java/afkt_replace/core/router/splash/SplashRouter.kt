@@ -1,6 +1,5 @@
 package afkt_replace.core.router.splash
 
-import afkt_replace.core.router.aaa.AAARouter.GROUP
 import afkt_replace.core.router.main.MainRouter
 import com.alibaba.android.arouter.facade.Postcard
 import com.alibaba.android.arouter.launcher.ARouter

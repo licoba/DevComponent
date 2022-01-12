@@ -34,16 +34,16 @@ ext {
                     // 模块名
                     moduleName   : "APP",
             ],
-            // 演示 AAA Module
-            "module_aaa"      : [
+            // 模板 Module ( 便于 copy )
+            "module_template"      : [
                     // 版本号
                     versionCode  : 100,
                     // 版本名
                     versionName  : "1.0.0",
                     // 包名
-                    applicationId: "afkt_replace.module.aaa",
+                    applicationId: "afkt_replace.module.template",
                     // 模块名
-                    moduleName   : "AAA",
+                    moduleName   : "TEMPLATE",
             ],
             // 商品相关 Module
             "module_commodity": [

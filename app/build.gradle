@@ -22,7 +22,7 @@ dependencies {
 //    implementation project(':lib_circle_igview') // 哪个 module 需要使用就单独依赖
 
     if (!isModular) { // 非组件化则加载各个模块
-        implementation project(':module_aaa')
+        implementation project(':module_template')
         implementation project(':module_commodity')
         implementation project(':module_main')
         implementation project(':module_splash')

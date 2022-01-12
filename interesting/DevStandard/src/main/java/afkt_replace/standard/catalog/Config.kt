@@ -107,7 +107,7 @@ object Config {
         sComponentCatalogMap["component"] = "根目录"
         sComponentCatalogMap[".core"] = "核心基础整合库"
         sComponentCatalogMap[".libs"] = "通用 Library、第三方库 clone 差异化修改"
-        sComponentCatalogMap[".module"] = "具体功能模块，被主体应用 ( 壳 ) 所依赖使用"
+        sComponentCatalogMap[".module"] = "具体功能模块 ( 可单独运行 )，被主体应用 ( 壳 ) 所依赖使用"
 
         // ========
         // = Core =
@@ -135,7 +135,7 @@ object Config {
         // ==========
 
         sModuleCatalogMap["module"] = "根目录"
-        sModuleCatalogMap[".module_aaa"] = "演示 AAA Module"
+        sModuleCatalogMap[".module_template"] = "模板 Module ( 便于 copy )"
         sModuleCatalogMap[".module_commodity"] = "商品相关 Module"
         sModuleCatalogMap[".module_main"] = "首页 Module"
         sModuleCatalogMap[".module_splash"] = "启动页 ( 广告页、首次启动引导页 ) Module"

@@ -1,9 +1,8 @@
-package afkt_replace.module.aaa.activity
+package afkt_replace.module.template
 
 import afkt_replace.core.lib.base.app.BaseActivityViewBinding
 import afkt_replace.core.lib.bean.ThemeIntent
-import afkt_replace.core.router.aaa.AAARouter
-import afkt_replace.module.aaa.BuildConfig
+import afkt_replace.core.router.template.TemplateRouter
 import android.graphics.Color
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -14,7 +13,7 @@ import dev.utils.DevFinal
 import dev.utils.app.ClickUtils
 import dev.utils.app.toast.ToastTintUtils
 
-@Route(path = AAARouter.PATH_MAIN, group = AAARouter.GROUP)
+@Route(path = TemplateRouter.PATH_MAIN, group = TemplateRouter.GROUP)
 class MainContainerActivity : BaseActivityViewBinding<ViewBinding>() {
 
     @JvmField
@@ -36,7 +35,7 @@ class MainContainerActivity : BaseActivityViewBinding<ViewBinding>() {
 
         themeIntent?.let { uiController.setAllBackground(it.color) }
 
-        (AAARouter.build(AAARouter.PATH_AAA_FRAGMENT)
+        (TemplateRouter.build(TemplateRouter.PATH_AAA_FRAGMENT)
             .with(intent.extras).navigation() as? Fragment)?.let { fragment ->
             supportFragmentManager.beginTransaction().apply {
                 add(contentAssist.contentLinear!!.id, fragment)
