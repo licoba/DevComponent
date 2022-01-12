@@ -15,7 +15,7 @@
         </provider>
 
         <activity
-            android:name="afkt_replace.module.template.MainContainerActivity"
+            android:name=".MainContainerActivity"
             android:configChanges="orientation|keyboardHidden"
             android:screenOrientation="portrait" />
     </application>

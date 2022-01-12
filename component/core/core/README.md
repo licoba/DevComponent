@@ -130,10 +130,10 @@ dependencies {
          - property          
          - receiver          
          - router            
-            - aaa            
             - commodity      
             - main           
             - splash         
+            - template       
             - user           
 ```
 

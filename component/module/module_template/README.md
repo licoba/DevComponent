@@ -30,7 +30,7 @@ dependencies {
         </provider>
 
         <activity
-            android:name=".activity.MainContainerActivity"
+            android:name=".MainContainerActivity"
             android:configChanges="orientation|keyboardHidden"
             android:screenOrientation="portrait" />
     </application>
@@ -43,10 +43,9 @@ dependencies {
 - java                           
    - afkt_replace                
       - module                   
-         - aaa                   
-            - activity           
+         - template              
             - base               
-            - fragment           
+            - feature            
 ```
 
 
