@@ -5,7 +5,7 @@ apply plugin: 'kotlin-kapt'
 
 def libName = project.getName()
 def modular = modularVersion[libName]
-// 模块化编译开关 ( true = 每个模块都是独立应用, false = 整合运行)
+// 模块化编译开关 ( true = 每个模块都是独立应用, false = 整合运行 )
 boolean isModular = isModular.toBoolean()
 
 android {

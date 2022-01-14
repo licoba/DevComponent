@@ -6,19 +6,53 @@ ext {
             // = project config =
             // ==================
 
+            // ==========
+            // = 调试相关 =
+            // ==========
+
             // 是否打印日志
             isOpenLog = true,
-            // 是否 Debug 模式
+            // 是否标记 Debug 模式 ( 与 APK build 模式无关, 用于控制第三方库 debug 标记 )
             isOpenDebug = true,
             // 是否开启优化检测、调试工具 ( 控制 UETool、LeakCanary、BlockCanary、Glance 等开关 )
             showDebugTools = false,
+
+            // ==========
+            // = 打包相关 =
+            // ==========
+
             // 模块化编译开关 ( true = 每个模块都是独立应用, false = 整合运行 )
             isModular = false,
+            // 是否 Release 版本标记 ( 用于标记 APK 是否 Release 发布版本 )
+            isRelease = false,
             // 升级版本号 ( 视情况而定, 为了区分 versionCode )
             upgradeCode = 1, // 整个 application、module 通用
-            // 是否 Release 版本标记 ( 可用于部分配置切换判断 )
-            isRelease = false,
+            // 服务器环境地址 ( 例如 )
+            environmentType = 2,
     ]
+
+    // =============
+    // = 签名配置信息 =
+    // =============
+
+    modularSigning = [
+            "release": [
+                    storeFile    : "file/sign/demo.jks",
+                    storePassword: "123456",
+                    keyAlias     : "demo",
+                    keyPassword  : "123456",
+            ],
+            "debug"  : [
+                    storeFile    : "file/sign/demo.jks",
+                    storePassword: "123456",
+                    keyAlias     : "demo",
+                    keyPassword  : "123456",
+            ]
+    ]
+
+    // ===============
+    // = 组件化模块信息 =
+    // ===============
 
     // 每个模块各自信息
     modularVersion = [
@@ -35,7 +69,7 @@ ext {
                     moduleName   : "APP",
             ],
             // 模板 Module ( 便于 copy )
-            "module_template"      : [
+            "module_template" : [
                     // 版本号
                     versionCode  : 100,
                     // 版本名
@@ -89,21 +123,5 @@ ext {
                     // 模块名
                     moduleName   : "USER",
             ],
-    ]
-
-    // 签名配置信息
-    modularSigning = [
-            "release": [
-                    storeFile    : "file/sign/demo.jks",
-                    storePassword: "123456",
-                    keyAlias     : "demo",
-                    keyPassword  : "123456",
-            ],
-            "debug"  : [
-                    storeFile    : "file/sign/demo.jks",
-                    storePassword: "123456",
-                    keyAlias     : "demo",
-                    keyPassword  : "123456",
-            ]
     ]
 }
