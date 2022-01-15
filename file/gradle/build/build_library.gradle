@@ -3,6 +3,9 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-parcelize'
 apply plugin: 'kotlin-kapt'
 
+// 版本构建截取、设置处理
+apply from: rootProject.file(files.config_build_version_gradle)
+
 kapt {
     arguments {
         arg("AROUTER_MODULE_NAME", project.getName())
@@ -55,6 +58,3 @@ android {
 tasks.withType(JavaCompile) {
     options.encoding = "UTF-8"
 }
-
-// 版本构建截取、设置处理
-apply from: rootProject.file(files.config_build_version_gradle)

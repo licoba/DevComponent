@@ -6,14 +6,11 @@ def openLog = isOpenLog.toBoolean()
 def openDebug = isOpenDebug.toBoolean()
 // 是否开启优化检测、调试工具 ( 控制 UETool、LeakCanary、BlockCanary、Glance 等开关 )
 def showDebugTools = showDebugTools.toBoolean()
-// 升级版本号 ( 视情况而定, 为了区分 versionCode )
-def upgradeCode = upgradeCode.toLong()
 
 android.defaultConfig {
     buildConfigField("boolean", "openLog", "$openLog")
     buildConfigField("boolean", "openDebug", "$openDebug")
     buildConfigField("boolean", "showDebugTools", "$showDebugTools")
-    buildConfigField("long", "upgradeCode", "${upgradeCode}")
 }
 
 /**

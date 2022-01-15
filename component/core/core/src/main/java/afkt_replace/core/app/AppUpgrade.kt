@@ -8,10 +8,10 @@ import afkt_replace.core.BuildConfig
  */
 object AppUpgrade {
 
-    /**
-     * 获取升级版本号 ( 视情况而定, 为了区分 versionCode )
-     */
-    fun getUpgradeCode(): Long = BuildConfig.upgradeCode
+//    /**
+//     * 获取升级版本号 ( 视情况而定, 为了区分 versionCode )
+//     */
+//    fun getUpgradeCode(): Long = BuildConfig.upgradeCode
 }
 
 /**

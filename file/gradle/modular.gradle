@@ -25,8 +25,6 @@ ext {
             isModular = false,
             // 是否 Release 版本标记 ( 用于标记 APK 是否 Release 发布版本 )
             isRelease = false,
-            // 升级版本号 ( 视情况而定, 为了区分 versionCode )
-            upgradeCode = 1, // 整个 application、module 通用
             // 服务器环境地址 ( 例如 )
             environmentType = 2,
     ]
@@ -59,68 +57,80 @@ ext {
             // TODO 非模块化情况下, 打包最终使用该信息 ( "app" 根据 project.getName() )
             "app"             : [
                     // 版本号
-                    versionCode  : 100,
+                    versionCode   : 100,
                     // 版本名
-                    versionName  : "1.0.0",
+                    versionName   : "1.0.0",
                     // 包名
-                    applicationId: "afkt_replace.component",
+                    applicationId : "afkt_replace.component",
                     // 模块名
-                    moduleName   : "APP",
+                    moduleName    : "APP",
+                    // 模块功能版本 ( 需求、RP 版本 )
+                    featureVersion: "22.01.01",
             ],
             // 模板 Module ( 便于 copy )
             "module_template" : [
                     // 版本号
-                    versionCode  : 100,
+                    versionCode   : 100,
                     // 版本名
-                    versionName  : "1.0.0",
+                    versionName   : "1.0.0",
                     // 包名
-                    applicationId: "afkt_replace.module.template",
+                    applicationId : "afkt_replace.module.template",
                     // 模块名
-                    moduleName   : "TEMPLATE",
+                    moduleName    : "TEMPLATE",
+                    // 模块功能版本 ( 需求、RP 版本 )
+                    featureVersion: "22.01.01",
             ],
             // 商品相关 Module
             "module_commodity": [
                     // 版本号
-                    versionCode  : 100,
+                    versionCode   : 100,
                     // 版本名
-                    versionName  : "1.0.0",
+                    versionName   : "1.0.0",
                     // 包名
-                    applicationId: "afkt_replace.module.commodity",
+                    applicationId : "afkt_replace.module.commodity",
                     // 模块名
-                    moduleName   : "COMMODITY",
+                    moduleName    : "COMMODITY",
+                    // 模块功能版本 ( 需求、RP 版本 )
+                    featureVersion: "22.01.01",
             ],
             // 首页 Module
             "module_main"     : [
                     // 版本号
-                    versionCode  : 100,
+                    versionCode   : 100,
                     // 版本名
-                    versionName  : "1.0.0",
+                    versionName   : "1.0.0",
                     // 包名
-                    applicationId: "afkt_replace.module.main",
+                    applicationId : "afkt_replace.module.main",
                     // 模块名
-                    moduleName   : "MAIN",
+                    moduleName    : "MAIN",
+                    // 模块功能版本 ( 需求、RP 版本 )
+                    featureVersion: "22.01.01",
             ],
             // 启动页 ( 广告页、首次启动引导页 ) Module
             "module_splash"   : [
                     // 版本号
-                    versionCode  : 100,
+                    versionCode   : 100,
                     // 版本名
-                    versionName  : "1.0.0",
+                    versionName   : "1.0.0",
                     // 包名
-                    applicationId: "afkt_replace.module.splash",
+                    applicationId : "afkt_replace.module.splash",
                     // 模块名
-                    moduleName   : "SPLASH",
+                    moduleName    : "SPLASH",
+                    // 模块功能版本 ( 需求、RP 版本 )
+                    featureVersion: "22.01.01",
             ],
             // 用户 Module
             "module_user"     : [
                     // 版本号
-                    versionCode  : 100,
+                    versionCode   : 100,
                     // 版本名
-                    versionName  : "1.0.0",
+                    versionName   : "1.0.0",
                     // 包名
-                    applicationId: "afkt_replace.module.user",
+                    applicationId : "afkt_replace.module.user",
                     // 模块名
-                    moduleName   : "USER",
+                    moduleName    : "USER",
+                    // 模块功能版本 ( 需求、RP 版本 )
+                    featureVersion: "22.01.01",
             ],
     ]
 
