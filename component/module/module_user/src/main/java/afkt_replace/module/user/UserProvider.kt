@@ -1,28 +1,24 @@
 package afkt_replace.module.user
 
-import afkt_replace.core.CoreConst
-import afkt_replace.core.app.AppDebug
 import afkt_replace.core.lib.bean.user.UserInfo
 import afkt_replace.core.lib.bean.user.enums.SexEnum
 import afkt_replace.core.lib.bean.user.enums.UserLevelEnum
 import afkt_replace.core.lib.bean.user.enums.UserStateEnum
 import afkt_replace.core.lib.config.AppConst
+import afkt_replace.core.router.BaseProviderExt
 import afkt_replace.core.router.user.IUserProvider
 import afkt_replace.core.router.user.UserRouter
 import android.content.Context
-import android.util.Log
 import com.alibaba.android.arouter.facade.annotation.Route
 import dev.utils.common.ChineseUtils
 import dev.utils.common.DevCommonUtils
 import dev.utils.common.RandomUtils
 
 @Route(path = UserRouter.PATH_USER_PROVIDER, group = UserRouter.GROUP)
-class UserProvider : IUserProvider {
-
-    val TAG = UserProvider::class.java.simpleName
+class UserProvider : IUserProvider,
+    BaseProviderExt(UserProvider::class.java.simpleName) {
 
     override fun init(context: Context?) {
-        CoreConst.printProviderInitialize(TAG)
         // 随机性创建
         if (RandomUtils.nextBoolean()) {
             // 可以通过读取配置获取等
