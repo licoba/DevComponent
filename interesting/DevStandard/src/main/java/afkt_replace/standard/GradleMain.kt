@@ -14,7 +14,7 @@ import java.security.NoSuchAlgorithmException
  * https://developer.android.google.cn/studio/releases/gradle-plugin
  * 快捷搜索、下载地址:
  * distributionUrl=https\://services.gradle.org/distributions/gradle-6.5-all.zip
- * C:\Users\Administrator\.gradle\wrapper\dists
+ * C:/Users/Administrator/.gradle/wrapper/dists
  */
 internal object GradleMain {
 
