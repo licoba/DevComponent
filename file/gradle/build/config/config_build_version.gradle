@@ -5,6 +5,9 @@
 // 获取 lib 名 => settings.gradle 例 include ':core_lib_engine'
 def libName = project.getName() // core_lib_engine
 
+// 模块化编译开关 ( true = 每个模块都是独立应用, false = 整合运行 )
+boolean isModular = isModular.toBoolean()
+
 // ========
 // = core =
 // ========
@@ -23,6 +26,8 @@ if (libName.startsWith("core")) {
                 // Core Library Version
                 buildConfigField("int", libName + "_VersionCode", "${versionCode}")
                 buildConfigField("String", libName + "_Version", "\"${versionName}\"")
+                // 模块名
+                buildConfigField("String", libName + "_NAME", "\"${coreLibrary.moduleName}\"")
             }
         }
     }
@@ -46,6 +51,10 @@ if (libName.startsWith("module_")) {
                 // Module Version
                 buildConfigField("int", libName + "_VersionCode", "${versionCode}")
                 buildConfigField("String", libName + "_Version", "\"${versionName}\"")
+                // 模块化编译开关值
+                buildConfigField("boolean", "isModular", "${isModular}")
+                // 模块名
+                buildConfigField("String", "MODULE_NAME", "\"${modular.moduleName}\"")
             }
         }
     }

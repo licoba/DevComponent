@@ -11,7 +11,7 @@ if (isModular) { // 每个模块都是独立应用
     apply from: rootProject.file(files.build_library_module_gradle)
 }
 
-// 版本构建截取处理
+// 版本构建截取、设置处理
 apply from: rootProject.file(files.config_build_version_gradle)
 
 kapt {

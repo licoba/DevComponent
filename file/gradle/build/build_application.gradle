@@ -6,8 +6,6 @@ apply plugin: 'com.alibaba.arouter'
 
 def libName = project.getName()
 def modular = modularVersion[libName]
-// 模块化编译开关 ( true = 每个模块都是独立应用, false = 整合运行 )
-boolean isModular = isModular.toBoolean()
 
 // https://blog.csdn.net/weixin_37625173/article/details/100867037
 android {
@@ -21,11 +19,6 @@ android {
         applicationId modular.applicationId
         versionCode modular.versionCode
         versionName modular.versionName
-
-        // 模块化编译开关值
-        buildConfigField("boolean", "isModular", "${isModular}")
-        // 模块名
-        buildConfigField("String", "MODULE_NAME", "\"${modular.moduleName}\"")
 
         // 开启 multiDex
         multiDexEnabled true

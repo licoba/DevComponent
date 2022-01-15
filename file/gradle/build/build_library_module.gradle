@@ -7,11 +7,6 @@ apply plugin: 'kotlin-kapt'
 // = Module 构建配置 ( 非可运行应用 ) =
 // ================================
 
-def libName = project.getName()
-def modular = modularVersion[libName]
-// 模块化编译开关 ( true = 每个模块都是独立应用, false = 整合运行 )
-boolean isModular = isModular.toBoolean()
-
 android {
 
     compileSdkVersion versions.compileSdkVersion
@@ -20,11 +15,6 @@ android {
         minSdkVersion versions.lib_minSdkVersion
         // 混淆配置
         consumerProguardFiles 'proguard-rules.pro'
-
-        // 模块化编译开关值
-        buildConfigField("boolean", "isModular", "${isModular}")
-        // 模块名
-        buildConfigField("String", "MODULE_NAME", "\"${modular.moduleName}\"")
     }
 
     buildFeatures {

@@ -56,5 +56,5 @@ tasks.withType(JavaCompile) {
     options.encoding = "UTF-8"
 }
 
-// 版本构建截取处理
+// 版本构建截取、设置处理
 apply from: rootProject.file(files.config_build_version_gradle)
