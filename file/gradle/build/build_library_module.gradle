@@ -3,6 +3,10 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-parcelize'
 apply plugin: 'kotlin-kapt'
 
+// ================================
+// = Module 构建配置 ( 非可运行应用 ) =
+// ================================
+
 def libName = project.getName()
 def modular = modularVersion[libName]
 // 模块化编译开关 ( true = 每个模块都是独立应用, false = 整合运行 )

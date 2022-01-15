@@ -57,4 +57,4 @@ tasks.withType(JavaCompile) {
 }
 
 // 版本构建截取处理
-apply from: rootProject.file(files.build_library_version_gradle)
+apply from: rootProject.file(files.config_build_library_version_gradle)

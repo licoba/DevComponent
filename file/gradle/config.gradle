@@ -4,21 +4,30 @@ apply from: rootProject.file("file/gradle/modular.gradle")
 ext {
 
     files = [
-            // 应用程序构建配置
-            build_application_gradle    : "file/gradle/build/build_application.gradle",
-            // Module 构建配置 ( module 依赖使用, 自动判断 isModular 依赖 gradle 文件 )
-            build_module_gradle         : "file/gradle/build/build_module.gradle",
-            // Lib Module 构建配置
-            build_library_module_gradle : "file/gradle/build/build_library_module.gradle",
-            // Lib 构建通用配置
-            build_library_gradle        : "file/gradle/build/build_library.gradle",
-            // Lib 版本构建截取处理
-            build_library_version_gradle: "file/gradle/build/build_library_version.gradle",
-            // APK 多渠道打包
-            apk_channel_gradle          : "file/gradle/channel/apk_channel.gradle",
+            // Module 构建配置 ( module 依赖使用, 自动判断 isModular 依赖不同 gradle 文件 )
+            build_module_gradle                : "file/gradle/build/build_module.gradle",
+            // 应用程序构建配置 ( 可运行 )
+            build_application_gradle           : "file/gradle/build/build_application.gradle",
+            // Lib Module 构建配置 ( 非可运行应用 )
+            build_library_module_gradle        : "file/gradle/build/build_library_module.gradle",
+            // Lib 构建通用配置 ( 各种 core、底层库依赖使用 )
+            build_library_gradle               : "file/gradle/build/build_library.gradle",
 
             // Java Lib 构建通用配置 ( 方便使用 kotlin 运行 main, plugin 为 android kotlin )
-            build_library_java_gradle   : "file/gradle/build/build_library_java.gradle",
+            build_library_java_gradle          : "file/gradle/build/build_library_java.gradle",
+
+            // APK 多渠道打包
+            apk_channel_gradle                 : "file/gradle/channel/apk_channel.gradle",
+
+            // =============
+            // = 配置信息构建 =
+            // =============
+
+            // 部分字段信息构建
+            config_build_field_gradle          : "file/gradle/build/config/config_build_field.gradle",
+
+            // Lib 版本构建截取处理
+            config_build_library_version_gradle: "file/gradle/build/config/config_build_library_version.gradle",
     ]
 
     deps = [
