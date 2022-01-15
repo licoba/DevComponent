@@ -26,8 +26,8 @@ ext {
             // 部分字段信息构建
             config_build_field_gradle          : "file/gradle/build/config/config_build_field.gradle",
 
-            // Lib 版本构建截取处理
-            config_build_library_version_gradle: "file/gradle/build/config/config_build_library_version.gradle",
+            // 版本构建截取、设置处理
+            config_build_version_gradle: "file/gradle/build/config/config_build_version.gradle",
     ]
 
     deps = [
