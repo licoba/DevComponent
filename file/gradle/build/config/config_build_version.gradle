@@ -1,3 +1,5 @@
+import java.text.SimpleDateFormat
+
 // =================
 // = 版本信息统一处理 =
 // =================
@@ -6,7 +8,13 @@
 def libName = project.getName() // core_lib_engine
 
 // 模块化编译开关 ( true = 每个模块都是独立应用, false = 整合运行 )
-boolean isModular = isModular.toBoolean()
+def isModular = isModular.toBoolean()
+// 是否 Release 版本标记 ( 用于标记 APK 是否 Release 发布版本 )
+def isRelease = isRelease.toBoolean()
+// 构建时间 ( 时间戳 )
+def buildTime = System.currentTimeMillis()
+// 构建时间 ( yyyy-MM-dd HH:mm:ss )
+def buildTime_str = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(buildTime)
 
 // ========
 // = core =
@@ -18,6 +26,7 @@ if (libName.startsWith("core")) {
     if (coreLibrary != null) {
         def coreLibVersionCode = coreLibrary.versionCode
         def coreLibVersionName = coreLibrary.versionName
+        def moduleName = coreLibrary.moduleName
 
         if (coreLibVersionCode != null && coreLibVersionName != null) {
             android.defaultConfig {
@@ -27,7 +36,13 @@ if (libName.startsWith("core")) {
                 buildConfigField("int", libName + "_VersionCode", "${versionCode}")
                 buildConfigField("String", libName + "_Version", "\"${versionName}\"")
                 // 模块名
-                buildConfigField("String", libName + "_NAME", "\"${coreLibrary.moduleName}\"")
+                buildConfigField("String", "MODULE_NAME", "\"${moduleName}\"")
+                // Release 版本标记
+                buildConfigField("boolean", "isRelease", "${isRelease}")
+                // 构建时间 ( 时间戳 )
+                buildConfigField "long", "BUILD_TIME", "${buildTime}"
+                // 构建时间 ( yyyy-MM-dd HH:mm:ss )
+                buildConfigField "String", "BUILD_TIME_STR", "\"${buildTime_str}\""
             }
         }
     }
@@ -43,18 +58,59 @@ if (libName.startsWith("module_")) {
     if (modular != null) {
         def moduleVersionCode = modular.versionCode
         def moduleVersionName = modular.versionName
+        def moduleName = modular.moduleName
 
         if (moduleVersionCode != null && moduleVersionName != null) {
             android.defaultConfig {
                 versionCode moduleVersionCode
                 versionName moduleVersionName
+                // 模块化编译开关值
+                buildConfigField("boolean", "isModular", "${isModular}")
                 // Module Version
                 buildConfigField("int", libName + "_VersionCode", "${versionCode}")
                 buildConfigField("String", libName + "_Version", "\"${versionName}\"")
+                // 模块名
+                buildConfigField("String", "MODULE_NAME", "\"${moduleName}\"")
+                // Release 版本标记
+                buildConfigField("boolean", "isRelease", "${isRelease}")
+                // 构建时间 ( 时间戳 )
+                buildConfigField "long", "BUILD_TIME", "${buildTime}"
+                // 构建时间 ( yyyy-MM-dd HH:mm:ss )
+                buildConfigField "String", "BUILD_TIME_STR", "\"${buildTime_str}\""
+            }
+        }
+    }
+}
+
+// =======================
+// = Application ( app ) =
+// =======================
+
+// 从 file/gradle/modular.gradle 中获取 app 版本信息
+if (libName.startsWith("app")) {
+    def app = modularVersion[libName]
+    if (app != null) {
+        def appVersionCode = app.versionCode
+        def appVersionName = app.versionName
+        def moduleName = app.moduleName
+
+        if (appVersionCode != null && appVersionName != null) {
+            android.defaultConfig {
+                versionCode appVersionCode
+                versionName appVersionName
                 // 模块化编译开关值
                 buildConfigField("boolean", "isModular", "${isModular}")
+                // Application Version
+                buildConfigField("int", libName + "_VersionCode", "${versionCode}")
+                buildConfigField("String", libName + "_Version", "\"${versionName}\"")
                 // 模块名
-                buildConfigField("String", "MODULE_NAME", "\"${modular.moduleName}\"")
+                buildConfigField("String", "MODULE_NAME", "\"${moduleName}\"")
+                // Release 版本标记
+                buildConfigField("boolean", "isRelease", "${isRelease}")
+                // 构建时间 ( 时间戳 )
+                buildConfigField "long", "BUILD_TIME", "${buildTime}"
+                // 构建时间 ( yyyy-MM-dd HH:mm:ss )
+                buildConfigField "String", "BUILD_TIME_STR", "\"${buildTime_str}\""
             }
         }
     }

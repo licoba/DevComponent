@@ -1,13 +1,13 @@
 apply from: rootProject.file(files.build_library_gradle)
 
 // 是否打印日志
-boolean openLog = isOpenLog.toBoolean()
+def openLog = isOpenLog.toBoolean()
 // 是否 Debug 模式
-boolean openDebug = isOpenDebug.toBoolean()
+def openDebug = isOpenDebug.toBoolean()
 // 是否开启优化检测、调试工具 ( 控制 UETool、LeakCanary、BlockCanary、Glance 等开关 )
-boolean showDebugTools = showDebugTools.toBoolean()
+def showDebugTools = showDebugTools.toBoolean()
 // 升级版本号 ( 视情况而定, 为了区分 versionCode )
-long upgradeCode = upgradeCode.toLong()
+def upgradeCode = upgradeCode.toLong()
 
 android.defaultConfig {
     buildConfigField("boolean", "openLog", "$openLog")
