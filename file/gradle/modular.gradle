@@ -54,7 +54,6 @@ ext {
     // = 组件化模块信息 =
     // ===============
 
-    // 每个模块各自信息
     modularVersion = [
             // 主程序 ( 壳 ) 版本信息
             // TODO 非模块化情况下, 打包最终使用该信息 ( "app" 根据 project.getName() )
@@ -122,6 +121,111 @@ ext {
                     applicationId: "afkt_replace.module.user",
                     // 模块名
                     moduleName   : "USER",
+            ],
+    ]
+
+    // ===============
+    // = 核心开发库信息 =
+    // ===============
+
+    coreLibraryVersion = [
+
+            // =========
+            // = 核心库 =
+            // =========
+
+            // 核心空壳依赖库
+            "core"            : [
+                    // 版本号
+                    versionCode: 100,
+                    // 版本名
+                    versionName: "1.0.0",
+                    // 模块名
+                    moduleName : "CORE",
+            ],
+
+            // 核心基础依赖库
+            "core_base_lib"   : [
+                    // 版本号
+                    versionCode: 100,
+                    // 版本名
+                    versionName: "1.0.0",
+                    // 模块名
+                    moduleName : "CORE_BASE_LIB",
+            ],
+
+            // ==============
+            // = 核心库 libs =
+            // ==============
+
+            // 基础 ( 基类等 ) lib
+            "core_lib_base"   : [
+                    // 版本号
+                    versionCode: 100,
+                    // 版本名
+                    versionName: "1.0.0",
+                    // 模块名
+                    moduleName : "CORE_LIB_BASE",
+            ],
+
+            // 通用实体类 lib
+            "core_lib_bean"   : [
+                    // 版本号
+                    versionCode: 100,
+                    // 版本名
+                    versionName: "1.0.0",
+                    // 模块名
+                    moduleName : "CORE_LIB_BEAN",
+            ],
+
+            // 通用配置、常量 lib
+            "core_lib_config" : [
+                    // 版本号
+                    versionCode: 100,
+                    // 版本名
+                    versionName: "1.0.0",
+                    // 模块名
+                    moduleName : "CORE_LIB_CONFIG",
+            ],
+
+            // 通用 Engine ( 图片加载、日志、JSON、权限、资源选择 等 ) lib
+            "core_lib_engine" : [
+                    // 版本号
+                    versionCode: 100,
+                    // 版本名
+                    versionName: "1.0.0",
+                    // 模块名
+                    moduleName : "CORE_LIB_ENGINE",
+            ],
+
+            // 网络框架 lib
+            "core_lib_network": [
+                    // 版本号
+                    versionCode: 100,
+                    // 版本名
+                    versionName: "1.0.0",
+                    // 模块名
+                    moduleName : "CORE_LIB_NETWORK",
+            ],
+
+            // 通用 UI 样式、资源、交互、控件 lib
+            "core_lib_ui"     : [
+                    // 版本号
+                    versionCode: 100,
+                    // 版本名
+                    versionName: "1.0.0",
+                    // 模块名
+                    moduleName : "CORE_LIB_UI",
+            ],
+
+            // 通用工具库
+            "core_lib_utils"  : [
+                    // 版本号
+                    versionCode: 100,
+                    // 版本名
+                    versionName: "1.0.0",
+                    // 模块名
+                    moduleName : "CORE_LIB_UTILS",
             ],
     ]
 }

@@ -5,21 +5,26 @@
 // 获取 lib 名 => settings.gradle 例 include ':core_lib_engine'
 def libName = project.getName() // core_lib_engine
 
-// =============
-// = core、libs =
-// =============
+// ========
+// = core =
+// ========
 
-// 从 file/gradle/version.gradle 中获取对应的 lib 版本信息
-def libVersionCode = versions.get(libName + "_versionCode")
-def libVersionName = versions.get(libName + "_versionName")
+// 从 file/gradle/modular.gradle 中获取对应的 core lib 版本信息
+if (libName.startsWith("core")) {
+    def coreLibrary = coreLibraryVersion[libName]
+    if (coreLibrary != null) {
+        def coreLibVersionCode = coreLibrary.versionCode
+        def coreLibVersionName = coreLibrary.versionName
 
-if (libVersionCode != null && libVersionName != null) {
-    android.defaultConfig {
-        versionCode libVersionCode
-        versionName libVersionName
-        // Library Version
-        buildConfigField("int", libName + "_VersionCode", "${versionCode}")
-        buildConfigField("String", libName + "_Version", "\"${versionName}\"")
+        if (coreLibVersionCode != null && coreLibVersionName != null) {
+            android.defaultConfig {
+                versionCode coreLibVersionCode
+                versionName coreLibVersionName
+                // Core Library Version
+                buildConfigField("int", libName + "_VersionCode", "${versionCode}")
+                buildConfigField("String", libName + "_Version", "\"${versionName}\"")
+            }
+        }
     }
 }
 
