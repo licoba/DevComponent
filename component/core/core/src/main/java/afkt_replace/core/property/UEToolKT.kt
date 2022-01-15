@@ -11,7 +11,7 @@ object UEToolKT {
     /**
      * 打开悬浮窗
      */
-    fun showUETMenu(y: Int = 10) {
+    fun showUETMenu(y: Int = 300) {
         UETool.showUETMenu(y)
     }
 

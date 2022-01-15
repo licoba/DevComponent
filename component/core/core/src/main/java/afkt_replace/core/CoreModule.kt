@@ -6,6 +6,7 @@ import android.content.Context
 import android.util.Log
 import dev.DevUtils
 import dev.engine.DevEngine
+import dev.utils.DevFinal
 import dev.utils.LogPrintUtils
 import dev.utils.app.logger.DevLogger
 import dev.utils.app.logger.LogConfig
@@ -29,7 +30,6 @@ class CoreModule private constructor() : BaseModule(CoreModule::class.java.simpl
      * @param context Context
      */
     fun initialize(context: Context) {
-        printInitialize()
         // 初始化 DevUtils
         DevUtils.init(context.applicationContext)
         // 初始化 DevUtils debug 相关配置
@@ -63,18 +63,20 @@ class CoreModule private constructor() : BaseModule(CoreModule::class.java.simpl
         if (AppDebug.isOpenLog()) {
             //DevLogger.setPrint(DevLogger.Print())
             //JCLogUtils.setPrint(JCLogUtils.Print())
-            LogPrintUtils.setPrint(LogPrintUtils.Print { logType, tag, message -> // 防止 null 处理
-                var message: String? = message ?: return@Print
-                // 进行编码处理
-                message = StringUtils.strEncode(message, "UTF-8")
+            // 日志拦截, 进行编码处理
+            LogPrintUtils.setPrint(LogPrintUtils.Print { logType, tag, message ->
+                // 防止 null 处理
+                if (message == null) return@Print
+                // 编码处理
+                val msg = StringUtils.strEncode(message, DevFinal.ENCODE.UTF_8)
                 when (logType) {
-                    Log.VERBOSE -> Log.v(tag, message)
-                    Log.DEBUG -> Log.d(tag, message)
-                    Log.INFO -> Log.i(tag, message)
-                    Log.WARN -> Log.w(tag, message)
-                    Log.ERROR -> Log.e(tag, message)
-                    Log.ASSERT -> Log.wtf(tag, message)
-                    else -> Log.wtf(tag, message)
+                    Log.VERBOSE -> Log.v(tag, msg)
+                    Log.DEBUG -> Log.d(tag, msg)
+                    Log.INFO -> Log.i(tag, msg)
+                    Log.WARN -> Log.w(tag, msg)
+                    Log.ERROR -> Log.e(tag, msg)
+                    Log.ASSERT -> Log.wtf(tag, msg)
+                    else -> Log.wtf(tag, msg)
                 }
             })
             // 初始化 Logger 配置

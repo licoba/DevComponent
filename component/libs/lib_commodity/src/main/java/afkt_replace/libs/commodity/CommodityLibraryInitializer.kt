@@ -1,5 +1,6 @@
 package afkt_replace.libs.commodity
 
+import afkt_replace.core.BaseInitializer
 import android.content.Context
 import androidx.startup.Initializer
 import java.util.*
@@ -8,7 +9,7 @@ import java.util.*
  * detail: Commodity Library ( App Startup Initializer )
  * @author Ttt
  */
-class CommodityLibraryInitializer : afkt_replace.core.BaseInitializer<CommodityLibrary>() {
+class CommodityLibraryInitializer : BaseInitializer<CommodityLibrary>() {
 
     override fun create(context: Context): CommodityLibrary {
         CommodityLibrary.instance.initialize(context)

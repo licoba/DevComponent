@@ -20,6 +20,5 @@ class TemplateModule private constructor() : BaseModule(TemplateModule::class.ja
      * @param context Context
      */
     fun initialize(context: Context) {
-        printInitialize()
     }
 }

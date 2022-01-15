@@ -20,6 +20,5 @@ class CommodityLibrary private constructor() : BaseModule(CommodityLibrary::clas
      * @param context Context
      */
     fun initialize(context: Context) {
-        printInitialize()
     }
 }

@@ -1,5 +1,6 @@
 package afkt_replace.module.user
 
+import afkt_replace.core.BaseInitializer
 import android.content.Context
 import androidx.startup.Initializer
 import java.util.*
@@ -8,7 +9,7 @@ import java.util.*
  * detail: User Module ( App Startup Initializer )
  * @author Ttt
  */
-class UserInitializer : afkt_replace.core.BaseInitializer<UserModule>() {
+class UserInitializer : BaseInitializer<UserModule>() {
 
     override fun create(context: Context): UserModule {
         UserModule.instance.initialize(context)

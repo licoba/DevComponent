@@ -20,6 +20,5 @@ class MainModule private constructor() : BaseModule(MainModule::class.java.simpl
      * @param context Context
      */
     fun initialize(context: Context) {
-        printInitialize()
     }
 }

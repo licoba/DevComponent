@@ -1,5 +1,6 @@
 package afkt_replace.module.template
 
+import afkt_replace.core.BaseInitializer
 import android.content.Context
 import androidx.startup.Initializer
 import java.util.*
@@ -8,7 +9,7 @@ import java.util.*
  * detail: Template Module ( App Startup Initializer )
  * @author Ttt
  */
-class TemplateInitializer : afkt_replace.core.BaseInitializer<TemplateModule>() {
+class TemplateInitializer : BaseInitializer<TemplateModule>() {
 
     override fun create(context: Context): TemplateModule {
         TemplateModule.instance.initialize(context)

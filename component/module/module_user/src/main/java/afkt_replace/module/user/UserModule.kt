@@ -20,6 +20,5 @@ class UserModule private constructor() : BaseModule(UserModule::class.java.simpl
      * @param context Context
      */
     fun initialize(context: Context) {
-        printInitialize()
     }
 }

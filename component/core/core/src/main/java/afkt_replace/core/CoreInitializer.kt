@@ -5,7 +5,7 @@ import androidx.startup.Initializer
 import java.util.*
 
 /**
- * detail: CCC Module ( App Startup Initializer )
+ * detail: Core Module ( App Startup Initializer )
  * @author Ttt
  * ContentProvider 的 onCreate() 方法是什么时候被调用的呢 ?
  * 它是介于 Application 的 attachBaseContext(Context) 和 onCreate() 之间所调用的

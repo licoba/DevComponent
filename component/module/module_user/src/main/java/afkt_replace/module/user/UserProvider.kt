@@ -22,9 +22,7 @@ class UserProvider : IUserProvider {
     val TAG = UserProvider::class.java.simpleName
 
     override fun init(context: Context?) {
-        if (AppDebug.isOpenDebug()) {
-            Log.d(CoreConst.PROVIDER_TAG, "$TAG - initialize")
-        }
+        CoreConst.printProviderInitialize(TAG)
         // 随机性创建
         if (RandomUtils.nextBoolean()) {
             // 可以通过读取配置获取等

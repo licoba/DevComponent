@@ -6,8 +6,12 @@ import com.alibaba.android.arouter.facade.service.SerializationService
 import dev.engine.DevEngine
 import java.lang.reflect.Type
 
+/**
+ * detail: ARouter JSON 序列号转换服务
+ * @author Ttt
+ */
 @Route(path = "/service/json_serialization")
-class JSONServiceImpl : SerializationService {
+class ARouterJSONServiceImpl : SerializationService {
 
     override fun init(context: Context?) {
     }
