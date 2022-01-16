@@ -52,8 +52,4 @@ dependencies {
 
 ```
 - java                           
-   - dev                         
-      - core                     
-         - lib                   
-            - engine             
 ```
