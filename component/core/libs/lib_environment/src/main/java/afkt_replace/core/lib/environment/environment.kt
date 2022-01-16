@@ -1,5 +1,6 @@
 package afkt_replace.core.lib.environment
 
+import android.content.Context
 import dev.environment.annotation.Environment
 import dev.environment.annotation.Module
 
@@ -44,6 +45,16 @@ internal class HttpService private constructor() {
  * detail: Build Config Field Environment Type 构建校验
  * @author Ttt
  */
-internal object EnvironmentTypeCore {
+internal object EnvironmentTypeChecker {
 
+    /**
+     * 环境校验
+     * @param context Context
+     * @param index Int
+     */
+    fun checker(
+        context: Context,
+        index: Int
+    ) {
+    }
 }
