@@ -1,18 +1,5 @@
 apply from: rootProject.file(files.build_library_gradle)
 
-// 是否打印日志
-def openLog = isOpenLog.toBoolean()
-// 是否 Debug 模式
-def openDebug = isOpenDebug.toBoolean()
-// 是否开启优化检测、调试工具 ( 控制 UETool、LeakCanary、BlockCanary、Glance 等开关 )
-def showDebugTools = showDebugTools.toBoolean()
-
-android.defaultConfig {
-    buildConfigField("boolean", "openLog", "$openLog")
-    buildConfigField("boolean", "openDebug", "$openDebug")
-    buildConfigField("boolean", "showDebugTools", "$showDebugTools")
-}
-
 /**
  * 该 Module 依赖 core 核心开发库、核心第三方库等
  * 统一维护核心库依赖, 对外只需要依赖该 Module 便可使用整个核心模块 ( core 文件以及内部所有 libs )
@@ -66,8 +53,6 @@ dependencies {
     if (showDebugTools) {
         // 内存检测工具 https://github.com/square/leakcanary
         api deps.property.leakcanary
-        // 应用数据库展示 https://github.com/guolindev/Glance
-        api deps.property.glance
         // 饿了么 UETool https://github.com/eleme/UETool/blob/master/README_zh.md
         api deps.property.uetool
         // BlockCanary 性能监控组件 https://github.com/markzhai/AndroidPerformanceMonitor/blob/master/README_CN.md
@@ -78,11 +63,4 @@ dependencies {
         // BlockCanary 性能监控组件 https://github.com/markzhai/AndroidPerformanceMonitor/blob/master/README_CN.md
         api deps.property.blockcanary_no_op
     }
-
-//    // 饿了么 UETool https://github.com/eleme/UETool/blob/master/README_zh.md
-//    debugApi deps.property.uetool
-//    releaseApi deps.property.uetool_no_op
-//    // BlockCanary 性能监控组件 https://github.com/markzhai/AndroidPerformanceMonitor/blob/master/README_CN.md
-//    debugApi deps.property.blockcanary_android
-//    releaseApi deps.property.blockcanary_no_op
 }

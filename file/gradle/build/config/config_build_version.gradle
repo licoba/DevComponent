@@ -6,11 +6,18 @@ import java.text.SimpleDateFormat
 
 // 获取 lib 名 => settings.gradle 例 include ':core_lib_engine'
 def libName = project.getName() // core_lib_engine
-
+// 是否打印日志
+def openLog = isOpenLog.toBoolean()
+// 是否 Debug 模式
+def openDebug = isOpenDebug.toBoolean()
+// 是否开启优化检测、调试工具 ( 控制 UETool、LeakCanary、BlockCanary、Glance 等开关 )
+def showDebugTools = showDebugTools.toBoolean()
 // 模块化编译开关 ( true = 每个模块都是独立应用, false = 整合运行 )
 def isModular = isModular.toBoolean()
 // 是否 Release 版本标记 ( 用于标记 APK 是否 Release 发布版本 )
 def isRelease = isRelease.toBoolean()
+// 服务器环境地址 ( 例: 1 生产环境、2 测试环境、3 预发布环境、4 开发环境 )
+def environmentType = environmentType.intValue()
 // 构建时间 ( 时间戳 )
 def buildTime = System.currentTimeMillis()
 // 构建日期 ( yyyy-MM-dd HH:mm:ss )
@@ -42,11 +49,11 @@ if (libName.startsWith("core")) {
                 // Release 版本标记
                 buildConfigField("boolean", "isRelease", "${isRelease}")
                 // 构建时间 ( 时间戳 )
-                buildConfigField "long", "BUILD_TIME", "${buildTime}"
+                buildConfigField("long", "BUILD_TIME", "${buildTime}")
                 // 构建日期 ( yyyy-MM-dd HH:mm:ss )
-                buildConfigField "String", "BUILD_DATE", "\"${buildDate}\""
+                buildConfigField("String", "BUILD_DATE", "\"${buildDate}\"")
                 // 构建日期 ( yyyyMMdd )
-                buildConfigField "String", "BUILD_DATE_YYYYMMDD", "\"${buildDate_yyyyMMdd}\""
+                buildConfigField("String", "BUILD_DATE_YYYYMMDD", "\"${buildDate_yyyyMMdd}\"")
             }
         }
     }
@@ -81,11 +88,11 @@ if (libName.startsWith("module_")) {
                 // Release 版本标记
                 buildConfigField("boolean", "isRelease", "${isRelease}")
                 // 构建时间 ( 时间戳 )
-                buildConfigField "long", "BUILD_TIME", "${buildTime}"
+                buildConfigField("long", "BUILD_TIME", "${buildTime}")
                 // 构建日期 ( yyyy-MM-dd HH:mm:ss )
-                buildConfigField "String", "BUILD_DATE", "\"${buildDate}\""
+                buildConfigField("String", "BUILD_DATE", "\"${buildDate}\"")
                 // 构建日期 ( yyyyMMdd )
-                buildConfigField "String", "BUILD_DATE_YYYYMMDD", "\"${buildDate_yyyyMMdd}\""
+                buildConfigField("String", "BUILD_DATE_YYYYMMDD", "\"${buildDate_yyyyMMdd}\"")
             }
         }
     }
@@ -120,11 +127,11 @@ if (libName.startsWith("app")) {
                 // Release 版本标记
                 buildConfigField("boolean", "isRelease", "${isRelease}")
                 // 构建时间 ( 时间戳 )
-                buildConfigField "long", "BUILD_TIME", "${buildTime}"
+                buildConfigField("long", "BUILD_TIME", "${buildTime}")
                 // 构建日期 ( yyyy-MM-dd HH:mm:ss )
-                buildConfigField "String", "BUILD_DATE", "\"${buildDate}\""
+                buildConfigField("String", "BUILD_DATE", "\"${buildDate}\"")
                 // 构建日期 ( yyyyMMdd )
-                buildConfigField "String", "BUILD_DATE_YYYYMMDD", "\"${buildDate_yyyyMMdd}\""
+                buildConfigField("String", "BUILD_DATE_YYYYMMDD", "\"${buildDate_yyyyMMdd}\"")
             }
         }
     }
@@ -148,4 +155,25 @@ android {
 //        resourcePrefix libName
     }
     printf("\n%s - %s", libName, android.resourcePrefix)
+}
+
+
+// =============
+// = 特殊字段创建 =
+// =============
+
+// Core Module 构建字段创建
+if (libName == "core") {
+    android.defaultConfig {
+        buildConfigField("boolean", "openLog", "$openLog")
+        buildConfigField("boolean", "openDebug", "$openDebug")
+        buildConfigField("boolean", "showDebugTools", "$showDebugTools")
+    }
+}
+
+// core/libs/lib_environment Module 构建字段创建
+if (libName == "core_lib_environment") {
+    android.defaultConfig {
+        buildConfigField("int", "environmentType", "$environmentType")
+    }
 }

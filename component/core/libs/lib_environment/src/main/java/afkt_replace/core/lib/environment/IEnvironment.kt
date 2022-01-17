@@ -12,15 +12,12 @@ import android.content.Context
 interface IEnvironment {
 
     /**
-     * 环境校验
+     * 环境校验与重置
      * @param context Context
-     * @param index Int
      * 需在 Application 内尽可能的早调用
+     * 用于非 Release 版本下针对自动化构建工具支持环境切换处理
      */
-    fun checker(
-        context: Context,
-        index: Int
-    ) {
-        EnvironmentTypeChecker.checker(context, index)
+    fun checker(context: Context) {
+        EnvironmentTypeChecker.checker(context)
     }
 }
