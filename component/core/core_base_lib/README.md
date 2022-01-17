@@ -34,8 +34,20 @@ dependencies {
 
     // DevEnvironment - Android 环境配置切换库
     api deps.dev.dev_environment
-//    kaptDebug deps.dev.dev_environment_compiler
-//    kaptRelease deps.dev.dev_environment_compiler_release
+    if (isRelease) {
+        kapt deps.dev.dev_environment_compiler_release
+    } else {
+        kapt deps.dev.dev_environment_compiler
+    }
+
+    // DevHttpCapture - OKHttp 抓包工具库
+    api deps.dev.dev_http_capture
+    // DevHttpCaptureCompiler - OKHttp 抓包工具库 ( 可视化功能 )
+    if (isRelease) {
+        api deps.dev.dev_http_capture_compiler_release
+    } else {
+        api deps.dev.dev_http_capture_compiler
+    }
 
     // ===========
     // = Android =

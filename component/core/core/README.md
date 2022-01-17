@@ -23,6 +23,8 @@ dependencies {
     api project(':core_lib_config')
     // 通用 Engine ( 图片加载、日志、JSON、权限、资源选择 等 ) lib
     api project(':core_lib_engine')
+    // 通用环境配置切换库
+    api project(':core_lib_environment')
     // 网络框架 lib
     api project(':core_lib_network')
     // 通用 UI 样式、资源、交互、控件 lib
