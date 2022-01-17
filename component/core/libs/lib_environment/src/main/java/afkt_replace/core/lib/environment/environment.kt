@@ -1,7 +1,7 @@
 package afkt_replace.core.lib.environment
 
 import afkt_replace.core_lib_environment.BuildConfig
-import android.content.Context
+import dev.DevUtils
 import dev.environment.DevEnvironment
 import dev.environment.annotation.Environment
 import dev.environment.annotation.Module
@@ -15,7 +15,7 @@ import dev.utils.app.share.SPUtils
  * detail: 环境类型枚举类
  * @author Ttt
  */
-internal enum class EnvironmentType(
+enum class EnvironmentType(
     val type: Int,
     val alias: String
 ) {
@@ -36,8 +36,8 @@ internal enum class EnvironmentType(
  */
 internal class HttpService private constructor() {
 
-    @Module(alias = "登录、注册模块")
-    private inner class Login {
+    @Module(alias = "启动页 ( 广告页、首次启动引导页 ) 模块")
+    private inner class Splash {
         @Environment(value = "https://login-release.com", isRelease = true, alias = "生产环境")
         private val release: String? = null
 
@@ -82,82 +82,14 @@ internal class HttpService private constructor() {
     }
 }
 
+private val EMPTY_MODULE = ModuleBean("", "")
+private val EMPTY_ENVIRONMENT = EnvironmentBean("", "", "", EMPTY_MODULE)
+
 /**
  * detail: Build Config Field Environment Type 构建校验
  * @author Ttt
  */
 internal object EnvironmentTypeChecker {
-
-    // ==========
-    // = 内部方法 =
-    // ==========
-
-    /**
-     * 内部环境设置
-     * @param context Context
-     * HttpService 每新增一个模块, 则需要在改方法新增处理
-     */
-    private fun innerEnvironmentSet(context: Context) {
-        // EnvironmentType
-        val type = innerGetEnvironmentType(BuildConfig.environmentType)
-
-        // 登录、注册模块环境设置
-        DevEnvironment.setLoginEnvironment(
-            context, innerGetEnvironmentBean(
-                type, DevEnvironment.getLoginModule()
-            )
-        )
-
-        // 用户模块环境设置
-        DevEnvironment.setUserEnvironment(
-            context, innerGetEnvironmentBean(
-                type, DevEnvironment.getUserModule()
-            )
-        )
-
-        // 商品模块环境设置
-        DevEnvironment.setCommodityEnvironment(
-            context, innerGetEnvironmentBean(
-                type, DevEnvironment.getCommodityModule()
-            )
-        )
-    }
-
-    // =============
-    // = 内部逻辑方法 =
-    // =============
-
-    /**
-     * 通过构建值获取环境类型枚举
-     * @param type Int
-     * @return EnvironmentType
-     */
-    private fun innerGetEnvironmentType(type: Int): EnvironmentType {
-        EnvironmentType.values().forEach {
-            if (it.type == type) {
-                return it
-            }
-        }
-        return EnvironmentType.RELEASE
-    }
-
-    /**
-     * 通过环境类型获取对应模块的环境地址
-     * @param type EnvironmentType
-     * @param module ModuleBean
-     * @return EnvironmentBean
-     */
-    private fun innerGetEnvironmentBean(
-        type: EnvironmentType,
-        module: ModuleBean
-    ): EnvironmentBean {
-        module.environments.forEach {
-            if (it.alias == type.alias) {
-                return it
-            }
-        }
-        return module.environments[0]
-    }
 
     // =============
     // = 对外公开方法 =
@@ -165,20 +97,20 @@ internal object EnvironmentTypeChecker {
 
     /**
      * 环境校验与重置
-     * @param context Context
      * 需在 Application 内尽可能的早调用
      * 用于非 Release 版本下针对自动化构建工具支持环境切换处理
      */
-    fun checker(context: Context) {
+    fun checker() {
         // 非 Release 版本才进行处理
         if (!BuildConfig.isRelease) {
+            val context = DevUtils.getContext()
             val sp = SPUtils.getPreference(
                 context, BuildConfig.MODULE_NAME
             )
             // 上次构建时间
             val oldTime = sp?.getLong(DevFinal.STR.BUILD) ?: 0
             if (BuildConfig.BUILD_TIME > oldTime) {
-                innerEnvironmentSet(context)
+                innerEnvironmentSet()
                 sp?.put(DevFinal.STR.BUILD, BuildConfig.BUILD_TIME)
             }
         }
@@ -215,5 +147,219 @@ internal object EnvironmentTypeChecker {
      */
     fun clearOnEnvironmentChangeListener(): Boolean {
         return DevEnvironment.clearOnEnvironmentChangeListener()
+    }
+
+    /**
+     * 获取指定 Module ModuleBean
+     * @param moduleName module Name
+     */
+    fun getModuleBean(moduleName: String): ModuleBean {
+        return when (moduleName) {
+            // 启动页 ( 广告页、首次启动引导页 ) 模块
+            BuildConfig.MODULE_SPLASH -> {
+                DevEnvironment.getSplashModule()
+            }
+            // 用户模块
+            BuildConfig.MODULE_USER -> {
+                DevEnvironment.getUserModule()
+            }
+            // 商品模块
+            BuildConfig.MODULE_COMMODITY -> {
+                DevEnvironment.getCommodityModule()
+            }
+            else -> {
+                EMPTY_MODULE
+            }
+        }
+    }
+
+    /**
+     * 获取指定 Module Release Environment Bean
+     * @param moduleName module Name
+     * @return Release Environment Bean
+     */
+    fun getReleaseEnvironment(moduleName: String): EnvironmentBean {
+        return when (moduleName) {
+            // 启动页 ( 广告页、首次启动引导页 ) 模块
+            BuildConfig.MODULE_SPLASH -> {
+                DevEnvironment.getSplashReleaseEnvironment()
+            }
+            // 用户模块
+            BuildConfig.MODULE_USER -> {
+                DevEnvironment.getUserReleaseEnvironment()
+            }
+            // 商品模块
+            BuildConfig.MODULE_COMMODITY -> {
+                DevEnvironment.getCommodityReleaseEnvironment()
+            }
+            else -> {
+                EMPTY_ENVIRONMENT
+            }
+        }
+    }
+
+    /**
+     * 获取指定 Module Release Environment Bean Value
+     * @param moduleName module Name
+     * @return Release Environment Bean Value
+     */
+    fun getReleaseEnvironmentValue(moduleName: String): String {
+        return getReleaseEnvironment(moduleName).value
+    }
+
+    /**
+     * 获取指定 Module Selected Environment Bean
+     * @param moduleName module Name
+     * @return Selected Environment Bean
+     */
+    fun getEnvironment(moduleName: String): EnvironmentBean {
+        val context = DevUtils.getContext()
+        return when (moduleName) {
+            // 启动页 ( 广告页、首次启动引导页 ) 模块
+            BuildConfig.MODULE_SPLASH -> {
+                DevEnvironment.getSplashEnvironment(context)
+            }
+            // 用户模块
+            BuildConfig.MODULE_USER -> {
+                DevEnvironment.getUserEnvironment(context)
+            }
+            // 商品模块
+            BuildConfig.MODULE_COMMODITY -> {
+                DevEnvironment.getCommodityEnvironment(context)
+            }
+            else -> {
+                EMPTY_ENVIRONMENT
+            }
+        }
+    }
+
+    /**
+     * 获取指定 Module Selected Environment Bean Value
+     * @param moduleName module Name
+     * @return Selected Environment Bean Value
+     */
+    fun getEnvironmentValue(moduleName: String): String {
+        return getEnvironment(moduleName).value
+    }
+
+    /**
+     * 设置指定 Module Environment Bean
+     * @param moduleName module Name
+     * @param newEnvironment environment bean
+     * @return `true` success, `false` fail
+     */
+    fun setEnvironment(
+        moduleName: String,
+        newEnvironment: EnvironmentBean
+    ): Boolean {
+        val context = DevUtils.getContext()
+        return when (moduleName) {
+            // 启动页 ( 广告页、首次启动引导页 ) 模块
+            BuildConfig.MODULE_SPLASH -> {
+                DevEnvironment.setSplashEnvironment(context, newEnvironment)
+            }
+            // 用户模块
+            BuildConfig.MODULE_USER -> {
+                DevEnvironment.setUserEnvironment(context, newEnvironment)
+            }
+            // 商品模块
+            BuildConfig.MODULE_COMMODITY -> {
+                DevEnvironment.setCommodityEnvironment(context, newEnvironment)
+            }
+            else -> {
+                false
+            }
+        }
+    }
+
+    /**
+     * 设置指定 Module Environment Bean
+     * @param moduleName module Name
+     * @param type EnvironmentType
+     * @return `true` success, `false` fail
+     */
+    fun setEnvironment(
+        moduleName: String,
+        type: EnvironmentType
+    ): Boolean {
+        return setEnvironment(
+            moduleName, getEnvironmentByType(
+                moduleName, type
+            )
+        )
+    }
+
+    /**
+     * 通过环境类型获取对应模块的环境信息
+     * @param moduleName module Name
+     * @param type EnvironmentType
+     * @return EnvironmentBean
+     */
+    fun getEnvironmentByType(
+        moduleName: String,
+        type: EnvironmentType
+    ): EnvironmentBean {
+        return innerGetBuildEnvironmentTypeBean(
+            type, getModuleBean(moduleName)
+        )
+    }
+
+    // ==========
+    // = 内部方法 =
+    // ==========
+
+    /**
+     * 内部环境设置
+     */
+    private fun innerEnvironmentSet() {
+        // EnvironmentType
+        val type = innerConvertBuildEnvironmentType()
+
+        // =========================
+        // = 设置每个模块构建的环境地址 =
+        // =========================
+
+        BuildConfig::class.java.declaredFields.forEach {
+            it?.let { field ->
+                if (field.type == String::class.java) {
+                    val name = field.name
+                    // 循环所有 MODULE_ 字符串进行设置环境
+                    if (name.startsWith("MODULE_")) {
+                        setEnvironment(name, getEnvironmentByType(name, type))
+                    }
+                }
+            }
+        }
+    }
+
+    /**
+     * 通过构建值获取环境类型枚举
+     * @return EnvironmentType
+     */
+    private fun innerConvertBuildEnvironmentType(): EnvironmentType {
+        EnvironmentType.values().forEach {
+            if (it.type == BuildConfig.environmentType) {
+                return it
+            }
+        }
+        return EnvironmentType.RELEASE
+    }
+
+    /**
+     * 通过环境类型获取对应模块的环境信息
+     * @param type EnvironmentType
+     * @param module ModuleBean
+     * @return EnvironmentBean
+     */
+    private fun innerGetBuildEnvironmentTypeBean(
+        type: EnvironmentType,
+        module: ModuleBean
+    ): EnvironmentBean {
+        module.environments.forEach {
+            if (it.alias == type.alias) {
+                return it
+            }
+        }
+        return module.environments[0]
     }
 }

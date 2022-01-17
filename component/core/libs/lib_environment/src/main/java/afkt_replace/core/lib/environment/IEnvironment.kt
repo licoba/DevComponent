@@ -1,7 +1,5 @@
 package afkt_replace.core.lib.environment
 
-import android.content.Context
-
 /**
  * detail: APP 环境配置
  * @author Ttt
@@ -13,11 +11,10 @@ interface IEnvironment {
 
     /**
      * 环境校验与重置
-     * @param context Context
      * 需在 Application 内尽可能的早调用
      * 用于非 Release 版本下针对自动化构建工具支持环境切换处理
      */
-    fun checker(context: Context) {
-        EnvironmentTypeChecker.checker(context)
+    fun checker() {
+        EnvironmentTypeChecker.checker()
     }
 }

@@ -1,7 +1,5 @@
 package afkt_replace.core.app
 
-import afkt_replace.core.BuildConfig
-
 /**
  * detail: APP 渠道信息
  * @author Ttt

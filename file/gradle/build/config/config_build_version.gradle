@@ -175,5 +175,11 @@ if (libName == "core") {
 if (libName == "core_lib_environment") {
     android.defaultConfig {
         buildConfigField("int", "environmentType", "$environmentType")
+
+        // 循环每个模块 MODULE_NAME 用于传入 MODULE_NAME 获取对应的环境地址
+        modularVersion.values().forEach {
+            def moduleName = it.moduleName
+            buildConfigField("String", "MODULE_${moduleName}", "\"${moduleName}\"")
+        }
     }
 }

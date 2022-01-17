@@ -1,6 +1,7 @@
 package afkt_replace.core
 
 import afkt_replace.core.app.AppDebug
+import afkt_replace.core.app.AppEnvironment
 import afkt_replace.core.lib.config.AppConst
 import android.content.Context
 import android.util.Log
@@ -40,6 +41,9 @@ class CoreModule private constructor() : BaseModule(CoreModule::class.java.simpl
         initializeEngine(context)
         // Dev 系列工具类初始化
         initializeDevUtils()
+
+        // 初始化环境信息
+        AppEnvironment.checker()
     }
 
     // ============
