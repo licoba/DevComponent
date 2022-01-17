@@ -2,11 +2,33 @@ package afkt_replace.core.lib.environment
 
 import afkt_replace.core_lib_environment.BuildConfig
 import android.content.Context
-import dev.environment.DevEnvironmentActivity
+import dev.environment.DevEnvironment
 import dev.environment.annotation.Environment
 import dev.environment.annotation.Module
+import dev.environment.bean.EnvironmentBean
+import dev.environment.bean.ModuleBean
+import dev.environment.listener.OnEnvironmentChangeListener
 import dev.utils.DevFinal
 import dev.utils.app.share.SPUtils
+
+/**
+ * detail: 环境类型枚举类
+ * @author Ttt
+ */
+internal enum class EnvironmentType(
+    val type: Int,
+    val alias: String
+) {
+    RELEASE(1, "生产环境"),
+
+    DEBUG(2, "测试环境"),
+
+    PRE_RELEASE(3, "预发布环境"),
+
+    DEVELOPMENT(4, "开发环境"),
+
+    ;
+}
 
 /**
  * detail: Http Base Service 服务器请求地址
@@ -76,19 +98,65 @@ internal object EnvironmentTypeChecker {
      * HttpService 每新增一个模块, 则需要在改方法新增处理
      */
     private fun innerEnvironmentSet(context: Context) {
-        when (BuildConfig.environmentType) {
-            1 -> { // 生产环境
-            }
-            2 -> { // 测试环境
+        // EnvironmentType
+        val type = innerGetEnvironmentType(BuildConfig.environmentType)
 
-            }
-            3 -> { // 预发布环境
+        // 登录、注册模块环境设置
+        DevEnvironment.setLoginEnvironment(
+            context, innerGetEnvironmentBean(
+                type, DevEnvironment.getLoginModule()
+            )
+        )
 
-            }
-            4 -> { // 开发环境
+        // 用户模块环境设置
+        DevEnvironment.setUserEnvironment(
+            context, innerGetEnvironmentBean(
+                type, DevEnvironment.getUserModule()
+            )
+        )
 
+        // 商品模块环境设置
+        DevEnvironment.setCommodityEnvironment(
+            context, innerGetEnvironmentBean(
+                type, DevEnvironment.getCommodityModule()
+            )
+        )
+    }
+
+    // =============
+    // = 内部逻辑方法 =
+    // =============
+
+    /**
+     * 通过构建值获取环境类型枚举
+     * @param type Int
+     * @return EnvironmentType
+     */
+    private fun innerGetEnvironmentType(type: Int): EnvironmentType {
+        EnvironmentType.values().forEach {
+            if (it.type == type) {
+                return it
             }
         }
+        return EnvironmentType.RELEASE
+    }
+
+    /**
+     * 通过环境类型获取对应模块的环境地址
+     * @param type EnvironmentType
+     * @param module ModuleBean
+     * @return EnvironmentBean
+     */
+    private fun innerGetEnvironmentBean(
+        type: EnvironmentType,
+        module: ModuleBean
+    ): EnvironmentBean {
+        module.environments.forEach {
+            if (it.alias == type.alias) {
+                return it
+            }
+        }
+        return module.environments[0]
     }
 
     // =============
@@ -114,5 +182,38 @@ internal object EnvironmentTypeChecker {
                 sp?.put(DevFinal.STR.BUILD, BuildConfig.BUILD_TIME)
             }
         }
+    }
+
+    /**
+     * 添加模块环境改变触发事件
+     * Add Environment Change Listener
+     * @param listener environment change listener
+     * @return `true` success, `false` fail
+     */
+    fun addOnEnvironmentChangeListener(
+        listener: OnEnvironmentChangeListener?
+    ): Boolean {
+        return DevEnvironment.addOnEnvironmentChangeListener(listener)
+    }
+
+    /**
+     * 移除模块环境改变触发事件
+     * Remove Environment Change Listener
+     * @param listener environment change listener
+     * @return `true` success, `false` fail
+     */
+    fun removeOnEnvironmentChangeListener(
+        listener: OnEnvironmentChangeListener?
+    ): Boolean {
+        return DevEnvironment.removeOnEnvironmentChangeListener(listener)
+    }
+
+    /**
+     * 清空模块环境改变触发事件
+     * Clear All Environment Change Listener
+     * @return `true` success, `false` fail
+     */
+    fun clearOnEnvironmentChangeListener(): Boolean {
+        return DevEnvironment.clearOnEnvironmentChangeListener()
     }
 }
