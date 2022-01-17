@@ -40,9 +40,9 @@ dependencies {
         kapt deps.dev.dev_environment_compiler
     }
 
-    // DevHttpCapture - OKHttp 抓包工具库
+    // DevHttpCapture - OkHttp 抓包工具库
     api deps.dev.dev_http_capture
-    // DevHttpCaptureCompiler - OKHttp 抓包工具库 ( 可视化功能 )
+    // DevHttpCaptureCompiler - OkHttp 抓包工具库 ( 可视化功能 )
     if (isRelease) {
         api deps.dev.dev_http_capture_compiler_release
     } else {

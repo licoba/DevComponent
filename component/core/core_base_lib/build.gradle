@@ -3,6 +3,7 @@ apply from: rootProject.file(files.build_library_gradle)
 /**
  * 该 Module 基于 Dev 系列开发库搭建, 且不存在任何代码属于核心 lib 依赖 ( 全部开发基于该 module )
  * 用于统一维护基础核心开发库依赖, 如有必须依赖底层库在此添加
+ * 注: 该 Module 只是用于 lib 依赖, 不添加任何代码
  */
 dependencies {
 
@@ -38,9 +39,9 @@ dependencies {
         kapt deps.dev.dev_environment_compiler
     }
 
-    // DevHttpCapture - OKHttp 抓包工具库
+    // DevHttpCapture - OkHttp 抓包工具库
     api deps.dev.dev_http_capture
-    // DevHttpCaptureCompiler - OKHttp 抓包工具库 ( 可视化功能 )
+    // DevHttpCaptureCompiler - OkHttp 抓包工具库 ( 可视化功能 )
     if (isRelease) {
         api deps.dev.dev_http_capture_compiler_release
     } else {
