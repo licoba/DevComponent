@@ -1,5 +1,11 @@
 package afkt_replace.core.lib.environment
 
+import afkt_replace.core.lib.environment.EnvironmentTypeChecker.getEnvironment
+import afkt_replace.core.lib.environment.EnvironmentTypeChecker.getEnvironmentByType
+import afkt_replace.core.lib.environment.EnvironmentTypeChecker.getModuleBean
+import afkt_replace.core.lib.environment.EnvironmentTypeChecker.getReleaseEnvironment
+import afkt_replace.core.lib.environment.EnvironmentTypeChecker.innerGetBuildEnvironmentTypeBean
+import afkt_replace.core.lib.environment.EnvironmentTypeChecker.setEnvironment
 import afkt_replace.core_lib_environment.BuildConfig
 import dev.DevUtils
 import dev.environment.DevEnvironment
@@ -12,6 +18,12 @@ import dev.utils.app.share.SPUtils
 /**
  * detail: 环境类型枚举类
  * @author Ttt
+ * 环境类型尽量与 [HttpService] 相对应
+ * 如需通过传入 [EnvironmentType] 切换环境且属于新的 alias
+ * 则需要同步在该枚举内创建新的 type 内部通过
+ * [innerGetBuildEnvironmentTypeBean]
+ * 循环判断 alias 返回对应的 [EnvironmentBean]
+ * 便于 [getEnvironmentByType] 方法切换环境
  */
 enum class EnvironmentType(
     val type: Int,
@@ -35,12 +47,17 @@ enum class EnvironmentType(
 /**
  * detail: Build Config Field Environment Type 构建校验
  * @author Ttt
+ * [HttpService] 新增模块则同步需要再以下方法进行添加处理
+ * [getModuleBean]、[getReleaseEnvironment]、[getEnvironment]、[setEnvironment]
  */
 internal object EnvironmentTypeChecker {
 
     // 空实体类便于复用
     private val EMPTY_MODULE = ModuleBean("", "")
     private val EMPTY_ENVIRONMENT = EnvironmentBean("", "", "", EMPTY_MODULE)
+
+    // 是否 Release 版本标记
+    private fun isRelease() = BuildConfig.isRelease
 
     // =============
     // = 对外公开方法 =
@@ -52,18 +69,17 @@ internal object EnvironmentTypeChecker {
      * 用于非 Release 版本下针对自动化构建工具支持环境切换处理
      */
     fun checker() {
+        if (isRelease()) return
+
         // 非 Release 版本才进行处理
-        if (!BuildConfig.isRelease) {
-            val context = DevUtils.getContext()
-            val sp = SPUtils.getPreference(
-                context, BuildConfig.MODULE_NAME
-            )
-            // 上次构建时间
-            val oldTime = sp?.getLong(DevFinal.STR.BUILD) ?: 0
-            if (BuildConfig.BUILD_TIME > oldTime) {
-                innerEnvironmentSet()
-                sp?.put(DevFinal.STR.BUILD, BuildConfig.BUILD_TIME)
-            }
+        val sp = SPUtils.getPreference(
+            DevUtils.getContext(), BuildConfig.MODULE_NAME
+        )
+        // 上次构建时间
+        val oldTime = sp?.getLong(DevFinal.STR.BUILD) ?: 0
+        if (BuildConfig.BUILD_TIME > oldTime) {
+            innerSetBuildEnvironment()
+            sp?.put(DevFinal.STR.BUILD, BuildConfig.BUILD_TIME)
         }
     }
 
@@ -100,6 +116,7 @@ internal object EnvironmentTypeChecker {
     /**
      * 获取指定 Module ModuleBean
      * @param moduleName module Name
+     * @return [ModuleBean]
      */
     fun getModuleBean(moduleName: String): ModuleBean {
         return when (moduleName) {
@@ -124,7 +141,7 @@ internal object EnvironmentTypeChecker {
     /**
      * 获取指定 Module Release Environment Bean
      * @param moduleName module Name
-     * @return Release Environment Bean
+     * @return [EnvironmentBean]
      */
     fun getReleaseEnvironment(moduleName: String): EnvironmentBean {
         return when (moduleName) {
@@ -149,7 +166,7 @@ internal object EnvironmentTypeChecker {
     /**
      * 获取指定 Module Release Environment Bean Value
      * @param moduleName module Name
-     * @return Release Environment Bean Value
+     * @return [EnvironmentBean.value]
      */
     fun getReleaseEnvironmentValue(moduleName: String): String {
         return getReleaseEnvironment(moduleName).value
@@ -158,7 +175,9 @@ internal object EnvironmentTypeChecker {
     /**
      * 获取指定 Module Selected Environment Bean
      * @param moduleName module Name
-     * @return Selected Environment Bean
+     * @return [EnvironmentBean]
+     * 无需判断 [isRelease] gradle kapt 自动创建不同的类
+     * Release DevEnvironment 直接返回 Release Environment
      */
     fun getEnvironment(moduleName: String): EnvironmentBean {
         val context = DevUtils.getContext()
@@ -184,7 +203,7 @@ internal object EnvironmentTypeChecker {
     /**
      * 获取指定 Module Selected Environment Bean Value
      * @param moduleName module Name
-     * @return Selected Environment Bean Value
+     * @return [EnvironmentBean.value]
      */
     fun getEnvironmentValue(moduleName: String): String {
         return getEnvironment(moduleName).value
@@ -195,11 +214,17 @@ internal object EnvironmentTypeChecker {
      * @param moduleName module Name
      * @param newEnvironment environment bean
      * @return `true` success, `false` fail
+     * 无需判断 [isRelease] gradle kapt 自动创建不同的类
+     * Release DevEnvironment 方法内部为空实现
      */
     fun setEnvironment(
         moduleName: String,
         newEnvironment: EnvironmentBean
     ): Boolean {
+        // 属于空实体类则不设置环境
+        if (newEnvironment == EMPTY_ENVIRONMENT) {
+            return false
+        }
         val context = DevUtils.getContext()
         return when (moduleName) {
             // 启动页 ( 广告页、首次启动引导页 ) 模块
@@ -238,10 +263,10 @@ internal object EnvironmentTypeChecker {
     }
 
     /**
-     * 通过环境类型获取对应模块的环境信息
+     * 通过环境类型获取对应模块的 Environment Bean
      * @param moduleName module Name
      * @param type EnvironmentType
-     * @return EnvironmentBean
+     * @return [EnvironmentBean]
      */
     fun getEnvironmentByType(
         moduleName: String,
@@ -257,10 +282,10 @@ internal object EnvironmentTypeChecker {
     // ==========
 
     /**
-     * 内部环境设置
+     * 非 Release 版本下
+     * 根据构建时间、environmentType 进行设置对应的环境
      */
-    private fun innerEnvironmentSet() {
-        // EnvironmentType
+    private fun innerSetBuildEnvironment() {
         val type = innerConvertBuildEnvironmentType()
 
         // =========================
@@ -308,6 +333,6 @@ internal object EnvironmentTypeChecker {
                 return it
             }
         }
-        return module.environments[0]
+        return EMPTY_ENVIRONMENT
     }
 }
