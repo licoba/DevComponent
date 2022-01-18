@@ -25,6 +25,8 @@ dependencies {
     api project(':core_lib_environment')
     // 网络框架 lib
     api project(':core_lib_network')
+    // 路由相关
+    api project(':core_lib_router')
     // 通用 UI 样式、资源、交互、控件 lib
     api project(':core_lib_ui')
     // 通用工具库
@@ -40,10 +42,6 @@ dependencies {
     // Bugly https://bugly.qq.com/docs/
     api deps.property.bugly
     api deps.property.bugly_ndk
-
-    // ARouter 路由 https://github.com/alibaba/ARouter
-    api deps.lib.arouter_api // https://github.com/alibaba/ARouter/blob/master/README_CN.md
-    kapt deps.lib.arouter_compiler
 
     // ====================
     // = 性能检测、排查相关库 =

@@ -1,4 +1,4 @@
-package afkt_replace.core.lib.environment
+package afkt_replace.core.lib.router
 
 import afkt_replace.core.lib.environment.EnvironmentTypeChecker.getEnvironment
 import afkt_replace.core.lib.environment.EnvironmentTypeChecker.getEnvironmentByType

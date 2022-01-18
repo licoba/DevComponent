@@ -228,6 +228,16 @@ ext {
                     moduleName : "CORE_LIB_NETWORK",
             ],
 
+            // 路由相关
+            "core_lib_router": [
+                    // 版本号
+                    versionCode: 100,
+                    // 版本名
+                    versionName: "1.0.0",
+                    // 模块名
+                    moduleName : "CORE_LIB_ROUTER",
+            ],
+
             // 通用 UI 样式、资源、交互、控件 lib
             "core_lib_ui"         : [
                     // 版本号
