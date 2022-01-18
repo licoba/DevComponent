@@ -1,4 +1,4 @@
-package afkt_replace.core.assist
+package afkt_replace.core.lib.web.assist
 
 import android.graphics.Paint
 import android.os.Build

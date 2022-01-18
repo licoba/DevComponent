@@ -33,6 +33,8 @@ dependencies {
     api project(':core_lib_ui')
     // 通用工具库
     api project(':core_lib_utils')
+    // WebView 相关
+    api project(':core_lib_web')
 
     // =============
     // = 第三方库依赖 =

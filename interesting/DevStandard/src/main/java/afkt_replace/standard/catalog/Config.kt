@@ -127,6 +127,7 @@ object Config {
         sCoreCatalogMap[".libs.lib_router"] = "路由相关"
         sCoreCatalogMap[".libs.lib_ui"] = "统一 style、widget、ui 相关组件"
         sCoreCatalogMap[".libs.lib_utils"] = "通用工具库"
+        sCoreCatalogMap[".libs.lib_web"] = "WebView 相关"
 
         sCoreIgnoreCatalogs.add("core")
         sCoreIgnoreCatalogs.add("core_base_lib")

@@ -229,7 +229,7 @@ ext {
             ],
 
             // 广播监听 ( 如网络状态、电量、屏幕解锁 ) 相关
-            "core_lib_receiver": [
+            "core_lib_receiver"   : [
                     // 版本号
                     versionCode: 100,
                     // 版本名
@@ -239,7 +239,7 @@ ext {
             ],
 
             // 路由相关
-            "core_lib_router": [
+            "core_lib_router"     : [
                     // 版本号
                     versionCode: 100,
                     // 版本名
@@ -266,6 +266,16 @@ ext {
                     versionName: "1.0.0",
                     // 模块名
                     moduleName : "CORE_LIB_UTILS",
+            ],
+
+            // WebView 相关
+            "core_lib_web"        : [
+                    // 版本号
+                    versionCode: 100,
+                    // 版本名
+                    versionName: "1.0.0",
+                    // 模块名
+                    moduleName : "CORE_LIB_WEB",
             ],
     ]
 }
