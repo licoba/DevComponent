@@ -15,8 +15,11 @@
       - lib_engine           | 通用 Engine ( 图片加载、日志、JSON、权限、资源选择、缓存 ) lib
       - lib_environment      | 通用环境配置切换库
       - lib_network          | 网络相关 lib ( 网络请求、上传下载 )
+      - lib_receiver         | 广播监听 ( 如网络状态、电量、屏幕解锁 ) 相关
+      - lib_router           | 路由相关
       - lib_ui               | 统一 style、widget、ui 相关组件
       - lib_utils            | 通用工具库
+      - lib_web              | WebView 相关
 ```
 
 # core/core

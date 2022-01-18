@@ -38,25 +38,25 @@ dependencies {
 # main/java 目录结构
 
 ```
-- java                           
-   - afkt_replace                
-      - libs                     
-         - commodity             
-            - utils              
+- java                             
+   - afkt_replace                  
+      - libs                       
+         - commodity               
+            - utils                
 ```
 
 
 # main/res 目录结构
 
 ```
-- res                            
-   - drawable-xhdpi              
+- res                              
+   - drawable-xhdpi                
 ```
 
 
 # main/res-label 目录结构
 
 ```
-- res-label                      
-   - drawable-xhdpi              
+- res-label                        
+   - drawable-xhdpi                
 ```

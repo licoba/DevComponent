@@ -28,9 +28,9 @@ dependencies {
 # main/java 目录结构
 
 ```
-- java                           
-   - afkt_replace                
-      - core                     
-         - lib                   
-            - utils              
+- java                             
+   - afkt_replace                  
+      - core                       
+         - lib                     
+            - utils                
 ```

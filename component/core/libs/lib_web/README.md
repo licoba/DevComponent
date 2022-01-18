@@ -1,7 +1,7 @@
 
 # About
 
-通用工具库
+WebView 相关
 
 # 依赖信息
 
@@ -28,9 +28,10 @@ dependencies {
 # main/java 目录结构
 
 ```
-- java                           
-   - afkt_replace                
-      - core                     
-         - lib                   
-            - web              
+- java                             
+   - afkt_replace                  
+      - core                       
+         - lib                     
+            - web                  
+               - assist            
 ```

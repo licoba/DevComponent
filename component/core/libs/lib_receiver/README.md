@@ -1,7 +1,7 @@
 
 # About
 
-通用工具库
+广播监听 ( 如网络状态、电量、屏幕解锁 ) 相关
 
 # 依赖信息
 
@@ -32,5 +32,6 @@ dependencies {
    - afkt_replace                
       - core                     
          - lib                   
-            - receiver              
+            - receiver           
+               - feature         
 ```

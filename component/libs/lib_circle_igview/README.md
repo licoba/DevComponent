@@ -13,10 +13,10 @@ clone CircleImageView 修改源码使用 ( 用于演示, 推荐使用 Material S
 # main/java 目录结构
 
 ```
-- java                           
-   - de                          
-      - hdodenhof                
-         - circleimageview       
+- java                             
+   - de                            
+      - hdodenhof                  
+         - circleimageview         
 ```
 
 # Usage

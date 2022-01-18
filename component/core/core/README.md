@@ -27,10 +27,16 @@ dependencies {
     api project(':core_lib_environment')
     // 网络框架 lib
     api project(':core_lib_network')
+    // 广播监听 ( 如网络状态、电量、屏幕解锁 ) 相关
+    api project(':core_lib_receiver')
+    // 路由相关
+    api project(':core_lib_router')
     // 通用 UI 样式、资源、交互、控件 lib
     api project(':core_lib_ui')
     // 通用工具库
     api project(':core_lib_utils')
+    // WebView 相关
+    api project(':core_lib_web')
 
     // =============
     // = 第三方库依赖 =
@@ -43,10 +49,6 @@ dependencies {
     api deps.property.bugly
     api deps.property.bugly_ndk
 
-    // ARouter 路由 https://github.com/alibaba/ARouter
-    api deps.lib.arouter_api // https://github.com/alibaba/ARouter/blob/master/README_CN.md
-    kapt deps.lib.arouter_compiler
-
     // ====================
     // = 性能检测、排查相关库 =
     // ====================
@@ -55,8 +57,6 @@ dependencies {
     if (showDebugTools) {
         // 内存检测工具 https://github.com/square/leakcanary
         api deps.property.leakcanary
-        // 应用数据库展示 https://github.com/guolindev/Glance
-        api deps.property.glance
         // 饿了么 UETool https://github.com/eleme/UETool/blob/master/README_zh.md
         api deps.property.uetool
         // BlockCanary 性能监控组件 https://github.com/markzhai/AndroidPerformanceMonitor/blob/master/README_CN.md
@@ -67,13 +67,6 @@ dependencies {
         // BlockCanary 性能监控组件 https://github.com/markzhai/AndroidPerformanceMonitor/blob/master/README_CN.md
         api deps.property.blockcanary_no_op
     }
-
-//    // 饿了么 UETool https://github.com/eleme/UETool/blob/master/README_zh.md
-//    debugApi deps.property.uetool
-//    releaseApi deps.property.uetool_no_op
-//    // BlockCanary 性能监控组件 https://github.com/markzhai/AndroidPerformanceMonitor/blob/master/README_CN.md
-//    debugApi deps.property.blockcanary_android
-//    releaseApi deps.property.blockcanary_no_op
 }
 ```
 
@@ -127,16 +120,8 @@ dependencies {
    - afkt_replace            
       - core                 
          - app               
-         - assist            
-         - function          
          - property          
-         - receiver          
          - router            
-            - commodity      
-            - main           
-            - splash         
-            - template       
-            - user           
 ```
 
 

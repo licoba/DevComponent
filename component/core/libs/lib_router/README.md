@@ -1,7 +1,7 @@
 
 # About
 
-通用环境配置切换库
+路由相关
 
 # 依赖信息
 
@@ -10,6 +10,15 @@ dependencies {
 
     // 核心基础依赖库 ( 编译但不参与打包 )
     compileOnly project(':core_base_lib')
+
+    // 通用实体类 lib
+    compileOnly project(':core_lib_bean')
+
+    // 通用配置、常量 lib
+    compileOnly project(':core_lib_config')
+
+    // 通用 Engine ( 图片加载、日志、JSON、权限、资源选择 等 ) lib
+    compileOnly project(':core_lib_engine')
 }
 ```
 
@@ -25,9 +34,15 @@ dependencies {
 # main/java 目录结构
 
 ```
-- java                           
-   - afkt_replace                
-      - core                     
-         - lib                   
-            - router        
+- java                             
+   - afkt_replace                  
+      - core                       
+         - lib                     
+            - router               
+               - module            
+                  - commodity      
+                  - main           
+                  - splash         
+                  - template       
+                  - user           
 ```

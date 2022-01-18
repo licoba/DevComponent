@@ -40,21 +40,21 @@ dependencies {
 # main/java 目录结构
 
 ```
-- java                           
-   - afkt_replace                
-      - module                   
-         - template              
-            - base               
-            - feature            
+- java                             
+   - afkt_replace                  
+      - module                     
+         - template                
+            - base                 
+            - feature              
 ```
 
 
 # main/res 目录结构
 
 ```
-- res                            
-   - layout                      
-   - mipmap-xxxhdpi              
-   - values                      
-   - values-zh                   
+- res                              
+   - layout                        
+   - mipmap-xxxhdpi                
+   - values                        
+   - values-zh                     
 ```
