@@ -2,7 +2,7 @@ package afkt_replace.module.user.activity
 
 import afkt_replace.core.lib.base.app.BaseActivityViewBinding
 import afkt_replace.core.lib.bean.ThemeIntent
-import afkt_replace.core.router.user.UserRouter
+import afkt_replace.core.lib.router.module.user.UserRouter
 import afkt_replace.module.user.BuildConfig
 import android.graphics.Color
 import android.os.Bundle

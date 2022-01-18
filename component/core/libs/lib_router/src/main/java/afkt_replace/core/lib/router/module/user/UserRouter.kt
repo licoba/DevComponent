@@ -1,4 +1,4 @@
-package afkt_replace.core.router.user
+package afkt_replace.core.lib.router.module.user
 
 import com.alibaba.android.arouter.facade.Postcard
 import com.alibaba.android.arouter.launcher.ARouter
@@ -53,5 +53,16 @@ object UserRouter {
             userProvider = ARouter.getInstance().navigation(IUserProvider::class.java)
         }
         return userProvider
+    }
+
+    // ==========
+    // = 跳转方法 =
+    // ==========
+
+    /**
+     * 模块入口路由跳转
+     */
+    fun routerMain() {
+        build(PATH_MAIN).navigation()
     }
 }

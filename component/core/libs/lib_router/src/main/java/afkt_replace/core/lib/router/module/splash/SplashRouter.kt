@@ -1,25 +1,23 @@
-package afkt_replace.core.router.commodity
+package afkt_replace.core.lib.router.module.splash
 
+import afkt_replace.core.lib.router.module.main.MainRouter
 import com.alibaba.android.arouter.facade.Postcard
 import com.alibaba.android.arouter.launcher.ARouter
 
 /**
- * detail: Commodity Module Router
+ * detail: Splash Module Router
  * @author Ttt
  */
-object CommodityRouter {
+object SplashRouter {
 
-    const val GROUP = "commodity"
+    const val GROUP = "splash"
 
     // ========
     // = PATH =
     // ========
 
     // 模块入口
-    const val PATH_MAIN = "/$GROUP/main"
-
-    // 购物车 Fragment
-    const val PATH_SHOP_CART_FRAGMENT = "/commodity/shop/cart/fragment"
+    const val PATH_LAUNCHER = "/${GROUP}/launcher"
 
     // ==========
     // = 快捷方法 =
@@ -31,5 +29,20 @@ object CommodityRouter {
      */
     fun build(path: String): Postcard {
         return ARouter.getInstance().build(path, GROUP)
+    }
+
+    // ==========
+    // = 跳转方法 =
+    // ==========
+
+    /**
+     * 模块入口路由跳转
+     */
+    fun routerMain() {
+        build(PATH_LAUNCHER).navigation()
+    }
+
+    fun buildAppMain(): Postcard {
+        return MainRouter.buildMain()
     }
 }

@@ -1,4 +1,4 @@
-package afkt_replace.core.router.template
+package afkt_replace.core.lib.router.module.template
 
 import com.alibaba.android.arouter.facade.Postcard
 import com.alibaba.android.arouter.launcher.ARouter
@@ -31,5 +31,16 @@ object TemplateRouter {
      */
     fun build(path: String): Postcard {
         return ARouter.getInstance().build(path, GROUP)
+    }
+
+    // ==========
+    // = 跳转方法 =
+    // ==========
+
+    /**
+     * 模块入口路由跳转
+     */
+    fun routerMain() {
+        build(PATH_MAIN).navigation()
     }
 }

@@ -1,15 +1,15 @@
-package afkt_replace.core.router.main
+package afkt_replace.core.lib.router.module.commodity
 
 import com.alibaba.android.arouter.facade.Postcard
 import com.alibaba.android.arouter.launcher.ARouter
 
 /**
- * detail: Main Module Router
+ * detail: Commodity Module Router
  * @author Ttt
  */
-object MainRouter {
+object CommodityRouter {
 
-    const val GROUP = "main"
+    const val GROUP = "commodity"
 
     // ========
     // = PATH =
@@ -17,6 +17,9 @@ object MainRouter {
 
     // 模块入口
     const val PATH_MAIN = "/$GROUP/main"
+
+    // 购物车 Fragment
+    const val PATH_SHOP_CART_FRAGMENT = "/commodity/shop/cart/fragment"
 
     // ==========
     // = 快捷方法 =
@@ -28,5 +31,16 @@ object MainRouter {
      */
     fun build(path: String): Postcard {
         return ARouter.getInstance().build(path, GROUP)
+    }
+
+    // ==========
+    // = 跳转方法 =
+    // ==========
+
+    /**
+     * 模块入口路由跳转
+     */
+    fun routerMain() {
+        build(PATH_MAIN).navigation()
     }
 }

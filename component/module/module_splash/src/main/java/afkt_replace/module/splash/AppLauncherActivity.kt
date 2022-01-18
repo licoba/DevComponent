@@ -2,8 +2,8 @@ package afkt_replace.module.splash
 
 import afkt_replace.core.lib.base.app.BaseActivityViewBinding
 import afkt_replace.core.lib.bean.ThemeIntent
-import afkt_replace.core.router.splash.SplashRouter
-import afkt_replace.core.router.user.UserRouter
+import afkt_replace.core.lib.router.module.splash.SplashRouter
+import afkt_replace.core.lib.router.module.user.UserRouter
 import android.content.Intent
 import android.os.Bundle
 import android.view.View

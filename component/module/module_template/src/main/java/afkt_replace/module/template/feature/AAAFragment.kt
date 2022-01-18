@@ -2,7 +2,7 @@ package afkt_replace.module.template.feature
 
 import afkt_replace.core.lib.base.app.BaseFragmentViewBinding
 import afkt_replace.core.lib.bean.ThemeIntent
-import afkt_replace.core.router.template.TemplateRouter
+import afkt_replace.core.lib.router.module.template.TemplateRouter
 import afkt_replace.module.template.R
 import afkt_replace.module.template.databinding.TemplateFragmentAaaBinding
 import android.os.Bundle

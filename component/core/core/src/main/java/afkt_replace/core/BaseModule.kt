@@ -1,5 +1,10 @@
 package afkt_replace.core
 
+import dev.utils.LogPrintUtils
+
+// 初始化 TAG
+const val MODULAR_INIT_TAG = "Modular_Init"
+
 /**
  * detail: Base Module ( ContentProvider Initializer )
  * @author Ttt
@@ -8,6 +13,14 @@ package afkt_replace.core
 open class BaseModule(val TAG: String) {
 
     init {
-        CoreConst.printModularInitialize(TAG)
+        printModularInitialize(TAG)
+    }
+
+    /**
+     * 打印 Modular 初始化日志
+     * @param tag Module class Name
+     */
+    private fun printModularInitialize(tag: String) {
+        LogPrintUtils.dTag(MODULAR_INIT_TAG, "$tag - initialize")
     }
 }

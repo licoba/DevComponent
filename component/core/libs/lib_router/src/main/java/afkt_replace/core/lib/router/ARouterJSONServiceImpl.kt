@@ -1,4 +1,4 @@
-package afkt_replace.core.router
+package afkt_replace.core.lib.router
 
 import android.content.Context
 import com.alibaba.android.arouter.facade.annotation.Route

@@ -5,9 +5,9 @@ import afkt_replace.core.lib.bean.user.enums.SexEnum
 import afkt_replace.core.lib.bean.user.enums.UserLevelEnum
 import afkt_replace.core.lib.bean.user.enums.UserStateEnum
 import afkt_replace.core.lib.config.AppConst
-import afkt_replace.core.router.BaseProviderExt
-import afkt_replace.core.router.user.IUserProvider
-import afkt_replace.core.router.user.UserRouter
+import afkt_replace.core.lib.router.BaseProviderExt
+import afkt_replace.core.lib.router.module.user.IUserProvider
+import afkt_replace.core.lib.router.module.user.UserRouter
 import android.content.Context
 import com.alibaba.android.arouter.facade.annotation.Route
 import dev.utils.common.ChineseUtils

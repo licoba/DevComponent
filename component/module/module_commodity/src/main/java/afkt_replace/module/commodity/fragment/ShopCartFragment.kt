@@ -3,8 +3,8 @@ package afkt_replace.module.commodity.fragment
 import afkt_replace.core.lib.base.app.BaseFragmentViewBinding
 import afkt_replace.core.lib.bean.ThemeIntent
 import afkt_replace.core.lib.bean.commodity.CommodityBean
+import afkt_replace.core.lib.router.module.commodity.CommodityRouter
 import afkt_replace.core.lib.ui.widget.BaseTextView
-import afkt_replace.core.router.commodity.CommodityRouter
 import afkt_replace.module.commodity.R
 import afkt_replace.module.commodity.adapter.ShopCartAdapter
 import afkt_replace.module.commodity.databinding.CommodityFragmentShopCartBinding

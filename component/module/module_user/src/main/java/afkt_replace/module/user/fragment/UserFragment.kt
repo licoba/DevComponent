@@ -2,8 +2,8 @@ package afkt_replace.module.user.fragment
 
 import afkt_replace.core.lib.base.app.BaseFragmentViewBinding
 import afkt_replace.core.lib.bean.ThemeIntent
+import afkt_replace.core.lib.router.module.user.UserRouter
 import afkt_replace.core.lib.utils.ProjectUtils
-import afkt_replace.core.router.user.UserRouter
 import afkt_replace.module.user.R
 import afkt_replace.module.user.databinding.UserFragmentBinding
 import android.annotation.SuppressLint

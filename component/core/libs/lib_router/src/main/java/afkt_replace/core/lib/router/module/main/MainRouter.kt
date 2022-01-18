@@ -1,23 +1,22 @@
-package afkt_replace.core.router.splash
+package afkt_replace.core.lib.router.module.main
 
-import afkt_replace.core.router.main.MainRouter
 import com.alibaba.android.arouter.facade.Postcard
 import com.alibaba.android.arouter.launcher.ARouter
 
 /**
- * detail: Splash Module Router
+ * detail: Main Module Router
  * @author Ttt
  */
-object SplashRouter {
+object MainRouter {
 
-    const val GROUP = "splash"
+    const val GROUP = "main"
 
     // ========
     // = PATH =
     // ========
 
     // 模块入口
-    const val PATH_LAUNCHER = "/${GROUP}/launcher"
+    const val PATH_MAIN = "/$GROUP/main"
 
     // ==========
     // = 快捷方法 =
@@ -31,7 +30,21 @@ object SplashRouter {
         return ARouter.getInstance().build(path, GROUP)
     }
 
-    fun buildAppMain(): Postcard {
-        return ARouter.getInstance().build(MainRouter.PATH_MAIN, MainRouter.GROUP)
+    // ==========
+    // = 跳转方法 =
+    // ==========
+
+    /**
+     * 模块入口路由跳转
+     */
+    fun routerMain() {
+        build(PATH_MAIN).navigation()
+    }
+
+    /**
+     * 模块入口路由
+     */
+    fun buildMain(): Postcard {
+        return build(PATH_MAIN)
     }
 }

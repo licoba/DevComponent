@@ -2,7 +2,7 @@ package afkt_replace.module.commodity
 
 import afkt_replace.core.lib.base.app.BaseActivityViewBinding
 import afkt_replace.core.lib.bean.ThemeIntent
-import afkt_replace.core.router.commodity.CommodityRouter
+import afkt_replace.core.lib.router.module.commodity.CommodityRouter
 import android.os.Bundle
 import android.view.View
 import android.widget.ImageView

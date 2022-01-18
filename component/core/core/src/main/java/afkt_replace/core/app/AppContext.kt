@@ -26,7 +26,7 @@ open class AppContext : BaseAppContext() {
             // 打印日志的时候打印线程堆栈
             ARouter.printStackTrace()
         }
-        // 尽可能早, 推荐在 Application 中初始化
+        // 尽可能的早调用, 推荐在 Application 中初始化
         ARouter.init(this)
 
         // Bugly

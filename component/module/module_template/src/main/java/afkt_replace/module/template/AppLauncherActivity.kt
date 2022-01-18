@@ -2,7 +2,7 @@ package afkt_replace.module.template
 
 import afkt_replace.core.lib.base.app.BaseActivityViewBinding
 import afkt_replace.core.lib.bean.ThemeIntent
-import afkt_replace.core.router.template.TemplateRouter
+import afkt_replace.core.lib.router.module.template.TemplateRouter
 import android.os.Bundle
 import android.view.View
 import android.widget.ImageView

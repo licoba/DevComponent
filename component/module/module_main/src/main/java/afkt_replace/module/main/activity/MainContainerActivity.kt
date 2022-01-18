@@ -2,7 +2,7 @@ package afkt_replace.module.main.activity
 
 import afkt_replace.core.lib.base.app.BaseActivityViewBinding
 import afkt_replace.core.lib.bean.ThemeIntent
-import afkt_replace.core.router.main.MainRouter
+import afkt_replace.core.lib.router.module.main.MainRouter
 import afkt_replace.module.main.BuildConfig
 import afkt_replace.module.main.R
 import afkt_replace.module.main.adapter.MainAdapter
