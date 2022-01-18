@@ -25,6 +25,8 @@ dependencies {
     api project(':core_lib_environment')
     // 网络框架 lib
     api project(':core_lib_network')
+    // 广播监听 ( 如网络状态、电量、屏幕解锁 ) 相关
+    api project(':core_lib_receiver')
     // 路由相关
     api project(':core_lib_router')
     // 通用 UI 样式、资源、交互、控件 lib

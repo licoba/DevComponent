@@ -1,4 +1,4 @@
-package afkt_replace.core.receiver
+package afkt_replace.core.lib.receiver.feature
 
 import android.annotation.SuppressLint
 import android.content.BroadcastReceiver

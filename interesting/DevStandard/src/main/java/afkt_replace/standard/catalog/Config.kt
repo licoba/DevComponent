@@ -123,6 +123,7 @@ object Config {
         sCoreCatalogMap[".libs.lib_engine"] = "通用 Engine ( 图片加载、日志、JSON、权限、资源选择、缓存 ) lib"
         sCoreCatalogMap[".libs.lib_environment"] = "通用环境配置切换库"
         sCoreCatalogMap[".libs.lib_network"] = "网络相关 lib ( 网络请求、上传下载 )"
+        sCoreCatalogMap[".libs.lib_receiver"] = "广播监听 ( 如网络状态、电量、屏幕解锁 ) 相关"
         sCoreCatalogMap[".libs.lib_router"] = "路由相关"
         sCoreCatalogMap[".libs.lib_ui"] = "统一 style、widget、ui 相关组件"
         sCoreCatalogMap[".libs.lib_utils"] = "通用工具库"
