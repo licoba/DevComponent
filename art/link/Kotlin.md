@@ -26,7 +26,7 @@
 
 * [在 Activity 中使用 LifecycleScope 替代 GlobalScope](https://blog.csdn.net/vitaviva/article/details/108897278)
 
-* [Retrofit2 + Kolin 协程](https://blog.csdn.net/vitaviva/article/details/104390442)
+* [Retrofit2 + Kotlin 协程](https://blog.csdn.net/vitaviva/article/details/104390442)
 
 #### Flow
 

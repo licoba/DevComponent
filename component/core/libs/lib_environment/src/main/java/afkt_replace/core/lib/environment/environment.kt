@@ -3,8 +3,6 @@ package afkt_replace.core.lib.environment
 import afkt_replace.core_lib_environment.BuildConfig
 import dev.DevUtils
 import dev.environment.DevEnvironment
-import dev.environment.annotation.Environment
-import dev.environment.annotation.Module
 import dev.environment.bean.EnvironmentBean
 import dev.environment.bean.ModuleBean
 import dev.environment.listener.OnEnvironmentChangeListener
@@ -30,66 +28,19 @@ enum class EnvironmentType(
     ;
 }
 
-/**
- * detail: Http Base Service 服务器请求地址
- * @author Ttt
- */
-internal class HttpService private constructor() {
-
-    @Module(alias = "启动页 ( 广告页、首次启动引导页 ) 模块")
-    private inner class Splash {
-        @Environment(value = "https://login-release.com", isRelease = true, alias = "生产环境")
-        private val release: String? = null
-
-        @Environment(value = "http://login-debug.com", alias = "测试环境")
-        private val debug: String? = null
-
-        @Environment(value = "http://login-pre_release.com", alias = "预发布环境")
-        private val pre_release: String? = null
-
-        @Environment(value = "http://login-development.com", alias = "开发环境")
-        private val development: String? = null
-    }
-
-    @Module(alias = "用户模块")
-    private inner class User {
-        @Environment(value = "https://user-release.com", isRelease = true, alias = "生产环境")
-        private val release: String? = null
-
-        @Environment(value = "http://user-debug.com", alias = "测试环境")
-        private val debug: String? = null
-
-        @Environment(value = "http://user-pre_release.com", alias = "预发布环境")
-        private val pre_release: String? = null
-
-        @Environment(value = "http://user-development.com", alias = "开发环境")
-        private val development: String? = null
-    }
-
-    @Module(alias = "商品模块")
-    private inner class Commodity {
-        @Environment(value = "https://commodity-release.com", isRelease = true, alias = "生产环境")
-        private val release: String? = null
-
-        @Environment(value = "http://commodity-debug.com", alias = "测试环境")
-        private val debug: String? = null
-
-        @Environment(value = "http://commodity-pre_release.com", alias = "预发布环境")
-        private val pre_release: String? = null
-
-        @Environment(value = "http://commodity-development.com", alias = "开发环境")
-        private val development: String? = null
-    }
-}
-
-private val EMPTY_MODULE = ModuleBean("", "")
-private val EMPTY_ENVIRONMENT = EnvironmentBean("", "", "", EMPTY_MODULE)
+// ===========================
+// = Environment Type 构建校验 =
+// ===========================
 
 /**
  * detail: Build Config Field Environment Type 构建校验
  * @author Ttt
  */
 internal object EnvironmentTypeChecker {
+
+    // 空实体类便于复用
+    private val EMPTY_MODULE = ModuleBean("", "")
+    private val EMPTY_ENVIRONMENT = EnvironmentBean("", "", "", EMPTY_MODULE)
 
     // =============
     // = 对外公开方法 =
@@ -118,7 +69,6 @@ internal object EnvironmentTypeChecker {
 
     /**
      * 添加模块环境改变触发事件
-     * Add Environment Change Listener
      * @param listener environment change listener
      * @return `true` success, `false` fail
      */
@@ -130,7 +80,6 @@ internal object EnvironmentTypeChecker {
 
     /**
      * 移除模块环境改变触发事件
-     * Remove Environment Change Listener
      * @param listener environment change listener
      * @return `true` success, `false` fail
      */
@@ -142,7 +91,6 @@ internal object EnvironmentTypeChecker {
 
     /**
      * 清空模块环境改变触发事件
-     * Clear All Environment Change Listener
      * @return `true` success, `false` fail
      */
     fun clearOnEnvironmentChangeListener(): Boolean {

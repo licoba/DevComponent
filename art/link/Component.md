@@ -27,7 +27,7 @@
 * [Android 组件化之终极方案](https://www.cnblogs.com/cr330326/p/9785894.html)
 
 * [Component 组件化框架](https://github.com/xiaojinzi123/Component)
-  
+
 * [MVVM + 组件化 + ARouter 实现](https://mp.weixin.qq.com/s/l-wU8jQ-veide8oliqjS_g)
 
 ### 其他
