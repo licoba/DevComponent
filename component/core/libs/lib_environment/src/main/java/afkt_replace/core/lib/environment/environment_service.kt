@@ -15,16 +15,16 @@ internal class HttpService private constructor() {
 
     @Module(alias = "启动页 ( 广告页、首次启动引导页 ) 模块")
     private inner class Splash {
-        @Environment(value = "https://login-release.com", isRelease = true, alias = "生产环境")
+        @Environment(value = "https://splash-release.com", isRelease = true, alias = "生产环境")
         private val release: String? = null
 
-        @Environment(value = "http://login-debug.com", alias = "测试环境")
+        @Environment(value = "http://splash-debug.com", alias = "测试环境")
         private val debug: String? = null
 
-        @Environment(value = "http://login-pre_release.com", alias = "预发布环境")
+        @Environment(value = "http://splash-pre_release.com", alias = "预发布环境")
         private val pre_release: String? = null
 
-        @Environment(value = "http://login-development.com", alias = "开发环境")
+        @Environment(value = "http://splash-development.com", alias = "开发环境")
         private val development: String? = null
     }
 

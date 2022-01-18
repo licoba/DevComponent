@@ -298,7 +298,9 @@ internal object EnvironmentTypeChecker {
                     val name = field.name
                     // 循环所有 MODULE_ 字符串进行设置环境
                     if (name.startsWith("MODULE_")) {
-                        setEnvironment(name, getEnvironmentByType(name, type))
+                        (field.get(name) as? String)?.let { moduleName ->
+                            setEnvironment(moduleName, getEnvironmentByType(moduleName, type))
+                        }
                     }
                 }
             }
