@@ -152,19 +152,20 @@ object AppUpgrade {
 
     /**
      * 安装权限申请封装方法
+     * @param activity Activity
+     * @param callback 权限请求回调
      */
     @RequiresApi(Build.VERSION_CODES.O)
     fun installPermission(
         activity: Activity,
-        file: File?,
-        listener: InstallListener
+        callback: IPermissionEngine.Callback
     ) {
         DevEngine.getPermission()?.request(
             activity, arrayOf(
                 Manifest.permission.REQUEST_INSTALL_PACKAGES
             ), object : IPermissionEngine.Callback {
                 override fun onGranted() {
-                    installApp(file, listener)
+                    callback.onGranted()
                 }
 
                 override fun onDenied(
@@ -175,8 +176,12 @@ object AppUpgrade {
                     if (deniedList.isNotEmpty()) {
                         // 跳转设置页面, 开启安装未知应用权限
                         AppUtils.startActivity(IntentUtils.getLaunchAppInstallPermissionSettingsIntent())
+                        // 触发回调
+                        callback.onDenied(
+                            grantedList, deniedList, notFoundList
+                        )
                     } else {
-                        onGranted()
+                        callback.onGranted()
                     }
                 }
             }
