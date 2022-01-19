@@ -1,10 +1,10 @@
-package afkt_replace.core.app
+package afkt_replace.core.lib.base.core
 
-import android.text.TextUtils
 import com.meituan.android.walle.ChannelInfo
 import com.meituan.android.walle.WalleChannelReader
 import dev.DevUtils
 import dev.utils.common.MapUtils
+import dev.utils.common.StringUtils
 
 /**
  * detail: APP 渠道信息
@@ -23,17 +23,18 @@ object AppChannel {
      * 获取 APP 渠道
      */
     fun getChannel(): String {
-        val channel = getChannelInfo()?.channel
-        if (TextUtils.isEmpty(channel)) return ""
-        return channel!!
+        return StringUtils.checkValue(getChannelInfo()?.channel)
     }
 
     /**
      * 获取 APP 渠道额外配置的信息
      */
     fun getExtraInfo(): MutableMap<String, String> {
-        val extraInfo = getChannelInfo()?.extraInfo
-        if (MapUtils.isNotEmpty(extraInfo)) return extraInfo!!
+        getChannelInfo()?.extraInfo?.let {
+            if (MapUtils.isNotEmpty(it)) {
+                return it
+            }
+        }
         return mutableMapOf()
     }
 
@@ -44,7 +45,7 @@ object AppChannel {
     fun getExtraInfo(key: String?): String {
         return key?.let { itKey ->
             getExtraInfo().let { map ->
-                map[itKey]
+                StringUtils.checkValue(map[itKey])
             }
         } ?: ""
     }

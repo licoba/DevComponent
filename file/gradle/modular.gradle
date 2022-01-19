@@ -64,7 +64,7 @@ ext {
                     applicationId : "afkt_replace.component",
                     // 模块名
                     moduleName    : "APP",
-                    // 模块功能版本 ( 需求、RP 版本 )
+                    // 模块功能版本标识 ( 需求、RP 版本 )
                     featureVersion: "22.01.01",
             ],
             // 模板 Module ( 便于 copy )
@@ -77,7 +77,7 @@ ext {
                     applicationId : "afkt_replace.module.template",
                     // 模块名
                     moduleName    : "TEMPLATE",
-                    // 模块功能版本 ( 需求、RP 版本 )
+                    // 模块功能版本标识 ( 需求、RP 版本 )
                     featureVersion: "22.01.01",
             ],
             // 商品相关 Module
@@ -90,7 +90,7 @@ ext {
                     applicationId : "afkt_replace.module.commodity",
                     // 模块名
                     moduleName    : "COMMODITY",
-                    // 模块功能版本 ( 需求、RP 版本 )
+                    // 模块功能版本标识 ( 需求、RP 版本 )
                     featureVersion: "22.01.01",
             ],
             // 首页 Module
@@ -103,7 +103,7 @@ ext {
                     applicationId : "afkt_replace.module.main",
                     // 模块名
                     moduleName    : "MAIN",
-                    // 模块功能版本 ( 需求、RP 版本 )
+                    // 模块功能版本标识 ( 需求、RP 版本 )
                     featureVersion: "22.01.01",
             ],
             // 启动页 ( 广告页、首次启动引导页 ) Module
@@ -116,7 +116,7 @@ ext {
                     applicationId : "afkt_replace.module.splash",
                     // 模块名
                     moduleName    : "SPLASH",
-                    // 模块功能版本 ( 需求、RP 版本 )
+                    // 模块功能版本标识 ( 需求、RP 版本 )
                     featureVersion: "22.01.01",
             ],
             // 用户 Module
@@ -129,7 +129,7 @@ ext {
                     applicationId : "afkt_replace.module.user",
                     // 模块名
                     moduleName    : "USER",
-                    // 模块功能版本 ( 需求、RP 版本 )
+                    // 模块功能版本标识 ( 需求、RP 版本 )
                     featureVersion: "22.01.01",
             ],
     ]

@@ -6,6 +6,7 @@ import afkt_replace.core.lib.router.module.user.UserRouter
 import afkt_replace.module.user.BuildConfig
 import android.graphics.Color
 import android.os.Bundle
+import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.viewbinding.ViewBinding
 import com.alibaba.android.arouter.facade.annotation.Autowired
@@ -39,7 +40,7 @@ class MainContainerActivity : BaseActivityViewBinding<ViewBinding>() {
         (UserRouter.build(UserRouter.PATH_USER_FRAGMENT)
             .with(intent.extras).navigation() as? Fragment)?.let { fragment ->
             supportFragmentManager.beginTransaction().apply {
-                add(contentAssist.contentLinear!!.id, fragment)
+                add(contentAssist.contentLinear?.id ?: View.NO_ID, fragment)
                 commit()
             }
         }

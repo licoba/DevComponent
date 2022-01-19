@@ -1,6 +1,6 @@
 package afkt_replace.core.property
 
-import afkt_replace.core.app.AppChannel
+import afkt_replace.core.lib.base.core.AppChannel
 import afkt_replace.core.app.AppContext
 import afkt_replace.core.lib.base.core.AppDebug
 import android.os.Process

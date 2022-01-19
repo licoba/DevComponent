@@ -76,9 +76,7 @@ class ShopCartAdapter :
                 // 设置是否选中
                 ViewUtils.setSelected(mMultiSelectMap.isSelectKey(key), selectIGView)
                 // 触发回调
-                if (selectListener != null) {
-                    selectListener!!.onClickSelect(position, mMultiSelectMap.isSelectKey(key))
-                }
+                selectListener?.onClickSelect(position, mMultiSelectMap.isSelectKey(key))
             }, holder.itemView)
     }
 

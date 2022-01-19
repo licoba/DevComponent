@@ -78,7 +78,7 @@ if (libName.startsWith("module_")) {
                 versionName moduleVersionName
                 // 模块化编译开关值
                 buildConfigField("boolean", "isModular", "${isModular}")
-                // 模块功能版本 ( 需求、RP 版本 )
+                // 模块功能版本标识 ( 需求、RP 版本 )
                 buildConfigField("String", "FEATURE_VERSION", "\"${featureVersion}\"")
                 // Build Version
                 buildConfigField("int", libName + "_VersionCode", "${versionCode}")
@@ -117,7 +117,7 @@ if (libName.startsWith("app")) {
                 versionName appVersionName
                 // 模块化编译开关值
                 buildConfigField("boolean", "isModular", "${isModular}")
-                // 模块功能版本 ( 需求、RP 版本 )
+                // 模块功能版本标识 ( 需求、RP 版本 )
                 buildConfigField("String", "FEATURE_VERSION", "\"${featureVersion}\"")
                 // Build Version
                 buildConfigField("int", libName + "_VersionCode", "${versionCode}")
