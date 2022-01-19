@@ -1,4 +1,4 @@
-package afkt_replace.core.app
+package afkt_replace.core.lib.base.core
 
 import afkt_replace.core.lib.environment.BaseEnvironment
 

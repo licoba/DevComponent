@@ -10,11 +10,11 @@ ext {
             // = 调试相关 =
             // ==========
 
-            // 是否打印日志
+            // 是否开启日志
             isOpenLog = true,
             // 是否标记 Debug 模式 ( 与 APK build 模式无关, 用于控制第三方库 debug 标记 )
             isOpenDebug = true,
-            // 是否开启优化检测、调试工具 ( 控制 UETool、LeakCanary、BlockCanary、Glance 等开关 )
+            // 是否开启优化检测、调试工具 ( 控制 UETool、LeakCanary、BlockCanary 等开关 )
             showDebugTools = false,
 
             // ==========

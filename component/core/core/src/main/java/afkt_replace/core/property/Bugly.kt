@@ -2,7 +2,7 @@ package afkt_replace.core.property
 
 import afkt_replace.core.app.AppChannel
 import afkt_replace.core.app.AppContext
-import afkt_replace.core.app.AppDebug
+import afkt_replace.core.lib.base.core.AppDebug
 import android.os.Process
 import com.tencent.bugly.crashreport.CrashReport
 import com.tencent.bugly.crashreport.CrashReport.UserStrategy

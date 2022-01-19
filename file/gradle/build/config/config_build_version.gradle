@@ -6,11 +6,11 @@ import java.text.SimpleDateFormat
 
 // 获取 lib 名 => settings.gradle 例 include ':core_lib_engine'
 def libName = project.getName() // core_lib_engine
-// 是否打印日志
+// 是否开启日志
 def openLog = isOpenLog.toBoolean()
-// 是否 Debug 模式
+// 是否标记 Debug 模式 ( 与 APK build 模式无关, 用于控制第三方库 debug 标记 )
 def openDebug = isOpenDebug.toBoolean()
-// 是否开启优化检测、调试工具 ( 控制 UETool、LeakCanary、BlockCanary、Glance 等开关 )
+// 是否开启优化检测、调试工具 ( 控制 UETool、LeakCanary、BlockCanary 等开关 )
 def showDebugTools = showDebugTools.toBoolean()
 // 模块化编译开关 ( true = 每个模块都是独立应用, false = 整合运行 )
 def isModular = isModular.toBoolean()
@@ -162,8 +162,8 @@ android {
 // = 特殊字段创建 =
 // =============
 
-// Core Module 构建字段创建
-if (libName == "core") {
+// core/libs/lib_base Module 构建字段创建
+if (libName == "core_lib_base") {
     android.defaultConfig {
         buildConfigField("boolean", "openLog", "$openLog")
         buildConfigField("boolean", "openDebug", "$openDebug")

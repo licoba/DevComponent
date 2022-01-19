@@ -51,7 +51,7 @@ dependencies {
     // = 性能检测、排查相关库 =
     // ====================
 
-    // 是否编译调试工具
+    // 是否开启优化检测、调试工具 ( 控制 UETool、LeakCanary、BlockCanary 等开关 )
     if (showDebugTools) {
         // 内存检测工具 https://github.com/square/leakcanary
         api deps.property.leakcanary

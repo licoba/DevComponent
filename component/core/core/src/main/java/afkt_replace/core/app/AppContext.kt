@@ -1,12 +1,14 @@
 package afkt_replace.core.app
 
-import afkt_replace.core.lib.base.BaseAppContext
-import afkt_replace.core.lib.web.WebCoreLibrary
+import afkt_replace.core.lib.base.core.AppDebug
+import afkt_replace.core.lib.base.core.BaseAppContext
 import afkt_replace.core.property.BlockCanaryKT
 import afkt_replace.core.property.Bugly
 import afkt_replace.core.property.BuglyConfig
 import afkt_replace.core.property.defaultBuglyConfig
+import android.content.Context
 import com.alibaba.android.arouter.launcher.ARouter
+import dev.DevUtils
 
 /**
  * detail: App Base Application
@@ -30,8 +32,6 @@ open class AppContext : BaseAppContext() {
         Bugly.init(this)
         // BlockCanary
         BlockCanaryKT.init(this)
-        // 初始化 WebView 辅助类全局配置
-        WebCoreLibrary.initializeWebViewBuilder()
     }
 
     // ==========
@@ -40,4 +40,28 @@ open class AppContext : BaseAppContext() {
 
     // 获取 Bugly 配置
     open fun getBuglyConfig(): BuglyConfig? = defaultBuglyConfig()
+
+    // ==========
+    // = 静态方法 =
+    // ==========
+
+    companion object {
+
+        /**
+         * 获取全局 Context
+         * @return Context
+         */
+        fun content(): Context {
+            return DevUtils.getContext()
+        }
+
+        /**
+         * 获取 Context ( 判断 null, 视情况返回全局 Context)
+         * @param context Context
+         * @return Context
+         */
+        fun content(context: Context?): Context {
+            return DevUtils.getContext(context)
+        }
+    }
 }
