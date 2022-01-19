@@ -16,7 +16,7 @@ def showDebugTools = showDebugTools.toBoolean()
 def isModular = isModular.toBoolean()
 // 是否 Release 版本标记 ( 用于标记 APK 是否 Release 发布版本 )
 def isRelease = isRelease.toBoolean()
-// 服务器环境地址 ( 例: 1 生产环境、2 测试环境、3 预发布环境、4 开发环境 )
+// 服务器环境配置 ( 例: 1 生产环境、2 测试环境、3 预发布环境、4 开发环境 )
 def environmentType = environmentType.intValue()
 // 构建时间 ( 时间戳 )
 def buildTime = System.currentTimeMillis()
@@ -176,7 +176,7 @@ if (libName == "core_lib_environment") {
     android.defaultConfig {
         buildConfigField("int", "environmentType", "$environmentType")
 
-        // 循环每个模块 MODULE_NAME 用于传入 MODULE_NAME 获取对应的环境地址
+        // 循环每个模块 MODULE_NAME 用于传入 MODULE_NAME 获取对应的环境配置
         modularVersion.values().forEach {
             def moduleName = it.moduleName
             buildConfigField("String", "MODULE_${moduleName}", "\"${moduleName}\"")

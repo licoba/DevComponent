@@ -1,7 +1,7 @@
 package afkt_replace.core.app
 
 import afkt_replace.core.lib.base.BaseAppContext
-import afkt_replace.core.lib.web.WebLibrary
+import afkt_replace.core.lib.web.WebCoreLibrary
 import afkt_replace.core.property.BlockCanaryKT
 import afkt_replace.core.property.Bugly
 import afkt_replace.core.property.BuglyConfig
@@ -31,7 +31,7 @@ open class AppContext : BaseAppContext() {
         // BlockCanary
         BlockCanaryKT.init(this)
         // 初始化 WebView 辅助类全局配置
-        WebLibrary.initializeWebViewBuilder()
+        WebCoreLibrary.initializeWebViewBuilder()
     }
 
     // ==========

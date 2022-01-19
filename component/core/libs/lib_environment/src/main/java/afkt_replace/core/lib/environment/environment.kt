@@ -2,7 +2,6 @@ package afkt_replace.core.lib.environment
 
 import afkt_replace.core.lib.environment.EnvironmentTypeChecker.getEnvironment
 import afkt_replace.core.lib.environment.EnvironmentTypeChecker.getEnvironmentByType
-import afkt_replace.core.lib.environment.EnvironmentTypeChecker.getEnvironmentValue
 import afkt_replace.core.lib.environment.EnvironmentTypeChecker.getModuleBean
 import afkt_replace.core.lib.environment.EnvironmentTypeChecker.getReleaseEnvironment
 import afkt_replace.core.lib.environment.EnvironmentTypeChecker.innerGetBuildEnvironmentTypeBean
@@ -50,10 +49,6 @@ enum class EnvironmentType(
  * @author Ttt
  * [HttpService] 新增模块则同步需要再以下方法进行添加处理
  * [getModuleBean]、[getReleaseEnvironment]、[getEnvironment]、[setEnvironment]
- * 如何使用:
- * 正常只需要使用 [getEnvironmentValue] 即可
- * 在 Release 编译下只会返回 Release 环境地址
- * 非 Release 编译下则会根据选中的环境进行返回
  */
 internal object EnvironmentTypeChecker {
 
@@ -62,7 +57,12 @@ internal object EnvironmentTypeChecker {
     private val EMPTY_ENVIRONMENT = EnvironmentBean("", "", "", EMPTY_MODULE)
 
     // 是否 Release 版本标记
-    private fun isRelease() = DevEnvironment.isRelease()
+    private fun isRelease() = BuildConfig.isRelease // DevEnvironment.isRelease()
+
+//    // 是否 Release 版本标记 ( 用于标记 APK 是否 Release 发布版本 )
+//    BuildConfig.isRelease
+//    // DevEnvironment 环境库依赖构建版本标记
+//    DevEnvironment.isRelease()
 
     // =============
     // = 对外公开方法 =
@@ -294,7 +294,7 @@ internal object EnvironmentTypeChecker {
         val type = innerConvertBuildEnvironmentType()
 
         // =========================
-        // = 设置每个模块构建的环境地址 =
+        // = 设置每个模块构建的环境配置 =
         // =========================
 
         BuildConfig::class.java.declaredFields.forEach {

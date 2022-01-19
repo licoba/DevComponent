@@ -10,8 +10,12 @@ import dev.environment.listener.OnEnvironmentChangeListener
  * 该类用于给 Core Module AppEnvironment 类实现
  * 内部实现代码, 外部直接通过 AppEnvironment 进行调用无需关注内部实现逻辑
  * 减少该模块暴露
+ * 如何使用:
+ * 正常只需要使用 [getEnvironmentValue] 即可
+ * 在 Release 编译下只会返回 Release 环境配置
+ * 非 Release 编译下则会根据选中的环境进行返回
  */
-interface IEnvironment {
+interface BaseEnvironment {
 
     /**
      * 环境校验与重置

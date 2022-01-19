@@ -6,10 +6,10 @@ import dev.engine.DevEngine
 import dev.utils.app.PathUtils
 
 /**
- * detail: WebView lib
+ * detail: WebView Core Lib
  * @author Ttt
  */
-object WebLibrary {
+object WebCoreLibrary {
 
     // ============
     // = 初始化方法 =
