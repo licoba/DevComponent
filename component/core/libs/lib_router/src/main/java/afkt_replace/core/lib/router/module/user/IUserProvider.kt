@@ -11,7 +11,7 @@ interface IUserProvider : BaseProvider {
 
     /**
      * 是否登录
-     * @return Boolean
+     * @return `true` yes, `false` no
      */
     fun isLogin(): Boolean
 
