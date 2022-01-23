@@ -1,6 +1,7 @@
 package afkt_replace.module.commodity.fragment
 
 import afkt_replace.core.lib.base.app.BaseFragmentViewBinding
+import afkt_replace.core.lib.base.core.AppSize
 import afkt_replace.core.lib.bean.ThemeIntent
 import afkt_replace.core.lib.bean.commodity.CommodityBean
 import afkt_replace.core.lib.router.module.commodity.CommodityRouter
@@ -207,8 +208,8 @@ class ShopCartFragment : BaseFragmentViewBinding<CommodityFragmentShopCartBindin
                 .setText(text)
                 .setBold()
                 .setTextColors(ResourceUtils.getColor(R.color.white))
-                .setTextSizeBySp(13.0F)
-                .setPadding(ResourceUtils.getDimensionInt(R.dimen.dp_10))
+                .setTextSizeBySp(AppSize.getDimension(R.dimen.sp_13))
+                .setPadding(AppSize.getDimensionInt(R.dimen.dp_10))
                 .setOnClick(onClickListener)
                 .getView()
         }

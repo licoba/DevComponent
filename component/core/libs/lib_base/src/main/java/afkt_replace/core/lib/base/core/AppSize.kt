@@ -1,9 +1,12 @@
 package afkt_replace.core.lib.base.core
 
 import android.content.Context
+import androidx.annotation.DimenRes
 import dev.DevUtils
 import dev.base.DevVariableExt
+import dev.utils.app.ResourceUtils
 import dev.utils.app.SizeUtils
+import dev.utils.app.assist.ResourceAssist
 
 /**
  * detail: App 适配值转换快捷类
@@ -93,6 +96,42 @@ object AppSize {
         return px2spf(null, value)
     }
 
+    /**
+     * 获取 Dimension
+     * @param id resource identifier
+     * @return Dimension
+     */
+    fun getDimension(@DimenRes id: Int): Float {
+        return getDimension(null, id)
+    }
+
+    /**
+     * 获取 Dimension
+     * @param id resource identifier
+     * @return Dimension
+     */
+    fun getDimensionInt(@DimenRes id: Int): Int {
+        return getDimensionInt(null, id)
+    }
+
+    /**
+     * 获取 Dimension
+     * @param resName resource name
+     * @return Dimension
+     */
+    fun getDimension(resName: String?): Float {
+        return getDimension(null, resName)
+    }
+
+    /**
+     * 获取 Dimension
+     * @param resName resource name
+     * @return Dimension
+     */
+    fun getDimensionInt(resName: String?): Int {
+        return getDimensionInt(null, resName)
+    }
+
     // ===========
     // = Context =
     // ===========
@@ -120,8 +159,8 @@ object AppSize {
         context: Context?,
         value: Float
     ): Float {
-        return CONVERT.dp2pxConvert.getVariableValue(
-            value, context
+        return CONVERT.innerConvert(
+            context, Type.dp2px, value
         )
     }
 
@@ -148,8 +187,8 @@ object AppSize {
         context: Context?,
         value: Float
     ): Float {
-        return CONVERT.px2dpConvert.getVariableValue(
-            value, context
+        return CONVERT.innerConvert(
+            context, Type.px2dp, value
         )
     }
 
@@ -176,8 +215,8 @@ object AppSize {
         context: Context?,
         value: Float
     ): Float {
-        return CONVERT.sp2pxConvert.getVariableValue(
-            value, context
+        return CONVERT.innerConvert(
+            context, Type.sp2px, value
         )
     }
 
@@ -204,14 +243,89 @@ object AppSize {
         context: Context?,
         value: Float
     ): Float {
-        return CONVERT.px2spConvert.getVariableValue(
-            value, context
+        return CONVERT.innerConvert(
+            context, Type.px2sp, value
         )
+    }
+
+    /**
+     * 获取 Dimension
+     * @param context Context
+     * @param id resource identifier
+     * @return Dimension
+     */
+    fun getDimension(
+        context: Context?,
+        @DimenRes id: Int
+    ): Float {
+        val value: Float = CONVERT.dimenIdConvert.getVariableValue(
+            id, context
+        )
+        if (value == 0F) {
+            CONVERT.dimenIdConvert.variable.removeVariable(id)
+        }
+        return value
+    }
+
+    /**
+     * 获取 Dimension
+     * @param context Context
+     * @param id resource identifier
+     * @return Dimension
+     */
+    fun getDimensionInt(
+        context: Context?,
+        @DimenRes id: Int
+    ): Int {
+        return getDimension(context, id).toInt()
+    }
+
+    /**
+     * 获取 Dimension
+     * @param context Context
+     * @param resName resource name
+     * @return Dimension
+     */
+    fun getDimension(
+        context: Context?,
+        resName: String?
+    ): Float {
+        val value: Float = CONVERT.dimenNameConvert.getVariableValue(
+            resName, context
+        )
+        if (value == 0F) {
+            CONVERT.dimenNameConvert.variable.removeVariable(resName)
+        }
+        return value
+    }
+
+    /**
+     * 获取 Dimension
+     * @param context Context
+     * @param resName resource name
+     * @return Dimension
+     */
+    fun getDimensionInt(
+        context: Context?,
+        resName: String?
+    ): Int {
+        return getDimension(context, resName).toInt()
     }
 
     // =============
     // = 内部转换存储 =
     // =============
+
+    internal enum class Type {
+
+        dp2px,
+
+        px2dp,
+
+        sp2px,
+
+        px2sp
+    }
 
     /**
      * detail: 转换适配值封装
@@ -247,18 +361,31 @@ object AppSize {
             }
         }
 
-        // =
-
-        private enum class Type {
-
-            dp2px,
-
-            px2dp,
-
-            sp2px,
-
-            px2sp
+        // dimen id 值获取 ( float )
+        val dimenIdConvert: DevVariableExt<Int, Float, Context?> by lazy {
+            DevVariableExt<Int, Float, Context?> { key, context ->
+                val ctx = context ?: DevUtils.getTopActivity()
+                ResourceUtils.getDimension(
+                    ResourceAssist.get(
+                        DevUtils.getContext(ctx)
+                    ), key
+                )
+            }
         }
+
+        // dimen id Name 值获取 ( float )
+        val dimenNameConvert: DevVariableExt<String?, Float, Context?> by lazy {
+            DevVariableExt<String?, Float, Context?> { key, context ->
+                val ctx = context ?: DevUtils.getTopActivity()
+                ResourceUtils.getDimension(
+                    ResourceAssist.get(
+                        DevUtils.getContext(ctx)
+                    ), key
+                )
+            }
+        }
+
+        // =
 
         /**
          * 适配值内部创建实现
@@ -306,7 +433,7 @@ object AppSize {
          * 该方法主要解决出现转换失败返回 0 的情况
          * 导致后续获取缓存值为 0 直接返回使用
          */
-        private fun innerConvert(
+        internal fun innerConvert(
             context: Context?,
             type: Type,
             key: Float
