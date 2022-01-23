@@ -29,6 +29,12 @@ open class BaseAppContext : DevApplication()
  */
 open class DevApplication : MultiDexApplication() {
 
+    override fun onCreate() {
+        super.onCreate()
+        // 初始化方法
+        initialize(this)
+    }
+
     /**
      * 初始化方法
      * @param context Context

@@ -208,7 +208,7 @@ class ShopCartFragment : BaseFragmentViewBinding<CommodityFragmentShopCartBindin
                 .setText(text)
                 .setBold()
                 .setTextColors(ResourceUtils.getColor(R.color.white))
-                .setTextSizeBySp(13.0f)
+                .setTextSizeBySp(13.0F)
                 .setPadding(ResourceUtils.getDimensionInt(R.dimen.un_dp_10))
                 .setOnClick(onClickListener)
                 .getView()

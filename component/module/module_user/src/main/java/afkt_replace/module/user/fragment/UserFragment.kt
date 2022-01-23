@@ -66,7 +66,7 @@ class UserFragment : BaseFragmentViewBinding<UserFragmentBinding>() {
                                 source: DevSource?,
                                 throwable: Throwable?
                             ) {
-                                DevEngine.getLog().eTag(TAG, throwable)
+                                DevEngine.getLog()?.eTag(TAG, throwable)
                             }
                         }
                     )
