@@ -66,7 +66,7 @@ class BaseTitleBar : LinearLayout {
             binding.root,
             FrameLayout.LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT,
-                ResourceUtils.getDimensionInt(R.dimen.un_dp_45)
+                ResourceUtils.getDimensionInt(R.dimen.dp_45)
             )
         )
     }

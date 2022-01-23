@@ -14,9 +14,9 @@
     </item>
 
     <item
-        android:width="@dimen/un_dp_150"
-        android:height="@dimen/un_dp_150"
+        android:width="@dimen/dp_150"
+        android:height="@dimen/dp_150"
         android:drawable="@mipmap/core_ui_module_logo"
         android:gravity="center|top"
-        android:top="@dimen/un_dp_150" />
+        android:top="@dimen/dp_150" />
 </layer-list>

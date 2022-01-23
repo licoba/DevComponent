@@ -55,7 +55,7 @@ class ShopCartFragment : BaseFragmentViewBinding<CommodityFragmentShopCartBindin
         mAdapter.setDataList(newList(15), false)
         // 添加分割线
         binding.vidRefresh.getRecyclerView()?.addItemDecoration(
-            LastLineItemDecoration(ResourceUtils.getDimension(R.dimen.un_dp_10))
+            LastLineItemDecoration(ResourceUtils.getDimension(R.dimen.dp_10))
         )
         // 绑定适配器、设置加载事件
         binding.vidRefresh.setAdapter(mAdapter)
@@ -209,7 +209,7 @@ class ShopCartFragment : BaseFragmentViewBinding<CommodityFragmentShopCartBindin
                 .setBold()
                 .setTextColors(ResourceUtils.getColor(R.color.white))
                 .setTextSizeBySp(13.0F)
-                .setPadding(ResourceUtils.getDimensionInt(R.dimen.un_dp_10))
+                .setPadding(ResourceUtils.getDimensionInt(R.dimen.dp_10))
                 .setOnClick(onClickListener)
                 .getView()
         }
