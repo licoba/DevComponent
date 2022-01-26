@@ -57,7 +57,7 @@ class ShopCartAdapter :
         DevEngine.getImage().display(
             holder.binding.vidPicIv,
             item.picture,
-            ProjectUtils.getRoundConfig3()
+            ProjectUtils.roundConfig3
         )
 
         // ==========

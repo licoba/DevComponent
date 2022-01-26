@@ -20,8 +20,8 @@ object WebCoreLibrary {
      */
     fun initializeWebViewBuilder() {
         val builder: WebViewAssist.Builder = WebViewAssist.Builder()
-            .setBuiltInZoomControls(true) // 显示内置缩放工具
-            .setDisplayZoomControls(true) // 显示缩放工具
+            .setBuiltInZoomControls(false) // 显示内置缩放工具
+            .setDisplayZoomControls(false) // 显示缩放工具
             .setAppCachePath( // Application Caches 地址
                 PathUtils.getInternal().getAppCachePath("cache")
             )

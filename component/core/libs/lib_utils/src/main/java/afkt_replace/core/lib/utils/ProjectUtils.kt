@@ -11,35 +11,34 @@ object ProjectUtils {
     // ==================
 
     // GlideConfig 配置变量
-    private val sConfigVariable: DevVariable<Int, ImageConfig?> = DevVariable<Int, ImageConfig?>()
+    private val sConfigVariable = DevVariable<Float, ImageConfig?>()
 
     /**
      * 获取圆角 GlideConfig
      * @return 圆角 [ImageConfig]
      */
-    fun getRoundConfig3(): ImageConfig {
-        return getRoundConfig(3)
-    }
+    val roundConfig3: ImageConfig
+        get() = roundConfig(3F)
 
     /**
      * 获取圆角 GlideConfig
      * @return 圆角 [ImageConfig]
      */
-    fun getRoundConfig10(): ImageConfig {
-        return getRoundConfig(10)
-    }
+    val roundConfig10: ImageConfig
+        get() = roundConfig(10F)
 
     /**
      * 获取圆角 GlideConfig
      * @param roundDP 圆角 dp 值
      * @return [ImageConfig]
      */
-    fun getRoundConfig(roundDP: Int): ImageConfig {
-        var config: ImageConfig? = sConfigVariable.getVariableValue(roundDP)
+    fun roundConfig(roundDP: Float): ImageConfig {
+        var config = sConfigVariable.getVariableValue(roundDP)
         if (config != null) return config
-        config = ImageConfig.create()
-        config.setRoundedCornersRadius(SizeUtils.dp2px(roundDP.toFloat()))
-        config.setTransform(ImageConfig.TRANSFORM_ROUNDED_CORNERS)
+        config = ImageConfig.create().apply {
+            setRoundedCornersRadius(SizeUtils.dp2px(roundDP))
+            setTransform(ImageConfig.TRANSFORM_ROUNDED_CORNERS)
+        }
         sConfigVariable.putVariable(roundDP, config)
         return config
     }

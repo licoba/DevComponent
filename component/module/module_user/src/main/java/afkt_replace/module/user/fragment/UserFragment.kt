@@ -43,7 +43,7 @@ class UserFragment : BaseFragmentViewBinding<UserFragmentBinding>() {
                     DevEngine.getImage().display(
                         binding.vidAvatarIv,
                         user.avatar,
-                        ProjectUtils.getRoundConfig10()
+                        ProjectUtils.roundConfig10
                     )
                     // 加载背景
                     DevEngine.getImage().loadDrawable(
