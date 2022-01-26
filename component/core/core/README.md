@@ -38,12 +38,9 @@ dependencies {
     // WebView 相关
     api project(':core_lib_web')
 
-    // =============
-    // = 第三方库依赖 =
-    // =============
-
-    // 瓦力多渠道打包 https://github.com/Meituan-Dianping/walle
-    api deps.build_apk.walle
+    // ====================
+    // = libs - 第三方库依赖 =
+    // ====================
 
     // Bugly https://bugly.qq.com/docs/
     api deps.property.bugly

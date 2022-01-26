@@ -79,9 +79,9 @@ dependencies {
     kapt deps.androidx.hilt_android_compiler
     api deps.androidx.startup
 
-    // =============
-    // = 第三方开发库 =
-    // =============
+    // ====================
+    // = libs - 第三方库依赖 =
+    // ====================
 
     // RxJava3 https://github.com/ReactiveX/RxJava/tree/3.x
     api deps.lib.rxjava3
@@ -112,6 +112,13 @@ dependencies {
     // ARouter 路由 https://github.com/alibaba/ARouter
     api deps.lib.arouter_api // https://github.com/alibaba/ARouter/blob/master/README_CN.md
     kapt deps.lib.arouter_compiler
+
+    // ==========
+    // = 打包相关 =
+    // ==========
+
+    // 瓦力多渠道打包 https://github.com/Meituan-Dianping/walle
+    api deps.build_apk.walle
 }
 ```
 

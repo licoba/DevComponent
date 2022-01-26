@@ -11,7 +11,11 @@ dependencies {
     // 核心基础依赖库 ( 编译但不参与打包 )
     compileOnly project(':core_base_lib')
 
-    // 依赖 Engine ( 编译但不参与打包 ) => 例 JSON 相关使用
+    // ===================
+    // = core - 核心开发库 =
+    // ===================
+
+    // 通用 Engine ( 图片加载、日志、JSON、权限、资源选择 等 ) lib
     compileOnly project(':core_lib_engine')
 }
 ```

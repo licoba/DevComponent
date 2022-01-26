@@ -11,6 +11,10 @@ dependencies {
     // 核心基础依赖库 ( 编译但不参与打包 )
     compileOnly project(':core_base_lib')
 
+    // ================
+    // = Dev 系列开发库 =
+    // ================
+
 //    // DevEnvironment - Android 环境配置切换库
 //    api deps.dev.dev_environment
     if (isRelease) {
