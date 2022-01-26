@@ -78,9 +78,9 @@ dependencies {
     kapt deps.androidx.hilt_android_compiler
     api deps.androidx.startup
 
-    // =============
-    // = 第三方开发库 =
-    // =============
+    // ====================
+    // = libs - 第三方库依赖 =
+    // ====================
 
     // RxJava3 https://github.com/ReactiveX/RxJava/tree/3.x
     api deps.lib.rxjava3

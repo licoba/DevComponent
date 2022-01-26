@@ -33,9 +33,10 @@ object ProjectUtils {
      * @return [ImageConfig]
      */
     fun roundConfig(roundDP: Float): ImageConfig {
-        var config = sConfigVariable.getVariableValue(roundDP)
-        if (config != null) return config
-        config = ImageConfig.create().apply {
+        sConfigVariable.getVariableValue(roundDP)?.let {
+            return it
+        }
+        val config = ImageConfig.create().apply {
             setRoundedCornersRadius(SizeUtils.dp2px(roundDP))
             setTransform(ImageConfig.TRANSFORM_ROUNDED_CORNERS)
         }

@@ -5,18 +5,20 @@ dependencies {
     // 核心基础依赖库 ( 编译但不参与打包 )
     compileOnly project(':core_base_lib')
 
+    // ===================
+    // = core - 核心开发库 =
+    // ===================
+
     // 通用实体类 lib
     compileOnly project(':core_lib_bean')
-
     // 通用配置、常量 lib
     compileOnly project(':core_lib_config')
-
     // 通用 Engine ( 图片加载、日志、JSON、权限、资源选择 等 ) lib
     compileOnly project(':core_lib_engine')
 
-    // =============
-    // = 第三方开发库 =
-    // =============
+    // ====================
+    // = libs - 第三方库依赖 =
+    // ====================
 
     // ARouter 路由 https://github.com/alibaba/ARouter
     api deps.lib.arouter_api // https://github.com/alibaba/ARouter/blob/master/README_CN.md
