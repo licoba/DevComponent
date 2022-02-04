@@ -145,7 +145,7 @@ ext {
             // =========
 
             // 核心空壳依赖库
-            "core"                : [
+            "core"                 : [
                     // 版本号
                     versionCode: 100,
                     // 版本名
@@ -155,7 +155,7 @@ ext {
             ],
 
             // 核心基础依赖库
-            "core_base_lib"       : [
+            "core_base_lib"        : [
                     // 版本号
                     versionCode: 100,
                     // 版本名
@@ -169,7 +169,7 @@ ext {
             // ==============
 
             // 基础 ( 基类等 ) lib
-            "core_lib_base"       : [
+            "core_lib_base"        : [
                     // 版本号
                     versionCode: 100,
                     // 版本名
@@ -179,7 +179,7 @@ ext {
             ],
 
             // 通用实体类 lib
-            "core_lib_bean"       : [
+            "core_lib_bean"        : [
                     // 版本号
                     versionCode: 100,
                     // 版本名
@@ -189,7 +189,7 @@ ext {
             ],
 
             // 通用配置、常量 lib
-            "core_lib_config"     : [
+            "core_lib_config"      : [
                     // 版本号
                     versionCode: 100,
                     // 版本名
@@ -198,8 +198,18 @@ ext {
                     moduleName : "CORE_LIB_CONFIG",
             ],
 
+            // Debug 编译辅助开发库 ( 提供切换环境、抓包数据可视化、调试按钮开关等辅助功能 )
+            "core_lib_debug_assist": [
+                    // 版本号
+                    versionCode: 100,
+                    // 版本名
+                    versionName: "1.0.0",
+                    // 模块名
+                    moduleName : "CORE_LIB_DEBUG_ASSIST",
+            ],
+
             // 通用 Engine ( 图片加载、日志、JSON、权限、资源选择 等 ) lib
-            "core_lib_engine"     : [
+            "core_lib_engine"      : [
                     // 版本号
                     versionCode: 100,
                     // 版本名
@@ -209,7 +219,7 @@ ext {
             ],
 
             // 通用环境配置切换库
-            "core_lib_environment": [
+            "core_lib_environment" : [
                     // 版本号
                     versionCode: 100,
                     // 版本名
@@ -219,7 +229,7 @@ ext {
             ],
 
             // 网络相关 lib ( 网络请求、上传下载 )
-            "core_lib_network"    : [
+            "core_lib_network"     : [
                     // 版本号
                     versionCode: 100,
                     // 版本名
@@ -229,7 +239,7 @@ ext {
             ],
 
             // 性能优化、检测 lib
-            "core_lib_property"   : [
+            "core_lib_property"    : [
                     // 版本号
                     versionCode: 100,
                     // 版本名
@@ -239,7 +249,7 @@ ext {
             ],
 
             // 广播监听 ( 如网络状态、电量、屏幕解锁 ) 相关
-            "core_lib_receiver"   : [
+            "core_lib_receiver"    : [
                     // 版本号
                     versionCode: 100,
                     // 版本名
@@ -249,7 +259,7 @@ ext {
             ],
 
             // 路由相关
-            "core_lib_router"     : [
+            "core_lib_router"      : [
                     // 版本号
                     versionCode: 100,
                     // 版本名
@@ -259,7 +269,7 @@ ext {
             ],
 
             // 通用 UI 样式、资源、交互、控件 lib
-            "core_lib_ui"         : [
+            "core_lib_ui"          : [
                     // 版本号
                     versionCode: 100,
                     // 版本名
@@ -269,7 +279,7 @@ ext {
             ],
 
             // 通用上传库
-            "core_lib_upload"     : [
+            "core_lib_upload"      : [
                     // 版本号
                     versionCode: 100,
                     // 版本名
@@ -279,7 +289,7 @@ ext {
             ],
 
             // 通用工具库
-            "core_lib_utils"      : [
+            "core_lib_utils"       : [
                     // 版本号
                     versionCode: 100,
                     // 版本名
@@ -289,7 +299,7 @@ ext {
             ],
 
             // WebView 相关
-            "core_lib_web"        : [
+            "core_lib_web"         : [
                     // 版本号
                     versionCode: 100,
                     // 版本名

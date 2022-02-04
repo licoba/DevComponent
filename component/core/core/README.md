@@ -49,6 +49,15 @@ dependencies {
     // Bugly https://bugly.qq.com/docs/
     api deps.property.bugly
     api deps.property.bugly_ndk
+
+    // =====================
+    // = Debug 编译辅助开发库 =
+    // =====================
+
+    if (showDebugTools) {
+        // Debug 编译辅助开发库 ( 提供切换环境、抓包数据可视化、调试按钮开关等辅助功能 )
+        api project(':core_lib_debug_assist')
+    }
 }
 ```
 
@@ -98,18 +107,18 @@ dependencies {
 # main/java 目录结构
 
 ```
-- java                       
-   - afkt_replace            
-      - core                 
-         - app               
-         - property          
-         - router            
+- java                        
+   - afkt_replace             
+      - core                  
+         - app                
+         - property           
+         - router             
 ```
 
 
 # main/res 目录结构
 
 ```
-- res                        
-   - xml                     
+- res                         
+   - xml                      
 ```
