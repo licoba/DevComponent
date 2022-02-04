@@ -1,7 +1,7 @@
 package afkt_replace.core.property
 
-import afkt_replace.core.lib.base.core.AppChannel
 import afkt_replace.core.app.AppContext
+import afkt_replace.core.lib.base.core.AppChannel
 import afkt_replace.core.lib.base.core.AppDebug
 import android.os.Process
 import com.tencent.bugly.crashreport.CrashReport
@@ -22,7 +22,7 @@ object Bugly {
      * 初始化 Bugly
      * @param appContext [AppContext]
      */
-    fun init(appContext: AppContext) {
+    fun initialize(appContext: AppContext) {
         appContext.getBuglyConfig()?.let { config ->
             // 用户配置策略
             val strategy = UserStrategy(appContext)

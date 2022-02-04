@@ -17,7 +17,7 @@ dependencies {
 
     // 通用 Engine ( 图片加载、日志、JSON、权限、资源选择 等 ) lib
     compileOnly project(':core_lib_engine')
-    // 网络框架 lib
+    // 网络相关 lib ( 网络请求、上传下载 )
     compileOnly project(':core_lib_network')
 }
 ```

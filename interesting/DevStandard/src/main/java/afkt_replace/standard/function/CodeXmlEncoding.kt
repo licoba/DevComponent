@@ -7,7 +7,6 @@ import dev.utils.common.StringUtils
 import dev.utils.common.assist.search.FileDepthFirstSearchUtils
 import java.io.File
 import java.io.UnsupportedEncodingException
-import java.util.*
 
 /**
  * detail: Xml Encoding 追加处理

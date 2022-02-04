@@ -23,14 +23,18 @@ dependencies {
     api project(':core_lib_engine')
     // 通用环境配置切换库
     api project(':core_lib_environment')
-    // 网络框架 lib
+    // 网络相关 lib ( 网络请求、上传下载 )
     api project(':core_lib_network')
+    // 性能优化、检测 lib
+    api project(':core_lib_property')
     // 广播监听 ( 如网络状态、电量、屏幕解锁 ) 相关
     api project(':core_lib_receiver')
     // 路由相关
     api project(':core_lib_router')
     // 通用 UI 样式、资源、交互、控件 lib
     api project(':core_lib_ui')
+    // 通用上传库
+    api project(':core_lib_upload')
     // 通用工具库
     api project(':core_lib_utils')
     // WebView 相关
@@ -43,23 +47,4 @@ dependencies {
     // Bugly https://bugly.qq.com/docs/
     api deps.property.bugly
     api deps.property.bugly_ndk
-
-    // ====================
-    // = 性能检测、排查相关库 =
-    // ====================
-
-    // 是否开启优化检测、调试工具 ( 控制 UETool、LeakCanary、BlockCanary 等开关 )
-    if (showDebugTools) {
-        // 内存检测工具 https://github.com/square/leakcanary
-        api deps.property.leakcanary
-        // 饿了么 UETool https://github.com/eleme/UETool/blob/master/README_zh.md
-        api deps.property.uetool
-        // BlockCanary 性能监控组件 https://github.com/markzhai/AndroidPerformanceMonitor/blob/master/README_CN.md
-        api deps.property.blockcanary_android
-    } else {
-        // 饿了么 UETool https://github.com/eleme/UETool/blob/master/README_zh.md
-        api deps.property.uetool_no_op
-        // BlockCanary 性能监控组件 https://github.com/markzhai/AndroidPerformanceMonitor/blob/master/README_CN.md
-        api deps.property.blockcanary_no_op
-    }
 }

@@ -1,4 +1,4 @@
-package afkt_replace.core.property
+package afkt_replace.core.lib.property
 
 import android.annotation.SuppressLint
 import android.app.Application
@@ -14,7 +14,7 @@ import dev.utils.app.NetWorkUtils
  */
 object BlockCanaryKT {
 
-    fun init(application: Application) {
+    fun initialize(application: Application) {
         // 在主进程初始化调用哈
         BlockCanary.install(application, AppBlockCanaryContext()).start()
     }

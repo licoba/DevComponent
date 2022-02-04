@@ -1,5 +1,6 @@
 package afkt_replace.core.lib.web.assist
 
+import afkt_replace.core.lib.web.assist.WebViewAssist.Builder.OnApplyListener
 import android.graphics.Paint
 import android.os.Build
 import android.view.KeyEvent

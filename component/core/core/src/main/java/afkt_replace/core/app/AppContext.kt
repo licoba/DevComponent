@@ -2,7 +2,7 @@ package afkt_replace.core.app
 
 import afkt_replace.core.lib.base.core.AppDebug
 import afkt_replace.core.lib.base.core.BaseAppContext
-import afkt_replace.core.property.BlockCanaryKT
+import afkt_replace.core.lib.property.BlockCanaryKT
 import afkt_replace.core.property.Bugly
 import afkt_replace.core.property.BuglyConfig
 import afkt_replace.core.property.defaultBuglyConfig
@@ -41,9 +41,9 @@ open class AppContext : BaseAppContext(),
         mAppViewModelStore = ViewModelStore()
 
         // Bugly
-        Bugly.init(this)
+        Bugly.initialize(this)
         // BlockCanary
-        BlockCanaryKT.init(this)
+        BlockCanaryKT.initialize(this)
     }
 
     // ==========

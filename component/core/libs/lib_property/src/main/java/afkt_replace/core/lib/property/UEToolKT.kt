@@ -1,4 +1,4 @@
-package afkt_replace.core.property
+package afkt_replace.core.lib.property
 
 import me.ele.uetool.UETool
 

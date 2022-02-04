@@ -218,7 +218,7 @@ ext {
                     moduleName : "CORE_LIB_ENVIRONMENT",
             ],
 
-            // 网络框架 lib
+            // 网络相关 lib ( 网络请求、上传下载 )
             "core_lib_network"    : [
                     // 版本号
                     versionCode: 100,
@@ -226,6 +226,16 @@ ext {
                     versionName: "1.0.0",
                     // 模块名
                     moduleName : "CORE_LIB_NETWORK",
+            ],
+
+            // 性能优化、检测 lib
+            "core_lib_property"   : [
+                    // 版本号
+                    versionCode: 100,
+                    // 版本名
+                    versionName: "1.0.0",
+                    // 模块名
+                    moduleName : "CORE_LIB_PROPERTY",
             ],
 
             // 广播监听 ( 如网络状态、电量、屏幕解锁 ) 相关
