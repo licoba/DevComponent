@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest package="afkt_replace.core_lib_debug_assist">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="afkt_replace.core_lib_debug_assist">
 
+    <application>
+        <provider
+            android:name="afkt_replace.core.lib.debug_assist.provider.InitProvider"
+            android:authorities="afkt_replace.core.lib.debug_assist.provider.InitProvider"
+            android:exported="false" />
+    </application>
 </manifest>
