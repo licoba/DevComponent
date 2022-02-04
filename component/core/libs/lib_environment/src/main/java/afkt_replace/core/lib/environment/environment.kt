@@ -126,16 +126,20 @@ internal object EnvironmentTypeChecker {
     fun getModuleBean(moduleName: String): ModuleBean {
         return when (moduleName) {
             // 启动页 ( 广告页、首次启动引导页 ) 模块
-            BuildConfig.MODULE_SPLASH -> {
+            BuildConfig.ENV_MODULE_SPLASH -> {
                 DevEnvironment.getSplashModule()
             }
             // 用户模块
-            BuildConfig.MODULE_USER -> {
+            BuildConfig.ENV_MODULE_USER -> {
                 DevEnvironment.getUserModule()
             }
             // 商品模块
-            BuildConfig.MODULE_COMMODITY -> {
+            BuildConfig.ENV_MODULE_COMMODITY -> {
                 DevEnvironment.getCommodityModule()
+            }
+            // 上传 lib
+            BuildConfig.ENV_LIB_CORE_LIB_UPLOAD -> {
+                DevEnvironment.getLibUploadModule()
             }
             else -> {
                 EMPTY_MODULE
@@ -151,16 +155,20 @@ internal object EnvironmentTypeChecker {
     fun getReleaseEnvironment(moduleName: String): EnvironmentBean {
         return when (moduleName) {
             // 启动页 ( 广告页、首次启动引导页 ) 模块
-            BuildConfig.MODULE_SPLASH -> {
+            BuildConfig.ENV_MODULE_SPLASH -> {
                 DevEnvironment.getSplashReleaseEnvironment()
             }
             // 用户模块
-            BuildConfig.MODULE_USER -> {
+            BuildConfig.ENV_MODULE_USER -> {
                 DevEnvironment.getUserReleaseEnvironment()
             }
             // 商品模块
-            BuildConfig.MODULE_COMMODITY -> {
+            BuildConfig.ENV_MODULE_COMMODITY -> {
                 DevEnvironment.getCommodityReleaseEnvironment()
+            }
+            // 上传 lib
+            BuildConfig.ENV_LIB_CORE_LIB_UPLOAD -> {
+                DevEnvironment.getLibUploadReleaseEnvironment()
             }
             else -> {
                 EMPTY_ENVIRONMENT
@@ -188,16 +196,20 @@ internal object EnvironmentTypeChecker {
         val context = DevUtils.getContext()
         return when (moduleName) {
             // 启动页 ( 广告页、首次启动引导页 ) 模块
-            BuildConfig.MODULE_SPLASH -> {
+            BuildConfig.ENV_MODULE_SPLASH -> {
                 DevEnvironment.getSplashEnvironment(context)
             }
             // 用户模块
-            BuildConfig.MODULE_USER -> {
+            BuildConfig.ENV_MODULE_USER -> {
                 DevEnvironment.getUserEnvironment(context)
             }
             // 商品模块
-            BuildConfig.MODULE_COMMODITY -> {
+            BuildConfig.ENV_MODULE_COMMODITY -> {
                 DevEnvironment.getCommodityEnvironment(context)
+            }
+            // 上传 lib
+            BuildConfig.ENV_LIB_CORE_LIB_UPLOAD -> {
+                DevEnvironment.getLibUploadEnvironment(context)
             }
             else -> {
                 EMPTY_ENVIRONMENT
@@ -232,16 +244,20 @@ internal object EnvironmentTypeChecker {
         val context = DevUtils.getContext()
         return when (moduleName) {
             // 启动页 ( 广告页、首次启动引导页 ) 模块
-            BuildConfig.MODULE_SPLASH -> {
+            BuildConfig.ENV_MODULE_SPLASH -> {
                 DevEnvironment.setSplashEnvironment(context, newEnvironment)
             }
             // 用户模块
-            BuildConfig.MODULE_USER -> {
+            BuildConfig.ENV_MODULE_USER -> {
                 DevEnvironment.setUserEnvironment(context, newEnvironment)
             }
             // 商品模块
-            BuildConfig.MODULE_COMMODITY -> {
+            BuildConfig.ENV_MODULE_COMMODITY -> {
                 DevEnvironment.setCommodityEnvironment(context, newEnvironment)
+            }
+            // 上传 lib
+            BuildConfig.ENV_LIB_CORE_LIB_UPLOAD -> {
+                DevEnvironment.setLibUploadEnvironment(context, newEnvironment)
             }
             else -> {
                 false
@@ -301,8 +317,8 @@ internal object EnvironmentTypeChecker {
             it?.let { field ->
                 if (field.type == String::class.java) {
                     val name = field.name
-                    // 循环所有 MODULE_ 字符串进行设置环境
-                    if (name.startsWith("MODULE_")) {
+                    // 循环所有 ENV_ 字符串进行设置环境
+                    if (name.startsWith("ENV_")) {
                         (field.get(name) as? String)?.let { moduleName ->
                             setEnvironment(moduleName, getEnvironmentByType(moduleName, type))
                         }

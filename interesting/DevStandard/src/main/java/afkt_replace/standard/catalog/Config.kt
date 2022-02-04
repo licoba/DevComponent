@@ -1,7 +1,6 @@
 package afkt_replace.standard.catalog
 
 import java.io.File
-import java.util.*
 
 /**
  * detail: 目录生成配置
@@ -126,6 +125,7 @@ object Config {
         sCoreCatalogMap[".libs.lib_receiver"] = "广播监听 ( 如网络状态、电量、屏幕解锁 ) 相关"
         sCoreCatalogMap[".libs.lib_router"] = "路由相关"
         sCoreCatalogMap[".libs.lib_ui"] = "统一 style、widget、ui 相关组件"
+        sCoreCatalogMap[".libs.lib_upload"] = "通用上传库"
         sCoreCatalogMap[".libs.lib_utils"] = "通用工具库"
         sCoreCatalogMap[".libs.lib_web"] = "WebView 相关"
 

@@ -258,6 +258,16 @@ ext {
                     moduleName : "CORE_LIB_UI",
             ],
 
+            // 通用上传库
+            "core_lib_upload"     : [
+                    // 版本号
+                    versionCode: 100,
+                    // 版本名
+                    versionName: "1.0.0",
+                    // 模块名
+                    moduleName : "CORE_LIB_UPLOAD",
+            ],
+
             // 通用工具库
             "core_lib_utils"      : [
                     // 版本号

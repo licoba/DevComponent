@@ -13,6 +13,10 @@ import dev.environment.annotation.Module
  */
 internal class HttpService private constructor() {
 
+    // ==========
+    // = Module =
+    // ==========
+
     @Module(alias = "启动页 ( 广告页、首次启动引导页 ) 模块")
     private inner class Splash {
         @Environment(value = "https://splash-release.com", isRelease = true, alias = "生产环境")
@@ -45,6 +49,25 @@ internal class HttpService private constructor() {
 
     @Module(alias = "商品模块")
     private inner class Commodity {
+        @Environment(value = "https://commodity-release.com", isRelease = true, alias = "生产环境")
+        private val release: String? = null
+
+        @Environment(value = "http://commodity-debug.com", alias = "测试环境")
+        private val debug: String? = null
+
+        @Environment(value = "http://commodity-pre_release.com", alias = "预发布环境")
+        private val pre_release: String? = null
+
+        @Environment(value = "http://commodity-development.com", alias = "开发环境")
+        private val development: String? = null
+    }
+
+    // =======
+    // = Lib =
+    // =======
+
+    @Module(alias = "上传 Libs")
+    private inner class LibUpload {
         @Environment(value = "https://commodity-release.com", isRelease = true, alias = "生产环境")
         private val release: String? = null
 

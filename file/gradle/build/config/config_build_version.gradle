@@ -179,7 +179,20 @@ if (libName == "core_lib_environment") {
         // 循环每个模块 MODULE_NAME 用于传入 MODULE_NAME 获取对应的环境配置
         modularVersion.values().forEach {
             def moduleName = it.moduleName
-            buildConfigField("String", "MODULE_${moduleName}", "\"${moduleName}\"")
+            buildConfigField("String", "ENV_MODULE_${moduleName}", "\"${moduleName}\"")
+        }
+
+        // ===================================
+        // = 以下代码用于支持 lib 封装支持环境切换 =
+        // ===================================
+
+        // 正常应该通过外部传入 url
+        // lib 则实现具体功能 ( 如上传文件 lib, 只关注上传不考虑上传到哪 )
+
+        // 循环每个 lib MODULE_NAME 用于传入 MODULE_NAME 获取对应的环境配置
+        coreLibraryVersion.values().forEach {
+            def moduleName = it.moduleName
+            buildConfigField("String", "ENV_LIB_${moduleName}", "\"${moduleName}\"")
         }
     }
 }
