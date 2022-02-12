@@ -13,4 +13,6 @@ dependencies {
     compileOnly project(':core_lib_engine')
     // 性能优化、检测 lib
     compileOnly project(':core_lib_property')
+    // 通用 UI 样式、资源、交互、控件 lib
+    compileOnly project(':core_lib_ui')
 }

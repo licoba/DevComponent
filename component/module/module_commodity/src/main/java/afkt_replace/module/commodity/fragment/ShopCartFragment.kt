@@ -24,7 +24,7 @@ import dev.utils.app.helper.quick.QuickHelper
 import dev.utils.app.toast.ToastTintUtils
 import dev.utils.common.ChineseUtils
 import dev.utils.common.RandomUtils
-import dev.widget.decoration.LastLineItemDecoration
+import dev.widget.decoration.linear.LastLineItemDecoration
 import kotlinx.coroutines.*
 
 @Route(path = CommodityRouter.PATH_SHOP_CART_FRAGMENT, group = CommodityRouter.GROUP)
@@ -208,7 +208,7 @@ class ShopCartFragment : BaseFragmentViewBinding<CommodityFragmentShopCartBindin
                 .setText(text)
                 .setBold()
                 .setTextColors(ResourceUtils.getColor(R.color.white))
-                .setTextSizeBySp(AppSize.getDimension(R.dimen.sp_13))
+                .setTextSizeByPx(AppSize.getDimension(R.dimen.sp_13))
                 .setPadding(AppSize.getDimensionInt(R.dimen.dp_10))
                 .setOnClick(onClickListener)
                 .getView()

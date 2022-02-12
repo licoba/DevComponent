@@ -16,6 +16,8 @@
 
 * [Android Studio 3.x 新的依赖方式 ( implementation、api、compileOnly )](https://www.cnblogs.com/tc310/p/9086627.html)
 
+* [MacOS 管理 Android 手机文件](https://www.android.com/filetransfer)
+
 ### Github
 
 * [励志成为较全的直播技术导航 AnyRTC](https://github.com/DyncLang/DevLiveBook)

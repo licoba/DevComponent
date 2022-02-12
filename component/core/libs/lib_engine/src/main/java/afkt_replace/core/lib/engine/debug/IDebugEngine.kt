@@ -1,6 +1,6 @@
 package afkt_replace.core.lib.engine.debug
 
-import android.app.Activity
+import androidx.fragment.app.FragmentActivity
 import okhttp3.OkHttpClient
 
 /**
@@ -11,21 +11,21 @@ interface IDebugEngine {
 
     /**
      * 设置 Debug 功能开关
-     * @param show 是否显示 Debug 功能
+     * @param display 是否显示 Debug 功能
      */
-    fun setDebugFunction(show: Boolean)
+    fun setDebugFunction(display: Boolean)
 
     /**
-     * 显示 Debug 功能
+     * 连接 ( 显示 ) Debug 功能关联
      * @param activity 所属 Activity
      */
-    fun showDebugFunction(activity: Activity?)
+    fun attachDebug(activity: FragmentActivity?)
 
     /**
-     * 移除 Debug 功能
+     * 分离 ( 隐藏 ) Debug 功能关联
      * @param activity 所属 Activity
      */
-    fun removeDebugFunction(activity: Activity?)
+    fun detachDebug(activity: FragmentActivity?)
 
     /**
      * 添加抓包拦截器
@@ -36,9 +36,4 @@ interface IDebugEngine {
         builder: OkHttpClient.Builder?,
         moduleName: String?
     )
-
-    /**
-     * 当前环境提示
-     */
-    fun environmentTips()
 }
