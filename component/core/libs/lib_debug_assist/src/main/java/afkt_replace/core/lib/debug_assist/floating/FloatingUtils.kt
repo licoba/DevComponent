@@ -1,10 +1,13 @@
 package afkt_replace.core.lib.debug_assist.floating
 
+import afkt_replace.core.lib.debug_assist.DebugMainContainerActivity
+import android.content.Intent
 import android.graphics.PointF
 import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
 import android.widget.FrameLayout
+import dev.utils.app.AppUtils
 import dev.utils.app.ScreenUtils
 import dev.utils.app.ViewUtils
 import dev.utils.app.assist.floating.*
@@ -49,7 +52,12 @@ internal class FloatingUtils private constructor() : IFloatingOperate {
                 firstPoint: PointF
             ): Boolean {
                 if (DevFloatingCommon.isValidEvent(event, firstPoint)) {
-                    ToastTintUtils.info("触发点击")
+                    AppUtils.startActivity(
+                        Intent(
+                            ViewUtils.getContext(view),
+                            DebugMainContainerActivity::class.java
+                        )
+                    )
                 }
                 return true
             }
@@ -62,6 +70,8 @@ internal class FloatingUtils private constructor() : IFloatingOperate {
                 if (DevFloatingCommon.isValidEvent(event, firstPoint)) {
                     // 长按关闭 Debug 功能
                     FloatingDebug.instance.setDebugFunction(false)
+                    // 进行提示
+                    ToastTintUtils.normal("已关闭 Debug 功能, 重启 APP 将会再次打开")
                 }
                 return true
             }

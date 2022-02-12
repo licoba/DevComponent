@@ -10,7 +10,7 @@ import okhttp3.OkHttpClient
  * detail: 悬浮窗 Debug Engine 实现
  * @author Ttt
  */
-class FloatingDebug : IDebugEngine {
+internal class FloatingDebug : IDebugEngine {
 
     companion object {
 
