@@ -25,11 +25,11 @@ dependencies {
 	// dev_environment_compiler_release
 	implementation 'io.github.afkt:DevEnvironmentCompilerRelease:1.0.8'
 	// dev_http_capture
-	implementation 'io.github.afkt:DevHttpCapture:1.0.8'
+	implementation 'io.github.afkt:DevHttpCapture:1.0.9'
 	// dev_http_capture_compiler
-	implementation 'io.github.afkt:DevHttpCaptureCompiler:1.0.8'
+	implementation 'io.github.afkt:DevHttpCaptureCompiler:1.0.9'
 	// dev_http_capture_compiler_release
-	implementation 'io.github.afkt:DevHttpCaptureCompilerRelease:1.0.8'
+	implementation 'io.github.afkt:DevHttpCaptureCompilerRelease:1.0.9'
 
 	// = kotlin =
 
@@ -220,21 +220,21 @@ dependencies {
 	// blockcanary_no_op
 	implementation 'com.github.markzhai:blockcanary-no-op:1.5.0'
 	// matrix_android_lib
-	implementation 'com.tencent.matrix:matrix-android-lib:2.0.2'
+	implementation 'com.tencent.matrix:matrix-android-lib:2.0.5'
 	// matrix_android_commons
-	implementation 'com.tencent.matrix:matrix-android-commons:2.0.2'
+	implementation 'com.tencent.matrix:matrix-android-commons:2.0.5'
 	// matrix_trace_canary
-	implementation 'com.tencent.matrix:matrix-trace-canary:2.0.2'
+	implementation 'com.tencent.matrix:matrix-trace-canary:2.0.5'
 	// matrix_resource_canary_android
-	implementation 'com.tencent.matrix:matrix-resource-canary-android:2.0.2'
+	implementation 'com.tencent.matrix:matrix-resource-canary-android:2.0.5'
 	// matrix_resource_canary_common
-	implementation 'com.tencent.matrix:matrix-resource-canary-common:2.0.2'
+	implementation 'com.tencent.matrix:matrix-resource-canary-common:2.0.5'
 	// matrix_io_canary
-	implementation 'com.tencent.matrix:matrix-io-canary:2.0.2'
+	implementation 'com.tencent.matrix:matrix-io-canary:2.0.5'
 	// matrix_sqlite_lint
-	implementation 'com.tencent.matrix:matrix-sqlite-lint-android-sdk:2.0.2'
+	implementation 'com.tencent.matrix:matrix-sqlite-lint-android-sdk:2.0.5'
 	// matrix_battery_canary
-	implementation 'com.tencent.matrix:matrix-battery-canary:2.0.2'
+	implementation 'com.tencent.matrix:matrix-battery-canary:2.0.5'
 
 	// = build_apk =
 
