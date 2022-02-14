@@ -5,6 +5,7 @@ import afkt_replace.core.lib.base.core.BaseAppContext
 import afkt_replace.core.lib.property.BlockCanaryKT
 import afkt_replace.core.property.Bugly
 import afkt_replace.core.property.BuglyConfig
+import afkt_replace.core.property.FloatingDebug
 import afkt_replace.core.property.defaultBuglyConfig
 import android.content.Context
 import androidx.lifecycle.ViewModel
@@ -44,6 +45,8 @@ open class AppContext : BaseAppContext(),
         Bugly.initialize(this)
         // BlockCanary
         BlockCanaryKT.initialize(this)
+        // Debug 悬浮窗处理
+        FloatingDebug.initialize(this)
     }
 
     // ==========
