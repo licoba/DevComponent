@@ -4,7 +4,10 @@ import afkt_replace.core.lib.base.app.BaseFragmentViewBinding
 import afkt_replace.core.lib.bean.ThemeIntent
 import afkt_replace.core.lib.router.module.user.UserNav
 import afkt_replace.core.lib.router.module.user.UserRouter
-import afkt_replace.core.lib.utils.ProjectUtils
+import afkt_replace.core.lib.utils.image.ROUND_10
+import afkt_replace.core.lib.utils.image.display
+import afkt_replace.core.lib.utils.image.loadDrawable
+import afkt_replace.core.lib.utils.toSource
 import afkt_replace.module.user.R
 import afkt_replace.module.user.databinding.UserFragmentBinding
 import android.annotation.SuppressLint
@@ -41,17 +44,15 @@ class UserFragment : BaseFragmentViewBinding<UserFragmentBinding>() {
                 getUserInfo()?.let { user ->
                     binding.vidNicknameTv.text = user.nickName
                     // 加载用户图片
-                    DevEngine.getImage().display(
-                        binding.vidAvatarIv,
-                        user.avatar,
-                        ProjectUtils.roundConfig10
+                    binding.vidAvatarIv.display(
+                        source = user.avatar?.toSource(),
+                        config = ROUND_10
                     )
                     // 加载背景
-                    DevEngine.getImage().loadDrawable(
-                        activity,
-                        DevSource.create(user.background),
-                        null,
-                        object : DrawableListener() {
+                    activity?.loadDrawable(
+                        source = user.background?.toSource(),
+                        config = null,
+                        listener = object : DrawableListener() {
                             @SuppressLint("NewApi")
                             override fun onResponse(
                                 source: DevSource?,

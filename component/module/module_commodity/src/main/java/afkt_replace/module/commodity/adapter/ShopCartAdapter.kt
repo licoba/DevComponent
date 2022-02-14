@@ -1,7 +1,9 @@
 package afkt_replace.module.commodity.adapter
 
 import afkt_replace.core.lib.bean.commodity.CommodityBean
-import afkt_replace.core.lib.utils.ProjectUtils
+import afkt_replace.core.lib.utils.image.ROUND_3
+import afkt_replace.core.lib.utils.image.display
+import afkt_replace.core.lib.utils.toSource
 import afkt_replace.libs.commodity.utils.appendLabel
 import afkt_replace.module.commodity.R
 import afkt_replace.module.commodity.databinding.CommodityAdapterShopCartBinding
@@ -11,7 +13,6 @@ import dev.adapter.DevDataAdapterExt2
 import dev.base.DevPage
 import dev.base.adapter.DevBaseViewBindingVH
 import dev.base.adapter.newBindingViewHolder
-import dev.engine.DevEngine
 import dev.utils.app.ViewUtils
 import dev.utils.app.helper.view.ViewHelper
 import dev.utils.common.BigDecimalUtils
@@ -54,10 +55,9 @@ class ShopCartAdapter :
                 holder.binding.vidPriceTv
             )
         // 商品图片
-        DevEngine.getImage().display(
-            holder.binding.vidPicIv,
-            item.picture,
-            ProjectUtils.roundConfig3
+        holder.binding.vidPicIv.display(
+            source = item.picture.toSource(),
+            config = ROUND_3
         )
 
         // ==========
