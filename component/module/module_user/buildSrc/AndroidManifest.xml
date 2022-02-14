@@ -3,10 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="afkt_replace.module.user">
 
-    <!--
-        android:name="afkt_replace.core.app.AppContext"
-    -->
-
     <application
         android:name=".base.BaseApplication"
         android:allowBackup="false"

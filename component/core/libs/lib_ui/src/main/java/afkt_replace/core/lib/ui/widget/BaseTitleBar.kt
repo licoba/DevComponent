@@ -1,7 +1,7 @@
 package afkt_replace.core.lib.ui.widget
 
-import afkt_replace.core_lib_ui.R
-import afkt_replace.core_lib_ui.databinding.CoreUiBaseTitleBarBinding
+import afkt_replace.core.lib.ui.R
+import afkt_replace.core.lib.ui.databinding.CoreUiBaseTitleBarBinding
 import android.content.Context
 import android.os.Build
 import android.util.AttributeSet

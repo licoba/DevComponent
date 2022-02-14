@@ -1,4 +1,4 @@
-package afkt_replace.core.lib.debug_assist.floating
+package afkt_replace.core.lib.debug.floating
 
 import android.app.Activity
 import android.view.View

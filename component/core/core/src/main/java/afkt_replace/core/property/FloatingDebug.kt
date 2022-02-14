@@ -1,8 +1,8 @@
 package afkt_replace.core.property
 
 import afkt_replace.core.app.AppContext
+import afkt_replace.core.lib.base.BuildConfig
 import afkt_replace.core.lib.engine.debug.DevDebugEngine
-import afkt_replace.core_lib_base.BuildConfig
 import android.app.Activity
 import android.app.Application
 import android.os.Bundle

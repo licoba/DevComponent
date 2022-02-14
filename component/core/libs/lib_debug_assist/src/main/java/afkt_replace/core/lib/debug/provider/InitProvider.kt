@@ -1,6 +1,6 @@
-package afkt_replace.core.lib.debug_assist.provider
+package afkt_replace.core.lib.debug.provider
 
-import afkt_replace.core.lib.debug_assist.engine.DevDebugImpl
+import afkt_replace.core.lib.debug.engine.DevDebugImpl
 import afkt_replace.core.lib.engine.debug.DevDebugEngine
 import android.content.ContentProvider
 import android.content.ContentValues

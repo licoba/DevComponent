@@ -1,4 +1,4 @@
-package afkt_replace.core.lib.debug_assist.floating
+package afkt_replace.core.lib.debug.floating
 
 import afkt_replace.core.lib.engine.debug.IDebugEngine
 import androidx.fragment.app.FragmentActivity

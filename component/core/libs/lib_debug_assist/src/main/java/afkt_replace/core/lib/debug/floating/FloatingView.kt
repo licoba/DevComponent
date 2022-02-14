@@ -1,6 +1,6 @@
-package afkt_replace.core.lib.debug_assist.floating
+package afkt_replace.core.lib.debug.floating
 
-import afkt_replace.core_lib_debug_assist.R
+import afkt_replace.core.lib.debug.R
 import android.annotation.SuppressLint
 import android.content.Context
 import android.view.MotionEvent

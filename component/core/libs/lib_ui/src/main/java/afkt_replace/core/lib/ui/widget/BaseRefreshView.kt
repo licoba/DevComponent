@@ -1,7 +1,7 @@
 package afkt_replace.core.lib.ui.widget
 
 import afkt_replace.core.lib.ui.assist.DevBaseRefreshAssist
-import afkt_replace.core_lib_ui.databinding.CoreUiBaseRefreshViewBinding
+import afkt_replace.core.lib.ui.databinding.CoreUiBaseRefreshViewBinding
 import android.content.Context
 import android.os.Build
 import android.util.AttributeSet

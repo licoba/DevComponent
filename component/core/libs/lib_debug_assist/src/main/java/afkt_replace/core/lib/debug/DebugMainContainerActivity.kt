@@ -1,6 +1,6 @@
-package afkt_replace.core.lib.debug_assist
+package afkt_replace.core.lib.debug
 
-import afkt_replace.core_lib_debug_assist.databinding.CoreDebugAssistMainActivityBinding
+import afkt_replace.core.lib.debug.databinding.CoreDebugAssistMainActivityBinding
 import android.app.Activity
 import android.os.Bundle
 import dev.DevHttpCaptureCompiler

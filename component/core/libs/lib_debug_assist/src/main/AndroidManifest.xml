@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="afkt_replace.core_lib_debug_assist">
+    package="afkt_replace.core.lib.debug">
 
     <application>
         <activity
-            android:name="afkt_replace.core.lib.debug_assist.DebugMainContainerActivity"
+            android:name="afkt_replace.core.lib.debug.DebugMainContainerActivity"
             android:exported="false" />
 
         <provider
-            android:name="afkt_replace.core.lib.debug_assist.provider.InitProvider"
-            android:authorities="afkt_replace.core.lib.debug_assist.provider.InitProvider"
+            android:name="afkt_replace.core.lib.debug.provider.InitProvider"
+            android:authorities="afkt_replace.core.lib.debug.provider.InitProvider"
             android:exported="false" />
     </application>
 </manifest>

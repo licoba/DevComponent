@@ -6,7 +6,6 @@ import afkt_replace.core.lib.environment.EnvironmentTypeChecker.getModuleBean
 import afkt_replace.core.lib.environment.EnvironmentTypeChecker.getReleaseEnvironment
 import afkt_replace.core.lib.environment.EnvironmentTypeChecker.innerGetBuildEnvironmentTypeBean
 import afkt_replace.core.lib.environment.EnvironmentTypeChecker.setEnvironment
-import afkt_replace.core_lib_environment.BuildConfig
 import dev.DevUtils
 import dev.environment.DevEnvironment
 import dev.environment.bean.EnvironmentBean

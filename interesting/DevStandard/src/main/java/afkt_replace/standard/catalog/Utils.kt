@@ -72,21 +72,21 @@ object Utils {
         ComparatorUtils.sortWindowsExplorerStringSimpleComparatorAsc(names)
         for (name in names) {
             val catalog = "$dirName.$name"
-            val catelogPath = path + catalog.replace("\\.".toRegex(), "//") + File.separator
+            val catalogPath = path + catalog.replace("\\.".toRegex(), "//") + File.separator
 
-            mapAbout?.let { mapAbout ->
-                if (mapAbout.containsKey(catalog)) {
-                    val gradleFile = File(catelogPath + "build.gradle")
+            mapAbout?.let { map ->
+                if (map.containsKey(catalog)) {
+                    val gradleFile = File(catalogPath + "build.gradle")
                     // 文件存在则进行生成
                     if (gradleFile.exists()) {
-                        generateDependenciesREADME(catelogPath, mapAbout[catalog])
+                        generateDependenciesREADME(catalogPath, map[catalog])
                     } else {
                         var dir = "."
                         if (StringUtils.isNotEmpty(dirName)) {
                             dir += "$dirName."
                             dir = "." + StringUtils.clearStartsWith(dir, ".")
                         }
-                        generateDependenciesCatalog(path, dir + name, mapAbout)
+                        generateDependenciesCatalog(path, dir + name, map)
                     }
                 }
             }

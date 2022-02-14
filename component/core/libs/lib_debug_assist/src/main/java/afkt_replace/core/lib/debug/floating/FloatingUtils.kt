@@ -1,6 +1,6 @@
-package afkt_replace.core.lib.debug_assist.floating
+package afkt_replace.core.lib.debug.floating
 
-import afkt_replace.core.lib.debug_assist.DebugMainContainerActivity
+import afkt_replace.core.lib.debug.DebugMainContainerActivity
 import android.content.Intent
 import android.graphics.PointF
 import android.view.MotionEvent

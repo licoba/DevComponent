@@ -1,6 +1,6 @@
 package afkt_replace.core.lib.base.core
 
-import afkt_replace.core_lib_base.BuildConfig
+import afkt_replace.core.lib.base.BuildConfig
 
 /**
  * detail: Base App 编译信息
