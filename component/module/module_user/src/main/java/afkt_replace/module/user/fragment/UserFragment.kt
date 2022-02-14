@@ -2,6 +2,7 @@ package afkt_replace.module.user.fragment
 
 import afkt_replace.core.lib.base.app.BaseFragmentViewBinding
 import afkt_replace.core.lib.bean.ThemeIntent
+import afkt_replace.core.lib.router.module.user.UserNav
 import afkt_replace.core.lib.router.module.user.UserRouter
 import afkt_replace.core.lib.utils.ProjectUtils
 import afkt_replace.module.user.R
@@ -34,7 +35,7 @@ class UserFragment : BaseFragmentViewBinding<UserFragmentBinding>() {
 
         themeIntent?.let { uiController.setAllBackground(it.color) }
 
-        UserRouter.userProvider()?.apply {
+        UserNav.userProvider()?.apply {
             // 如果已经登录了
             if (isLogin()) {
                 getUserInfo()?.let { user ->

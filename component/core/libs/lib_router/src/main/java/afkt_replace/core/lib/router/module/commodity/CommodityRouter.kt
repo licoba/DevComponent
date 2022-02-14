@@ -16,7 +16,7 @@ object CommodityRouter {
     // ========
 
     // 模块入口
-    const val PATH_MAIN = "/$GROUP/main"
+    const val PATH_MAIN = "/commodity/main"
 
     // 购物车 Fragment
     const val PATH_SHOP_CART_FRAGMENT = "/commodity/shop/cart/fragment"
@@ -29,18 +29,7 @@ object CommodityRouter {
      * 内部传入 [GROUP] 尽量各个模块直接通过对应 [build] 方法跳转
      * 便于代码跳转直观、对外避免跳转错 [GROUP] ( Module )
      */
-    fun build(path: String): Postcard {
+    internal fun build(path: String): Postcard {
         return ARouter.getInstance().build(path, GROUP)
-    }
-
-    // ==========
-    // = 跳转方法 =
-    // ==========
-
-    /**
-     * 模块入口路由跳转
-     */
-    fun routerMain() {
-        build(PATH_MAIN).navigation()
     }
 }

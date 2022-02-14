@@ -2,6 +2,7 @@ package afkt_replace.module.commodity
 
 import afkt_replace.core.lib.base.app.BaseActivityViewBinding
 import afkt_replace.core.lib.bean.ThemeIntent
+import afkt_replace.core.lib.router.module.commodity.CommodityNav
 import afkt_replace.core.lib.router.module.commodity.CommodityRouter
 import android.os.Bundle
 import android.view.View
@@ -40,7 +41,7 @@ class AppLauncherActivity : BaseActivityViewBinding<ViewBinding>() {
 
         GlobalScope.launch {
             delay(2000L)
-            CommodityRouter.build(CommodityRouter.PATH_MAIN)
+            CommodityNav.build(CommodityRouter.PATH_MAIN)
                 .withObject(DevFinal.STR.DATA, ThemeIntent("【模块化运行】"))
                 .navigation()
             finish()

@@ -2,8 +2,9 @@ package afkt_replace.module.splash
 
 import afkt_replace.core.lib.base.app.BaseActivityViewBinding
 import afkt_replace.core.lib.bean.ThemeIntent
+import afkt_replace.core.lib.router.module.splash.SplashNav
 import afkt_replace.core.lib.router.module.splash.SplashRouter
-import afkt_replace.core.lib.router.module.user.UserRouter
+import afkt_replace.core.lib.router.module.user.UserNav
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
@@ -41,14 +42,14 @@ class AppLauncherActivity : BaseActivityViewBinding<ViewBinding>() {
         ToastTintUtils.normal("延迟进入【首页容器页】")
 
         // 调用其他模块数据
-        val isLogin: Boolean = UserRouter.userProvider()?.isLogin() == true
+        val isLogin: Boolean = UserNav.userProvider()?.isLogin() == true
         DevEngine.getLog()?.d("是否登录了 $isLogin")
-        DevEngine.getLog()?.d("是否存在 UserProvider ${UserRouter.userProvider()}")
+        DevEngine.getLog()?.d("是否存在 UserProvider ${UserNav.userProvider()}")
 
         GlobalScope.launch {
             delay(2000L)
             // 直接通过 postcard.navigation() 跳转会显示 AppTheme.Launcher style windowBackground
-            val postcard = SplashRouter.buildAppMain()
+            val postcard = SplashNav.buildAppMain()
                 .withObject(DevFinal.STR.DATA, ThemeIntent(value))
             try {
                 LogisticsCenter.completion(postcard)

@@ -2,6 +2,7 @@ package afkt_replace.module.template
 
 import afkt_replace.core.lib.base.app.BaseActivityViewBinding
 import afkt_replace.core.lib.bean.ThemeIntent
+import afkt_replace.core.lib.router.module.template.TemplateNav
 import afkt_replace.core.lib.router.module.template.TemplateRouter
 import android.graphics.Color
 import android.os.Bundle
@@ -36,7 +37,7 @@ class MainContainerActivity : BaseActivityViewBinding<ViewBinding>() {
 
         themeIntent?.let { uiController.setAllBackground(it.color) }
 
-        (TemplateRouter.build(TemplateRouter.PATH_AAA_FRAGMENT)
+        (TemplateNav.build(TemplateRouter.PATH_AAA_FRAGMENT)
             .with(intent.extras).navigation() as? Fragment)?.let { fragment ->
             supportFragmentManager.beginTransaction().apply {
                 add(contentAssist.contentLinear?.id ?: View.NO_ID, fragment)

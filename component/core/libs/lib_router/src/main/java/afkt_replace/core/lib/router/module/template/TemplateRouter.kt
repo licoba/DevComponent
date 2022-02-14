@@ -16,10 +16,10 @@ object TemplateRouter {
     // ========
 
     // 模块入口
-    const val PATH_MAIN = "/$GROUP/main"
+    const val PATH_MAIN = "/template/main"
 
     // 对外公开 Fragment
-    const val PATH_AAA_FRAGMENT = "/aaa/aaa/fragment"
+    const val PATH_AAA_FRAGMENT = "/template/aaa/fragment"
 
     // ==========
     // = 快捷方法 =
@@ -29,18 +29,7 @@ object TemplateRouter {
      * 内部传入 [GROUP] 尽量各个模块直接通过对应 [build] 方法跳转
      * 便于代码跳转直观、对外避免跳转错 [GROUP] ( Module )
      */
-    fun build(path: String): Postcard {
+    internal fun build(path: String): Postcard {
         return ARouter.getInstance().build(path, GROUP)
-    }
-
-    // ==========
-    // = 跳转方法 =
-    // ==========
-
-    /**
-     * 模块入口路由跳转
-     */
-    fun routerMain() {
-        build(PATH_MAIN).navigation()
     }
 }

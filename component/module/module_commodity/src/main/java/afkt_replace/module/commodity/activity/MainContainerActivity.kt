@@ -2,6 +2,7 @@ package afkt_replace.module.commodity.activity
 
 import afkt_replace.core.lib.base.app.BaseActivityViewBinding
 import afkt_replace.core.lib.bean.ThemeIntent
+import afkt_replace.core.lib.router.module.commodity.CommodityNav
 import afkt_replace.core.lib.router.module.commodity.CommodityRouter
 import afkt_replace.module.commodity.BuildConfig
 import android.graphics.Color
@@ -37,7 +38,7 @@ class MainContainerActivity : BaseActivityViewBinding<ViewBinding>() {
 
         themeIntent?.let { uiController.setAllBackground(it.color) }
 
-        (CommodityRouter.build(CommodityRouter.PATH_SHOP_CART_FRAGMENT)
+        (CommodityNav.build(CommodityRouter.PATH_SHOP_CART_FRAGMENT)
             .with(intent.extras).navigation() as? Fragment)?.let { fragment ->
             supportFragmentManager.beginTransaction().apply {
                 add(contentAssist.contentLinear?.id ?: View.NO_ID, fragment)
