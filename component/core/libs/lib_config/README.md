@@ -17,9 +17,7 @@ dependencies {
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
-<manifest package="afkt_replace.core_lib_config">
-
-</manifest>
+<manifest package="afkt_replace.core.lib.config" />
 ```
 
 # main/java 目录结构

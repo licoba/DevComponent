@@ -17,10 +17,11 @@ dependencies {
 
     // 是否开启优化检测、调试工具 ( 控制 UETool、LeakCanary、BlockCanary 等开关 )
     if (showDebugTools) {
-        // 内存检测工具 https://github.com/square/leakcanary
-        api deps.property.leakcanary
+//        // 内存检测工具 https://github.com/square/leakcanary
+//        api deps.property.leakcanary
         // 饿了么 UETool https://github.com/eleme/UETool/blob/master/README_zh.md
         api deps.property.uetool
+        api deps.property.uetool_base
         // BlockCanary 性能监控组件 https://github.com/markzhai/AndroidPerformanceMonitor/blob/master/README_CN.md
         api deps.property.blockcanary_android
     } else {
@@ -36,9 +37,7 @@ dependencies {
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
-<manifest package="afkt_replace.core_lib_property">
-
-</manifest>
+<manifest package="afkt_replace.core.lib.property" />
 ```
 
 # main/java 目录结构

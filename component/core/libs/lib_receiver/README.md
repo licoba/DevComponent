@@ -24,9 +24,8 @@ dependencies {
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
-<manifest package="afkt_replace.core_lib_receiver">
+<manifest package="afkt_replace.core.lib.receiver" />
 
-</manifest>
 ```
 
 # main/java 目录结构

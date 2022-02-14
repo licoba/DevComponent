@@ -17,8 +17,12 @@ dependencies {
 
     // 通用 Engine ( 图片加载、日志、JSON、权限、资源选择 等 ) lib
     compileOnly project(':core_lib_engine')
+    // 通用环境配置切换库
+    compileOnly project(':core_lib_environment')
     // 性能优化、检测 lib
     compileOnly project(':core_lib_property')
+    // 通用 UI 样式、资源、交互、控件 lib
+    compileOnly project(':core_lib_ui')
 }
 ```
 
@@ -26,8 +30,19 @@ dependencies {
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
-<manifest package="afkt_replace.core_lib_debug_assist">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="afkt_replace.core.lib.debug">
 
+    <application>
+        <activity
+            android:name="afkt_replace.core.lib.debug.DebugMainContainerActivity"
+            android:exported="false" />
+
+        <provider
+            android:name="afkt_replace.core.lib.debug.provider.InitProvider"
+            android:authorities="afkt_replace.core.lib.debug.provider.InitProvider"
+            android:exported="false" />
+    </application>
 </manifest>
 ```
 
@@ -38,5 +53,17 @@ dependencies {
    - afkt_replace                
       - core                     
          - lib                   
-            - debug_assist       
+            - debug              
+               - engine          
+               - floating        
+               - provider        
+```
+
+
+# main/res 目录结构
+
+```
+- res                            
+   - drawable                    
+   - layout                      
 ```

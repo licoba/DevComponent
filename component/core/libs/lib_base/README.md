@@ -17,10 +17,21 @@ dependencies {
 
     // 通用配置、常量 lib
     compileOnly project(':core_lib_config')
+    // 通用 Engine ( 图片加载、日志、JSON、权限、资源选择 等 ) lib
+    compileOnly project(':core_lib_engine')
     // 通用环境配置切换库
     compileOnly project(':core_lib_environment')
     // 通用 UI 样式、资源、交互、控件 lib
     compileOnly project(':core_lib_ui')
+
+    // =====================
+    // = Debug 编译辅助开发库 =
+    // =====================
+
+    if (showDebugTools) {
+        // Debug 编译辅助开发库 ( 提供切换环境、抓包数据可视化、调试按钮开关等辅助功能 )
+        api project(':core_lib_debug_assist')
+    }
 }
 ```
 
@@ -28,9 +39,7 @@ dependencies {
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
-<manifest package="afkt_replace.core_lib_base">
-
-</manifest>
+<manifest package="afkt_replace.core.lib.base" />
 ```
 
 # main/java 目录结构
