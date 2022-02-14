@@ -61,7 +61,6 @@ object Code {
 
     /**
      * 转换 UTF-8 编码
-     * @receiver String
      * @return String
      */
     fun String.toUTF8(): String {
