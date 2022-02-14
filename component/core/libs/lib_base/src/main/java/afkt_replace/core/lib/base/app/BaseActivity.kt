@@ -2,7 +2,6 @@ package afkt_replace.core.lib.base.app
 
 import afkt_replace.core.lib.base.controller.BaseController
 import afkt_replace.core.lib.base.controller.BaseUIController
-import afkt_replace.core.lib.engine.debug.DevDebugEngine
 import afkt_replace.core.lib.ui.widget.BaseTitleBar
 import android.app.Activity
 import android.graphics.Color
@@ -54,8 +53,6 @@ abstract class BaseActivity<VDB : ViewDataBinding, VM : ViewModel> : DevBaseCont
         preLoad()
         // 初始化方法
         initOrder()
-        // 创建 Debug 悬浮窗
-        DevDebugEngine.getEngine()?.attachDebug(this)
     }
 
     // ==========
