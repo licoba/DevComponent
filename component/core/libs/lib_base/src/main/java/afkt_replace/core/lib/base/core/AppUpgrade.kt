@@ -1,10 +1,10 @@
 package afkt_replace.core.lib.base.core
 
+import afkt_replace.core.lib.utils.permission.request
 import android.Manifest
 import android.app.Activity
 import android.os.Build
 import androidx.annotation.RequiresApi
-import dev.engine.DevEngine
 import dev.engine.permission.IPermissionEngine
 import dev.utils.app.AppUtils
 import dev.utils.app.IntentUtils
@@ -160,10 +160,11 @@ object AppUpgrade {
         activity: Activity,
         callback: IPermissionEngine.Callback
     ) {
-        DevEngine.getPermission()?.request(
-            activity, arrayOf(
+        activity.request(
+            permissions = arrayOf(
                 Manifest.permission.REQUEST_INSTALL_PACKAGES
-            ), object : IPermissionEngine.Callback {
+            ),
+            callback = object : IPermissionEngine.Callback {
                 override fun onGranted() {
                     callback.onGranted()
                 }
