@@ -41,14 +41,14 @@ fun Any.toJson(
 
 fun <T : Any> String.fromJson(
     key: String? = null,
-    classOfT: Class<T>
+    classOfT: Class<T>?
 ): T? {
     return getEngine(key)?.fromJson(this, classOfT)
 }
 
 fun <T : Any> String.fromJson(
     key: String? = null,
-    classOfT: Class<T>,
+    classOfT: Class<T>?,
     config: JSONConfig?
 ): T? {
     return getEngine(key)?.fromJson(this, classOfT, config)
@@ -56,14 +56,14 @@ fun <T : Any> String.fromJson(
 
 fun <T : Any> String.fromJson(
     key: String? = null,
-    typeOfT: Type
+    typeOfT: Type?
 ): T? {
     return getEngine(key)?.fromJson(this, typeOfT)
 }
 
 fun <T : Any> String.fromJson(
     key: String? = null,
-    typeOfT: Type,
+    typeOfT: Type?,
     config: JSONConfig?
 ): T? {
     return getEngine(key)?.fromJson(this, typeOfT, config)

@@ -1,9 +1,10 @@
 package afkt_replace.core.lib.router
 
+import afkt_replace.core.lib.utils.json.fromJson
+import afkt_replace.core.lib.utils.json.toJson
 import android.content.Context
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.alibaba.android.arouter.facade.service.SerializationService
-import dev.engine.DevEngine
 import java.lang.reflect.Type
 
 /**
@@ -19,18 +20,18 @@ class ARouterJSONServiceImpl : SerializationService {
     override fun <T : Any> json2Object(
         input: String?,
         clazz: Class<T>?
-    ): T {
+    ): T? {
         return parseObject(input, clazz)
     }
 
     override fun object2Json(instance: Any?): String? {
-        return DevEngine.getJSON()?.toJson(instance)
+        return instance?.toJson()
     }
 
     override fun <T : Any> parseObject(
         input: String?,
         clazz: Type?
-    ): T {
-        return DevEngine.getJSON()?.fromJson<T>(input, clazz) as T
+    ): T? {
+        return input?.fromJson(typeOfT = clazz)
     }
 }

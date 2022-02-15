@@ -3,6 +3,8 @@ package afkt_replace.module.commodity.adapter
 import afkt_replace.core.lib.bean.commodity.CommodityBean
 import afkt_replace.core.lib.utils.image.ROUND_3
 import afkt_replace.core.lib.utils.image.display
+import afkt_replace.core.lib.utils.price.toPriceString
+import afkt_replace.core.lib.utils.price.toRMBSubZeroAndDot
 import afkt_replace.core.lib.utils.toSource
 import afkt_replace.libs.commodity.utils.appendLabel
 import afkt_replace.module.commodity.R
@@ -15,8 +17,6 @@ import dev.base.adapter.DevBaseViewBindingVH
 import dev.base.adapter.newBindingViewHolder
 import dev.utils.app.ViewUtils
 import dev.utils.app.helper.view.ViewHelper
-import dev.utils.common.BigDecimalUtils
-import java.math.BigDecimal
 
 /**
  * detail: 购物车 Adapter
@@ -49,9 +49,7 @@ class ShopCartAdapter :
                 holder.binding.vidNameTv
             )
             .setText(
-                "￥" + BigDecimalUtils.round(
-                    item.price, 2, BigDecimal.ROUND_HALF_UP
-                ),
+                item.price.toPriceString()?.toRMBSubZeroAndDot(),
                 holder.binding.vidPriceTv
             )
         // 商品图片
