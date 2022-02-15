@@ -1,6 +1,6 @@
 package afkt_replace.core.lib.utils.image
 
-import afkt_replace.core.lib.base.core.AppSize
+import afkt_replace.core.lib.utils.size.GLOBAL_APP_AUTO_SIZE
 import dev.base.DevVariable
 import dev.engine.image.ImageConfig
 
@@ -106,21 +106,21 @@ internal fun createImageConfig(key: String): ImageConfig? {
         IMAGE_ROUND_3 -> {
             ImageConfig.create(ROUND).apply {
                 setRoundedCornersRadius(
-                    AppSize.dp2px(3F)
+                    GLOBAL_APP_AUTO_SIZE.dp2px(3F)
                 )
             }
         }
         IMAGE_ROUND_10 -> {
             ImageConfig.create(ROUND).apply {
                 setRoundedCornersRadius(
-                    AppSize.dp2px(10F)
+                    GLOBAL_APP_AUTO_SIZE.dp2px(10F)
                 )
             }
         }
         IMAGE_ROUND_CROP_10 -> {
             ImageConfig.create(ROUND).apply {
                 setRoundedCornersRadius(
-                    AppSize.dp2px(10F)
+                    GLOBAL_APP_AUTO_SIZE.dp2px(10F)
                 )
                 setScaleType(ImageConfig.SCALE_CENTER_CROP)
             }
@@ -128,7 +128,7 @@ internal fun createImageConfig(key: String): ImageConfig? {
         IMAGE_ROUND_FIX_10 -> {
             ImageConfig.create(ROUND).apply {
                 setRoundedCornersRadius(
-                    AppSize.dp2px(10F)
+                    GLOBAL_APP_AUTO_SIZE.dp2px(10F)
                 )
                 setScaleType(ImageConfig.SCALE_FIT_CENTER)
             }

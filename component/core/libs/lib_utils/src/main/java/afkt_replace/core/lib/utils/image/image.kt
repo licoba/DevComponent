@@ -24,8 +24,8 @@ import dev.engine.image.listener.OnConvertListener
  * 内部做了处理如果匹配不到则返回默认 Image Engine
  */
 internal fun getEngine(key: String?): IImageEngine<in IImageEngine.EngineConfig>? {
-    DevEngine.getImage(key)?.let { engine ->
-        return engine
+    DevEngine.getImage(key)?.let { value ->
+        return value
     }
     return DevEngine.getImage()
 }
@@ -54,20 +54,20 @@ internal fun requireSource(source: DevSource?): Boolean {
 // = pause and resume =
 // ====================
 
-fun Fragment.pause(key: String? = null) {
-    getEngine(key)?.pause(this)
+fun Fragment.pause(engine: String? = null) {
+    getEngine(engine)?.pause(this)
 }
 
-fun Fragment.resume(key: String? = null) {
-    getEngine(key)?.resume(this)
+fun Fragment.resume(engine: String? = null) {
+    getEngine(engine)?.resume(this)
 }
 
-fun Context.pause(key: String? = null) {
-    getEngine(key)?.pause(this)
+fun Context.pause(engine: String? = null) {
+    getEngine(engine)?.pause(this)
 }
 
-fun Context.resume(key: String? = null) {
-    getEngine(key)?.resume(this)
+fun Context.resume(engine: String? = null) {
+    getEngine(engine)?.resume(this)
 }
 
 // ===========
@@ -75,55 +75,55 @@ fun Context.resume(key: String? = null) {
 // ===========
 
 fun Context.preload(
-    key: String? = null,
+    engine: String? = null,
     source: DevSource?
 ) {
     if (requireSource(source)) return
-    getEngine(key)?.preload(this, source)
+    getEngine(engine)?.preload(this, source)
 }
 
 fun Context.preload(
-    key: String? = null,
+    engine: String? = null,
     source: DevSource?,
     config: ImageConfig?
 ) {
     if (requireSource(source)) return
-    getEngine(key)?.preload(this, source, config)
+    getEngine(engine)?.preload(this, source, config)
 }
 
 // =========
 // = clear =
 // =========
 
-fun View.clear(key: String? = null) {
-    getEngine(key)?.clear(this)
+fun View.clear(engine: String? = null) {
+    getEngine(engine)?.clear(this)
 }
 
 fun Fragment.clear(
-    key: String? = null,
+    engine: String? = null,
     view: View?
 ) {
-    getEngine(key)?.clear(this, view)
+    getEngine(engine)?.clear(this, view)
 }
 
-fun Context.clearDiskCache(key: String? = null) {
-    getEngine(key)?.clearDiskCache(this)
+fun Context.clearDiskCache(engine: String? = null) {
+    getEngine(engine)?.clearDiskCache(this)
 }
 
-fun Context.clearMemoryCache(key: String? = null) {
-    getEngine(key)?.clearMemoryCache(this)
+fun Context.clearMemoryCache(engine: String? = null) {
+    getEngine(engine)?.clearMemoryCache(this)
 }
 
-fun Context.clearAllCache(key: String? = null) {
-    getEngine(key)?.clearAllCache(this)
+fun Context.clearAllCache(engine: String? = null) {
+    getEngine(engine)?.clearAllCache(this)
 }
 
 // =========
 // = other =
 // =========
 
-fun Context.lowMemory(key: String? = null) {
-    getEngine(key)?.lowMemory(this)
+fun Context.lowMemory(engine: String? = null) {
+    getEngine(engine)?.lowMemory(this)
 }
 
 // ===========
@@ -131,81 +131,81 @@ fun Context.lowMemory(key: String? = null) {
 // ===========
 
 fun ImageView.display(
-    key: String? = null,
+    engine: String? = null,
     source: DevSource?
 ) {
     if (requireSource(source)) return
-    getEngine(key)?.display(this, source)
+    getEngine(engine)?.display(this, source)
 }
 
 fun ImageView.display(
-    key: String? = null,
+    engine: String? = null,
     source: DevSource?,
     config: ImageConfig?
 ) {
     if (requireSource(source)) return
-    getEngine(key)?.display(this, source, config)
+    getEngine(engine)?.display(this, source, config)
 }
 
 fun <T : Any> ImageView.display(
-    key: String? = null,
+    engine: String? = null,
     source: DevSource?,
     listener: LoadListener<T>?
 ) {
     if (requireSource(source)) return
-    getEngine(key)?.display(this, source, listener)
+    getEngine(engine)?.display(this, source, listener)
 }
 
 fun <T : Any> ImageView.display(
-    key: String? = null,
+    engine: String? = null,
     source: DevSource?,
     config: ImageConfig?,
     listener: LoadListener<T>?
 ) {
     if (requireSource(source)) return
-    getEngine(key)?.display(this, source, config, listener)
+    getEngine(engine)?.display(this, source, config, listener)
 }
 
 // =
 
 fun ImageView.display(
-    key: String? = null,
+    engine: String? = null,
     fragment: Fragment?,
     source: DevSource?
 ) {
     if (requireSource(source)) return
-    getEngine(key)?.display(fragment, this, source)
+    getEngine(engine)?.display(fragment, this, source)
 }
 
 fun ImageView.display(
-    key: String? = null,
+    engine: String? = null,
     fragment: Fragment?,
     source: DevSource?,
     config: ImageConfig?
 ) {
     if (requireSource(source)) return
-    getEngine(key)?.display(fragment, this, source, config)
+    getEngine(engine)?.display(fragment, this, source, config)
 }
 
 fun <T : Any> ImageView.display(
-    key: String? = null,
+    engine: String? = null,
     fragment: Fragment?,
     source: DevSource?,
     listener: LoadListener<T>?
 ) {
     if (requireSource(source)) return
-    getEngine(key)?.display(fragment, this, source, listener)
+    getEngine(engine)?.display(fragment, this, source, listener)
 }
 
 fun <T : Any> ImageView.display(
-    key: String? = null,
+    engine: String? = null,
     fragment: Fragment?,
     source: DevSource?,
     config: ImageConfig?,
     listener: LoadListener<T>?
 ) {
     if (requireSource(source)) return
-    getEngine(key)?.display(fragment, this, source, config, listener)
+    getEngine(engine)?.display(fragment, this, source, config, listener)
 }
 
 // ========
@@ -213,123 +213,123 @@ fun <T : Any> ImageView.display(
 // ========
 
 fun <T : Any> Context.loadImage(
-    key: String? = null,
+    engine: String? = null,
     source: DevSource?,
     config: ImageConfig?,
     listener: LoadListener<T>?
 ) {
     if (requireSource(source)) return
-    getEngine(key)?.loadImage(this, source, config, listener)
+    getEngine(engine)?.loadImage(this, source, config, listener)
 }
 
 fun <T : Any> Fragment.loadImage(
-    key: String? = null,
+    engine: String? = null,
     source: DevSource?,
     config: ImageConfig?,
     listener: LoadListener<T>?
 ) {
     if (requireSource(source)) return
-    getEngine(key)?.loadImage(this, source, config, listener)
+    getEngine(engine)?.loadImage(this, source, config, listener)
 }
 
 fun <T : Any> Context.loadImage(
-    key: String? = null,
+    engine: String? = null,
     source: DevSource?,
     config: ImageConfig?,
     type: Class<*>?
 ): T? {
     if (requireSource(source)) return null
-    return getEngine(key)?.loadImage(this, source, config, type)
+    return getEngine(engine)?.loadImage(this, source, config, type)
 }
 
 fun <T : Any> Context.loadImageThrows(
-    key: String? = null,
+    engine: String? = null,
     source: DevSource?,
     config: ImageConfig?,
     type: Class<*>?
 ): T? {
     if (requireSource(source)) return null
-    return getEngine(key)?.loadImageThrows(this, source, config, type)
+    return getEngine(engine)?.loadImageThrows(this, source, config, type)
 }
 
 // =
 
 fun Context.loadBitmap(
-    key: String? = null,
+    engine: String? = null,
     source: DevSource?,
     config: ImageConfig?,
     listener: LoadListener<Bitmap>?
 ) {
     if (requireSource(source)) return
-    getEngine(key)?.loadBitmap(this, source, config, listener)
+    getEngine(engine)?.loadBitmap(this, source, config, listener)
 }
 
 fun Fragment.loadBitmap(
-    key: String? = null,
+    engine: String? = null,
     source: DevSource?,
     config: ImageConfig?,
     listener: LoadListener<Bitmap>?
 ) {
     if (requireSource(source)) return
-    getEngine(key)?.loadBitmap(this, source, config, listener)
+    getEngine(engine)?.loadBitmap(this, source, config, listener)
 }
 
 fun Context.loadBitmap(
-    key: String? = null,
+    engine: String? = null,
     source: DevSource?,
     config: ImageConfig?
 ): Bitmap? {
     if (requireSource(source)) return null
-    return getEngine(key)?.loadBitmap(this, source, config)
+    return getEngine(engine)?.loadBitmap(this, source, config)
 }
 
 fun Context.loadBitmapThrows(
-    key: String? = null,
+    engine: String? = null,
     source: DevSource?,
     config: ImageConfig?
 ): Bitmap? {
     if (requireSource(source)) return null
-    return getEngine(key)?.loadBitmapThrows(this, source, config)
+    return getEngine(engine)?.loadBitmapThrows(this, source, config)
 }
 
 // =
 
 fun Context.loadDrawable(
-    key: String? = null,
+    engine: String? = null,
     source: DevSource?,
     config: ImageConfig?,
     listener: LoadListener<Drawable>?
 ) {
     if (requireSource(source)) return
-    getEngine(key)?.loadDrawable(this, source, config, listener)
+    getEngine(engine)?.loadDrawable(this, source, config, listener)
 }
 
 fun Fragment.loadDrawable(
-    key: String? = null,
+    engine: String? = null,
     source: DevSource?,
     config: ImageConfig?,
     listener: LoadListener<Drawable>?
 ) {
     if (requireSource(source)) return
-    getEngine(key)?.loadDrawable(this, source, config, listener)
+    getEngine(engine)?.loadDrawable(this, source, config, listener)
 }
 
 fun Context.loadDrawable(
-    key: String? = null,
+    engine: String? = null,
     source: DevSource?,
     config: ImageConfig?
 ): Drawable? {
     if (requireSource(source)) return null
-    return getEngine(key)?.loadDrawable(this, source, config)
+    return getEngine(engine)?.loadDrawable(this, source, config)
 }
 
 fun Context.loadDrawableThrows(
-    key: String? = null,
+    engine: String? = null,
     source: DevSource?,
     config: ImageConfig?
 ): Drawable? {
     if (requireSource(source)) return null
-    return getEngine(key)?.loadDrawableThrows(this, source, config)
+    return getEngine(engine)?.loadDrawableThrows(this, source, config)
 }
 
 // ===========
@@ -337,18 +337,18 @@ fun Context.loadDrawableThrows(
 // ===========
 
 fun Context.convertImageFormat(
-    key: String? = null,
+    engine: String? = null,
     sources: MutableList<DevSource>?,
     listener: OnConvertListener?
 ): Boolean {
-    return getEngine(key)?.convertImageFormat(this, sources, listener) ?: false
+    return getEngine(engine)?.convertImageFormat(this, sources, listener) ?: false
 }
 
 fun Context.convertImageFormat(
-    key: String? = null,
+    engine: String? = null,
     sources: MutableList<DevSource>?,
     config: ImageConfig?,
     listener: OnConvertListener?
 ): Boolean {
-    return getEngine(key)?.convertImageFormat(this, sources, config, listener) ?: false
+    return getEngine(engine)?.convertImageFormat(this, sources, config, listener) ?: false
 }

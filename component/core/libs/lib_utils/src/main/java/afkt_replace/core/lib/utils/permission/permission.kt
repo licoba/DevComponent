@@ -16,8 +16,8 @@ import dev.engine.permission.IPermissionEngine
  * 内部做了处理如果匹配不到则返回默认 Permission Engine
  */
 internal fun getEngine(key: String?): IPermissionEngine {
-    DevEngine.getPermission(key)?.let { engine ->
-        return engine
+    DevEngine.getPermission(key)?.let { value ->
+        return value
     }
     return DevEngine.getPermission()
 }
@@ -27,37 +27,37 @@ internal fun getEngine(key: String?): IPermissionEngine {
 // =========================
 
 fun Context.isGranted(
-    key: String? = null,
+    engine: String? = null,
     vararg permissions: String?
 ): Boolean {
-    return getEngine(key).isGranted(this, *permissions)
+    return getEngine(engine).isGranted(this, *permissions)
 }
 
 fun Activity.shouldShowRequestPermissionRationale(
-    key: String? = null,
+    engine: String? = null,
     vararg permissions: String?
 ): Boolean {
-    return getEngine(key).shouldShowRequestPermissionRationale(
+    return getEngine(engine).shouldShowRequestPermissionRationale(
         this, *permissions
     )
 }
 
 fun Activity.getDeniedPermissionStatus(
-    key: String? = null,
+    engine: String? = null,
     shouldShow: Boolean,
     vararg permissions: String?
 ): MutableList<String> {
-    return getEngine(key).getDeniedPermissionStatus(
+    return getEngine(engine).getDeniedPermissionStatus(
         this, shouldShow, *permissions
     )
 }
 
 fun Activity.againRequest(
-    key: String? = null,
+    engine: String? = null,
     callback: IPermissionEngine.Callback?,
     deniedList: MutableList<String>?
 ): Int {
-    return getEngine(key).againRequest(this, callback, deniedList)
+    return getEngine(engine).againRequest(this, callback, deniedList)
 }
 
 // =============
@@ -65,25 +65,25 @@ fun Activity.againRequest(
 // =============
 
 fun Activity.request(
-    key: String? = null,
+    engine: String? = null,
     permissions: Array<out String>?
 ) {
-    return getEngine(key).request(this, permissions)
+    return getEngine(engine).request(this, permissions)
 }
 
 fun Activity.request(
-    key: String? = null,
+    engine: String? = null,
     permissions: Array<out String>?,
     callback: IPermissionEngine.Callback?
 ) {
-    return getEngine(key).request(this, permissions, callback)
+    return getEngine(engine).request(this, permissions, callback)
 }
 
 fun Activity.request(
-    key: String? = null,
+    engine: String? = null,
     permissions: Array<out String>?,
     callback: IPermissionEngine.Callback?,
     againRequest: Boolean
 ) {
-    return getEngine(key).request(this, permissions, callback, againRequest)
+    return getEngine(engine).request(this, permissions, callback, againRequest)
 }

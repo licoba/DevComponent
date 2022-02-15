@@ -16,8 +16,8 @@ import java.lang.reflect.Type
  * 内部做了处理如果匹配不到则返回默认 JSON Engine
  */
 internal fun getEngine(key: String?): IJSONEngine<in IJSONEngine.EngineConfig>? {
-    DevEngine.getJSON(key)?.let { engine ->
-        return engine
+    DevEngine.getJSON(key)?.let { value ->
+        return value
     }
     return DevEngine.getJSON()
 }
@@ -26,72 +26,72 @@ internal fun getEngine(key: String?): IJSONEngine<in IJSONEngine.EngineConfig>? 
 // = Key JSON Engine =
 // ===================
 
-fun Any.toJson(key: String? = null): String? {
-    return getEngine(key)?.toJson(this)
+fun Any.toJson(engine: String? = null): String? {
+    return getEngine(engine)?.toJson(this)
 }
 
 fun Any.toJson(
-    key: String? = null,
+    engine: String? = null,
     config: JSONConfig?
 ): String? {
-    return getEngine(key)?.toJson(this, config)
+    return getEngine(engine)?.toJson(this, config)
 }
 
 // =
 
 fun <T : Any> String.fromJson(
-    key: String? = null,
+    engine: String? = null,
     classOfT: Class<T>?
 ): T? {
-    return getEngine(key)?.fromJson(this, classOfT)
+    return getEngine(engine)?.fromJson(this, classOfT)
 }
 
 fun <T : Any> String.fromJson(
-    key: String? = null,
+    engine: String? = null,
     classOfT: Class<T>?,
     config: JSONConfig?
 ): T? {
-    return getEngine(key)?.fromJson(this, classOfT, config)
+    return getEngine(engine)?.fromJson(this, classOfT, config)
 }
 
 fun <T : Any> String.fromJson(
-    key: String? = null,
+    engine: String? = null,
     typeOfT: Type?
 ): T? {
-    return getEngine(key)?.fromJson(this, typeOfT)
+    return getEngine(engine)?.fromJson(this, typeOfT)
 }
 
 fun <T : Any> String.fromJson(
-    key: String? = null,
+    engine: String? = null,
     typeOfT: Type?,
     config: JSONConfig?
 ): T? {
-    return getEngine(key)?.fromJson(this, typeOfT, config)
+    return getEngine(engine)?.fromJson(this, typeOfT, config)
 }
 
 // ==========
 // = 其他方法 =
 // ==========
 
-fun String.isJSON(key: String? = null): Boolean {
-    return getEngine(key)?.isJSON(this) == true
+fun String.isJSON(engine: String? = null): Boolean {
+    return getEngine(engine)?.isJSON(this) == true
 }
 
-fun String.isJSONObject(key: String? = null): Boolean {
-    return getEngine(key)?.isJSONObject(this) == true
+fun String.isJSONObject(engine: String? = null): Boolean {
+    return getEngine(engine)?.isJSONObject(this) == true
 }
 
-fun String.isJSONArray(key: String? = null): Boolean {
-    return getEngine(key)?.isJSONArray(this) == true
+fun String.isJSONArray(engine: String? = null): Boolean {
+    return getEngine(engine)?.isJSONArray(this) == true
 }
 
-fun Any.toJsonIndent(key: String? = null): String? {
-    return getEngine(key)?.toJsonIndent(this)
+fun Any.toJsonIndent(engine: String? = null): String? {
+    return getEngine(engine)?.toJsonIndent(this)
 }
 
 fun Any.toJsonIndent(
-    key: String? = null,
+    engine: String? = null,
     config: JSONConfig?
 ): String? {
-    return getEngine(key)?.toJsonIndent(this, config)
+    return getEngine(engine)?.toJsonIndent(this, config)
 }
