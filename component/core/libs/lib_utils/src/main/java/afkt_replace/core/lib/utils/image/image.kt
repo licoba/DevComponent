@@ -19,12 +19,12 @@ import dev.engine.image.listener.OnConvertListener
 
 /**
  * 通过 Key 获取 Image Engine
- * @param key String?
+ * @param engine String?
  * @return IImageEngine<IImageEngine.EngineConfig>
  * 内部做了处理如果匹配不到则返回默认 Image Engine
  */
-internal fun getEngine(key: String?): IImageEngine<in IImageEngine.EngineConfig>? {
-    DevEngine.getImage(key)?.let { value ->
+internal fun getEngine(engine: String?): IImageEngine<in IImageEngine.EngineConfig>? {
+    DevEngine.getImage(engine)?.let { value ->
         return value
     }
     return DevEngine.getImage()
@@ -54,19 +54,27 @@ internal fun requireSource(source: DevSource?): Boolean {
 // = pause and resume =
 // ====================
 
-fun Fragment.pause(engine: String? = null) {
+fun Fragment.pause(
+    engine: String? = null
+) {
     getEngine(engine)?.pause(this)
 }
 
-fun Fragment.resume(engine: String? = null) {
+fun Fragment.resume(
+    engine: String? = null
+) {
     getEngine(engine)?.resume(this)
 }
 
-fun Context.pause(engine: String? = null) {
+fun Context.pause(
+    engine: String? = null
+) {
     getEngine(engine)?.pause(this)
 }
 
-fun Context.resume(engine: String? = null) {
+fun Context.resume(
+    engine: String? = null
+) {
     getEngine(engine)?.resume(this)
 }
 
@@ -95,7 +103,9 @@ fun Context.preload(
 // = clear =
 // =========
 
-fun View.clear(engine: String? = null) {
+fun View.clear(
+    engine: String? = null
+) {
     getEngine(engine)?.clear(this)
 }
 
@@ -106,15 +116,21 @@ fun Fragment.clear(
     getEngine(engine)?.clear(this, view)
 }
 
-fun Context.clearDiskCache(engine: String? = null) {
+fun Context.clearDiskCache(
+    engine: String? = null
+) {
     getEngine(engine)?.clearDiskCache(this)
 }
 
-fun Context.clearMemoryCache(engine: String? = null) {
+fun Context.clearMemoryCache(
+    engine: String? = null
+) {
     getEngine(engine)?.clearMemoryCache(this)
 }
 
-fun Context.clearAllCache(engine: String? = null) {
+fun Context.clearAllCache(
+    engine: String? = null
+) {
     getEngine(engine)?.clearAllCache(this)
 }
 
@@ -122,7 +138,9 @@ fun Context.clearAllCache(engine: String? = null) {
 // = other =
 // =========
 
-fun Context.lowMemory(engine: String? = null) {
+fun Context.lowMemory(
+    engine: String? = null
+) {
     getEngine(engine)?.lowMemory(this)
 }
 

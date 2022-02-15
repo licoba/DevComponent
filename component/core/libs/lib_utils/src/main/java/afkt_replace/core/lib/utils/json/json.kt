@@ -11,12 +11,12 @@ import java.lang.reflect.Type
 
 /**
  * 通过 Key 获取 JSON Engine
- * @param key String?
+ * @param engine String?
  * @return IJSONEngine<IJSONEngine.EngineConfig>
  * 内部做了处理如果匹配不到则返回默认 JSON Engine
  */
-internal fun getEngine(key: String?): IJSONEngine<in IJSONEngine.EngineConfig>? {
-    DevEngine.getJSON(key)?.let { value ->
+internal fun getEngine(engine: String?): IJSONEngine<in IJSONEngine.EngineConfig>? {
+    DevEngine.getJSON(engine)?.let { value ->
         return value
     }
     return DevEngine.getJSON()
@@ -26,7 +26,9 @@ internal fun getEngine(key: String?): IJSONEngine<in IJSONEngine.EngineConfig>? 
 // = Key JSON Engine =
 // ===================
 
-fun Any.toJson(engine: String? = null): String? {
+fun Any.toJson(
+    engine: String? = null
+): String? {
     return getEngine(engine)?.toJson(this)
 }
 
@@ -73,19 +75,27 @@ fun <T : Any> String.fromJson(
 // = 其他方法 =
 // ==========
 
-fun String.isJSON(engine: String? = null): Boolean {
+fun String.isJSON(
+    engine: String? = null
+): Boolean {
     return getEngine(engine)?.isJSON(this) == true
 }
 
-fun String.isJSONObject(engine: String? = null): Boolean {
+fun String.isJSONObject(
+    engine: String? = null
+): Boolean {
     return getEngine(engine)?.isJSONObject(this) == true
 }
 
-fun String.isJSONArray(engine: String? = null): Boolean {
+fun String.isJSONArray(
+    engine: String? = null
+): Boolean {
     return getEngine(engine)?.isJSONArray(this) == true
 }
 
-fun Any.toJsonIndent(engine: String? = null): String? {
+fun Any.toJsonIndent(
+    engine: String? = null
+): String? {
     return getEngine(engine)?.toJsonIndent(this)
 }
 

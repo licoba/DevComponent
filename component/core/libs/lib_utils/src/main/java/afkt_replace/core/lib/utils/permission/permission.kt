@@ -11,12 +11,12 @@ import dev.engine.permission.IPermissionEngine
 
 /**
  * 通过 Key 获取 Permission Engine
- * @param key String?
+ * @param engine String?
  * @return IPermissionEngine
  * 内部做了处理如果匹配不到则返回默认 Permission Engine
  */
-internal fun getEngine(key: String?): IPermissionEngine {
-    DevEngine.getPermission(key)?.let { value ->
+internal fun getEngine(engine: String?): IPermissionEngine {
+    DevEngine.getPermission(engine)?.let { value ->
         return value
     }
     return DevEngine.getPermission()
