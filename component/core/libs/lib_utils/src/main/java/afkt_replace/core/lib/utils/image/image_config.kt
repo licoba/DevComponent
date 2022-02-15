@@ -8,42 +8,46 @@ import dev.engine.image.ImageConfig
 // = dev.engine.image.ImageConfig =
 // ================================
 
+// ============
+// = 使用方式一 =
+// ============
+
 private val ROUND = ImageConfig.create().apply {
     setTransform(ImageConfig.TRANSFORM_ROUNDED_CORNERS)
     setScaleType(ImageConfig.SCALE_NONE)
 }
 
-val DEFAULT_CROP = ImageConfig.create().apply {
-    setScaleType(ImageConfig.SCALE_CENTER_CROP)
-}
+//val DEFAULT_CROP = ImageConfig.create().apply {
+//    setScaleType(ImageConfig.SCALE_CENTER_CROP)
+//}
+//
+//val DEFAULT_FIX = ImageConfig.create().apply {
+//    setScaleType(ImageConfig.SCALE_FIT_CENTER)
+//}
+//
+//val ROUND_3 = ImageConfig.create(ROUND).apply {
+//    setRoundedCornersRadius(
+//        AppSize.dp2px(3F)
+//    )
+//}
+//
+//val ROUND_10 = ImageConfig.create(ROUND).apply {
+//    setRoundedCornersRadius(
+//        AppSize.dp2px(10F)
+//    )
+//}
+//
+//val ROUND_CROP_10 = ImageConfig.create(ROUND_10).apply {
+//    setScaleType(ImageConfig.SCALE_CENTER_CROP)
+//}
+//
+//val ROUND_FIX_10 = ImageConfig.create(ROUND_10).apply {
+//    setScaleType(ImageConfig.SCALE_FIT_CENTER)
+//}
 
-val DEFAULT_FIX = ImageConfig.create().apply {
-    setScaleType(ImageConfig.SCALE_FIT_CENTER)
-}
-
-val ROUND_10 = ImageConfig.create(ROUND).apply {
-    setRoundedCornersRadius(
-        AppSize.dp2px(10F)
-    )
-}
-
-val ROUND_CROP_10 = ImageConfig.create(ROUND_10).apply {
-    setScaleType(ImageConfig.SCALE_CENTER_CROP)
-}
-
-val ROUND_FIX_10 = ImageConfig.create(ROUND_10).apply {
-    setScaleType(ImageConfig.SCALE_FIT_CENTER)
-}
-
-val ROUND_3 = ImageConfig.create(ROUND).apply {
-    setRoundedCornersRadius(
-        AppSize.dp2px(3F)
-    )
-}
-
-// ==========
-// = 其他方式 =
-// ==========
+// ============
+// = 使用方式二 =
+// ============
 
 // ===========
 // = Variable =
@@ -52,9 +56,13 @@ val ROUND_3 = ImageConfig.create(ROUND).apply {
 // Image Engine ImageConfig 配置缓存
 private val VAR_IMAGE_CONFIG = DevVariable<String, ImageConfig?>()
 
-// KEY.toImageConfig() => ImageConfig
-const val KEY_ROUND_3 = "KEY_ROUND_3"
-const val KEY_ROUND_10 = "KEY_ROUND_10"
+// IMAGE_KEY.toImageConfig() => ImageConfig
+const val IMAGE_DEFAULT_CROP = "IMAGE_DEFAULT_CROP"
+const val IMAGE_DEFAULT_FIX = "IMAGE_DEFAULT_FIX"
+const val IMAGE_ROUND_3 = "IMAGE_ROUND_3"
+const val IMAGE_ROUND_10 = "IMAGE_ROUND_10"
+const val IMAGE_ROUND_CROP_10 = "IMAGE_ROUND_CROP_10"
+const val IMAGE_ROUND_FIX_10 = "IMAGE_ROUND_FIX_10"
 
 /**
  * 清空全部 ImageConfig 配置
@@ -85,19 +93,44 @@ fun String.toImageConfig(): ImageConfig? {
  */
 internal fun createImageConfig(key: String): ImageConfig? {
     return when (key) {
-        KEY_ROUND_3 -> {
+        IMAGE_DEFAULT_CROP -> {
+            ImageConfig.create().apply {
+                setScaleType(ImageConfig.SCALE_CENTER_CROP)
+            }
+        }
+        IMAGE_DEFAULT_FIX -> {
+            ImageConfig.create().apply {
+                setScaleType(ImageConfig.SCALE_FIT_CENTER)
+            }
+        }
+        IMAGE_ROUND_3 -> {
             ImageConfig.create(ROUND).apply {
                 setRoundedCornersRadius(
                     AppSize.dp2px(3F)
                 )
             }
         }
-        KEY_ROUND_10 -> {
+        IMAGE_ROUND_10 -> {
             ImageConfig.create(ROUND).apply {
-                // 为了获取最新适配值重新读取
                 setRoundedCornersRadius(
                     AppSize.dp2px(10F)
                 )
+            }
+        }
+        IMAGE_ROUND_CROP_10 -> {
+            ImageConfig.create(ROUND).apply {
+                setRoundedCornersRadius(
+                    AppSize.dp2px(10F)
+                )
+                setScaleType(ImageConfig.SCALE_CENTER_CROP)
+            }
+        }
+        IMAGE_ROUND_FIX_10 -> {
+            ImageConfig.create(ROUND).apply {
+                setRoundedCornersRadius(
+                    AppSize.dp2px(10F)
+                )
+                setScaleType(ImageConfig.SCALE_FIT_CENTER)
             }
         }
         else -> {

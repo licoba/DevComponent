@@ -8,7 +8,6 @@ android {
                     'src/main/res', // 模块通用资源文件
                     'src/main/res-base', // Base 基础资源
                     'src/main/res-commodity', // 商品通用资源
-                    'src/main/res-tools', // 用于 xml tools:xxx 展示
             ]
         }
     }

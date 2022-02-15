@@ -1,8 +1,9 @@
 package afkt_replace.module.commodity.adapter
 
 import afkt_replace.core.lib.bean.commodity.CommodityBean
-import afkt_replace.core.lib.utils.image.ROUND_3
+import afkt_replace.core.lib.utils.image.IMAGE_ROUND_3
 import afkt_replace.core.lib.utils.image.display
+import afkt_replace.core.lib.utils.image.toImageConfig
 import afkt_replace.core.lib.utils.price.toPriceString
 import afkt_replace.core.lib.utils.price.toRMBSubZeroAndDot
 import afkt_replace.core.lib.utils.toSource
@@ -55,7 +56,7 @@ class ShopCartAdapter :
         // 商品图片
         holder.binding.vidPicIv.display(
             source = item.picture.toSource(),
-            config = ROUND_3
+            config = IMAGE_ROUND_3.toImageConfig()
         )
 
         // ==========
