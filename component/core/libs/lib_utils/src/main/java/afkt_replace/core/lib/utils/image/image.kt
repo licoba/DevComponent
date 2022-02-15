@@ -24,8 +24,8 @@ import dev.engine.image.listener.OnConvertListener
  * 内部做了处理如果匹配不到则返回默认 Image Engine
  */
 internal fun getEngine(key: String?): IImageEngine<in IImageEngine.EngineConfig>? {
-    DevEngine.getImage(key)?.let { image ->
-        return image
+    DevEngine.getImage(key)?.let { engine ->
+        return engine
     }
     return DevEngine.getImage()
 }
