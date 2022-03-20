@@ -2,6 +2,7 @@ package afkt_replace.core.lib.utils.keyvalue
 
 import dev.engine.DevEngine
 import dev.engine.keyvalue.IKeyValueEngine
+import dev.utils.DevFinal
 import java.lang.reflect.Type
 
 // =========================================================
@@ -25,13 +26,11 @@ internal fun getEngine(engine: String?): IKeyValueEngine<in IKeyValueEngine.Engi
 // = 默认值 =
 // ========
 
-private val INTEGER_DEFAULT: Int = -1
-private val LONG_DEFAULT: Long = -1L
-private val FLOAT_DEFAULT: Float = -1F
-private val DOUBLE_DEFAULT: Double = -1.0
-private val BOOLEAN_DEFAULT: Boolean = false
-private val STRING_DEFAULT: String? = null
-private val STRING_SET_DEFAULT: Set<String>? = null
+private const val INTEGER_DEFAULT: Int = DevFinal.DEFAULT.INT
+private const val LONG_DEFAULT: Long = DevFinal.DEFAULT.LONG
+private const val FLOAT_DEFAULT: Float = DevFinal.DEFAULT.FLOAT
+private const val DOUBLE_DEFAULT: Double = DevFinal.DEFAULT.DOUBLE
+private const val BOOLEAN_DEFAULT: Boolean = DevFinal.DEFAULT.BOOLEAN
 
 // =======================
 // = Key KeyValue Engine =
@@ -185,14 +184,14 @@ fun String.kv_getBoolean(
 fun String.kv_getString(
     engine: String? = null
 ): String? {
-    return getEngine(engine)?.getString(this) ?: STRING_DEFAULT
+    return getEngine(engine)?.getString(this)
 }
 
 fun String.kv_getString(
     engine: String? = null,
     defaultValue: String?
 ): String? {
-    return getEngine(engine)?.getString(this, defaultValue) ?: STRING_DEFAULT
+    return getEngine(engine)?.getString(this, defaultValue)
 }
 
 fun <T : Any> String.kv_getEntity(

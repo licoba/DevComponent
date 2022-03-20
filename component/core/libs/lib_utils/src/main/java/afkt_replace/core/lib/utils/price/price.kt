@@ -49,11 +49,9 @@ fun Any.toPriceString(
     roundingMode: Int = BigDecimal.ROUND_DOWN
 ): String? {
     return try {
-        BigDecimalUtils.operation(this)
-            .setThrowError(true)
-            .round(scale, roundingMode)
-            .requireNonNull().doubleValue()
-            .toString()
+        BigDecimalUtils.round(
+            this, scale, roundingMode
+        ).toString()
     } catch (e: Exception) {
         defValue
     }
@@ -72,10 +70,9 @@ fun Any.toPriceDouble(
     roundingMode: Int = BigDecimal.ROUND_DOWN
 ): Double {
     return try {
-        BigDecimalUtils.operation(this)
-            .setThrowError(true)
-            .round(scale, roundingMode)
-            .requireNonNull().doubleValue()
+        BigDecimalUtils.round(
+            this, scale, roundingMode
+        )
     } catch (e: Exception) {
         defValue
     }
