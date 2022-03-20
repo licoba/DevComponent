@@ -35,11 +35,11 @@ dependencies {
 
     <application>
         <activity
-            android:name="afkt_replace.core.lib.debug.DebugMainContainerActivity"
+            android:name=".DebugMainContainerActivity"
             android:exported="false" />
 
         <provider
-            android:name="afkt_replace.core.lib.debug.provider.InitProvider"
+            android:name=".provider.InitProvider"
             android:authorities="afkt_replace.core.lib.debug.provider.InitProvider"
             android:exported="false" />
     </application>

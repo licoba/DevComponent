@@ -63,9 +63,8 @@ open class DevApplication : MultiDexApplication() {
      * DevAssist Engine 初始化
      */
     private fun initializeEngine(context: Context) {
-        // 使用内部默认实现 Engine ( 使用 MMKV 必须调用 defaultMMKVInitialize() )
-        DevEngine.defaultMMKVInitialize(context.applicationContext)
-            .defaultEngine(DevEngine.getMMKVConfig())
+        // DevEngine 完整初始化
+        DevEngine.completeInitialize(this)
     }
 
     /**

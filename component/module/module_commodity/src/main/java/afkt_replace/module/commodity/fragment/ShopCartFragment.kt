@@ -24,7 +24,7 @@ import dev.utils.app.helper.quick.QuickHelper
 import dev.utils.app.toast.ToastTintUtils
 import dev.utils.common.ChineseUtils
 import dev.utils.common.RandomUtils
-import dev.widget.decoration.linear.LastLineItemDecoration
+import dev.widget.decoration.linear.LastLinearColorItemDecoration
 import kotlinx.coroutines.*
 
 @Route(path = CommodityRouter.PATH_SHOP_CART_FRAGMENT, group = CommodityRouter.GROUP)
@@ -55,7 +55,9 @@ class ShopCartFragment : BaseFragmentViewBinding<CommodityFragmentShopCartBindin
         mAdapter.setDataList(newList(15), false)
         // 添加分割线
         binding.vidRefresh.getRecyclerView()?.addItemDecoration(
-            LastLineItemDecoration(ResourceUtils.getDimension(R.dimen.dp_10))
+            LastLinearColorItemDecoration(
+                true, ResourceUtils.getDimension(R.dimen.dp_10)
+            )
         )
         // 绑定适配器、设置加载事件
         binding.vidRefresh.setAdapter(mAdapter)

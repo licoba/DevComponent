@@ -36,4 +36,18 @@ dependencies {
       - core                       
          - lib                     
             - utils                
+               - image             
+               - json              
+               - keyvalue          
+               - permission        
+               - price             
+               - size              
+```
+
+
+# main/res-tools 目录结构
+
+```
+- res-tools                        
+   - values                        
 ```
