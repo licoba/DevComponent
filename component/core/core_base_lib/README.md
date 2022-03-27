@@ -49,6 +49,9 @@ dependencies {
         api deps.dev.dev_http_capture_compiler
     }
 
+    // DevHttpManager - OkHttp 管理库 ( Retrofit 多 BaseUrl 等 )
+    api deps.dev.dev_http_manager
+
     // ===========
     // = Android =
     // ===========
