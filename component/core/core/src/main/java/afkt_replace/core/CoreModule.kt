@@ -1,5 +1,6 @@
 package afkt_replace.core
 
+import afkt_replace.core.lib.network.HttpCoreLibrary
 import afkt_replace.core.lib.web.WebCoreLibrary
 import android.content.Context
 
@@ -20,6 +21,8 @@ class CoreModule private constructor() : BaseModule(CoreModule::class.java.simpl
      * @param context Context
      */
     fun initialize(context: Context) {
+        // 初始化 OkHttp 管理库 ( Retrofit 多 BaseUrl 等 )
+        HttpCoreLibrary.initialize(context)
         // 初始化 WebView 辅助类全局配置
         WebCoreLibrary.initializeWebViewBuilder()
     }
