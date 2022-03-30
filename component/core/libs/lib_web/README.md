@@ -17,6 +17,8 @@ dependencies {
 
     // 通用 Engine ( 图片加载、日志、JSON、权限、资源选择 等 ) lib
     compileOnly project(':core_lib_engine')
+    // 通用工具库
+    compileOnly project(':core_lib_utils')
 }
 ```
 
@@ -30,10 +32,10 @@ dependencies {
 # main/java 目录结构
 
 ```
-- java                             
-   - afkt_replace                  
-      - core                       
-         - lib                     
-            - web                  
-               - assist            
+- java                               
+   - afkt_replace                    
+      - core                         
+         - lib                       
+            - web                    
+               - assist              
 ```

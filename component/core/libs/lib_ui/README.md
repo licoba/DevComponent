@@ -47,42 +47,42 @@ dependencies {
 # main/java 目录结构
 
 ```
-- java                             
-   - afkt_replace                  
-      - core                       
-         - lib                     
-            - ui                   
-               - assist            
-               - widget            
+- java                               
+   - afkt_replace                    
+      - core                         
+         - lib                       
+            - ui                     
+               - assist              
+               - widget              
 ```
 
 
 # main/res 目录结构
 
 ```
-- res                              
-   - drawable                      
-   - mipmap-xxxhdpi                
-   - values                        
-   - values-zh                     
+- res                                
+   - drawable                        
+   - mipmap-xxxhdpi                  
+   - values                          
+   - values-zh                       
 ```
 
 
 # main/res-base 目录结构
 
 ```
-- res-base                         
-   - layout                        
-   - mipmap-xxxhdpi                
+- res-base                           
+   - layout                          
+   - mipmap-xxxhdpi                  
 ```
 
 
 # main/res-commodity 目录结构
 
 ```
-- res-commodity                    
-   - drawable                      
-   - drawable-xxhdpi               
-   - values                        
-   - values-zh                     
+- res-commodity                      
+   - drawable                        
+   - drawable-xxhdpi                 
+   - values                          
+   - values-zh                       
 ```

@@ -47,23 +47,23 @@ dependencies {
 # main/java 目录结构
 
 ```
-- java                             
-   - afkt_replace                  
-      - module                     
-         - commodity               
-            - activity             
-            - adapter              
-            - base                 
-            - fragment             
+- java                               
+   - afkt_replace                    
+      - module                       
+         - commodity                 
+            - activity               
+            - adapter                
+            - base                   
+            - fragment               
 ```
 
 
 # main/res 目录结构
 
 ```
-- res                              
-   - layout                        
-   - mipmap-xxxhdpi                
-   - values                        
-   - values-zh                     
+- res                                
+   - layout                          
+   - mipmap-xxxhdpi                  
+   - values                          
+   - values-zh                       
 ```

@@ -1,10 +1,10 @@
-package afkt_replace.module.commodity.activity
+package afkt_replace.module.wan_android
 
 import afkt_replace.core.lib.base.app.BaseActivityViewBinding
 import afkt_replace.core.lib.bean.ThemeIntent
-import afkt_replace.core.lib.router.module.commodity.CommodityNav
-import afkt_replace.core.lib.router.module.commodity.CommodityRouter
-import afkt_replace.module.commodity.BuildConfig
+import afkt_replace.core.lib.router.module.wan_android.WanAndroidNav
+import afkt_replace.core.lib.router.module.wan_android.WanAndroidRouter
+import afkt_replace.module.wan_android.BuildConfig
 import android.graphics.Color
 import android.os.Bundle
 import android.view.View
@@ -16,7 +16,7 @@ import dev.utils.DevFinal
 import dev.utils.app.ClickUtils
 import dev.utils.app.toast.ToastTintUtils
 
-@Route(path = CommodityRouter.PATH_MAIN, group = CommodityRouter.GROUP)
+@Route(path = WanAndroidRouter.PATH_MAIN, group = WanAndroidRouter.GROUP)
 class MainContainerActivity : BaseActivityViewBinding<ViewBinding>() {
 
     @JvmField
@@ -38,7 +38,7 @@ class MainContainerActivity : BaseActivityViewBinding<ViewBinding>() {
 
         themeIntent?.let { uiController.setAllBackground(it.color) }
 
-        (CommodityNav.build(CommodityRouter.PATH_SHOP_CART_FRAGMENT)
+        (WanAndroidNav.build(WanAndroidRouter.PATH_ARTICLE_FRAGMENT)
             .with(intent.extras).navigation() as? Fragment)?.let { fragment ->
             supportFragmentManager.beginTransaction().apply {
                 add(contentAssist.contentLinear?.id ?: View.NO_ID, fragment)

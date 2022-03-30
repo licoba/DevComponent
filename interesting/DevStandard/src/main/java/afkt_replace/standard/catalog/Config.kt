@@ -146,10 +146,12 @@ object Config {
         sModuleCatalogMap[".module_main"] = "首页 Module"
         sModuleCatalogMap[".module_splash"] = "启动页 ( 广告页、首次启动引导页 ) Module"
         sModuleCatalogMap[".module_user"] = "用户 Module"
+        sModuleCatalogMap[".module_wanandroid"] = "玩 Android Module"
 
         sModuleAboutMap.putAll(sModuleCatalogMap)
         sModuleAboutMap[".module_commodity"] = "商品相关 ( 如商品详情、购物车、商品列表复用等 ) Module"
         sModuleAboutMap[".module_main"] = "首页 ( 底部 Button 导航 ) Module"
+        sModuleAboutMap[".module_wanandroid"] = "DevHttpManager 演示 - 玩 Android 文章 Module"
 
         // ========
         // = Libs =

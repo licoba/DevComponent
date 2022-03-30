@@ -46,15 +46,16 @@ dependencies {
 # main/java 目录结构
 
 ```
-- java                             
-   - afkt_replace                  
-      - core                       
-         - lib                     
-            - router               
-               - module            
-                  - commodity      
-                  - main           
-                  - splash         
-                  - template       
-                  - user           
+- java                               
+   - afkt_replace                    
+      - core                         
+         - lib                       
+            - router                 
+               - module              
+                  - commodity        
+                  - main             
+                  - splash           
+                  - template         
+                  - user             
+                  - wan_android      
 ```

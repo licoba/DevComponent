@@ -17,6 +17,8 @@ dependencies {
 
     // 通用 Engine ( 图片加载、日志、JSON、权限、资源选择 等 ) lib
     compileOnly project(':core_lib_engine')
+    // 通用工具库
+    compileOnly project(':core_lib_utils')
 
     // ====================
     // = libs - 第三方库依赖 =
@@ -49,4 +51,15 @@ dependencies {
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 </manifest>
+```
+
+# main/java 目录结构
+
+```
+- java                           
+   - afkt_replace                
+      - core                     
+         - lib                   
+            - network            
+               - common          
 ```

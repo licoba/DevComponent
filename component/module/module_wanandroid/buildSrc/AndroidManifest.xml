@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="afkt_replace.module.commodity">
+    package="afkt_replace.module.wan_android">
 
     <application
         android:name=".base.BaseApplication"
@@ -18,12 +18,12 @@
             android:exported="false"
             tools:node="merge">
             <meta-data
-                android:name="afkt_replace.module.commodity.CommodityInitializer"
+                android:name="afkt_replace.module.wan_android.WanAndroidInitializer"
                 android:value="@string/androidx_startup" />
         </provider>
 
         <activity
-            android:name=".activity.MainContainerActivity"
+            android:name=".MainContainerActivity"
             android:configChanges="orientation|keyboardHidden"
             android:screenOrientation="portrait" />
 

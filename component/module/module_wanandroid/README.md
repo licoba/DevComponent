@@ -1,19 +1,12 @@
 
 # About
 
-商品相关 ( 如商品详情、购物车、商品列表复用等 ) Module
+DevHttpManager 演示 - 玩 Android 文章 Module
 
 # 依赖信息
 
 ```groovy
 dependencies {
-
-    // ====================
-    // = libs - 模块封装复用 =
-    // ====================
-
-    // 依赖 lib_commodity
-    api project(':lib_commodity')
 }
 ```
 
@@ -23,7 +16,7 @@ dependencies {
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="afkt_replace.module.commodity">
+    package="afkt_replace.module.wan_android">
 
     <application>
         <provider
@@ -32,12 +25,12 @@ dependencies {
             android:exported="false"
             tools:node="merge">
             <meta-data
-                android:name="afkt_replace.module.commodity.CommodityInitializer"
+                android:name="afkt_replace.module.wan_android.WanAndroidInitializer"
                 android:value="@string/androidx_startup" />
         </provider>
 
         <activity
-            android:name=".activity.MainContainerActivity"
+            android:name=".MainContainerActivity"
             android:configChanges="orientation|keyboardHidden"
             android:screenOrientation="portrait" />
     </application>
@@ -47,23 +40,22 @@ dependencies {
 # main/java 目录结构
 
 ```
-- java                             
-   - afkt_replace                  
-      - module                     
-         - commodity               
-            - activity             
-            - adapter              
-            - base                 
-            - fragment             
+- java                               
+   - afkt_replace                    
+      - module                       
+         - wan_android               
+            - base                   
+            - feature                
+               - article             
 ```
 
 
 # main/res 目录结构
 
 ```
-- res                              
-   - layout                        
-   - mipmap-xxxhdpi                
-   - values                        
-   - values-zh                     
+- res                                
+   - layout                          
+   - mipmap-xxxhdpi                  
+   - values                          
+   - values-zh                       
 ```

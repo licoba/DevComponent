@@ -1,4 +1,4 @@
-package afkt_replace.module.commodity.base
+package afkt_replace.module.wan_android.base
 
 import afkt_replace.core.app.AppContext
 

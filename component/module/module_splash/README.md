@@ -37,19 +37,19 @@ dependencies {
 # main/java 目录结构
 
 ```
-- java                             
-   - afkt_replace                  
-      - module                     
-         - splash                  
-            - base                 
+- java                               
+   - afkt_replace                    
+      - module                       
+         - splash                    
+            - base                   
 ```
 
 
 # main/res 目录结构
 
 ```
-- res                              
-   - mipmap-xxxhdpi                
-   - values                        
-   - values-zh                     
+- res                                
+   - mipmap-xxxhdpi                  
+   - values                          
+   - values-zh                       
 ```

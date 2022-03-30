@@ -1,9 +1,9 @@
-package afkt_replace.module.commodity
+package afkt_replace.module.wan_android
 
 import afkt_replace.core.lib.base.app.BaseActivityViewBinding
 import afkt_replace.core.lib.bean.ThemeIntent
-import afkt_replace.core.lib.router.module.commodity.CommodityNav
-import afkt_replace.core.lib.router.module.commodity.CommodityRouter
+import afkt_replace.core.lib.router.module.wan_android.WanAndroidNav
+import afkt_replace.core.lib.router.module.wan_android.WanAndroidRouter
 import android.os.Bundle
 import android.view.View
 import android.widget.ImageView
@@ -41,7 +41,7 @@ class AppLauncherActivity : BaseActivityViewBinding<ViewBinding>() {
 
         GlobalScope.launch {
             delay(2000L)
-            CommodityNav.build(CommodityRouter.PATH_MAIN)
+            WanAndroidNav.build(WanAndroidRouter.PATH_MAIN)
                 .withObject(DevFinal.STR.DATA, ThemeIntent("【模块化运行】"))
                 .navigation()
             finish()

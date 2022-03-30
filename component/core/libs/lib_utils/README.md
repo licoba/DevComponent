@@ -31,23 +31,24 @@ dependencies {
 # main/java 目录结构
 
 ```
-- java                             
-   - afkt_replace                  
-      - core                       
-         - lib                     
-            - utils                
-               - image             
-               - json              
-               - keyvalue          
-               - permission        
-               - price             
-               - size              
+- java                               
+   - afkt_replace                    
+      - core                         
+         - lib                       
+            - utils                  
+               - image               
+               - json                
+               - keyvalue            
+               - log                 
+               - permission          
+               - price               
+               - size                
 ```
 
 
 # main/res-tools 目录结构
 
 ```
-- res-tools                        
-   - values                        
+- res-tools                          
+   - values                          
 ```
