@@ -55,7 +55,7 @@ ext {
     modularVersion = [
             // 主程序 ( 壳 ) 版本信息
             // TODO 非模块化情况下, 打包最终使用该信息 ( "app" 根据 project.getName() )
-            "app"             : [
+            "app"              : [
                     // 版本号
                     versionCode   : 100,
                     // 版本名
@@ -68,7 +68,7 @@ ext {
                     featureVersion: "22.01.01",
             ],
             // 模板 Module ( 便于 copy )
-            "module_template" : [
+            "module_template"  : [
                     // 版本号
                     versionCode   : 100,
                     // 版本名
@@ -81,7 +81,7 @@ ext {
                     featureVersion: "22.01.01",
             ],
             // 商品相关 Module
-            "module_commodity": [
+            "module_commodity" : [
                     // 版本号
                     versionCode   : 100,
                     // 版本名
@@ -94,7 +94,7 @@ ext {
                     featureVersion: "22.01.01",
             ],
             // 首页 Module
-            "module_main"     : [
+            "module_main"      : [
                     // 版本号
                     versionCode   : 100,
                     // 版本名
@@ -107,7 +107,7 @@ ext {
                     featureVersion: "22.01.01",
             ],
             // 启动页 ( 广告页、首次启动引导页 ) Module
-            "module_splash"   : [
+            "module_splash"    : [
                     // 版本号
                     versionCode   : 100,
                     // 版本名
@@ -120,7 +120,7 @@ ext {
                     featureVersion: "22.01.01",
             ],
             // 用户 Module
-            "module_user"     : [
+            "module_user"      : [
                     // 版本号
                     versionCode   : 100,
                     // 版本名
@@ -129,6 +129,24 @@ ext {
                     applicationId : "afkt_replace.module.user",
                     // 模块名
                     moduleName    : "USER",
+                    // 模块功能版本标识 ( 需求、RP 版本 )
+                    featureVersion: "22.01.01",
+            ],
+
+            // =========================
+            // = DevHttpManager 演示模块 =
+            // =========================
+
+            // WanAndroid Module
+            "module_wanandroid": [
+                    // 版本号
+                    versionCode   : 100,
+                    // 版本名
+                    versionName   : "1.0.0",
+                    // 包名
+                    applicationId : "afkt_replace.module.wan_android",
+                    // 模块名
+                    moduleName    : "WAN_ANDROID",
                     // 模块功能版本标识 ( 需求、RP 版本 )
                     featureVersion: "22.01.01",
             ],

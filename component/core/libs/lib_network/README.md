@@ -22,7 +22,7 @@ dependencies {
     // = libs - 第三方库依赖 =
     // ====================
 
-    // okip https://github.com/square/okio
+    // okio https://github.com/square/okio
     api deps.lib.okio
     // OkHttp3 网络请求框架 https://github.com/square/okhttp
     api deps.lib.okhttp3
