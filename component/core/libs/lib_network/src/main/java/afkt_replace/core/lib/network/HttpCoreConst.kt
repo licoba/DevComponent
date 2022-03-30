@@ -1,10 +1,10 @@
 package afkt_replace.core.lib.network
 
 /**
- * detail: Http 常量
+ * detail: Http Core 常量
  * @author Ttt
  */
-object HttpConst {
+object HttpCoreConst {
 
     // 全局默认时间 ( 毫秒 )
     const val DEFAULT_MS = 60000L

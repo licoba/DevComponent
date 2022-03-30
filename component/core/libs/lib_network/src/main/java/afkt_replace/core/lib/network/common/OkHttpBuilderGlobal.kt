@@ -1,7 +1,7 @@
 package afkt_replace.core.lib.network.common
 
 import afkt_replace.core.lib.network.BuildConfig
-import afkt_replace.core.lib.network.HttpConst
+import afkt_replace.core.lib.network.HttpCoreConst
 import afkt_replace.core.lib.utils.log.log_jsonTag
 import dev.capture.CallbackInterceptor
 import dev.http.manager.OkHttpBuilder
@@ -43,11 +43,11 @@ class OkHttpBuilderGlobal : OkHttpBuilder {
             // ==========
 
             // 全局的读取超时时间
-            readTimeout(HttpConst.READ_TIMEOUT_MS, TimeUnit.MILLISECONDS)
+            readTimeout(HttpCoreConst.READ_TIMEOUT_MS, TimeUnit.MILLISECONDS)
             // 全局的写入超时时间
-            writeTimeout(HttpConst.WRITE_TIMEOUT_MS, TimeUnit.MILLISECONDS)
+            writeTimeout(HttpCoreConst.WRITE_TIMEOUT_MS, TimeUnit.MILLISECONDS)
             // 全局的连接超时时间
-            connectTimeout(HttpConst.CONNECT_TIMEOUT_MS, TimeUnit.MILLISECONDS)
+            connectTimeout(HttpCoreConst.CONNECT_TIMEOUT_MS, TimeUnit.MILLISECONDS)
 
             // =============
             // = 不同版本构建 =
