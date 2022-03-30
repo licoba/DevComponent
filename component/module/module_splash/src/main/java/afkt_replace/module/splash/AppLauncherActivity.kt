@@ -5,6 +5,7 @@ import afkt_replace.core.lib.bean.ThemeIntent
 import afkt_replace.core.lib.router.module.splash.SplashNav
 import afkt_replace.core.lib.router.module.splash.SplashRouter
 import afkt_replace.core.lib.router.module.user.UserNav
+import afkt_replace.core.lib.utils.log.log_d
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
@@ -12,7 +13,6 @@ import android.widget.ImageView
 import androidx.viewbinding.ViewBinding
 import com.alibaba.android.arouter.core.LogisticsCenter
 import com.alibaba.android.arouter.facade.annotation.Route
-import dev.engine.DevEngine
 import dev.utils.DevFinal
 import dev.utils.app.toast.ToastTintUtils
 import kotlinx.coroutines.GlobalScope
@@ -43,8 +43,8 @@ class AppLauncherActivity : BaseActivityViewBinding<ViewBinding>() {
 
         // 调用其他模块数据
         val isLogin: Boolean = UserNav.userProvider()?.isLogin() == true
-        DevEngine.getLog()?.d("是否登录了 $isLogin")
-        DevEngine.getLog()?.d("是否存在 UserProvider ${UserNav.userProvider()}")
+        log_d(message = "是否登录了 $isLogin")
+        log_d(message = "是否存在 UserProvider ${UserNav.userProvider()}")
 
         GlobalScope.launch {
             delay(2000L)

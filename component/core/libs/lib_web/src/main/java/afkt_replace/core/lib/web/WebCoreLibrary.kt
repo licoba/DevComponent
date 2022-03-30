@@ -1,8 +1,8 @@
 package afkt_replace.core.lib.web
 
+import afkt_replace.core.lib.utils.log.log_d
 import afkt_replace.core.lib.web.assist.WebViewAssist
 import android.webkit.WebSettings
-import dev.engine.DevEngine
 import dev.utils.app.PathUtils
 
 /**
@@ -34,9 +34,7 @@ object WebCoreLibrary {
                     webViewAssist: WebViewAssist?,
                     builder: WebViewAssist.Builder
                 ) {
-                    DevEngine.getLog()?.apply {
-                        d("WebViewAssist Builder onApply")
-                    }
+                    log_d(message = "WebViewAssist Builder onApply")
                 }
             })
         // 基础布局算法

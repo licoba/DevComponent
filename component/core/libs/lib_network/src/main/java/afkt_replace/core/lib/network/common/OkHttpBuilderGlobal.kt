@@ -2,6 +2,7 @@ package afkt_replace.core.lib.network.common
 
 import afkt_replace.core.lib.network.BuildConfig
 import afkt_replace.core.lib.network.HttpConst
+import afkt_replace.core.lib.utils.log.log_jsonTag
 import dev.capture.CallbackInterceptor
 import dev.http.manager.OkHttpBuilder
 import dev.http.manager.RetrofitBuilder
@@ -21,7 +22,7 @@ class OkHttpBuilderGlobal : OkHttpBuilder {
      * @param key Key ( RetrofitBuilder Manager Key )
      * @return OkHttpClient.Builder
      */
-    override fun createOkHttpBuilder(key: String): OkHttpClient.Builder? {
+    override fun createOkHttpBuilder(key: String): OkHttpClient.Builder {
         return commonOkHttpBuilder(key)
     }
 
@@ -94,8 +95,12 @@ class OkHttpBuilderGlobal : OkHttpBuilder {
         builder.apply {
             // Http 抓包拦截器 ( 无存储逻辑, 进行回调通知 )
             addInterceptor(CallbackInterceptor { info ->
-//                DevEngine
-//                DevLogger.jsonTag("net:$moduleName", DevJSONEngine.getEngine()?.toJson(it))
+                // 打印 Http 请求信息 log
+                // tag 为 "key"_http_capture
+                log_jsonTag(
+                    tag = "${key}_http_capture",
+                    json = info?.toJson()
+                )
             })
         }
     }

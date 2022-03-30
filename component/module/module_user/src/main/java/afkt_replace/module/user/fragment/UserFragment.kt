@@ -8,6 +8,7 @@ import afkt_replace.core.lib.utils.image.IMAGE_ROUND_10
 import afkt_replace.core.lib.utils.image.display
 import afkt_replace.core.lib.utils.image.loadDrawable
 import afkt_replace.core.lib.utils.image.toImageConfig
+import afkt_replace.core.lib.utils.log.log_eTag
 import afkt_replace.core.lib.utils.toSource
 import afkt_replace.module.user.R
 import afkt_replace.module.user.databinding.UserFragmentBinding
@@ -18,7 +19,6 @@ import android.view.View
 import com.alibaba.android.arouter.facade.annotation.Autowired
 import com.alibaba.android.arouter.facade.annotation.Route
 import dev.base.DevSource
-import dev.engine.DevEngine
 import dev.engine.image.listener.DrawableListener
 import dev.utils.DevFinal
 
@@ -69,7 +69,10 @@ class UserFragment : BaseFragmentViewBinding<UserFragmentBinding>() {
                                 source: DevSource?,
                                 throwable: Throwable?
                             ) {
-                                DevEngine.getLog()?.eTag(TAG, throwable)
+                                log_eTag(
+                                    tag = TAG,
+                                    throwable = throwable
+                                )
                             }
                         }
                     )
