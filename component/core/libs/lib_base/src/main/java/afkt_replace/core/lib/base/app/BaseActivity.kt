@@ -15,6 +15,7 @@ import com.alibaba.android.arouter.launcher.ARouter
 import dev.base.expand.content.DevBaseContentMVVMActivity
 import dev.utils.app.BarUtils
 import dev.utils.app.ScreenUtils
+import dev.utils.common.ClassUtils
 
 /**
  * detail: Base MVVM Activity
@@ -95,6 +96,16 @@ abstract class BaseActivity<VDB : ViewDataBinding, VM : ViewModel> : DevBaseCont
     // =====================
 
     override fun initViewModel() {
+        try {
+            val clazz = ClassUtils.getGenericSuperclass(this.javaClass, 1) as Class<VM>
+            viewModelAssist.getActivityViewModel(
+                this, clazz
+            )?.let {
+                viewModel = it
+            }
+        } catch (e: Exception) {
+            assist.printLog(e, "initViewModel")
+        }
     }
 
     // =============

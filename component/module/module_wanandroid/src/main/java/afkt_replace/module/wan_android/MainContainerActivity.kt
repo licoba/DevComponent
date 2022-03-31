@@ -4,7 +4,6 @@ import afkt_replace.core.lib.base.app.BaseActivityViewBinding
 import afkt_replace.core.lib.bean.ThemeIntent
 import afkt_replace.core.lib.router.module.wan_android.WanAndroidNav
 import afkt_replace.core.lib.router.module.wan_android.WanAndroidRouter
-import afkt_replace.module.wan_android.BuildConfig
 import android.graphics.Color
 import android.os.Bundle
 import android.view.View

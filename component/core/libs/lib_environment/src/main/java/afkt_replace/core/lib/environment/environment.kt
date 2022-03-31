@@ -140,6 +140,10 @@ internal object EnvironmentTypeChecker {
             BuildConfig.ENV_LIB_CORE_LIB_UPLOAD -> {
                 DevEnvironment.getLibUploadModule()
             }
+            // 玩 Android 模块
+            BuildConfig.ENV_MODULE_WAN_ANDROID -> {
+                DevEnvironment.getWanAndroidModule()
+            }
             else -> {
                 EMPTY_MODULE
             }
@@ -168,6 +172,10 @@ internal object EnvironmentTypeChecker {
             // 上传 lib
             BuildConfig.ENV_LIB_CORE_LIB_UPLOAD -> {
                 DevEnvironment.getLibUploadReleaseEnvironment()
+            }
+            // 玩 Android 模块
+            BuildConfig.ENV_MODULE_WAN_ANDROID -> {
+                DevEnvironment.getWanAndroidReleaseEnvironment()
             }
             else -> {
                 EMPTY_ENVIRONMENT
@@ -209,6 +217,10 @@ internal object EnvironmentTypeChecker {
             // 上传 lib
             BuildConfig.ENV_LIB_CORE_LIB_UPLOAD -> {
                 DevEnvironment.getLibUploadEnvironment(context)
+            }
+            // 玩 Android 模块
+            BuildConfig.ENV_MODULE_WAN_ANDROID -> {
+                DevEnvironment.getWanAndroidEnvironment(context)
             }
             else -> {
                 EMPTY_ENVIRONMENT
@@ -257,6 +269,10 @@ internal object EnvironmentTypeChecker {
             // 上传 lib
             BuildConfig.ENV_LIB_CORE_LIB_UPLOAD -> {
                 DevEnvironment.setLibUploadEnvironment(context, newEnvironment)
+            }
+            // 玩 Android 模块
+            BuildConfig.ENV_MODULE_WAN_ANDROID -> {
+                DevEnvironment.setWanAndroidEnvironment(context, newEnvironment)
             }
             else -> {
                 false

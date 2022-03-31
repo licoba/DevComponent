@@ -80,4 +80,23 @@ internal class HttpService private constructor() {
         @Environment(value = "http://commodity-development.com", alias = "开发环境")
         private val development: String? = null
     }
+
+    // ==============================
+    // = Module - WanAndroid 演示模块 =
+    // ==============================
+
+    @Module(alias = "玩 Android 模块")
+    private inner class WanAndroid {
+        @Environment(value = "https://www.wanandroid.com", isRelease = true, alias = "生产环境")
+        private val release: String? = null
+
+        @Environment(value = "https://www.wanandroid.com", alias = "测试环境")
+        private val debug: String? = null
+
+        @Environment(value = "https://www.wanandroid.com", alias = "预发布环境")
+        private val pre_release: String? = null
+
+        @Environment(value = "https://www.wanandroid.com", alias = "开发环境")
+        private val development: String? = null
+    }
 }
