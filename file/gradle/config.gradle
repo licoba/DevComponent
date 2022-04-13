@@ -313,14 +313,14 @@ ext {
 //                    // 下拉刷新框架 ( 横向 ) https://github.com/scwang90/SmartRefreshHorizontal
 //                    smartrefreshHorizontal          : "io.github.scwang90:refresh-layout-horizontal:2.0.0",
                     // 下拉刷新框架 https://github.com/scwang90/SmartRefreshLayout
-                    smartrefreshlayout              : "com.scwang.smart:refresh-layout-kernel:2.0.3",
-                    smartrefresh_header_classics    : "com.scwang.smart:refresh-header-classics:2.0.3", // 经典刷新头
-                    smartrefresh_header_radar       : "com.scwang.smart:refresh-header-radar:2.0.3", // 雷达刷新头
-                    smartrefresh_header_falsify     : "com.scwang.smart:refresh-header-falsify:2.0.3", // 虚拟刷新头
-                    smartrefresh_header_material    : "com.scwang.smart:refresh-header-material:2.0.3", // 谷歌刷新头
-                    smartrefresh_header_two_level   : "com.scwang.smart:refresh-header-two-level:2.0.3", // 二级刷新头
-                    smartrefresh_footer_ball        : "com.scwang.smart:refresh-footer-ball:2.0.3", // 球脉冲加载
-                    smartrefresh_footer_classics    : "com.scwang.smart:refresh-footer-classics:2.0.3", // 经典加载
+                    smartrefreshlayout              : "io.github.scwang90:refresh-layout-kernel:2.0.5",
+                    smartrefresh_header_classics    : "io.github.scwang90:refresh-header-classics:2.0.5", // 经典刷新头
+                    smartrefresh_header_radar       : "io.github.scwang90:refresh-header-radar:2.0.5", // 雷达刷新头
+                    smartrefresh_header_falsify     : "io.github.scwang90:refresh-header-falsify:2.0.5", // 虚拟刷新头
+                    smartrefresh_header_material    : "io.github.scwang90:refresh-header-material:2.0.5", // 谷歌刷新头
+                    smartrefresh_header_two_level   : "io.github.scwang90:refresh-header-two-level:2.0.5", // 二级刷新头
+                    smartrefresh_footer_ball        : "io.github.scwang90:refresh-footer-ball:2.0.5", // 球脉冲加载
+                    smartrefresh_footer_classics    : "io.github.scwang90:refresh-footer-classics:2.0.5", // 经典加载
                     // 下拉刷新框架 ( 横向 ) https://github.com/scwang90/SmartRefreshHorizontal
                     smartrefreshHorizontal          : "com.scwang.smart:refresh-layout-horizontal:2.0.0",
                     // RecyclerView Adapter https://github.com/CymChad/BaseRecyclerViewAdapterHelper

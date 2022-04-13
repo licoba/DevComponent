@@ -43,6 +43,7 @@ buildscript {
 allprojects {
     repositories { // 该 repositories 用于 app、module dependencies 第三方库 implementation 等依赖加载
         google()
+        jcenter()
 
         // jitpack maven
         maven { url "https://jitpack.io" }

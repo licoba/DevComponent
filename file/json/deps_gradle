@@ -270,21 +270,21 @@ dependencies {
 	// stickyDecoration
 	implementation 'com.gavin.com.library:stickyDecoration:1.5.3'
 	// smartrefreshlayout
-	implementation 'com.scwang.smart:refresh-layout-kernel:2.0.3'
+	implementation 'io.github.scwang90:refresh-layout-kernel:2.0.5'
 	// smartrefresh_header_classics
-	implementation 'com.scwang.smart:refresh-header-classics:2.0.3'
+	implementation 'io.github.scwang90:refresh-header-classics:2.0.5'
 	// smartrefresh_header_radar
-	implementation 'com.scwang.smart:refresh-header-radar:2.0.3'
+	implementation 'io.github.scwang90:refresh-header-radar:2.0.5'
 	// smartrefresh_header_falsify
-	implementation 'com.scwang.smart:refresh-header-falsify:2.0.3'
+	implementation 'io.github.scwang90:refresh-header-falsify:2.0.5'
 	// smartrefresh_header_material
-	implementation 'com.scwang.smart:refresh-header-material:2.0.3'
+	implementation 'io.github.scwang90:refresh-header-material:2.0.5'
 	// smartrefresh_header_two_level
-	implementation 'com.scwang.smart:refresh-header-two-level:2.0.3'
+	implementation 'io.github.scwang90:refresh-header-two-level:2.0.5'
 	// smartrefresh_footer_ball
-	implementation 'com.scwang.smart:refresh-footer-ball:2.0.3'
+	implementation 'io.github.scwang90:refresh-footer-ball:2.0.5'
 	// smartrefresh_footer_classics
-	implementation 'com.scwang.smart:refresh-footer-classics:2.0.3'
+	implementation 'io.github.scwang90:refresh-footer-classics:2.0.5'
 	// smartrefreshHorizontal
 	implementation 'com.scwang.smart:refresh-layout-horizontal:2.0.0'
 	// base_recyclerview_adapter_helper
